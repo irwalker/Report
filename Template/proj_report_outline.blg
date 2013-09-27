@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (Web2C 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: proj_report_outline.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: background.aux
+A level-1 auxiliary file: project_management_approach.aux
+A level-1 auxiliary file: requirements_analysis.aux
+A level-1 auxiliary file: scraper_implementation.aux
+A level-1 auxiliary file: scraper_evaluation.aux
+A level-1 auxiliary file: policy_implementation.aux
+A level-1 auxiliary file: policy_evaluation.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: acm.bst
+Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "GRAft"
+Warning--empty journal in graft_paper
+Warning--empty journal in kewalramanisentiment
+Warning--empty journal in movshovitzanalysis
+You've used 40 entries,
+            2253 wiz_defined-function locations,
+            748 strings with 11697 characters,
+and the built_in function-call counts, 14878 in all, are:
+= -- 1462
+> -- 650
+< -- 0
++ -- 272
+- -- 228
+* -- 1037
+:= -- 2268
+add.period$ -- 117
+call.type$ -- 40
+change.case$ -- 232
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 607
+empty$ -- 1239
+format.name$ -- 228
+if$ -- 3219
+int.to.chr$ -- 0
+int.to.str$ -- 40
+missing$ -- 32
+newline$ -- 200
+num.names$ -- 80
+pop$ -- 310
+preamble$ -- 1
+purify$ -- 194
+quote$ -- 0
+skip$ -- 456
+stack$ -- 0
+substring$ -- 952
+swap$ -- 213
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 158
+warning$ -- 3
+while$ -- 149
+width$ -- 42
+write$ -- 406
+(There were 4 warnings)

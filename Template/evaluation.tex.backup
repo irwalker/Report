@@ -1,0 +1,142 @@
+\chapter{Evaluation}\label{C:us}
+
+This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conducted on the developed web scrapers. It then presents an evaluation of the policies and hypotheses formulated during analysis of data gathered. 
+
+\section{Web Scraper Evaluation}
+
+Performance - what performance goals did I have. How did they improve over time. Justify use of the incremental prototype-based strategy.
+
+Resistance to Detection - what performance goals did I have.
+
+Problems
+
+Accuracy - issues and why.
+
+%Performance
+
+%Resistance to Detection
+
+%Logging
+
+
+
+\section{Policy Evaluation}
+
+This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conduceted on the developed system. 
+
+In order to evaluate my solution I need to refer back to the requirements gathered at the beginning of the project. 
+
+- These requirements will be moved to the Requirements Analysis section... is just useful to have them stored here for easy referrals. 
+
+\begin{itemize}
+\item Develop a set of Policies that can be used to ...
+\item Develop a metric of reliability of information gathered, based on privacy settings.
+\item Potential to Develop an Interface with Filip Dimitrievski's project. Re-using my web-scraping libraries could be useful for his project. (Probably not going to happen)
+\item Aggregate data for storage into GRAft
+\end{itemize}
+
+Non-Functional Requirements:
+\begin{itemize}
+\item Privacy Protection
+\item Maintainability and Resistance to User-Interface Changes
+\item Performance of Scrapers
+\item Ability to Resist Blocking Detection, and Recover from Failure
+\end{itemize}
+
+\section{Policies}
+
+\subsection{Correlation of Impact Factor vs Bucketed Impacts}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=400px]{Images/monthly_impact_vs_overallv2.pdf}
+\caption{Monthly Impact against Overall Impact}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=400px]{Images/yearly_impact_vs_overallv2.pdf}
+\caption{Yearly Impact against Overall Impact}
+\end{figure}
+
+One strategy for inferring reputation information that I looked at was through temporal bucketing of impact factor, into days, months, and years. The figures below show the relationship between people's mean monthly calculated impact factor (i.e. by calculating a person's impact score for each month, and then averaging these values over the total number of months), and the individual's overall impact score. I infer that there is a weak relationship between average monthly impact and overall impact (Pearson's correlation coefficient of 0.273(3 s.f.)), and a stronger relationship between average yearly impact and overall impact (r=0.689(3 s.f.))\\
+
+\noindent What I believe this data shows is that the impact factor is favourable to individuals who are consistent on Twitter over time. 
+
+\subsection{Results of Monthly Bucketing}
+
+By applying the impact factor formula to individuals on a monthly basis, we are able to generate an impression of how regularly active a person is. The data also reveals how influential the person has been per month. This assists when comparing individuals who are consistently strongly influential (e.g. Barack Obama, companies such as instagram), with those who are popular for a limited period only. I looked at comparing different bucket sizes for this temporal aggregation. Days, months, and years were used as buckets, with monthly aggregation clearly showing the strongest and more interesting trends. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics{Images/daily_impact_chris_hadfield.pdf}
+\caption{The Daily Impact of Chris Hadfield - Famous Astronaut}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{Images/monthly_impact_chris_hadfield.pdf}
+\caption{The Monthly Impact of Chris Hadfield - Famous Astronaut}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{Images/monthly_impact_barack_obama.png}
+\caption{The Monthly Impact of Barack Obama - President of USA (As if you didn't know that)}
+\end{figure}
+
+We can see that the daily and monthly impact trends follow roughly the same curve, which should be expected. The difference is due to the strictness of the impact factor formula in classifying someone as 'influential'. It is very difficult to get a value much above 1 on a daily basis, unless you are very frequently both making use of the social media, and having people respond to this activity. 
+
+\section{Scraper}
+
+\subsection{Functional Requirements}
+
+Aggregate data for storage into Graft - given that I am currently only storing data from Twitter this requirement has not yet been met.
+
+Develop a metric of reliability of information gathered, based on privacy settings. Currently on Twitter there are two degrees of privacy - Open and Closed! Closed profiles means I cannot get any meaningful information, whereas on Open profiles I can get anything I want! Most profiles are open so this is not a concern. Profiles of celebrities etc are always set to open.
+
+Developing a set of Policies - still in the production line, still experimenting with different ways of using the data.
+
+\subsection{Non-Functional Requirements}
+
+\subsubsection{Maintainability and Resistance of Scrapers to User Interface Change}
+This is difficult to evaluate. Experiment: Change the layout of twitter pages, see how the scrapers react to these changes. How many changes do I need to make? There will undoubtedlu be single points of faiure, which I should mention. Important point: used as little xpath expressions as possible, as these inherently result in less flexbile scrapers. Any structural changes, or even a tag changing result in an xpath expression having to change. Still resistant to stylesheet changes, though.
+Single points of failure.
+
+\subsubsection{Twitter Scraper Performance}
+I evaluate the performance of my twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be fetched with a seperate http request. Figure <x> shows the average time taken to fetch and parse each tweet, with respect to my incremental build stages. The success of continuous and incremental improvement in performance helps justify my decision to use an incremental approach. Tweets were gathered over several days, and continuously throughout different times of the day on the Victoria network to ensure that a representative range of times were gathered for each stage. 
+
+
+I evaluate the performance of my twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be scraped with a seperate http request. Figure <x> shows the average time taken to fetch and parse each tweet, with respect to incremental builds. This also helps justify my incremental development strategy - we can see that succesive builds gradually increase performance. Tweets were gathered over several days, and at different times of the day on the Victoria network to ensure that a representative range of network performance speeds were used to gather data.\\
+
+\noindent The significant feature of improved performance was through parellization of tweet-fetches. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics{Images/average_time_to_fetch_parse_tweets_per_build.pdf}
+\caption{The Average Time to Fetch and Parse a Tweet, Ordered by Builds}
+\end{figure}
+
+Absolute limitations - Every tweet has to be fetched in an individual http request. This produces upper limits as to how fast the scraper can go, and means that the majority of performance speed is reliant on the speed of the network. (data - show how on some days tweets are fetched slightly faster than on other days. Times of day.)
+
+Sensitivity of tweets fetched - it isn't actually much faster if I bulk-collect tweets in a larger 'window', as the majority of time is spent fetching the details of each tweet. 
+
+Parellization of this? Would actually be a useful way of improving speeds...
+
+Discuss why I did not consider parellization at the beginning. The number of requests may be too many and result in more frequent failures than otherwise. Will have to collect the data to verify this claim. 
+
+\subsubsection{Ability to Resist Blocking Detection}
+
+The primary measure of my scraper libraries avoiding blocking detection is with regards to their failure or incomplete-scrape rates. Although in early, less stable builds I had parsing errors, my later work only failed when detected by twitter and blocked. As such detection rates in later builds can reliably be calculated by analysing failing or incomplete twitter profiles. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics{Images/percentage_failed_incomplete_twitter_profiles.pdf}
+\caption{The Percentage of Incomplete or Failed Profile Scrapes, Ordered by Builds}
+\end{figure}
+
+\subsubsection{Privacy Protection}
+
+Privacy protection - this is still pretty poor, saved as structured xml, data not anonymised (makes my life easier at present)... Are there things I could be doing here potentially to increase privacy for individuals that I am scraping? Document locking, or store as RDB? Since I plan on storing this info in Graft, this could be anonymised at this point. Individual profiles and what-not. 
+
+

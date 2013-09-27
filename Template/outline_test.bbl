@@ -1,0 +1,242 @@
+\begin{thebibliography}{10}
+
+\bibitem{adali2010}
+{\sc Adali, S., Escriva, R., Goldberg, M.~K., Hayvanovych, M., Magdon-Ismail,
+  M., Szymanski, B.~K., Wallace, W.~A., and Williams, G.}
+\newblock Measuring behavioral trust in social networks.
+\newblock In {\em Intelligence and Security Informatics (ISI), 2010 IEEE
+  International Conference on\/} (2010), IEEE, pp.~150--152.
+
+\bibitem{adali2012predicting}
+{\sc Adali, S., and Golbeck, J.}
+\newblock Predicting personality with social behavior.
+\newblock In {\em Advances in Social Networks Analysis and Mining (ASONAM),
+  2012 IEEE/ACM International Conference on\/} (2012), IEEE, pp.~302--309.
+
+\bibitem{adali2012actions}
+{\sc Adali, S., Sisenda, F., and Magdon-Ismail, M.}
+\newblock Actions speak as loud as words: Predicting relationships from social
+  behavior data.
+\newblock In {\em Proceedings of the 21st international conference on World
+  Wide Web\/} (2012), ACM, pp.~689--698.
+
+\bibitem{facebook_newsfeed}
+{\sc Arrington, M.}
+\newblock Facebook users revolt, facebook replies.
+\newblock
+  \url{http://techcrunch.com/2006/09/06/facebook-users-revolt-facebook-replies/},
+  2006.
+
+\bibitem{bachrach2012personality}
+{\sc Bachrach, Y., Kosinski, M., Graepel, T., Kohli, P., and Stillwell, D.}
+\newblock Personality and patterns of facebook usage.
+\newblock In {\em Proceedings of the 3rd Annual ACM Web Science Conference\/}
+  (2012), ACM, pp.~24--32.
+
+\bibitem{back2010facebook}
+{\sc Back, M.~D., Stopfer, J.~M., Vazire, S., Gaddis, S., Schmukle, S.~C.,
+  Egloff, B., and Gosling, S.~D.}
+\newblock Facebook profiles reflect actual personality, not self-idealization.
+\newblock {\em Psychological Science 21}, 3 (2010), 372--374.
+
+\bibitem{brabham2008crowdsourcing}
+{\sc Brabham, D.~C.}
+\newblock Crowdsourcing as a model for problem solving an introduction and
+  cases.
+\newblock {\em Convergence: the international journal of research into new
+  media technologies 14}, 1 (2008), 75--90.
+
+\bibitem{no_api_for_me}
+{\sc Brody, H.}
+\newblock I don't need no stinking api: Web-scraping for fun and profit.
+\newblock \url{http://blog.hartleybrody.com/web-scraping/}, 2013.
+
+\bibitem{brzozowski2008friends}
+{\sc Brzozowski, M.~J., Hogg, T., and Szabo, G.}
+\newblock Friends and foes: ideological social networking.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems\/} (2008), ACM, pp.~817--820.
+
+\bibitem{de2000big}
+{\sc De~Raad, B.}
+\newblock {\em The Big Five Personality Factors: The psycholexical approach to
+  personality.}
+\newblock Hogrefe \& Huber Publishers, 2000.
+
+\bibitem{debatin2009facebook}
+{\sc Debatin, B., Lovejoy, J.~P., Horn, A.-K., and Hughes, B.~N.}
+\newblock Facebook and online privacy: Attitudes, behaviors, and unintended
+  consequences.
+\newblock {\em Journal of Computer-Mediated Communication 15}, 1 (2009),
+  83--108.
+
+\bibitem{doan2011crowdsourcing}
+{\sc Doan, A., Ramakrishnan, R., and Halevy, A.~Y.}
+\newblock Crowdsourcing systems on the world-wide web.
+\newblock {\em Communications of the ACM 54}, 4 (2011), 86--96.
+
+\bibitem{dubois2011predicting}
+{\sc DuBois, T., Golbeck, J., and Srinivasan, A.}
+\newblock Predicting trust and distrust in social networks.
+\newblock In {\em Privacy, security, risk and trust (passat), 2011 ieee third
+  international conference on and 2011 ieee third international conference on
+  social computing (socialcom)\/} (2011), IEEE, pp.~418--424.
+
+\bibitem{fb_users}
+{\sc Facebook}.
+\newblock Facebook quaterly earnings slides, q4 2012.
+\newblock
+  \url{http://www.scribd.com/doc/123034877/Facebook-Q4-2012-Investor-Slide-Deck},
+  2012.
+
+\bibitem{gal2008cross}
+{\sc Gal-Oz, N., Grinshpoun, T., Gudes, E., and Meisels, A.}
+\newblock Cross-community reputation: Policies and alternatives.
+\newblock In {\em Proceedings of the IADIS International Conference on Web
+  Based Communities, Amsterdam, The Netherlands\/} (2008), pp.~197--201.
+
+\bibitem{golbeck2011computing}
+{\sc Golbeck, J., and Hansen, D.}
+\newblock Computing political preference among twitter followers.
+\newblock In {\em Proceedings of the 2011 annual conference on Human factors in
+  computing systems\/} (2011), ACM, pp.~1105--1108.
+
+\bibitem{golbeck2011experimental}
+{\sc Golbeck, J., Koepfler, J., and Emmerling, B.}
+\newblock An experimental study of social tagging behavior and image content.
+\newblock {\em Journal of the American Society for Information Science and
+  Technology 62}, 9 (2011), 1750--1760.
+
+\bibitem{golbeck2011predicting}
+{\sc Golbeck, J., Robles, C., Edmondson, M., and Turner, K.}
+\newblock Predicting personality from twitter.
+\newblock In {\em Privacy, security, risk and trust (passat), 2011 ieee third
+  international conference on and 2011 ieee third international conference on
+  social computing (socialcom)\/} (2011), IEEE, pp.~149--156.
+
+\bibitem{golbeck2011}
+{\sc Golbeck, J., Robles, C., and Turner, K.}
+\newblock Predicting personality with social media.
+\newblock In {\em Proceedings of the 2011 annual conference extended abstracts
+  on Human factors in computing systems\/} (2011), ACM, pp.~253--262.
+
+\bibitem{guha2004propagation}
+{\sc Guha, R., Kumar, R., Raghavan, P., and Tomkins, A.}
+\newblock Propagation of trust and distrust.
+\newblock In {\em Proceedings of the 13th international conference on World
+  Wide Web\/} (2004), ACM, pp.~403--412.
+
+\bibitem{graft_paper}
+{\sc Hendrix, F., and Burbendorfer, K.}
+\newblock Malleable access rights to establish and enable scientific
+  collaboration.
+\newblock Unpublished paper, submitted to eScience 2013 Conference.
+
+\bibitem{kewalramanisentiment}
+{\sc Kewalramani, M.}
+\newblock Sentiment analysis on twitter.
+
+\bibitem{klout}
+{\sc Klout}.
+\newblock Klout.com.
+\newblock \url{http://klout.com}.
+
+\bibitem{kosinski2012personality}
+{\sc Kosinski, M., Kohli, P., Stillwell, D., Bachrach, Y., and Graepel, T.}
+\newblock Personality and website choice.
+\newblock In {\em ACM Web Science Conference\/} (2012), pp.~251--254.
+
+\bibitem{kosinski2013private}
+{\sc Kosinski, M., Stillwell, D., and Graepel, T.}
+\newblock Private traits and attributes are predictable from digital records of
+  human behavior.
+\newblock {\em Proceedings of the National Academy of Sciences\/} (2013).
+
+\bibitem{kunegis2009slashdot}
+{\sc Kunegis, J., Lommatzsch, A., and Bauckhage, C.}
+\newblock The slashdot zoo: mining a social network with negative edges.
+\newblock In {\em Proceedings of the 18th international conference on World
+  wide web\/} (2009), ACM, pp.~741--750.
+
+\bibitem{leskovec2010predicting}
+{\sc Leskovec, J., Huttenlocher, D., and Kleinberg, J.}
+\newblock Predicting positive and negative links in online social networks.
+\newblock In {\em Proceedings of the 19th international conference on World
+  wide web\/} (2010), ACM, pp.~641--650.
+
+\bibitem{howto_scrape}
+{\sc Lurie, I.}
+\newblock How to:scrape search engines without pissing them off.
+\newblock
+  \url{http://searchnewscentral.com/20110928186/General-SEO/how-to-scrape-search-engines-without-pissing-them-off.html},
+  2011.
+
+\bibitem{open_id}
+{\sc OpenID}.
+\newblock \url{http://openid.net/}, 2013.
+
+\bibitem{quercia2011our}
+{\sc Quercia, D., Kosinski, M., Stillwell, D., and Crowcroft, J.}
+\newblock Our twitter profiles, our selves: Predicting personality with
+  twitter.
+\newblock In {\em Privacy, security, risk and trust (passat), 2011 ieee third
+  international conference on and 2011 ieee third international conference on
+  social computing (socialcom)\/} (2011), IEEE, pp.~180--185.
+
+\bibitem{quercia2012personality}
+{\sc Quercia, D., Lambiotte, R., Stillwell, D., Kosinski, M., and Crowcroft,
+  J.}
+\newblock The personality of popular facebook users.
+\newblock In {\em Proceedings of the ACM 2012 conference on Computer Supported
+  Cooperative Work\/} (2012), ACM, pp.~955--964.
+
+\bibitem{resnick2000reputation}
+{\sc Resnick, P., Kuwabara, K., Zeckhauser, R., and Friedman, E.}
+\newblock Reputation systems.
+\newblock {\em Communications of the ACM 43}, 12 (2000), 45--48.
+
+\bibitem{resnick2002trust}
+{\sc Resnick, P., and Zeckhauser, R.}
+\newblock Trust among strangers in internet transactions: Empirical analysis of
+  ebay's reputation system.
+\newblock {\em Advances in applied microeconomics 11\/} (2002), 127--157.
+
+\bibitem{sabater2005review}
+{\sc Sabater, J., and Sierra, C.}
+\newblock Review on computational trust and reputation models.
+\newblock {\em Artificial Intelligence Review 24}, 1 (2005), 33--60.
+
+\bibitem{social_media_share}
+{\sc Stelzner, M.}
+\newblock 2013 social media marketing industry report.
+\newblock
+  \url{http://www.socialmediaexaminer.com/social-media-marketing-industry-report-2013/},
+  2013.
+
+\bibitem{boston}
+{\sc Wadwha, T.}
+\newblock Lessons from crowdsourcing the boston bombing investigation.
+\newblock
+  \url{http://www.forbes.com/sites/tarunwadhwa/2013/04/22/lessons-from-crowdsourcing-the-boston-marathon-bombings-investigation/},
+  2013.
+
+\bibitem{facebook_sued}
+{\sc Warden, P.}
+\newblock How i got sued by facebook.
+\newblock
+  \url{http://petewarden.typepad.com/searchbrowser/2010/04/how-i-got-sued-by-facebook.html},
+  2010.
+
+\bibitem{xu2011sociable}
+{\sc Xu, Y., Cao, X., Sellen, A., Herbrich, R., and Graepel, T.}
+\newblock Sociable killers: understanding social relationships in an online
+  first-person shooter game.
+\newblock In {\em Proceedings of the ACM 2011 conference on Computer supported
+  cooperative work\/} (2011), ACM, pp.~197--206.
+
+\bibitem{ziegler2005propagation}
+{\sc Ziegler, C.-N., and Lausen, G.}
+\newblock Propagation models for trust and distrust in social networks.
+\newblock {\em Information Systems Frontiers 7}, 4-5 (2005), 337--358.
+
+\end{thebibliography}

@@ -1,0 +1,81 @@
+\chapter{Design and Implementation}\label{C:us}
+
+This section outlines the design of the system, highlighting important decisions made during the course of the project, as well as the steps taken to implement the system based on the initial design. I break this section into two logical components; web-scraping implementation and policy implementation.
+
+\section{Web Scraping Components}
+
+\section{Architecture Design Considerations}
+
+\section{Language Choice}
+
+I decided fairly early in the project that Ruby was the most suitable language to implement my scraper libraries with. There are a plethora of libraries to assist with web-scraping in Ruby, and its scripting background made for more straightforward scheduling and running of tasks. 
+
+Multiple approaches were considered for the implementation of my web scrapers. I decided fairly early that Ruby was the most suitable language to implement my scraper libraries with. 
+
+A standalone crawling application was conidered, in which my crawlers would be written from scratch, using libraries such as nokogiri and rest-client to request and parse pages. Alternative structures involved extending existing systems such as Ruby's SCRApi 
+
+Also considered was the extension of an existing scraping system based on... %G
+
+\subsection{Standalone Crawling Application}
+
+Describe the chosen standalone crawling architecture.
+
+\subsection{Extend SCRApi}
+
+SCRApi is a Rubyforge project 
+
+Rubyforge project to allow easy implementations of web scrapers. Advantages such as..
+
+Disadvantages; highly reliant on xpath expressions to find objects
+
+Did not want this as key objective was to make scrapers resistant to change.
+
+\subsection{Extend Watir}
+
+Watir - browser automated option. More for automated tests. Performance would be significantly worse than nokogiri, as pages are loaded through the browser. Also personal experience from building such applications shows that implementation of such a solution would be very time consuming. Advantages of this would be low detection rates. 
+
+\section{Standalone Crawling Application Implementation}
+
+%State why I chose this architecture, and how I built the application.
+
+%Discuss some of the difficulties I faced, Infinite Scroll, Quantifying Reputation Data, Sites Requiring Authentication.
+
+%Sites with large amounts of interactive and dynamic content are significantly more difficult to scrape data from.
+
+\subsection{Twitter Scraper}
+
+%How I went about implementing the Twitter scraper
+
+\subsection{LinkedIn Scraper}
+
+\subsection{Facebook Scraper}
+
+
+
+
+
+%Define the architectures that I considered for implementing web-scraper
+
+%Option one - stand-alone web scraping libraries
+
+%Option two - extend existing web scraper, utilise this.
+
+\section{Policy Construction}
+
+\subsection{MapEquation}
+
+
+
+Two phases to each facet of implementation; scraper, data understanding, and policy implementation and evaluation. Discuss each of these in seperate sections.
+
+Define multiple hypotheses to add strength to the report
+
+Brief description of LinkedIn Scraper. Ultimately decided that twitter had significant data interest to be the only focus of the project.
+
+Discuss how the project was a study on what could be inferred from the data that we can access. Therefore some dead ends, etc. E.g. LinkedIn, Sentiment140 API for tweet analysis. 
+
+Temporal analysis
+
+Evaluation tool development
+
+Phases of implementation for each tool. Design, implement scraper, implement data analysis components, implement evaluation components and policies. 

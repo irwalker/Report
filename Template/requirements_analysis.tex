@@ -1,0 +1,86 @@
+\chapter{Requirements Analysis}\label{C:us}
+
+To satisfy the goals of the project, the following issues need to be addressed. The requirements may be logically split into two divisions; web-scraping requirements and access policy requirements.
+
+\subsection{Functional Requirements}
+
+\begin{description}
+ \item  [R1.] Policies must consider data from reasonable time periods, to generate a shadow of the future.
+ %\item [R1.] Long-lived entities to generate a shadow of the future
+ \item [R2.] Aggregation of social media data into consistent and readable format
+ \item [R3.] Metric of reliability based on amounts of data collected.
+\end{description}
+
+\subsection{Non-Functional Requirements}
+
+\begin{description}
+ \item [R4.] Resistance to User-Interface Change
+ \item [R5.] Reasonable performance - expectation that policies and scrapers could be used as part of wider application.
+ \item [R6.] Accuracy of data collected - content should not be missing or incorrect
+ \item [R7.] Resistance to Blocking Detection - my scrapers should not be blocked.
+\end{description}
+
+\subsection{Discarded Requirements}
+
+\begin{description}
+ \item [R8] Aggregation of Social Media data, for storage in GRAft.
+\end{description}
+
+
+\section{Policy Construction}
+
+The first and most significant requirement is to generate a set of policies to assist with generating a snapshot of the reputation information of an individual. 
+
+\section{A reliability Metric Based on the Amount of Data Considered}%Consider removing this requirement
+
+From the beginning of the project I acknowledged that it may not be feasible to scrape the profile or data of an entire user 
+
+\section{Social Media Platform Portability}%Ability to port original scraper onto new sites.
+
+The ability to build scrapers for new sites on top of existing architecture I develop.
+
+%How to port my scrapers between social media platforms.
+
+\section{Maintainability and Resistance to User-Interface Changes}
+
+Along with portability of my scrapers, they need to be somewhat resistant to change at the user interface level. An oft-repeated downfall of web-scraping is that changes to interfaces may occur at any time, without warning. This is in contrast to changing APIs, which generally give some significant warning and phasing out period of functions. Often changes to the layout of pages will break crawlers, resulting in a need for frequent re-builgs on sites that go regular user interface change. As such my system must be designed in a manner that is as un-reliant on layout-specific information as possible. In cases where change will unavoidably break my scrapers, they should be designed in a fashion which allows for easy identification and solving of issues.
+
+\section{Scraper Performance}
+
+This requirement refers to the speed and accuracy of my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation, in a reasonable amount of time. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds or minutes. Data gathered must be accurate and represent what is actually displayed on a site. 
+
+\section{Ability to Resist Blocking Detection and Recover from Failure}
+
+A challenge presented in web-scraping is the ability to resist detection as a robot by webservers. Webservers do not look well upon robots, and will attempt to block aggresive crawlers. As such my scrapers need to implement strategies to avoid detection, and when blocked or detected, take appropriate action. A balance has to be achieved between performance of scrapers and detection by webservers - normally a scraper attempting to retrieve masses of results will be detected and blocked extremely rapidly. 
+
+\section{Privacy Protection}
+
+This requirement refers to the fact that data I gather should be anonymised to a reasonable extent, such that actual personal details should not be traceable. 
+
+Maintain reasonable privacy of data I collect. Discuss how the information I am gathering is publicly avaialble on social media anyway, and users should have reasonable expectation that their data will be accessed. 
+
+\section{Discarded Requirements}
+
+Aggregate data for storage into GRAft - because of community effort required. Business model would need to be constructed, out of scope for the project.
+
+Visualisation component of the project-  discarded as was able to source external tools to visualise and represent data. 
+
+
+%\subsection{Policy Requirements}
+
+%\begin{number}
+%\item Develop a set of Policies that can be used to ...
+%\item Develop a metric of reliability of information gathered, based on privacy settings.
+%\item Potential to Develop an Interface with Filip Dimitrievski's project. Re-using my web-scraping libraries could be useful for his project. (Probably not going to happen)
+%\item Aggregate data for storage into GRAft
+%\end{number}
+
+%\subsection{Web Scraping Requirements}
+
+%Web-Scraping Requirements
+%\begin{number}
+%\item Privacy Protection
+%\item Maintainability and Resistance to User-Interface Changes
+%\item Performance of Scrapers
+%\item Ability to Resist Blocking Detection, and Recover from Failure
+%\end{number}

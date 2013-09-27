@@ -1,0 +1,59 @@
+\chapter{Requirements Analysis}\label{C:us}
+
+To satisfy the goals of the project, the following issues need to be addressed. The requirements may be logically split into two divisions; web-scraping requirements and access policy requirements.
+
+\begin{enumerate}
+ \item Policy Generation to Approximate Reputation Values
+ \item A reliability metric based on amount of data gathered
+ \item Maintainability and Resistance to User-Interface Changes
+ \item Scraper Performance
+ \item Ability to Resist Blocking Detection and Recover from Failure
+\end{enumerate}
+
+\section{Policy Construction}
+
+The first and most significant requirement is to generate a set of policies to assist with generating a snapshot of the reputation information of an individual. 
+
+\section{A reliability Metric Based on the Amount of Data Considered}
+
+
+
+
+
+
+
+
+%\subsection{Policy Requirements}
+
+%\begin{number}
+%\item Develop a set of Policies that can be used to ...
+%\item Develop a metric of reliability of information gathered, based on privacy settings.
+%\item Potential to Develop an Interface with Filip Dimitrievski's project. Re-using my web-scraping libraries could be useful for his project. (Probably not going to happen)
+%\item Aggregate data for storage into GRAft
+%\end{number}
+
+%\subsection{Web Scraping Requirements}
+
+%Web-Scraping Requirements
+%\begin{number}
+%\item Privacy Protection
+%\item Maintainability and Resistance to User-Interface Changes
+%\item Performance of Scrapers
+%\item Ability to Resist Blocking Detection, and Recover from Failure
+%\end{number}
+
+Develop my set of policies... State why these are important.
+
+\section{Resistance to User-Interface Changes}
+
+\section{Accuracy of Information Gathered}
+
+\section{Performance of Scrapers}
+
+\section{Ability to Resist Blocking Detection}
+
+\section{Privacy Protection}
+
+The design of the application was driven by a prototyping and research based approach, which allowed me to develop a set of requirements for the project. 
+
+

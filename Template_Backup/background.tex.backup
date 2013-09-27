@@ -1,0 +1,155 @@
+\chapter{Background}\label{C:us}
+
+%What background is there into the research domain
+
+%Web-scraping background and concepts
+
+%Social media personality analysis
+
+%Social media behaviour analysis, showing that social media actions correspond to individuals real-life actions to some respect
+
+%Classification and dynamic access-driven policies, could these potentially be applied to social media
+
+%Quantifying reputation on social media - what this means. Examples of systems that attempt to quantify reputation on social media, through the use of APIs and how a system I build could extend upon these. 
+
+This section covers the background research I performed for the project, and works related to my project. I also discuss how I was able to contribute to the research domain, with points of differences to these. 
+
+\section{Web-Scraping Background}
+
+Web-scraping is a fairly well-understood problem, and there are existing architectures and frameworks to help facilitate web-scraping.  Web-scraping or 'screen scraping' refers to the practice of downloading web pages directly through http requests, and parsing this unstructured data into something useful. Anything online that is accessible through a browser can be scraped. Hartley gives a light introduction to the concepts and strengths of web-scraping \cite{no_api_for_me}. Web-scraping is largely used as an alternative to traditional API's on web pages, where these may not exist, or face a lack of support or development. Application's using web-API's which frequently change could also benefit from switching to a web-scraping alternative.
+
+The primary limitation of web-scrapers is that major user interface changes will likely result in a broken scraper. In general site's structures do not change frequently enough for this to be a major issue. The typical argument however is that a site's structure can, without any warning, change at any time. This is an unavoidable issue when considering developing a scraper, and as such the regularity of user interface changes on a website should be considered carefully when deciding between using an API or a scraper. In this project, Facebook was ruled out as a scraping option due to its regular user interface updates. In general it is more sensible to inspect a site's API for applicability before jumping into constructing a web-scraper. 
+
+%Limitations of scrapers
+%Although web-scrapers tend to break when user interfaces change, in general sites structures do not change frequently enough for this to be a major issue. However they can, without any warning, change at any time which limits web-scraping as a technology. Keep in mind that most websites do not change so frequently as for this to be an issue, although it did rule out Facebook as a candidate for my project. 
+
+A counter to the limitations of web-scrapers is the frequency of API changes on modern social media sites. Past projects fetching data from Facebook have failed due to its too-often changed API \cite{}. In the course of this project, Twitter's API changed such that the possibility of fetching required data through this interface was rendered infeasible. 
+
+%Look at some applications of web-scraping.
+
+%Web scraping vs APIs?
+
+\subsection{Legal and Privacy Issues}
+
+Companies such as Google and Facebook are widely known to use web-scraping on SNS and other sites for the purposes of web-indexing and advertising \cite{}. Despite this, other entities attempting to commercialise such aggregated data have been met with threats of hostile law action. Pete Warden discusses how his data-mining experiences on Facebook nearly resulted in legal action. In these cases, though, data-mining was intended to be used for commercial purposes. 
+
+By never signing into the SNS that I retrieve data from, I inherently do not agree to the user terms of service. I also followed general positive web-scraping practices where possible, in order to limit possible negative effects of my scrapers upon these sites. Examples include attemtping to adhere to a sites robots.txt, and place reasonable pauses between requests to reduce server burden. 
+
+%Discuss the core challenges of web scraping in a social media setting
+
+\section{Inferring Information from Social Media}
+
+Studies have shown how much information can be retrieved from SNS. 
+
+\section{Personality from Social Media}
+
+Studies have shown how private details about personality traits can be inferred by behavoural analysis of individuals on social media. These studies have taken both a behavioural-based and textual sentiment-analysis approach to determine personality. Studies showed that real life personality traits can be predicted by looking at past behavioural patterns on Twitter, with high accuracy \cite{}. Using publicly-available information on Twitter pages, the authors were able to classify individuals into different Big-Five personality types \cite{}. This was verified against a 44-question personality test for 71 individuals, wih acucuracy of around 80\%. Further research has been performed, looking at how Facebook behavioural patterns relate to personality type by asking questions on the MyPersonality Facebook app. Behavioural data was then gathered from the test subject's Facebook profiles, to check for correlations. Textual sentiment-analysis approaches have also been taken in order to determine personality type 
+from social media profiles. Sentiment-based analysis of tweets has also been studied, analysing the use of emoticons on Twitter \cite{}.
+
+While these studies showed how personality can be inferred from publicly-available data, they were made using applications which had to be given express permissions to access this data. In other words, although the conclusions drawn from these papers was that massive data-mining could be undertaken on these profiles as all the data is publicly available, they never used an approach that demonstrated the true feasiblity of this. Clearly as social media site API's are properly locked-down and require authorisation of the relavent users to retrieve data (see \cite{}), a web-scraping approach must be used. Such an approach allows applications to only require the same permissions as any human being accessing the same page, whilst also allowing the same data to be downloaded and aggregated. 
+
+A potential weakness in these studies is that personality on SNS may not translate well into actual personality. Although this may seem like a logical conclusion (e.g. Trolls, shallow internet relationships), studies have shown it to be false \cite{}. Quercia et. al. demonstrated how popular Facebook users in fact maintain meaningul relationships with their hundreds of friends, and not the superficial ones we may expect \cite{}. Again the Big Five personality model was used, and verified against popular Facebook users who used the MyPersonality app. Back et. al. demonstrated how Facebook profiles in fact are reflective of actual personality, and not a self-idealisation \cite{}. This study used manual inspection of profiles to make first impressions of individuals, which were compared against results from a Big Five personality test. Making similar predictions with computers would be an interesting and difficult challenge. 
+
+\section{Quantifying Reputation on Social Media}
+
+Although the above studies investigate the concept of personality and how we can quantify this using social media, they did not expressly address the concept of reputation. Therefore we should discuss what reputation explicitly means on social media, and how sites currently help express user reputation. 
+
+Some sites explicitly reference user reputatation, a system commonly ustilised on social forums. StackOverflow is a question and answer site where users are able to post code-related programming problems. It has been identified that sites such as StackOverflow are largely dependant on the contributions of a small number of expert users, who provide a significant proportion of useful answers. 
+
+On StackOverflow for example, it has been identified that the success of the site depends on the contribution of a small number of expert users who pro
+
+\section{Reputation Metrics Elsewhere}
+
+Reputation systems have had considerable success on trading applications such as eBay and TradeMe. Resnick et al looked at the success of eBay's reputation system and identified the three properties that a reputation system must enforce in order to add value to such a site \cite{}. 
+
+\begin{itemize}
+ \item Entities are long-lived, so that there is an expectation for future interacion
+ \item Feedback about current actions is captured and visible to others.
+ \item Feedback from the past guides current decisions: people must pay attention to reputations for them to be valuable. 
+\end{itemize}
+
+This impacts my study as it guides the creation of reputation policies; reputation data I gather should conform to these concepts. Resnick's paper also identified weaknesses within current reputation systems online. There are three weaknesses present within current reputation systems which automated policies can help address. 
+
+\begin{itemize}
+ \item Fears of retaliation
+ \item People not bothering to place feedback
+ \item The assurance of honest feedback
+\end{itemize}
+
+%Are these relevant to reputation metrics on social media
+
+\section{Community Detection}
+
+\section{Related Systems}
+
+I will now discuss some systems which consider reputation data and apply is to access-control policies online. This is only one potential application of the generation of reputation metrics, but such applications add considerable value from an adminstrative point of view when compared to, say, traditional Virtual Organisation (VO) access policies on Grid systems. Having looked at GRAft and an Open Social application, I move on to more social-media focused systems such as Klout.
+
+\subsection{Virtual Organisations}
+I will provide some background on Virtual Organisations, and discuss their limitations in order to validate the requirement for improved access control policies on Grid Systems. A VO running on the Grid allows users to access resources that are physically distributed in different locations \cite{}. Most VO frameworks support the concept of inter-institutional trust. But any user who wishes to access these resources must have an identity that is trusted by all service points and obtain permission from the authorisation server. This access model is inflesible when adapting to scientific collaborations which are often flexible and dynamic. VO adminstrative features lack the ability to easily describe fairly casual or temporary trust agreements between research groups \cite{}.
+
+To achieve data security in a VO, user authentication is based upon a very tightly controlled trust relationship between resource providers and uesrs. Every user must have an identity mapped to multiple IDs, in order to authenticate with the complex procedure, requesting access to a particular resource. These authorisation procedures on many popular VO access models result in large administrative burdens. I would argue that such a burden will become more and more infeasible in e-Science, given the increasingly large communities of researchers, educators and students \cite{}. Such an access control model would never be feasible on the social media. 
+
+There are potential security vulnerabilities exposed when working with an access system that does not reflect the needs of users. Security relies on organisations following the prescribed prorotocls, and that these protocols are not overly onerous on individuals. If this is not the case. users may create workarounds, resulting in security being compromised. This is not inconceivalbe in VO systems. For example, blanket access may be presribed to organisations where this may not be appropriate. 
+
+It's also worthwhile considering the semantic meaning of relationships online or on a scientific Grid when designing an access mechanism to suit these relationships. These relationships are ad hoc, flexible and changing. The VO model of access is none of these. We should consider that in a VO, trust relationships are stored in one central point, whereas trust information in reality is stored at the level of individuals. It thus makes more semantic sense to move trust information onto the nodes of a system. The following access control models, that use reputation information as key drivers for access decisions, are examples that better reflect these requirements.
+
+\subsection{Generalised Recommendation Architecture}
+
+The Generalised Recommendation Architecture (GRAft) \cite{} is a proposed distributed architecture that supports the collection and storage of reputation information for entities, whether these be individual users or systems. It uses the OpenID \cite{} infrastructure in order to maintain long-term identity for users. To ensure validity of reputatin data, information within GRAft is duplicated over the nodes (using a distributed hash-table) which comprise the network. 
+
+Entities within GRAft are uniquely identified using their OpenID. The system is able to maintain a history of the entities actions, including recommendation and transactional history. In this fashion, entity 'profiles' are established, with recommendation data being pulled from multiple sources.
+
+%Add more to this
+
+%Change this to he forum example. More relevant to my studies than the example pictured here. 
+
+Although GRAft is not a system currently used in industry, its draft paper discusses how it could be applied in practice. The domain of a scientific wiki is one such example. This wiki consists of scientific articles, which can be read and edited by members. Using a two-tier access policy, read access to a page was is given by co-authorship. Users who had previously worked with the owner have a 1st-degree relationship; those who have worked with a person in the set of 1st-degree owners are 2nd degree owners, and so on. Once the user is granted access depending on this degree of co-authorship, editing rights are calculated by the users Hirsh-Index (H-Index) \cite{}. Another policy is then responsible for assigning editing permissions based on this value. This example demonstrates how access rights can be automatically granted for all users who fulfil requirements defined by the page owner. The group is never explicitly defined in terms of usrs; and as the author begins work with others, they can be 
+automatically granted access to resources. This flexible policy comes closer to reflecting ad-hoc and informal scientific collaborative interactions, and is based on trust information that comes closer to real-life reputation. 
+
+\begin{verbatim}
+ $rb->logicalAnd(
+  $rb['hindex']->greaterThanOrEqualTo(1),
+  $rb->logicalAnd(
+    $rb['degree']->greaterThanOrEqualTo(0),
+    $rb['degree']->lessThanOrEqualTo(3)
+   )
+ )
+\end{verbatim}
+
+
+\subsection{Open Social}
+%How can GRAft be used and what value does it add.
+
+Zhang et al. \cite{} proposed an Open Social based group access control framework. Open Social is a framework for deploying cloud-based social applications. It was used in this context as it provides an API useful for retrieving social connection data. It also supports OAuth \cite{}, a protocol that allows users to grant third-part access to their protected resources.
+
+The social trust scheme proposed in this paper consists of a multi-tenancy access control model, which can be applied to a scientific team-management scenario. Firstly the authors consider how trust in this context is a complex human-to-human relationship, developed through scientific collaboration. The authors argue that information about such relationships can be captured through data embedded on Online Social Networking (OSN) sites. This enables friend-of-a-friend trust to be computed, enabling transitive data as also seen in GRAft(which proposed using degree of co-authorship as a trust attribute).
+
+\subsection{Social Media Data Access Control}
+
+How do social media sites control access
+
+How effective have social media sites been at controlling access, and how well do users feel that their information is safe?
+
+%How do social media sites control access
+%How effective have social media sites been at controlling access, and how well do users feel that their information is safe?
+
+\subsection{Klout}
+
+Klout \cite{} is a social media reputation system that generates an 'impact score' out of 100, based on how influential you are on various social media sites. In order to gather data from sites, you must create a Klout account and grant access to your various social media accounts. Klout then interacts with these sites APIs to fetch the relevant data. This site is useful to me as it both demonstrates how such information can be used to generate influence information, as well as how such a system can become popular. I extend this system by using the alternative approach of web-scraping. By doing so, users would be able to look at the reputation data of other users, as well as themselves. 
+
+\subsection{StackOverflow}
+
+\subsection{Karma}
+
+\subsection{Discussion}
+
+%Discuss how my system is different from these related systems, and how it adds value. 
+
+%Graft system
+
+%Klout
+
+
+
+\section{Discussion}
+%How did my research relate to the existing works reviewed, and to what extent my work can be distinguished from them. 

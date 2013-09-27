@@ -1,0 +1,33 @@
+\contentsline {chapter}{\numberline {1}Methodology}{1}
+\contentsline {section}{\numberline {1.1}Project Management Approach}{1}
+\contentsline {section}{\numberline {1.2}Design Approach}{1}
+\contentsline {section}{\numberline {1.3}Project Complexities}{2}
+\contentsline {chapter}{\numberline {2}Requirements Analysis}{3}
+\contentsline {subsection}{\numberline {2.0.1}Functional Requirements}{3}
+\contentsline {subsection}{\numberline {2.0.2}Non-Functional Requirements}{3}
+\contentsline {subsection}{\numberline {2.0.3}Discarded Requirements}{3}
+\contentsline {section}{\numberline {2.1}Policy Construction}{3}
+\contentsline {section}{\numberline {2.2}A reliability Metric Based on the Amount of Data Considered}{3}
+\contentsline {section}{\numberline {2.3}Social Media Platform Portability}{4}
+\contentsline {section}{\numberline {2.4}Maintainability and Resistance to User-Interface Changes}{4}
+\contentsline {section}{\numberline {2.5}Scraper Performance}{4}
+\contentsline {section}{\numberline {2.6}Ability to Resist Blocking Detection and Recover from Failure}{4}
+\contentsline {section}{\numberline {2.7}Privacy Protection}{4}
+\contentsline {section}{\numberline {2.8}Discarded Requirements}{4}
+\contentsline {chapter}{\numberline {3}Scraper Design and Implementation}{5}
+\contentsline {section}{\numberline {3.1}Architecture}{5}
+\contentsline {subsection}{\numberline {3.1.1}Database Storage}{5}
+\contentsline {subsection}{\numberline {3.1.2}XML Storage}{5}
+\contentsline {section}{\numberline {3.2}Technology}{6}
+\contentsline {subsection}{\numberline {3.2.1}Systems Design and Structure}{6}
+\contentsline {subsection}{\numberline {3.2.2}Code instrumentation}{7}
+\contentsline {section}{\numberline {3.3}Dataset}{8}
+\contentsline {subsection}{\numberline {3.3.1}Extend scrAPI}{8}
+\contentsline {subsection}{\numberline {3.3.2}Extend A Browser-Automation Model}{8}
+\contentsline {section}{\numberline {3.4}Social Media Selection}{8}
+\contentsline {subsection}{\numberline {3.4.1}Standalone Crawling Application}{8}
+\contentsline {section}{\numberline {3.5}Product Implementation}{8}
+\contentsline {subsection}{\numberline {3.5.1}Technology Choice}{8}
+\contentsline {subsection}{\numberline {3.5.2}Twitter Scraper}{8}
+\contentsline {subsection}{\numberline {3.5.3}LinkedIn Scraper}{9}
+\contentsline {subsection}{\numberline {3.5.4}Facebook Scraper}{9}

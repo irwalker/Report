@@ -1,0 +1,41 @@
+\chapter{Policy Design and Implementation}\label{C:us}
+
+In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. %Fix this
+
+\section{Retweet Analysis}
+
+
+\section{}
+
+This section discusses the design and implementation of my reputation policies associated with social media. 
+
+There are lots of different areas to discuss. For example, temporal analysis, sentiment analysis, retweet/favourite analysis, community detection discussion. 
+
+Constant emmitter - correlation between their impact factor and temporal bucketing will be higher than one-hit wonders. Detection for one-hit wonders. 
+
+
+%Define the architectures that I considered for implementing web-scraper
+
+%Option one - stand-alone web scraping libraries
+
+%Option two - extend existing web scraper, utilise this.
+
+\section{Policy Construction}
+
+\section{Temporal}
+
+\subsection{MapEquation}
+
+Two phases to each facet of implementation; scraper, data understanding, and policy implementation and evaluation. Discuss each of these in seperate sections.
+
+Define multiple hypotheses to add strength to the report
+
+Brief description of LinkedIn Scraper. Ultimately decided that twitter had significant data interest to be the only focus of the project.
+
+Discuss how the project was a study on what could be inferred from the data that we can access. Therefore some dead ends, etc. E.g. LinkedIn, Sentiment140 API for tweet analysis. 
+
+Temporal analysis
+
+Evaluation tool development
+
+Phases of implementation for each tool. Design, implement scraper, implement data analysis components, implement evaluation components and policies. 

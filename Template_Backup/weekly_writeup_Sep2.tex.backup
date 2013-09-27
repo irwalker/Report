@@ -1,0 +1,33 @@
+\chapter{Weekly Write-Up}\label{C:us}
+
+\section{Progress}
+
+\begin{itemize}
+ \item Policy Progress
+ \item Twitter Dataset Complete, verification tool constructed (assist with evaluation). 1,682 twitter profiles scraped (total)
+\end{itemize}
+
+\section{Policy Progress}
+
+Ideas...
+
+Justified decision to use retweets as standard measurement. Very similar in use to favourites. Easy to show; plot retweets/favourites against each other for individual tweets, result should be linear chart. 
+
+\begin{itemize}
+ \item First we have to argue that retweets are used similarly to favourites. This is easy to show; plot against each other, calculate correlation
+ \item We have our impact factor (bastardised H-Index)
+ \item Temporal analysis -> looking at consistency of tweets, standard deviation on tweet gaps(how much time between tweets)
+ \item Temporal bucketing -> Average monthly impact vs overall impact. Average monthly impact shows how much influence the individual has in an average month. Overall impact shows the person's impact since forever. So if we plot these, it should show 
+ \item Sentiment analysis, passing tweets into a sentiment engine and seeing whether these are generally positive or negative
+\end{itemize}
+
+Really need to start the final evaluation of these. Performance evaluation components are largely complete for twitter.
+
+Looking at blocking on Twitter!
+
+One point this week, I modified my implementation of fetching tweets slightly... This improved accuracy of results, but resulted in my requests actually getting blocked more! And this was not consistent with runs i.e. different runs would result in different requests failing. This is a hint that twitter was actually detecting me...
+
+
+\subsection{Targets}
+
+

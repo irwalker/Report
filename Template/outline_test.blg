@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (Web2C 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: outline_test.aux
+A level-1 auxiliary file: project_management_approach.aux
+A level-1 auxiliary file: requirements_analysis.aux
+A level-1 auxiliary file: scraper_implementation.aux
+The style file: acm.bst
+Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "GRAft"
+Warning--empty journal in graft_paper
+Warning--empty journal in kewalramanisentiment
+You've used 39 entries,
+            2253 wiz_defined-function locations,
+            739 strings with 11353 characters,
+and the built_in function-call counts, 14605 in all, are:
+= -- 1438
+> -- 628
+< -- 0
++ -- 263
+- -- 220
+* -- 1017
+:= -- 2216
+add.period$ -- 115
+call.type$ -- 39
+change.case$ -- 225
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 599
+empty$ -- 1226
+format.name$ -- 220
+if$ -- 3169
+int.to.chr$ -- 0
+int.to.str$ -- 39
+missing$ -- 31
+newline$ -- 196
+num.names$ -- 78
+pop$ -- 302
+preamble$ -- 1
+purify$ -- 188
+quote$ -- 0
+skip$ -- 452
+stack$ -- 0
+substring$ -- 947
+swap$ -- 212
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 154
+warning$ -- 2
+while$ -- 147
+width$ -- 41
+write$ -- 399
+(There were 3 warnings)
