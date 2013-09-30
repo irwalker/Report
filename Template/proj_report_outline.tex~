@@ -89,8 +89,8 @@ Online reputation has become increasingly important as more social and business 
 
 % individual chapters included here
 \include{introduction}
-\include{project_management_approach}
 \include{background}
+\include{project_management_approach}
 \include{requirements_analysis}
 \include{scraper_implementation}
 \include{scraper_evaluation}

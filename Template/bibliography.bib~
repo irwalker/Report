@@ -337,3 +337,15 @@ Title = {I don't need no Stinking API: Web-Scraping for Fun and Profit},
 Howpublished = {\url{http://blog.hartleybrody.com/web-scraping/}},
 Year = {2013}
 }
+
+@article{movshovitzanalysis,
+  title={Analysis of the Reputation System and User Contributions on a Question Answering Website: StackOverflow},
+  author={Movshovitz-Attias, Dana and Movshovitz-Attias, Yair and Steenkiste, Peter and Faloutsos, Christos}
+}
+
+@article{tsai2006introduction,
+  title={Introduction to Service-Oriented Computing},
+  author={Tsai, WT and Chen, Yinong and Bitter, Gary and Miron, Dorina},
+  journal={Arizona State University},
+  year={2006}
+}

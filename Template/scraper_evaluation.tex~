@@ -2,6 +2,25 @@
 
 This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conducted on the developed web scrapers. It then presents an evaluation of the policies and hypotheses formulated during analysis of data gathered. 
 
+\section{Evaluation Testbed}
+
+All tested were conducted on University lab computers, over Victoria's network. 
+
+All tests were conducted on university computers, over the university network. %Not very interesting. Network speeds, etc.
+
+\section{Performance Evaluation}
+
+Given the iterative approach taken to develop the scrapers, I evaluate their performance with respect to incremental builds, as well as final performance. As the definition of a 'profile' differs between sites, different performance metrics are used for each site. 
+
+Performance testing of scrapers was carried out throughout the project, through performance logging mechanisms designed to measure the time taken to fetch an entire profile. To reduce bias caused by varying network speeds at University, the software was run over extended periods of time.
+
+\subsection{Twitter Performance Evaluation}
+
+Twitter profiles consist of differing numbers of tweets, retweets and so on. Thus I evaluate the performance of my Twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping useful information from Twitter was that each tweet had to be fetched with a seperate HTTP request. 
+
+%What should I compare this to?
+
+
 \section{Web Scraper Evaluation}
 
 Performance - what performance goals did I have. How did they improve over time. Justify use of the incremental prototype-based strategy, through performance gains throughout the project.
@@ -11,7 +30,6 @@ Resistance to Detection - what performance goals did I have.
 Problems
 
 Accuracy - issues and why. Aims that I had - don't think I achieved them. In general entire profiles were not scraped. 
-
 
 \section{Scraper}
 

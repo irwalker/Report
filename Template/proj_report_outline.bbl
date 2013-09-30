@@ -177,6 +177,12 @@
 \newblock Analysis of the reputation system and user contributions on a
   question answering website: Stackoverflow.
 
+\bibitem{najafi2012web}
+{\sc Najafi, M., Sartipi, K., and Archer, N.}
+\newblock Web service competition: a new approach to service selection.
+\newblock In {\em Proceedings of the 2012 Conference of the Center for Advanced
+  Studies on Collaborative Research\/} (2012), IBM Corp., pp.~161--175.
+
 \bibitem{open_id}
 {\sc OpenID}.
 \newblock \url{http://openid.net/}, 2013.
@@ -218,6 +224,11 @@
 \newblock
   \url{http://www.socialmediaexaminer.com/social-media-marketing-industry-report-2013/},
   2013.
+
+\bibitem{tsai2006introduction}
+{\sc Tsai, W., Chen, Y., Bitter, G., and Miron, D.}
+\newblock Introduction to service-oriented computing.
+\newblock {\em Arizona State University\/} (2006).
 
 \bibitem{boston}
 {\sc Wadwha, T.}

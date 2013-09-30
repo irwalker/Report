@@ -54,9 +54,28 @@ A potential weakness in these studies is that personality on SNS may not transla
 
 Although the above studies investigate the concept of personality and how we can quantify this using social media, they did not expressly address the concept of reputation. Therefore we should discuss what reputation explicitly means on social media, and how sites currently help express user reputation. 
 
-Some sites explicitly reference user reputatation, a system commonly ustilised on social forums. StackOverflow is a question and answer site where users are able to post code-related programming problems. It has been identified that sites such as StackOverflow are largely dependant on the contributions of a small number of expert users, who provide a significant proportion of useful answers. 
+Some sites explicitly reference user reputatation, a system commonly ustilised on social forums. StackOverflow is a question and answer site where users are able to post code-related programming problems. It has been identified that sites such as StackOverflow are largely dependant on the contributions of a small number of expert users, who provide a significant proportion of useful answers. As such, identitying users who have the potential to become strong contributors is of significant importance to the success of the website.\\
+\begin{center}
+\begin{tabular}{l|r}
+ Action & Reputation Change\\ \hline
+ Answer is voted up & +10 \\
+ Question is voted up & +5 \\
+ Answer is accepted & +15 (+2 to acceptor) \\
+ Question is voted down & -2 \\
+ Answer is voted down & -2 (-1 to voter) \\
+ Experienced Stack Exchange user & onetime + 100 \\
+ Accepted answer to bounty & +bounty \\
+ Offer bounty to question & -bounty \\ 
+\end{tabular}
+%Actions and Corresponding Reputation Change on StackOverflow \cite{movshovitzanalysis}
+\end{center}
+Actions and Corresponding Reputation Change on StackOverflow \cite{movshovitzanalysis}\\
 
-On StackOverflow for example, it has been identified that the success of the site depends on the contribution of a small number of expert users who pro
+%\caption{Actions and Reputation Change on StackOverflow\cite{movshovitzanalysis}}\\
+
+\noindent Reputation in this context is entirely derivative of the actions of users. In the context of StackOverflow, a high user reputation score could be considered as a measure of expertise.
+
+Sites such as Reddit use similar systems, where 
 
 \section{Reputation Metrics Elsewhere}
 
@@ -80,18 +99,27 @@ This impacts my study as it guides the creation of reputation policies; reputati
 
 \section{Community Detection}
 
+\section{Sentiment and Temporal Analysis}
+
+%E.g. sentiment analysis of Tweets shown to predict stock market trends.
+
 \section{Related Systems}
 
-I will now discuss some systems which consider reputation data and apply is to access-control policies online. This is only one potential application of the generation of reputation metrics, but such applications add considerable value from an adminstrative point of view when compared to, say, traditional Virtual Organisation (VO) access policies on Grid systems. Having looked at GRAft and an Open Social application, I move on to more social-media focused systems such as Klout.
+I will now discuss some systems which consider reputation data and apply it to access-control and service selection policies online. Firstly we will look at how reputation metrics can be used to assist with service selection in paradigms such as service-oriented-computing. Then the Generalised Recommendation Architecture and an OpenSocial access framework will be covered, in the context of access control solutions using reputation attributes as keys for access. Finally, the social-media based reputation system Klout will be discussed. 
 
-\subsection{Virtual Organisations}
-I will provide some background on Virtual Organisations, and discuss their limitations in order to validate the requirement for improved access control policies on Grid Systems. A VO running on the Grid allows users to access resources that are physically distributed in different locations \cite{}. Most VO frameworks support the concept of inter-institutional trust. But any user who wishes to access these resources must have an identity that is trusted by all service points and obtain permission from the authorisation server. This access model is inflesible when adapting to scientific collaborations which are often flexible and dynamic. VO adminstrative features lack the ability to easily describe fairly casual or temporary trust agreements between research groups \cite{}.
+%I will now discuss some systems which consider reputation data and apply is to access-control policies online. This is only one potential application of the generation of reputation metrics, but such applications add considerable value from an adminstrative point of view when compared to, say, traditional Virtual Organisation (VO) access policies on Grid systems. Having looked at GRAft and an Open Social application, I move on to more social-media focused systems such as Klout.
 
-To achieve data security in a VO, user authentication is based upon a very tightly controlled trust relationship between resource providers and uesrs. Every user must have an identity mapped to multiple IDs, in order to authenticate with the complex procedure, requesting access to a particular resource. These authorisation procedures on many popular VO access models result in large administrative burdens. I would argue that such a burden will become more and more infeasible in e-Science, given the increasingly large communities of researchers, educators and students \cite{}. Such an access control model would never be feasible on the social media. 
+\subsection{Service Oriented Computing}
 
-There are potential security vulnerabilities exposed when working with an access system that does not reflect the needs of users. Security relies on organisations following the prescribed prorotocls, and that these protocols are not overly onerous on individuals. If this is not the case. users may create workarounds, resulting in security being compromised. This is not inconceivalbe in VO systems. For example, blanket access may be presribed to organisations where this may not be appropriate. 
+Service Oriented Computing (SOC) is a computing paradigm in which software applications are constructed based upon independant component services with standardised interfaces \cite{tsai2006introduction}. An emerging issue with this concept is how to select appropriate services based upon the application's needs. 
+%\subsection{Virtual Organisations}
+%I will provide some background on Virtual Organisations, and discuss their limitations in order to validate the requirement for improved access control policies on Grid Systems. A VO running on the Grid allows users to access resources that are physically distributed in different locations \cite{}. Most VO frameworks support the concept of inter-institutional trust. But any user who wishes to access these resources must have an identity that is trusted by all service points and obtain permission from the authorisation server. This access model is inflesible when adapting to scientific collaborations which are often flexible and dynamic. VO adminstrative features lack the ability to easily describe fairly casual or temporary trust agreements between research groups \cite{}.
 
-It's also worthwhile considering the semantic meaning of relationships online or on a scientific Grid when designing an access mechanism to suit these relationships. These relationships are ad hoc, flexible and changing. The VO model of access is none of these. We should consider that in a VO, trust relationships are stored in one central point, whereas trust information in reality is stored at the level of individuals. It thus makes more semantic sense to move trust information onto the nodes of a system. The following access control models, that use reputation information as key drivers for access decisions, are examples that better reflect these requirements.
+%To achieve data security in a VO, user authentication is based upon a very tightly controlled trust relationship between resource providers and uesrs. Every user must have an identity mapped to multiple IDs, in order to authenticate with the complex procedure, requesting access to a particular resource. These authorisation procedures on many popular VO access models result in large administrative burdens. I would argue that such a burden will become more and more infeasible in e-Science, given the increasingly large communities of researchers, educators and students \cite{}. Such an access control model would never be feasible on the social media. 
+
+%There are potential security vulnerabilities exposed when working with an access system that does not reflect the needs of users. Security relies on organisations following the prescribed prorotocls, and that these protocols are not overly onerous on individuals. If this is not the case. users may create workarounds, resulting in security being compromised. This is not inconceivalbe in VO systems. For example, blanket access may be presribed to organisations where this may not be appropriate. 
+
+%It's also worthwhile considering the semantic meaning of relationships online or on a scientific Grid when designing an access mechanism to suit these relationships. These relationships are ad hoc, flexible and changing. The VO model of access is none of these. We should consider that in a VO, trust relationships are stored in one central point, whereas trust information in reality is stored at the level of individuals. It thus makes more semantic sense to move trust information onto the nodes of a system. The following access control models, that use reputation information as key drivers for access decisions, are examples that better reflect these requirements.
 
 \subsection{Generalised Recommendation Architecture}
 

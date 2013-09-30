@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  27 SEP 2013 18:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  1 OCT 2013 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -290,68 +290,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--70
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-
-! LaTeX Error: \caption outside float.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.71 \caption
-             {Actions and Reputation Change on StackOverflow\cite{movshovitz...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption ... \endcsname \fi \fi \@dblarg {\@tempf 
-                                                  \@captype }
-l.71 \caption
-             {Actions and Reputation Change on StackOverflow\cite{movshovitz...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\caption ...e \fi \fi \@dblarg {\@tempf \@captype 
-                                                  }
-l.71 \caption
-             {Actions and Reputation Change on StackOverflow\cite{movshovitz...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 85.
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
- [5] [6] [7]) [8]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+
+Overfull \hbox (0.62277pt too wide) in paragraph at lines 110--111
+\OT1/ppl/m/n/10.95 can be used to as-sist with ser-vice se-lec-tion in paradigm
+s such as service-oriented-computing.
+ []
+
+[5] [6]) [7] [8]
 \openout2 = `project_management_approach.aux'.
 
-
-(./project_management_approach.tex
+ (./project_management_approach.tex
 Chapter 3.
 [9
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
@@ -370,7 +335,7 @@ Chapter 4.
  (./scraper_implementation.tex
 Chapter 5.
 
-Overfull \hbox (4.9266pt too wide) in paragraph at lines 13--14
+Overfull \hbox (4.9266pt too wide) in paragraph at lines 17--18
 \OT1/ppl/m/n/10.95 nents. A database-storage ap-proach was con-sid-ered, and th
 e more straight-for-ward text/XML
  []
@@ -379,112 +344,109 @@ e more straight-for-ward text/XML
 File: Images/Database_Architecture.pdf Graphic file (type pdf)
 
 <use Images/Database_Architecture.pdf>
-Package pdftex.def Info: Images/Database_Architecture.pdf used on input line 30
+Package pdftex.def Info: Images/Database_Architecture.pdf used on input line 23
 .
-(pdftex.def)             Requested size: 220.50885pt x 165.37941pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Images/XML_Storage_Architecture.pdf, id=66, 722.7pt x 542.025pt>
-File: Images/XML_Storage_Architecture.pdf Graphic file (type pdf)
-
-<use Images/XML_Storage_Architecture.pdf>
-Package pdftex.def Info: Images/XML_Storage_Architecture.pdf used on input line
- 40.
-(pdftex.def)             Requested size: 220.50885pt x 165.37941pt.
+(pdftex.def)             Requested size: 308.71104pt x 231.53613pt.
  [13
 
 
 
-]
+ <./Images/Database_Architecture.pdf>] <Images/XML_Storage_Architecture.pdf, id
+=81, 722.7pt x 542.025pt>
+File: Images/XML_Storage_Architecture.pdf Graphic file (type pdf)
 
-LaTeX Warning: Citation `GRAft' on page 14 undefined on input line 48.
+<use Images/XML_Storage_Architecture.pdf>
+Package pdftex.def Info: Images/XML_Storage_Architecture.pdf used on input line
+ 43.
+(pdftex.def)             Requested size: 308.71104pt x 231.53613pt.
 
-[14 <./Images/Database_Architecture.pdf> <./Images/XML_Storage_Architecture.pdf
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [14 <./Images/XML_Storage_Architecture.pdf>]
 
-pdfTeX warning: /usr/pkg/bin/pdflatex (file ./Images/XML_Storage_Architecture.p
-df): PDF inclusion: multiple pdfs with page group included in a single page
->] <Images/Implementation_Lifecycle.pdf, id=95, 722.7pt x 542.025pt>
+LaTeX Warning: Citation `GRAft' on page 15 undefined on input line 53.
+
+[15] <Images/Implementation_Lifecycle.pdf, id=99, 722.7pt x 542.025pt>
 File: Images/Implementation_Lifecycle.pdf Graphic file (type pdf)
 
 <use Images/Implementation_Lifecycle.pdf>
 Package pdftex.def Info: Images/Implementation_Lifecycle.pdf used on input line
- 60.
-(pdftex.def)             Requested size: 308.71104pt x 231.53613pt.
- [15 <./Images/Implementation_Lifecycle.pdf>] [16]) [17]
+ 83.
+(pdftex.def)             Requested size: 220.50885pt x 165.37941pt.
+ [16 <./Images/Implementation_Lifecycle.pdf>]
+Overfull \hbox (41.87206pt too wide) in paragraph at lines 104--104
+[] \OT1/cmtt/m/n/10.95 /timeline/with_replies?include_available_features=1&incl
+ude_entities=1&max_id=12345[] 
+ []
+
+[17]) [18]
 \openout2 = `scraper_evaluation.aux'.
 
- (./scraper_evaluation.tex [18
+ (./scraper_evaluation.tex
+Chapter 6.
+[19
 
 
 
 ]
-Chapter 6.
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 
-<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=123, 597.23125pt x
+<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=124, 597.23125pt x
  845.1575pt>
 File: Images/average_time_to_fetch_parse_tweets_per_build.pdf Graphic file (typ
 e pdf)
  <use Images/average_time_to_fetch_parse_tweets_per_build.pdf>
 Package pdftex.def Info: Images/average_time_to_fetch_parse_tweets_per_build.pd
-f used on input line 41.
+f used on input line 62.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-Overfull \hbox (156.21207pt too wide) in paragraph at lines 41--42
+Overfull \hbox (156.21207pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 188.97714pt on input line 43.
+LaTeX Warning: Float too large for page by 188.97714pt on input line 64.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-<Images/percentage_failed_incomplete_twitter_profiles.pdf, id=124, 451.6875pt x
+[20]
+<Images/percentage_failed_incomplete_twitter_profiles.pdf, id=128, 451.6875pt x
  279.0425pt>
 File: Images/percentage_failed_incomplete_twitter_profiles.pdf Graphic file (ty
 pe pdf)
  <use Images/percentage_failed_incomplete_twitter_profiles.pdf>
 Package pdftex.def Info: Images/percentage_failed_incomplete_twitter_profiles.p
-df used on input line 59.
+df used on input line 80.
 (pdftex.def)             Requested size: 451.68639pt x 279.04181pt.
 
-Overfull \hbox (10.66867pt too wide) in paragraph at lines 59--60
+Overfull \hbox (10.66867pt too wide) in paragraph at lines 80--81
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [20] [21 <./Images/average_time_to_fetch_parse_tweets_per_build.pdf>]
-[22 <./Images/percentage_failed_incomplete_twitter_profiles.pdf>]
+) [21] [22 <./Images/average_time_to_fetch_parse_tweets_per_build.pdf>]
+[23 <./Images/percentage_failed_incomplete_twitter_profiles.pdf>]
 \openout2 = `policy_implementation.aux'.
 
 
-(./policy_implementation.tex
-Chapter 7.
-) [23
+(./policy_implementation.tex [24
 
 
 
 ]
+Chapter 7.
+[25]) [26]
 \openout2 = `policy_evaluation.aux'.
 
- (./policy_evaluation.tex [24
-
-
-
-]
+ (./policy_evaluation.tex
 Chapter 8.
-<Images/monthly_impact_vs_overallv2.pdf, id=151, 597.23125pt x 845.1575pt>
+<Images/monthly_impact_vs_overallv2.pdf, id=159, 597.23125pt x 845.1575pt>
 File: Images/monthly_impact_vs_overallv2.pdf Graphic file (type pdf)
 
 <use Images/monthly_impact_vs_overallv2.pdf>
@@ -495,7 +457,7 @@ ine 42.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/yearly_impact_vs_overallv2.pdf, id=152, 597.23125pt x 845.1575pt>
+<Images/yearly_impact_vs_overallv2.pdf, id=160, 597.23125pt x 845.1575pt>
 File: Images/yearly_impact_vs_overallv2.pdf Graphic file (type pdf)
 
 <use Images/yearly_impact_vs_overallv2.pdf>
@@ -511,11 +473,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
-[25] [26 <./Images/monthly_impact_vs_overallv2.pdf>]
+[27
+
+
+
+] [28 <./Images/monthly_impact_vs_overallv2.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./Images/yearly_impact_vs_overallv2.pdf>]
-<Images/daily_impact_chris_hadfield.pdf, id=182, 451.6875pt x 279.0425pt>
+ [29 <./Images/yearly_impact_vs_overallv2.pdf>]
+<Images/daily_impact_chris_hadfield.pdf, id=189, 451.6875pt x 279.0425pt>
 File: Images/daily_impact_chris_hadfield.pdf Graphic file (type pdf)
 
 <use Images/daily_impact_chris_hadfield.pdf>
@@ -527,7 +493,7 @@ Overfull \hbox (10.66867pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
-<Images/monthly_impact_chris_hadfield.pdf, id=183, 451.6875pt x 279.0425pt>
+<Images/monthly_impact_chris_hadfield.pdf, id=190, 451.6875pt x 279.0425pt>
 File: Images/monthly_impact_chris_hadfield.pdf Graphic file (type pdf)
 
 <use Images/monthly_impact_chris_hadfield.pdf>
@@ -542,7 +508,7 @@ Overfull \hbox (10.66867pt too wide) in paragraph at lines 68--69
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/monthly_impact_barack_obama.png, id=184, 451.6875pt x 279.29344pt>
+<Images/monthly_impact_barack_obama.png, id=191, 451.6875pt x 279.29344pt>
 File: Images/monthly_impact_barack_obama.png Graphic file (type png)
 
 <use Images/monthly_impact_barack_obama.png>
@@ -557,21 +523,21 @@ Overfull \hbox (10.66867pt too wide) in paragraph at lines 74--75
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [28 <./Images/daily_impact_chris_hadfield.pdf>] [29 <./Images/monthly_impact_
+) [30 <./Images/daily_impact_chris_hadfield.pdf>] [31 <./Images/monthly_impact_
 chris_hadfield.pdf> <./Images/monthly_impact_barack_obama.png>]
 \openout2 = `conclusion.aux'.
 
 
-(./conclusion.tex [30
+(./conclusion.tex [32
 
 
 
 ]
 Chapter 9.
-) [31] [32
+) [33] [34
 
 
-] (./proj_report_outline.bbl [33
+] (./proj_report_outline.bbl [35
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 168--173
@@ -585,37 +551,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--173
 m / 20110928186 / General-[]SEO /
  []
 
-[34]
-Underfull \hbox (badness 2197) in paragraph at lines 216--221
+[36]
+Underfull \hbox (badness 2197) in paragraph at lines 222--227
 []\OT1/ppl/m/sc/10.95 Stelzner, M.  \OT1/ppl/m/n/10.95 2013 so-cial me-dia mar-
 ket-ing in-dus-try re-port.  $\OT1/cmtt/m/n/10.95 http : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--221
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 \OT1/cmtt/m/n/10.95 socialmediaexaminer . com / social-[]media-[]marketing-[]in
 dustry-[]report-[]2013/$\OT1/ppl/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
 []\OT1/ppl/m/sc/10.95 Wadwha, T.  \OT1/ppl/m/n/10.95 Lessons from crowd-sourc-i
 ng the boston bomb-ing in-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
 \OT1/ppl/m/n/10.95 ves-ti-ga-tion.  $\OT1/cmtt/m/n/10.95 http : / / www . forbe
 s . com / sites / tarunwadhwa / 2013 / 04 / 22 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
 \OT1/cmtt/m/n/10.95 lessons-[]from-[]crowdsourcing-[]the-[]boston-[]marathon-[]
 bombings-[]investigation/$\OT1/ppl/m/n/10.95 ,
  []
 
-) [35] (./proj_report_outline.aux (./introduction.aux) (./background.aux)
+) [37] (./proj_report_outline.aux (./introduction.aux) (./background.aux)
 (./project_management_approach.aux) (./requirements_analysis.aux)
 (./scraper_implementation.aux) (./scraper_evaluation.aux)
 (./policy_implementation.aux) (./policy_evaluation.aux) (./conclusion.aux))
@@ -627,10 +593,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2063 strings out of 494071
- 31030 string characters out of 3160406
- 86413 words of memory out of 3000000
- 5187 multiletter control sequences out of 15000+200000
+ 2065 strings out of 494071
+ 31067 string characters out of 3160406
+ 87421 words of memory out of 3000000
+ 5189 multiletter control sequences out of 15000+200000
  28880 words of font info for 72 fonts, out of 3000000 for 9000
  648 hyphenation exceptions out of 8191
  38i,6n,23p,1083b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -640,10 +606,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/fonts
 /palatino/uplb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplr8a
 .pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/pkg/
 share/texmf-dist/fonts/type1/vuw/vuw20.pfb>
-Output written on proj_report_outline.pdf (41 pages, 356009 bytes).
+Output written on proj_report_outline.pdf (43 pages, 366671 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 246 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
