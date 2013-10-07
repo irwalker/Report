@@ -4,16 +4,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Proposed Architecture for Database Storage Solution}}{13}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Proposed Architecture for XML Storage Solution. Implemented Components are Highlighted}}{14}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}}{14}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{16}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Pipes-and-Filters Class Structure}}{17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{22}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces The Percentage of Incomplete or Failed Profile Scrapes, Ordered by Builds}}{23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Monthly Impact against Overall Impact}}{24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Yearly Impact against Overall Impact}}{25}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The Daily Impact of Chris Hadfield - Famous Astronaut}}{26}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{26}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The Monthly Impact of Barack Obama - President of USA (As if you didn't know that)}}{27}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{32}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces The Percentage of Incomplete or Failed Profile Scrapes, Ordered by Builds}}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Monthly Impact against Overall Impact}}{28}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Yearly Impact against Overall Impact}}{29}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces The Daily Impact of Chris Hadfield - Famous Astronaut}}{30}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{31}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces The Monthly Impact of Barack Obama - President of USA (As if you didn't know that)}}{31}
 \addvspace {10\p@ }

@@ -18,8 +18,9 @@ Performance testing of scrapers was carried out throughout the project, through 
 
 Twitter profiles consist of differing numbers of tweets, retweets and so on. Thus I evaluate the performance of my Twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping useful information from Twitter was that each tweet had to be fetched with a seperate HTTP request. 
 
-%What should I compare this to?
+Should mention that some profiles viewed (not necessarily scraped) can contain hundreds of thousands of tweets.
 
+%What should I compare this to? 
 
 \section{Web Scraper Evaluation}
 
@@ -47,6 +48,8 @@ Developing a set of Policies - still in the production line, still experimenting
 This is difficult to evaluate. Experiment: Change the layout of twitter pages, see how the scrapers react to these changes. How many changes do I need to make? There will undoubtedlu be single points of faiure, which I should mention. Important point: used as little xpath expressions as possible, as these inherently result in less flexbile scrapers. Any structural changes, or even a tag changing result in an xpath expression having to change. Still resistant to stylesheet changes, though.
 Single points of failure.
 
+I identify areas which will result in the scraper breaking. 
+
 \subsubsection{Twitter Scraper Performance}
 I evaluate the performance of my twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be fetched with a seperate http request. Figure <x> shows the average time taken to fetch and parse each tweet, with respect to my incremental build stages. The success of continuous and incremental improvement in performance helps justify my decision to use an incremental approach. Tweets were gathered over several days, and continuously throughout different times of the day on the Victoria network to ensure that a representative range of times were gathered for each stage. 
 
@@ -63,12 +66,6 @@ I evaluate the performance of my twitter scraper with respect to average time ta
 
 Absolute limitations - Every tweet has to be fetched in an individual http request. This produces upper limits as to how fast the scraper can go, and means that the majority of performance speed is reliant on the speed of the network. (data - show how on some days tweets are fetched slightly faster than on other days. Times of day.)
 
-Sensitivity of tweets fetched - it isn't actually much faster if I bulk-collect tweets in a larger 'window', as the majority of time is spent fetching the details of each tweet. 
-
-Parellization of this? Would actually be a useful way of improving speeds...
-
-Discuss why I did not consider parellization at the beginning. The number of requests may be too many and result in more frequent failures than otherwise. Will have to collect the data to verify this claim. 
-
 \subsubsection{Ability to Resist Blocking Detection}
 
 The primary measure of my scraper libraries avoiding blocking detection is with regards to their failure or incomplete-scrape rates. Although in early, less stable builds I had parsing errors, my later work only failed when detected by twitter and blocked. As such detection rates in later builds can reliably be calculated by analysing failing or incomplete twitter profiles. 
@@ -83,4 +80,10 @@ The primary measure of my scraper libraries avoiding blocking detection is with 
 
 Privacy protection - this is still pretty poor, saved as structured xml, data not anonymised (makes my life easier at present)... Are there things I could be doing here potentially to increase privacy for individuals that I am scraping? Document locking, or store as RDB? Since I plan on storing this info in Graft, this could be anonymised at this point. Individual profiles and what-not. 
 
+\section{Possible Improvements}
 
+Greater parallelizaion - over the ECS Grid for example, rather than froma  single machine. Parallelize components other than tweet fething - entire profile fetching could be split up. Over engineered? 
+
+\section{Scraping Conclusions}
+
+Conclusions about what pages are suitable to scrape

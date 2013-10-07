@@ -45,41 +45,44 @@
 \contentsline {subsection}{\numberline {5.2.2}Extend A Browser-Automation Model}{15}
 \contentsline {subsection}{\numberline {5.2.3}Use the API}{16}
 \contentsline {section}{\numberline {5.3}Systems Design and Structure}{16}
-\contentsline {section}{\numberline {5.4}Twitter Crawler}{16}
-\contentsline {subsection}{\numberline {5.4.1}Parallel Tweet Fetching}{17}
-\contentsline {subsection}{\numberline {5.4.2}Detection Avoidance}{17}
-\contentsline {subsection}{\numberline {5.4.3}Dealing with Authentication}{17}
-\contentsline {subsection}{\numberline {5.4.4}Request Handler}{17}
-\contentsline {subsection}{\numberline {5.4.5}Avoiding Detection}{18}
-\contentsline {subsection}{\numberline {5.4.6}Twitter Scraper}{18}
-\contentsline {subsection}{\numberline {5.4.7}LinkedIn Scraper}{18}
-\contentsline {subsection}{\numberline {5.4.8}Facebook Scraper}{18}
-\contentsline {subsection}{\numberline {5.4.9}Code instrumentation}{18}
-\contentsline {chapter}{\numberline {6}Scraper Evaluation}{19}
-\contentsline {section}{\numberline {6.1}Evaluation Testbed}{19}
-\contentsline {section}{\numberline {6.2}Performance Evaluation}{19}
-\contentsline {subsection}{\numberline {6.2.1}Twitter Performance Evaluation}{19}
-\contentsline {section}{\numberline {6.3}Web Scraper Evaluation}{19}
-\contentsline {section}{\numberline {6.4}Scraper}{20}
-\contentsline {subsection}{\numberline {6.4.1}Functional Requirements}{20}
-\contentsline {subsection}{\numberline {6.4.2}Non-Functional Requirements}{20}
-\contentsline {subsubsection}{Maintainability and Resistance of Scrapers to User Interface Change}{20}
-\contentsline {subsubsection}{Twitter Scraper Performance}{20}
-\contentsline {subsubsection}{Ability to Resist Blocking Detection}{21}
-\contentsline {subsubsection}{Privacy Protection}{21}
-\contentsline {chapter}{\numberline {7}Data Analysis and Policy Implementation}{25}
-\contentsline {section}{\numberline {7.1}Social Media Selection}{25}
-\contentsline {section}{\numberline {7.2}Retweet Analysis}{25}
-\contentsline {section}{\numberline {7.3}}{25}
-\contentsline {section}{\numberline {7.4}Policy Construction}{25}
-\contentsline {section}{\numberline {7.5}Temporal}{25}
-\contentsline {subsection}{\numberline {7.5.1}MapEquation}{25}
-\contentsline {chapter}{\numberline {8}Policy Evaluation}{27}
-\contentsline {section}{\numberline {8.1}Policy Evaluation}{27}
-\contentsline {section}{\numberline {8.2}Policies}{27}
-\contentsline {subsection}{\numberline {8.2.1}Correlation of Impact Factor vs Bucketed Impacts}{27}
-\contentsline {subsection}{\numberline {8.2.2}Results of Monthly Bucketing}{30}
-\contentsline {section}{\numberline {8.3}Scraper}{30}
-\contentsline {subsection}{\numberline {8.3.1}Functional Requirements}{30}
-\contentsline {chapter}{\numberline {9}Conclusion and Future Work}{33}
-\contentsline {section}{\numberline {9.1}Future Work}{33}
+\contentsline {section}{\numberline {5.4}Facebook Crawler}{16}
+\contentsline {section}{\numberline {5.5}Twitter Crawler}{17}
+\contentsline {subsection}{\numberline {5.5.1}Parallel Tweet Fetching}{18}
+\contentsline {subsection}{\numberline {5.5.2}Detection Avoidance and Recovery}{18}
+\contentsline {subsection}{\numberline {5.5.3}Dealing with Authentication}{19}
+\contentsline {subsection}{\numberline {5.5.4}Dealing with Poorly Formed Markup}{19}
+\contentsline {section}{\numberline {5.6}LinkedIn Scraper}{19}
+\contentsline {section}{\numberline {5.7}Code instrumentation}{19}
+\contentsline {chapter}{\numberline {6}Data Discussion and Policy Construction}{21}
+\contentsline {section}{\numberline {6.1}Social Media Selection}{21}
+\contentsline {section}{\numberline {6.2}Retweet Analysis}{22}
+\contentsline {section}{\numberline {6.3}Temporal Clustering}{22}
+\contentsline {section}{\numberline {6.4}Community Detection}{22}
+\contentsline {subsection}{\numberline {6.4.1}MapEquation}{22}
+\contentsline {section}{\numberline {6.5}Policy Construction}{22}
+\contentsline {section}{\numberline {6.6}Temporal}{22}
+\contentsline {subsection}{\numberline {6.6.1}MapEquation}{22}
+\contentsline {section}{\numberline {6.7}Policy Evaluation}{23}
+\contentsline {section}{\numberline {6.8}Policies}{23}
+\contentsline {subsection}{\numberline {6.8.1}Correlation of Impact Factor vs Bucketed Impacts}{23}
+\contentsline {subsection}{\numberline {6.8.2}Results of Monthly Bucketing}{23}
+\contentsline {section}{\numberline {6.9}Scraper}{25}
+\contentsline {subsection}{\numberline {6.9.1}Functional Requirements}{25}
+\contentsline {chapter}{\numberline {7}Evaluation}{29}
+\contentsline {section}{\numberline {7.1}Evaluation Testbed}{29}
+\contentsline {section}{\numberline {7.2}Performance Evaluation}{29}
+\contentsline {subsection}{\numberline {7.2.1}Twitter Performance Evaluation}{29}
+\contentsline {section}{\numberline {7.3}Web Scraper Evaluation}{29}
+\contentsline {section}{\numberline {7.4}Scraper}{30}
+\contentsline {subsection}{\numberline {7.4.1}Functional Requirements}{30}
+\contentsline {subsection}{\numberline {7.4.2}Non-Functional Requirements}{30}
+\contentsline {subsubsection}{Maintainability and Resistance of Scrapers to User Interface Change}{30}
+\contentsline {subsubsection}{Twitter Scraper Performance}{30}
+\contentsline {subsubsection}{Ability to Resist Blocking Detection}{31}
+\contentsline {subsubsection}{Privacy Protection}{31}
+\contentsline {section}{\numberline {7.5}Possible Improvements}{31}
+\contentsline {section}{\numberline {7.6}Scraping Conclusions}{31}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{35}
+\contentsline {section}{\numberline {8.1}Future Work}{35}
+\contentsline {chapter}{\numberline {A}Appendices}{41}
+\contentsline {section}{\numberline {A.1}Twitter Data Schema}{41}

@@ -14,7 +14,14 @@ In this section I discuss the design and implementation of the web scraping comp
 
 \section{Architecture}
 
-Through the development of these basic prototypes, construction of more formal architectures was possible. I consider two architectures, when designing the web-scraper components. A database-storage approach was considered, and the more straightforward text/XML storage architecture was also considered and ultimately selected. 
+Two potential architectures were considered when designing the web-scraper components.
+
+\begin{itemize}
+ \item A database storage approach
+ \item A text/XML storage approach
+\end{itemize}
+
+Having received feedback on the database approach, the more straightforward and suitable text/XML design was ultimately used.
 
 \subsection{Database Storage Architecture}
 
@@ -24,15 +31,11 @@ Through the development of these basic prototypes, construction of more formal a
  \caption{Proposed Architecture for Database Storage Solution}
 \end{figure}
 
-A possible approach to meeting the goals of the project was to store fetched data in a relational database. In this design, the scrapers would gather data over an extended period of time, writing retrieved data into a database. Analysis components would then fetch data from the database storage as necessary, saving results in seperate tables within the same database.
+A possible approach to meeting the requirements of the project was to store fetched data in a relational database. In this design, the scrapers would gather data over an extended period of time, writing retrieved information into a database. Analysis components would then fetch data from the database as necessary, saving results in seperate tables within the same schema.
 
-This approach provides benefits in terms of long-term extensibility of the project. All of the advantages that come with database storage would have been present in this solution - fetching of specific profiles for example would have been much more practical through a database query. 
+This approach provides long-term extensibility benefits, as per requirement R.4. All of the advantages that come with database storage would have been present in this solution - fetching of specific profiles for example would have been much more practical through a database query. 
 
-The drawbacks to this approach are to do with the deemed over-engineered nature of the solution. Given that data retrieved is HTML, there was a large impedance mistmatch between data retrieved and the relational database format. This would then need to be converted back into object format for analysis. The analysis components were also largely contingent on the fetching of a whole profile, rather than specific elements. This removed the need for specific query capabilities in data storage.
-
-%Advantages - relational model, persistance, backups. Simplicty of fetching exact data.
-
-%Disadvantages - extra complexity deemed unnecessary. Worse integration with GRAft.
+However this design was deemed to be over-engineered for the purposes of the project. Given that data retrieved is in HTML, JSON or XML format there is a large impedance mismatch between retrieved data and relational database tuple format. This is compounded when retrieving data from the store for analysis - many third party analysis tools require input data in a variety of text forms.  The analysis components were also largely contingent on the fetching of a whole profile, rather than specific elements, lessening the need for querying against specific elements in my data storage structure. 
 
 \subsection{XML Storage Architecture}
 
@@ -41,22 +44,24 @@ The alternative and ultimately selected architecture involves the scraper and an
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{Images/XML_Storage_Architecture.pdf}
-\caption{Proposed Architecture for XML Storage Solution. Implemented Components are Highlighted}
+\caption{Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}
 \end{figure}
+%File storage is also much faster and less server taxing than using a database
+This design largely simplifys the scripting and scraper construction. Little setup was required during prototyping to construct schemas against which to save data. An informal XML approach also allowed for straightforward manipulation of data structures, and additions to what was being stored. Performance of storing to files is also known to be much faster and less server-taxing than the use of a database.
 
-The advantages of this design were primarily to simplify scripting and scraper construction. Little setup was required during prototyping to construct schemas against which to save data. These prototype structures and files were simply imported into subsequent versions. An informal approach like this also allowed for straightforward manipulation of schemas, and additions to stored data. 
+The primary disadvantage to the XML approach is difficulties associated with selecting individual slices of data in XML. Technologies such as xQuery exist for querying against XML, but were deemed unecessary for the project. This is due to entire profiles being used for input into analysis components, rather than selected components only.
 
 \section{Technology}
 
-The web-scraper components were written entirely in Ruby. Developing screen scrapers is largely independant upon language choice; however Ruby was selected due to its large number of libraries suitable for scraping, and straightforward scripting nature. Ruby also has a significant OpenSource culture in comparison to many other languages.This was considered important early in the project when looking at developing a model for future maintenance of the scrapers, especially when considering the discarded requirement of aggregating data for GRAft. 
+The web-scraper components were written entirely in Ruby. The development of screen scrapers is largely independant upon language choice; however Ruby was selected due to its large number of libraries suitable for scraping, and straightforward scripting nature. Ruby also has a significant OpenSource following in comparison to many more conventional languages like Java. This was considered necessary early in the project, when looking at a model for future maintenance of the scrapers, especially for the discarded requirement of aggregating data for GRAft. 
 
-Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to personal time constraints restricting personal capabilities of learning the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. 
+Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. 
 
-The frameworks upon which my scrapers are built included:
+The frameworks upon which my scrapers were built included:
 
 \begin{itemize}
- \item Nokogiri: a widely used HTML and XML parsing library, allowing for straightforward interpretation of raw HTML documents.
- \item Mechanize: a library simulating browser interaction on web-pages, without requiring a real browser.
+ \item Nokogiri: a widely used HTML and XML parsing framework, allowing for straightforward interpretation of raw HTML documents.
+ \item Mechanize: an extension of the Nokogiri framework, that simulates browser actions on web-pages.
  \item Rest-Client: Ruby's most popular HTTP client.
 \end{itemize}
 
@@ -64,23 +69,23 @@ Alternative frameworks were considered, and their advantages and reasons for not
 
 \subsection{Extend scrAPI}
 
-scrAPI is a Rubyforge project, allowing for fast implementation of web scrapers. The benefit of scrAPI is that it would allow me to fetch data from HTML pages using CSS selectors. It also hid processes such as the actual fetching of pages, and sending of HTTP requests. Ultimately scrAPI was a more high-level approach to scraping content.
+scrAPI is a Rubyforge project, allowing for fast implementation of web scrapers. The core benefit of scrAPI is allowing data to be fetched from HTML pages using CSS selectors. In addition it hides processes such as the actual fetching of pages. It is a much higher-level framework than Nokogiri and Mechanize. 
 
-Extending scrAPI was ultimately discarded however, due to its heavy reliance on CSS files remaining constant. Any change to stylesheet files would likely have broken my scrapers. Arguably these stylesheets are less likely to change than layout manipulations (e.g. consider xpath on HTML as an alternative); however on sites such as Twitter and Facebook large design teams frequently make changes to these files. Given that a key requirement of the project was to make scrapers resistant to user-interface change, this resulted in scrAPI being deemed unfit for purpose. 
+Extending scrAPI was ultimately discarded, due to its heavy reliance on CSS files remaining constant. Any change to stylesheet files would likely have broken the scrapers. Arguably these stylehseets are less likely to change than layout manipulations (for example consider xpath on HTML as an alternative); however on sites such as Twitter and Facebook large design teams frequently make changes to these files. Given that a key requirement of the project was to make scrapers resistant to user-interface change, this resulted in scrAPI being deemed unfit for purpose. 
 
 \subsection{Extend A Browser-Automation Model}
 
 Browser automation options were considered as an alternative architecture. Frameworks such as Watir allow users to simulate user interaction with web pages, by driving an actual browser instance.
 
-While this option would likely have had no issues through site detection (because of legitimate user-agents, downloading css selectors, etc), it would have been much less efficient with regards to performance. Interface changes generally result in browser-automation scripts failing, rendering this framework solution poorly maintainable in the long term. 
+A brower automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading css selectors and such. Despite this, performance would have been significantly poorer using this option. As browser automation scripts are generally highly dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change (R5). 
 
 \subsection{Use the API}
 
-Although the project title from the outset was 'Reputation Scraper', we investigated the use of site's APIs before settling on the scraping option. A basic application interacting with the Twitter API was constructed early in the project. Twitter's API version 1.0 was actually highly suitable for the needs of the project. However the changes in REST API v 1.1 rendered this infeasible. The earlier API allowed fetching of up to 800 statuses from any public profile, along with more public data (see appendix for more information). Version 1.1 however implemented more requirements for authentication, and limited functions such as downloading tweets to the individual's account only. Facebook's developer API is even more restricted, and in general only suitable for application developers able to obtain permissions from users. LinkedIn's policy is similar. %due to the changes!!!
+Although the project title from the outset was 'Reputation Scraper', we investigated the use of site's APIs before settling on the scraping option. A basic application interacting with the Twitter API was constructed early in the project. Twitter's API version 1.0 was actually highly suitable for the needs of the project. However the changes in REST API v 1.1 rendered this infeasible. The earlier API allowed fetching of up to 800 statuses from any public profile, along with more public data (see appendix for more information). Version 1.1 however implemented more requirements for authentication, and limited functions such as downloading tweets to the individual's account only. Facebook's developer API is even more restricted. On Facebook, permissions must be obtained from the appropriate users before fetching data from their profile. LinkedIn's policy is similar. %due to the changes!!!
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.3\textwidth]{Images/Implementation_Lifecycle.pdf}
+\includegraphics[width=0.4\textwidth]{Images/Implementation_Lifecycle.pdf}
 \caption{Scraper Development Feedback Loop}
 \end{figure}
 
@@ -88,83 +93,91 @@ Although the project title from the outset was 'Reputation Scraper', we investig
 
 Developing the project solution consisted generally of a cyclic, iterative prototyping approach as detailed in figure 5.3. This generally consisted of four phases; Implementing and adjusting scrapers, fetching data, analysing the data, and prototyping policy concepts as a result of this analysis. The first scraper developed was for Facebook. 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{Images/Code_Reuse.pdf}
+\caption{Pipes-and-Filters Class Structure}
+\end{figure}
+
+\section{Facebook Crawler}
+
+A Facebook scraper was prototyped early in the project, and allowed for experimentation with many of the technologies that were used later. Firstly, strategies for authenticating against Facebook had to be developed. While public profiles do exist, these are primarily for company pages or politicians, which is not what the project aimed to soley investigate. Authentication was implemented using a dummy Facebook account, through the Mechanize Ruby framework. Mechanize allows for form data on pages to be populated and submitted through either HTTP or HTTPS. Once authentication was achieved, an auth token was passed as an attribute of futher requests. New auth tokens are obtained after an adjustable time period, or on a new scraper run. 
+
+Having obtained the necessary authentication tokens, profile pages could be fetched. The planned approach was to crawl through friend networks via friend lists, and scrape profiles in this manner. Downloaded profiles would then be parsed using Nokogiri, and relevant data extracted via xpath expressions. Posts, likes, friends are examples of information identified as useful to collect. However as mentioned in chapter 3, this scraper was eventually discarded as infeasible. Scraping large amounts of content reliably through Facebook was infeasible within the project's scope due to its highly dynamic content, and frequently changing interface. Maintaining and updating a scraper to fetch accurate data from Facebook during the project would have been too time-consuming and distracting, and as a result was removed from the project scope. However the technologies experimented with whilst developing this prototype were useful later when developing the more robust Twitter scraper.
+
+%Discuss what I built the Facebook prototype with. Then mention that the technologies used here were added to in order to make the Twitter Crawler. Discussion as to why this was discarded as a requirement.
+
 \section{Twitter Crawler}
 
-The Twitter Crawler uses a Google Twitter search function, to loop through profiles at the top level. An input text file of random names delimited by lines is accepted by the scraper. These names are looped through in order, with the scraper fetching the profiles of the top 10 results returned through Google. Bias is introduced through this approach, as results appearing in Google are naturally more popular than users who would not. However as the top ten results are fetched and prepared for scraping, in general the lower ranking users here are more 'standard'. 
+The Twitter Crawler users a Google Twitter search function to search for profiles to fetch at the top level. An input text file of random names delimited by lines is accepted by the scraper. These names are looped through in order, with the scraper fetching the profiles of these top ten results returned through Google. Bias is introduced through this approach, since only the top ten search results are analysed. 
 
-A potentially better approach to randomising the selection of profiles to scrape would have been to crawl through an already-generated set of random profile names. However searches did not reveal any such databases to exist, excluding 'celebrity-exclusive' ones which would have been significantly worse than my current approach. I also considered crawling via embedded links on Twitter, starting from any profile and following retweet links through to new profiles. However this introduces new complexities - how will the algorithm detect infinite loops (potentially huge loops), or detect repeat profiles? As the project was ultimately about reputation and not scraping algorithms, the simple name-searching approach was selected. 
+%The Twitter Crawler uses a Google Twitter search function, to loop through profiles at the top level. An input text file of random names delimited by lines is accepted by the scraper. These names are looped through in order, with the scraper fetching the profiles of the top 10 results returned through Google. Bias is introduced through this approach, as results appearing in Google are naturally more popular than users who would not. However as the top ten results are fetched and prepared for scraping, in general the lower ranking users here are more 'standard'. 
 
-Once the ten profile names are selected for scraping, the application will move on to the actual scraping of each of these associated 'profiles'. The definition of a Twitter profile changed throughout the project, as more information was added to be analysed. The final schema of stored data for the standard Twitter scraper is contained in appendix 1.1. Essentially all tweets are captured where possible, along with associated retweets, favourites, and the profile names of users who retweeted this item. Profile metadata is also stored, such as number of followers, number following, and total number of tweets.
+Due to this bias, alternative approaches were considered. A potentially better scientific approach to randomising the selection of profiles to scrape would have been to crawl through an already-generated set of random profile names. However searches did not reveal any such databases to exist, excluding 'celebrity-exclusive' ones which would have been significantly worse than my current approach. I also considered crawling via embedded links on Twitter, starting from any profile and following retweet links through to new profiles. However this introduces new complexities - how will the algorithm detect infinite loops (potentially huge loops), or detect repeat profiles? As the project was ultimately about reputation and not scraping algorithms, the simple name-searching approach was selected. 
+
+Once the ten profile names are selected (for the current input name in the text file), the application will perform the scraping of each of these profiles in order.  The definition of a Twitter profile changed throughout the project, as more information was chosen to be analysed. The final schema of stored data for the standard Twitter scraper is contained in appendix 1.1. Essentially all tweets are captured where possible, along with associated retweets, favourites, and the profile names of users who retweeted this item. Profile metadata is also stored, such as number of followers, number following, and total number of tweets. 
 %CHANGE THIS AS APPROPRIATE. 
 
-There are a number of technical difficulties with the fetching of this data, which we will now discuss. Firstly, a twitter page does not immediately display all tweets for a user for obvious latency reasons. To view more than the initial 12 tweets, users must scroll through an infinite scrolling window which requests more data through AJAX calls. To simulate this interaction, I used chrome's 'network capture' feature to inspect requests to the page during the scrolling function. The URL is of the following form:
+Technical difficulties exist with fetching such profiles and metadata, which we will now discuss. Firstly, a Twitter page does not immediately display all tweets for a user for obvious latency reasons. To view more than the initial tweets, users must scroll through an 'infinite scrolling' window which requests more data through AJAX calls. To simulate this interaction, I used Google Chrome's 'network capture' feature to inspect requests to the page during the scrolling function. The URL is of the following form:
 
 \begin{verbatim}
  /timeline/with_replies?include_available_features=1&include_entities=1&max_id=12345
 \end{verbatim}
 
-\noindent The JSON returned is then parsed to retrieve relevant information. As a Twitter profile may contain retweets from other profiles, checks have to also be taken at this stage to ensure the content is originally generated by the user of interest. This is as simple as checking the poster name. To increase performance I experimented with various tweet window sizes, although this was ultimately inneffective at maximising speeds for reasons covered now.
+\noindent The JSON returned is then parsed to retrieve relevant information. As a Twitter profile may contain retweets from other profiles, checks have to also be taken at this stage to ensure the content is originally generated by the user of interest. This is as simple as checking the user name who posted the content originally. In order to increase the performance of extra tweet fetching, various tweet window sizes were experimented with. This was ultimately inneffective at maximising speeds, reasons for which are covered now.
 
 \subsection{Parallel Tweet Fetching}
 
-Although tweet content can be fetched from the basic page, useful data such as retweet and favourite count is initially hidden. To reveal this, a further request must be sent, to view tweet detail. Fortunately, this process can be parallelised for each of the tweet windows. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelisation of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 6.
+Although tweet content can be fetched from the base profile page, useful data such as retweet and favourite count is initially hidden. To view tweet detail, a further request must be sent, to mimick the user interaction of clicking on the tweet. Fortunately this process can be parallelised for each tweet within a tweet window. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelisation of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 6. Parallel fetching was not considered earlier in the project as I expected the resulting simulataneous requests to end in more frequent detection by sites. 
 
-\subsection{Detection Avoidance}
+\subsection{Detection Avoidance and Recovery}
 
+Operating on the University network likely resulted in less chance for blocking detection by Twitter, due to the large IP range allocated to Victoria University. Regardless, steps were taken to limit detection rates. Multiple strategies for avoiding detection were considered, and several employed simultaneously. The Request-Handler package handles the implementation of these strategies.
 
+The first and most straightforward strategy is to include random pause times between requests. The goal of this approach is to reduce potential server burden, and lessen the possibility of an aggresive scraper being permanently blocked due to its flooding the site. However this approach imposes a very low ceiling for performance and tweet fetch rates. Resources such as \cite{} recommend a ten to fifteen second delay between requests, but such a wait was infeasible for the needs of the project. As such, pauses between requests were only implemented in certain special cases; failed requests and at the end of a profile. 
+
+The second strategy employed is to send requests that spoof a browser user-agent, in order to appear as a legitimate browser instance at the server end. Before scraping a new tweet window, a new user-agent string is randomly selected from a list. 
+
+A third strategy that was considered but not implemented was the downloading of CSS and other markup, in order to behave as browser-like as possible. This was discarded because of questions of its feasiblity, as well as uncertainty as to the level of potential benefits from constructing such a solution. 
+
+%Rate limiting detection
+I rarely encountered rate limiting at University, and was never blocked outright on the University machines. Early in the project, when prototyping a Facebook scraper I was briefly banned from Facebook at home. 503 errors reveal detection on Twitter. 500 errors were encountered throughout the project also, but these were due to coding errors. 
 
 \subsection{Dealing with Authentication}
 
+The original scraper did not require authentication, since the majority of Twitter profiles are viewable to individuals who do not have a Twitter account, or are not signed in. However to fetch the names and profiles of users retweeting posted content, an authentication feature had to be added. Fortunately the authentication strategy employed by the Facebook prototype was able to be re-used for this component. 
+
 To fetch retweet-name data, more features had to be added. All other data fetched was publicly viewable, whereas this data is only available to users who have authenticated with Twitter.
 
-\subsection{Request Handler}
+\subsection{Dealing with Poorly Formed Markup}
 
-The Twitter crawler 
-
-First implemented basic scraper components, which loop through Twitter pages.
-
+A concern earlier in the project was the scraping of content containing poorly formed HTML or JSON markup. Thankfully the sensitivity of HTML parsers to poor markup is largely library-dependant. This was not well-documented in the gems (a gem is the library equivalent in Ruby) I found, so experimentation with various options had to suffice. 
 
 %Mention that the code is available from github. http://www.github.com/irwalker/dat-roll
 
-Content behind login
+%Content behind login
 
-Infinite scrolling
+%Infinite scrolling
 
-Rate limiting -> encountered sometimes? 503 errors primarily
+%Rate limiting -> encountered sometimes? 503 errors primarily
 
-'Scraper window', not actually very effective, due to the primary networking burden being on sending a seperate HTTP request to download every tweet.
+%'Scraper window', not actually very effective, due to the primary networking burden being on sending a seperate HTTP request to download every tweet.
 
-Spoofing headers -> using fake user-agents, and rotating between user agents in between overall requests.
+%Spoofing headers -> using fake user-agents, and rotating between user agents in between overall requests.
 
-Poorly formed markup -> was an occasional issue. Found that some libraries were more strict on this than others, and adjusted accordingly.
+%Poorly formed markup -> was an occasional issue. Found that some libraries were more strict on this than others, and adjusted accordingly.
 
-Authentication
+%Authentication
 
-Pattern scraper employed to fetch data. 
+%Pattern scraper employed to fetch data. 
 
-\subsection{Avoiding Detection}
+\section{LinkedIn Scraper}
 
-The request handler component uses several strategies to avoid detection by sites. 
+The LinkedIn Scraper was developed towards the close of the project, and as a result data analysis of what was collected using this tool was not carried out. 
 
-In order to avoid detection by websites, the request handler component of my scrapers 
+%brief description of the work done developing the LinkedIn scraper. What was fetched, etc etc.
 
-%This is where I talk about the actual scraper design, and how I cope with issues like infinite scrolling etc.
-%The actual code structure, and various component's roles.
-
-\subsection{Twitter Scraper}
-%How I went about implementing the Twitter scraper
-
-Initial prototype
-
-Design improvements, including multi-threading and parallel fetching of tweets. Decisions around discarding requests that fail in scraping individual tweets. 
-
-\subsection{LinkedIn Scraper}
-
-\subsection{Facebook Scraper}
-%This is where I should incorporate the discussion about framework selection.
-
-
-\subsection{Code instrumentation}
+\section{Code instrumentation}
 
 The code was instrumented using a Ruby logger system written for the application. Given complexities and difficulties debugging errors on web-scraping applications, logging had to be performed to a very fine level of granularity. Any action changing system state such as fetching a page triggers the logging mechanism. The logger would then take note of the timestamp and write to the appropriate file the nature of the action. For example, if the scraper sent an HTTP request to retrieve a given URL, it would record the timestamp and URL requested. 
 

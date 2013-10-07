@@ -18,12 +18,13 @@ To satisfy the goals of the project, the following issues need to be addressed. 
  \item [R5.] Reasonable performance - expectation that policies and scrapers could be used as part of wider application.
  \item [R6.] Accuracy of data collected - content should not be missing or incorrect
  \item [R7.] Resistance to Blocking Detection - my scrapers should not be blocked.
+ \item [R8.] Extensibility and Social Media Portability for future use of framework
 \end{description}
 
 \subsection{Discarded Requirements}
 
 \begin{description}
- \item 
+ \item [R8] Aggregation of Social Media data, for storage in GRAft.
 \end{description}
 
 
