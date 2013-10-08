@@ -6,7 +6,6 @@ To satisfy the goals of the project, the following issues need to be addressed. 
 
 \begin{description}
  \item  [R1.] Policies must consider data from reasonable time periods, to generate a shadow of the future.
- %\item [R1.] Long-lived entities to generate a shadow of the future
  \item [R2.] Aggregation of social media data into consistent and readable format
  \item [R3.] Metric of reliability based on amounts of data collected.
 \end{description}

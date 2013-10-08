@@ -55,21 +55,23 @@
 \contentsline {section}{\numberline {5.7}Code instrumentation}{19}
 \contentsline {chapter}{\numberline {6}Data Discussion and Policy Construction}{21}
 \contentsline {section}{\numberline {6.1}Social Media Selection}{21}
-\contentsline {section}{\numberline {6.2}Retweet Analysis}{22}
-\contentsline {section}{\numberline {6.3}Temporal Clustering}{22}
-\contentsline {section}{\numberline {6.4}Community Detection}{22}
-\contentsline {subsection}{\numberline {6.4.1}MapEquation}{22}
-\contentsline {section}{\numberline {6.5}Policy Construction}{22}
-\contentsline {section}{\numberline {6.6}Temporal}{22}
-\contentsline {subsection}{\numberline {6.6.1}MapEquation}{22}
-\contentsline {section}{\numberline {6.7}Policy Evaluation}{23}
-\contentsline {section}{\numberline {6.8}Policies}{23}
-\contentsline {subsection}{\numberline {6.8.1}Correlation of Impact Factor vs Bucketed Impacts}{23}
-\contentsline {subsection}{\numberline {6.8.2}Results of Monthly Bucketing}{23}
-\contentsline {section}{\numberline {6.9}Scraper}{25}
-\contentsline {subsection}{\numberline {6.9.1}Functional Requirements}{25}
+\contentsline {section}{\numberline {6.2}Collection Method}{22}
+\contentsline {section}{\numberline {6.3}Retweet Analysis}{22}
+\contentsline {subsection}{\numberline {6.3.1}An Impact Factor}{22}
+\contentsline {section}{\numberline {6.4}Temporal Clustering}{23}
+\contentsline {section}{\numberline {6.5}Community Detection}{23}
+\contentsline {subsection}{\numberline {6.5.1}MapEquation}{23}
+\contentsline {section}{\numberline {6.6}Policy Construction}{23}
+\contentsline {section}{\numberline {6.7}Temporal}{23}
+\contentsline {subsection}{\numberline {6.7.1}MapEquation}{23}
+\contentsline {section}{\numberline {6.8}Policy Evaluation}{23}
+\contentsline {section}{\numberline {6.9}Policies}{24}
+\contentsline {subsection}{\numberline {6.9.1}Correlation of Impact Factor vs Bucketed Impacts}{24}
+\contentsline {subsection}{\numberline {6.9.2}Results of Monthly Bucketing}{24}
+\contentsline {section}{\numberline {6.10}Scraper}{25}
+\contentsline {subsection}{\numberline {6.10.1}Functional Requirements}{25}
 \contentsline {chapter}{\numberline {7}Evaluation}{29}
-\contentsline {section}{\numberline {7.1}Evaluation Testbed}{29}
+\contentsline {section}{\numberline {7.1}Scraper Accuracy}{29}
 \contentsline {section}{\numberline {7.2}Performance Evaluation}{29}
 \contentsline {subsection}{\numberline {7.2.1}Twitter Performance Evaluation}{29}
 \contentsline {section}{\numberline {7.3}Web Scraper Evaluation}{29}

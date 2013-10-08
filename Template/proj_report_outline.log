@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  7 OCT 2013 12:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  8 OCT 2013 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,11 +248,11 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.88> not available
 
 
 ]
-(./proj_report_outline.toc [3])
+(./proj_report_outline.toc [3] [4])
 \tf@toc=\write3
 \openout3 = `proj_report_outline.toc'.
 
- [4] [5] [6
+ [5] [6
 
 ] (./proj_report_outline.lof)
 \tf@lof=\write4
@@ -399,127 +399,134 @@ Chapter 6.
 
 
 
-] [22]
-<Images/monthly_impact_vs_overallv2.pdf, id=158, 597.23125pt x 845.1575pt>
+] <Images/retweets_vs_favourites.pdf, id=155, 953.81343pt x 563.85657pt>
+File: Images/retweets_vs_favourites.pdf Graphic file (type pdf)
+
+<use Images/retweets_vs_favourites.pdf>
+Package pdftex.def Info: Images/retweets_vs_favourites.pdf used on input line 4
+0.
+(pdftex.def)             Requested size: 401.50146pt x 237.35158pt.
+ [22 <./Images/retweets_vs_favourites.pdf>] [23]
+<Images/monthly_impact_vs_overallv2.pdf, id=163, 597.23125pt x 845.1575pt>
 File: Images/monthly_impact_vs_overallv2.pdf Graphic file (type pdf)
 
 <use Images/monthly_impact_vs_overallv2.pdf>
 Package pdftex.def Info: Images/monthly_impact_vs_overallv2.pdf used on input l
-ine 116.
+ine 141.
 (pdftex.def)             Requested size: 401.50146pt x 568.1741pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/yearly_impact_vs_overallv2.pdf, id=159, 597.23125pt x 845.1575pt>
+<Images/yearly_impact_vs_overallv2.pdf, id=164, 597.23125pt x 845.1575pt>
 File: Images/yearly_impact_vs_overallv2.pdf Graphic file (type pdf)
 
 <use Images/yearly_impact_vs_overallv2.pdf>
 Package pdftex.def Info: Images/yearly_impact_vs_overallv2.pdf used on input li
-ne 122.
+ne 147.
 (pdftex.def)             Requested size: 401.50146pt x 568.1741pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-<Images/daily_impact_chris_hadfield.pdf, id=160, 451.6875pt x 279.0425pt>
+<Images/daily_impact_chris_hadfield.pdf, id=165, 451.6875pt x 279.0425pt>
 File: Images/daily_impact_chris_hadfield.pdf Graphic file (type pdf)
 
 <use Images/daily_impact_chris_hadfield.pdf>
 Package pdftex.def Info: Images/daily_impact_chris_hadfield.pdf used on input l
-ine 136.
+ine 161.
 (pdftex.def)             Requested size: 451.68639pt x 279.04181pt.
 
-Overfull \hbox (10.66867pt too wide) in paragraph at lines 136--137
+Overfull \hbox (10.66867pt too wide) in paragraph at lines 161--162
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/monthly_impact_chris_hadfield.pdf, id=161, 451.6875pt x 279.0425pt>
+<Images/monthly_impact_chris_hadfield.pdf, id=166, 451.6875pt x 279.0425pt>
 File: Images/monthly_impact_chris_hadfield.pdf Graphic file (type pdf)
 
 <use Images/monthly_impact_chris_hadfield.pdf>
 Package pdftex.def Info: Images/monthly_impact_chris_hadfield.pdf used on input
- line 142.
+ line 167.
 (pdftex.def)             Requested size: 451.68639pt x 279.04181pt.
 
-Overfull \hbox (10.66867pt too wide) in paragraph at lines 142--143
+Overfull \hbox (10.66867pt too wide) in paragraph at lines 167--168
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/monthly_impact_barack_obama.png, id=162, 451.6875pt x 279.29344pt>
+<Images/monthly_impact_barack_obama.png, id=167, 451.6875pt x 279.29344pt>
 File: Images/monthly_impact_barack_obama.png Graphic file (type png)
 
 <use Images/monthly_impact_barack_obama.png>
 Package pdftex.def Info: Images/monthly_impact_barack_obama.png used on input l
-ine 148.
+ine 173.
 (pdftex.def)             Requested size: 451.68639pt x 279.29276pt.
 
-Overfull \hbox (10.66867pt too wide) in paragraph at lines 148--149
+Overfull \hbox (10.66867pt too wide) in paragraph at lines 173--174
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23] [24 <./Images/monthly_impact_vs_overallv2.pdf>] [25 <./Images/yearly_impac
-t_vs_overallv2.pdf>] [26 <./Images/daily_impact_chris_hadfield.pdf> <./Images/m
-onthly_impact_chris_hadfield.pdf>]) [27 <./Images/monthly_impact_barack_obama.p
+[24] [25 <./Images/monthly_impact_vs_overallv2.pdf>]) [26 <./Images/yearly_impa
+ct_vs_overallv2.pdf>] [27 <./Images/daily_impact_chris_hadfield.pdf> <./Images/
+monthly_impact_chris_hadfield.pdf>] [28 <./Images/monthly_impact_barack_obama.p
 ng>]
 \openout2 = `scraper_evaluation.aux'.
 
- (./scraper_evaluation.tex [28
+ (./scraper_evaluation.tex
+Chapter 7.
+[29
 
 
 
 ]
-Chapter 7.
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
 
-<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=208, 597.23125pt x
+<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=209, 597.23125pt x
  845.1575pt>
 File: Images/average_time_to_fetch_parse_tweets_per_build.pdf Graphic file (typ
 e pdf)
  <use Images/average_time_to_fetch_parse_tweets_per_build.pdf>
 Package pdftex.def Info: Images/average_time_to_fetch_parse_tweets_per_build.pd
-f used on input line 63.
+f used on input line 61.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-Overfull \hbox (156.21207pt too wide) in paragraph at lines 63--64
+Overfull \hbox (156.21207pt too wide) in paragraph at lines 61--62
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 188.97714pt on input line 65.
+LaTeX Warning: Float too large for page by 188.97714pt on input line 63.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [30]
-<Images/percentage_failed_incomplete_twitter_profiles.pdf, id=212, 451.6875pt x
+<Images/percentage_failed_incomplete_twitter_profiles.pdf, id=213, 451.6875pt x
  279.0425pt>
 File: Images/percentage_failed_incomplete_twitter_profiles.pdf Graphic file (ty
 pe pdf)
  <use Images/percentage_failed_incomplete_twitter_profiles.pdf>
 Package pdftex.def Info: Images/percentage_failed_incomplete_twitter_profiles.p
-df used on input line 75.
+df used on input line 73.
 (pdftex.def)             Requested size: 451.68639pt x 279.04181pt.
 
-Overfull \hbox (10.66867pt too wide) in paragraph at lines 75--76
+Overfull \hbox (10.66867pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
@@ -611,10 +618,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2078 strings out of 494071
- 31238 string characters out of 3160406
- 87702 words of memory out of 3000000
- 5195 multiletter control sequences out of 15000+200000
+ 2083 strings out of 494071
+ 31415 string characters out of 3160406
+ 88703 words of memory out of 3000000
+ 5199 multiletter control sequences out of 15000+200000
  28880 words of font info for 72 fonts, out of 3000000 for 9000
  648 hyphenation exceptions out of 8191
  38i,6n,23p,1083b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -624,10 +631,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/fonts
 /palatino/uplb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplr8a
 .pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/pkg/
 share/texmf-dist/fonts/type1/vuw/vuw20.pfb>
-Output written on proj_report_outline.pdf (52 pages, 399136 bytes).
+Output written on proj_report_outline.pdf (52 pages, 420711 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
+ 287 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

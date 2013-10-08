@@ -15,13 +15,38 @@ In order to scrape useful information, I needed to look at the various social me
 \item Twitter: The social networking site allowing posts of up to 140 characters. Information available is number of followers, number of profiles the person is following, number of posts, and post data itself. Post data includes retweet and favourite count, the content itself, as well as the people who retweeted the tweet itself. 
 \item Google+: Google+ is similar to Facebook in style, and holds a large user base, but with much lower daily use than Facebook.
 \item Slashdot: Slashdot is a social media and news network targeted at a 'geek' audience. Slashdot is one of few social media sites that uses a positive/negative rating system on posts. This inbuilt reputation system could be interesting to look at further, when porting data between social media platforms. It is also unique from the standpoint of identifying 'trolls' - for which the website is widely known. 
-%\item  Facebook: As summarised above, much previous work has been done on looking at what information can be gathered from publicly available data on Facebook. Likes, Posts to Walls, and Friends are examples of data that is readily available on public profiles. Facebook has a difficulty with its strict and varying privacy settings, which is challenging in the context of a flexible scraper.
-%\item LinkedIn: This is the primary business social network on which professionals can display information about their careers. Reputation data here is fairly concrete - LinkedIn carries the concept of endorsements on skills, as well as information on past roles and experience. 
-%\item Twitter: Twitter is a social networking site allowing posts of up to 140 characters. This is another site with a decent market share - it is also more open to sharing than other sites. Twitter has an API that can be used to retrieve information from profiles, which should be more robust than web-scraping. There have been studies into behavioural analysis of twitter users, through the figures of number of followers, number following, and number of tweets. These three figures are publicly available. 
-%\item Google+: Google+ is similar to Facebook in style, and holds a large user base, but with much lower daily users than Facebook. It poses similar challenges to Facebook due to its stricter privacy settings. Google is also known for its restrictive hand on web-scrapers. This makes retrieving data from Google+ an interesting exercise. 
 \end{itemize}
 
+This basic feature analysis was the foundation for data exploration on the social media sites scraped. 
+
+\section{Collection Method}
+
+Data discussed was collected entirely from the Twitter Scraper I implemented. This was collected during implementation, as per the feedback loop in figure 5.3. As such, profiles scraped earlier contain less detail than data collected later. For example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totalling 1,745,161 tweets. 
+
+%Show the median,q1 q3 min max of the number of tweets per profile perhaps?
+
 \section{Retweet Analysis}
+
+I now present the results of retweet analysis on Twitter, and put forward example policies that may be constructed from such analysis. The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed seperately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
+
+\begin{description}
+ \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
+\end{description}
+
+A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=400px]{Images/retweets_vs_favourites.pdf}
+\caption{Correlation of Retweet Count to Favourite Count}
+\end{figure}
+
+%Number of tweets compared against
+%Correlation
+
+\subsection{An Impact Factor}
+
+We created an 'impact factor' measurement based upon a Twitter user's retweet count, and tweet activity. 
 
 First present the use of retweets vs favourites on Twitter, and show that they are similar
 

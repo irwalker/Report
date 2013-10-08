@@ -1,12 +1,10 @@
-\chapter{Scraper Evaluation}\label{C:us}
+\chapter{Evaluation}\label{C:us}
 
 This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conducted on the developed web scrapers. It then presents an evaluation of the policies and hypotheses formulated during analysis of data gathered. 
 
-\section{Evaluation Testbed}
+\section{Scraper Accuracy}
 
-All tested were conducted on University lab computers, over Victoria's network. 
 
-All tests were conducted on university computers, over the university network. %Not very interesting. Network speeds, etc.
 
 \section{Performance Evaluation}
 
