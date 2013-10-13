@@ -1,87 +1,156 @@
 \chapter{Evaluation}\label{C:us}
 
-This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conducted on the developed web scrapers. It then presents an evaluation of the policies and hypotheses formulated during analysis of data gathered. 
+Following the completed scraper implementation and data analysis, an evaluation of the project was carried out on both the scrapers and resulting policies. The evaluation was designed primarily to verify whether or not the scraper and policies created were succesful in fulfilling the requirements of the project.
 
 \section{Scraper Accuracy}
 
-http://www.beevolve.com/twitter-statistics/
+Quantitatively evaluating the accuracy of figures gathered by IHPScrape is difficult without a dataset to compare results against. Given that one of the primary reasons for implementing a scraper was due to this lack of a valid dataset, such an evaluation was not possible within the time constraints of the project. Requirement R6 stated that data gathered needs to be accurate in order to generate meaningful results, and that any potential innacuracies in data collected should be well understood. As such I performed a qualitative evaluation of aspects of scraper accuracy. 
+
+To measure relative scraper accuracy, manual inspection of 15 random Twitter profiles that were fetched in the final build was conducted. Figure 7.1 displays the data checked for accuracy on the user's Twitter profile pages, and scraped xml file. Details checked for correctness were as follows:
+
+\begin{itemize}
+ \item The number of users following the test subject (Number of Followers Correct)
+ \item The number of users the subject follows (Number of Following Correct)
+ \item The number of posts by the users (Number of Tweets Correct)
+ \item Whether retweet counts recorded were accurate (Retweet Counts Accurate)
+ \item Whether the set of profile names recorded as retweeting a post was correct and complete (Retweeter Names Correct)
+ \item Whether the entire set of tweets posted by the subject were collected (Tweet List Complete)
+\end{itemize}
+
+\begin{sidewaysfigure}[p]
+\begin{center}
+ \begin{tabular}{| p{3cm} | p{3cm}| p{3cm} | p{3cm} | p{3cm} | p{3cm} | p{2cm} |}
+ \hline
+ \textbf{Profile Name} & \textbf{Number of Followers Correct} & \textbf{Number Following Correct} & \textbf{Number of Tweets Correct} & \textbf{Retweet counts accuracte} & \textbf{Retweeter Names Correct} & \textbf{Tweet List Complete}\\ \hline
+\_Eduardofficial & Yes & Yes & Yes & Yes & Incomplete & Yes\\ \hline
+ MichaelaCNN & Yes & Yes & Yes & Yes & Incomplete & Yes \\ \hline
+ Natalyacoyle & Yes & Yes & Yes & Yes & Incomplete & Yes \\ \hline
+ OpheliaDagger & Yes & Yes & Yes & Yes & Incomplete & Yes \\ \hline
+ NitaLowey & Yes & Yes & Yes & Yes & Yes & Yes  \\ \hline
+ mims & Yes & Yes & Yes & Yes & Incomplete & No \\ \hline
+ sherlynroy & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+ Natpolitic & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+ portereduardo & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+ NatbyNature & Yes & Yes & Yes & Yes & Incomplete & No \\ \hline
+ NewzMuse & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+ NitaLakeLodge & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+ MirellaVieiraa & Yes & Yes & Yes & Yes & Yes & No \\ \hline
+ JanuarySeraph & Yes & Yes & Yes & Yes & Incomplete & No \\ \hline
+ MissKacieMarie & Yes & Yes & Yes & Yes & Incomplete & No \\ \hline
+ \end{tabular}
+\end{center}
+\caption{Accuracy Metric Results}
+\end{sidewaysfigure}
+
+The results of this sample test were encouraging. Static and unchanging values such as Number of followers, number following, and number of tweets were always correct. Dynamic lists such as the retweet names were sometimes incomplete. This was a design decision that I had to make earlier in the project, and it is known behaviour that for large converstation chains, or large lists of retweeters, not all of the names will be present. Since extended lists of retweet names require further HTTP requests, fetching the entire list would have resulted in performance penalties. The number of incomplete profiles from my sample here is consistent with incomplete profiles fetched overall in the final build. The common denominator for an incomplete profile is due to too large quantities tweets being posted by the user, on the order of 10,000 or more. This is a known problem with the IHPScrape solution, as after a number of tweets the Twitter server will respond saying no more Tweets exist, where this is untrue.  Fetching the entire profile of a user with 10,000 + tweets however is largely infeasible for use with reputation policies though, which is justified in the performance evaluation section.
+
+Having evaluated accuracy of results it was also noted that the order of tweets saved was occasionally different to the order posted by the subject, within the tweet window size of seven. This was due to the parallization of tweet fetching. Given that none of the policies designed require accurate ordering of tweets, this is not an issue within the scope of my project. 
+
+The experiment to verify scraper accuracy positively suggests that data collected is of good quality. I acknowledge that the small sample size covered was not ideal, but was feasible within the timeframe for evaluation. If possible a better evaluation would compare collected data against the same figures from an existing dataset. However, since no such dataset existed for the project, this factor being a driving force for scraper implementation, my ability to conduct a thorough quantitative assesment of the scraper's accuracy was limited.
 
 \section{Performance Evaluation}
 
-Given the iterative approach taken to develop the scrapers, I evaluate their performance with respect to incremental builds, as well as final performance. As the definition of a 'profile' differs between sites, different performance metrics are used for each site. 
+% Scraper performance was evaluated throughout the project at the completion of build cycles. This helps to validate the development strategy employed, with incremental builds impoving performance. As the definition of a 'profile' differs between sites, different performance metrics are used for each site. Performance testing of scrapers was conducted using the logging instrumentation mechanism. To reduce bias caused by varying speeds over the University network across the day, the software was run over extended periods of time.
 
-Performance testing of scrapers was carried out throughout the project, through performance logging mechanisms designed to measure the time taken to fetch an entire profile. To reduce bias caused by varying network speeds at University, the software was run over extended periods of time.
+I evaluate the performance of IHPScrape with respect to the average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be fetched with a separate HTTP request. Figure 7.2 displays the average time taken to fetch and parse each tweet, with respect to the 4 builds completed. Performance data was calculated using the inbuilt logging mechanism, and dividing the time taken to fetch an entire profile by the number of tweets fetched. To reduce bias caused by varying speeds on the University network across the day, IHPScrape was run over extended periods of time for each test. Performance gains in each build were resultant from the following features:
 
-\subsection{Twitter Performance Evaluation}
-
-Twitter profiles consist of differing numbers of tweets, retweets and so on. Thus I evaluate the performance of my Twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping useful information from Twitter was that each tweet had to be fetched with a seperate HTTP request. 
-
-Should mention that some profiles viewed (not necessarily scraped) can contain hundreds of thousands of tweets.
-
-%What should I compare this to? 
-
-\section{Web Scraper Evaluation}
-
-Performance - what performance goals did I have. How did they improve over time. Justify use of the incremental prototype-based strategy, through performance gains throughout the project.
-
-Resistance to Detection - what performance goals did I have.
-
-Problems
-
-Accuracy - issues and why. Aims that I had - don't think I achieved them. In general entire profiles were not scraped. 
-
-\section{Scraper}
-
-\subsection{Functional Requirements}
-
-Aggregate data for storage into Graft - given that I am currently only storing data from Twitter this requirement has not yet been met.
-
-Develop a metric of reliability of information gathered, based on privacy settings. Currently on Twitter there are two degrees of privacy - Open and Closed! Closed profiles means I cannot get any meaningful information, whereas on Open profiles I can get anything I want! Most profiles are open so this is not a concern. Profiles of celebrities etc are always set to open.
-
-Developing a set of Policies - still in the production line, still experimenting with different ways of using the data.
-
-\subsection{Non-Functional Requirements}
-
-\subsubsection{Maintainability and Resistance of Scrapers to User Interface Change}
-This is difficult to evaluate. Experiment: Change the layout of twitter pages, see how the scrapers react to these changes. How many changes do I need to make? There will undoubtedlu be single points of faiure, which I should mention. Important point: used as little xpath expressions as possible, as these inherently result in less flexbile scrapers. Any structural changes, or even a tag changing result in an xpath expression having to change. Still resistant to stylesheet changes, though.
-Single points of failure.
-
-I identify areas which will result in the scraper breaking. 
-
-\subsubsection{Twitter Scraper Performance}
-I evaluate the performance of my twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be fetched with a seperate http request. Figure <x> shows the average time taken to fetch and parse each tweet, with respect to my incremental build stages. The success of continuous and incremental improvement in performance helps justify my decision to use an incremental approach. Tweets were gathered over several days, and continuously throughout different times of the day on the Victoria network to ensure that a representative range of times were gathered for each stage. 
-
-
-I evaluate the performance of my twitter scraper with respect to average time taken to fetch and parse a tweet. The major limiting factor for scraping twitter was that each tweet had to be scraped with a seperate http request. Figure <x> shows the average time taken to fetch and parse each tweet, with respect to incremental builds. This also helps justify my incremental development strategy - we can see that succesive builds gradually increase performance. Tweets were gathered over several days, and at different times of the day on the Victoria network to ensure that a representative range of network performance speeds were used to gather data.\\
-
-\noindent The significant feature of improved performance was through parellization of tweet-fetches. 
+\begin{itemize}
+ \item Build 1 - Base performance. Outliers in performance (e.g. 8 seconds to parse a tweet) were due to unreliable and slow parsing libraries. The parsing problems were also reflected in failure rates for the first build.
+ \item Build 2 - A slightly larger tweet window was used, when fetching further tweets. This did not result in large performance gains due to each tweet in the window still needing to be fetched individually, after the tweet window is loaded. 
+ \item Build 3 - All tweets fetched before parsing. 
+ \item Build 4 - Fetching of tweets performed in parallel. This resulted in the scraper increasing in performance by a factor of six (Average time reduced from 1.4s to 0.2s).
+\end{itemize}
 
 \begin{figure}[h!]
 \centering
-\includegraphics{Images/average_time_to_fetch_parse_tweets_per_build.pdf}
-\caption{The Average Time to Fetch and Parse a Tweet, Ordered by Builds}
+\includegraphics[width=400px]{Images/scrape_performance_against_builds.pdf}
+\caption{Scraper performance improvements across incremental builds. }
 \end{figure}
 
-Absolute limitations - Every tweet has to be fetched in an individual http request. This produces upper limits as to how fast the scraper can go, and means that the majority of performance speed is reliant on the speed of the network. (data - show how on some days tweets are fetched slightly faster than on other days. Times of day.)
+%Performance testing for the Twitter scraper is conducted using quantitative performance data, collected at the end of each build. The primary metric for scraper efficiency is average time to scrape and parse a tweet. 
 
-\subsubsection{Ability to Resist Blocking Detection}
+%Figure 7.2 demonstrates the performance gains that 
 
-The primary measure of my scraper libraries avoiding blocking detection is with regards to their failure or incomplete-scrape rates. Although in early, less stable builds I had parsing errors, my later work only failed when detected by twitter and blocked. As such detection rates in later builds can reliably be calculated by analysing failing or incomplete twitter profiles. 
+% Performance benefits were experienced at the end of each development iteration, which was positive. 
+
+% Talk about causes for large increases in performance, as well as the reason for a large outlier on the first builds
+
+% Talk about how parallel implementation resulted in a order of magnitudinal increase in performance. 
+
+\subsection{Resulting Policy Performance}
+
+Based upon the final build results, we are able to evaluate the performance and practicality of policy fragments defined in chapter 6. 
+
+For each policy, discuss how long this would take on average for an average profile.
+
+Average number of tweets, and average time to fetch and parse a tweet based upon build number. 
+
+\section{Resistance to Interface Change}
+
+Evaluation of scraper resistance to interface change was conducted qualitatively. I summarise the critical points which, if changed, would result in the scraper failing. Discussion of the likelihood of these components changing is conducted in order to asess their reliability. 
+
+IHPScrape is reliant on two components remaining This is what a validate my scraper accuracy against. 
+constant; URLs to fetch resources and xPath expressions to fetch specific values. URLs are less likely to change, as this implies some level of large backend change or migration. xPath expressions are much more brittle, especialy when hard-coded based upon document structure (for example document/v1/li/test/ is more brittle than //**[li]). To evaluate the resistance of my Twitter scraper against user interface or backend change, I constructed a summary of all hard-coded URL and xPath expressions used to fetch data.
+
+\begin{figure}[h!]
+\begin{center}
+  \begin{tabular}{| l | p{6cm} | l |}
+  \hline
+   \textbf{Nature of Dependancy} & \textbf{Feature} & \textbf{Class Name} \\ \hline
+   URL & Google Twitter Search - searching for Twitter profiles by name & Twitter \\ \hline
+   URL & Twitter base profile & TwitterScraper \\ \hline
+   URL & Fetch extra tweets & Tweet \\ \hline
+   URL & Fetch tweet detail & Tweet \\ \hline
+   URL & Fetch retweeter list & Tweet \\ \hline
+   xPath & Google Twitter Search - retrieve names & Twitter \\ \hline
+   xPath & Fetch core profile statistics. Name, number of tweets, number of followers, number following & TwitterItem \\ \hline
+   xPath & Fetch detailed tweet information. Retweets, favourites, favourites, content, date\_time. & Tweet \\ \hline
+   xPath & Fetch retweeter names & Tweet \\ \hline
+  \end{tabular}  
+\end{center}
+\caption{Scraper Interface Dependancies}
+\end{figure}
+%Best represented in a table?
+
+URL dependancies are relatively constant and unlikely to change. xPath expressions however are much more prone to change, and thus fail. Taken in the context of the entire scraper, the number of absolute interface dependancies is low. Over the course of the project, the Twitter interface did not change, nor the URL structure. As such it is difficult to test whether any change would geniunely result in the scraper breaking, and how difficult this change would be to fix. %Finish this.
+
+%Fix this up. Tomorrow.
+
+%Discuss how likely each of these components is to change
+
+%State that any change would result in the scraper breaking
+
+%Google twitter search - URL reliance
+
+%To evaluate scraper and framework resistance 
+
+%Metric evaluation based upon fields that may change, and the effects that would occur if these changes happened. 
+
+%Heuristic discussion of the fields which would result in scrapers breaking. 
+
+\section{Resistance to Detection}
+
+Evaluation of scraping detection was performed throughout the data collection phase, by logging events where a scraper was blocked. The primary event indicating Twitter had blocked or limited my scraper was primarily the 503 error code. This has been experienced by other Twitter scrapers, confirming that this code indicates rate limiting and not a coding failure. The secondary event recorded to indicate blocking was 500 error codes - this was in fact a mistake, as 500 errors were in response to coding errors in IHPScrape. 
+
+As with performance, scraping detection and failure rates were recorded at the end of each build phase, displaying the incremental gains resulting from my development approach. The first build had extremely high parse errors, caused by choice of parsing library - this was one of the issues with feasibility noted at the milestone report. Having improved parsing... %Blah blah
 
 \begin{figure}[h!]
 \centering
-\includegraphics{Images/percentage_failed_incomplete_twitter_profiles.pdf}
-\caption{The Percentage of Incomplete or Failed Profile Scrapes, Ordered by Builds}
+\includegraphics[width=400px]{Images/failure_rate_and_reason.pdf}
+\caption{Incomplete profiles fetched, with reasons for Failure}
 \end{figure}
 
-\subsubsection{Privacy Protection}
+Events indicating a site has blocked or limited my scrapers included 503 error codes
 
-Privacy protection - this is still pretty poor, saved as structured xml, data not anonymised (makes my life easier at present)... Are there things I could be doing here potentially to increase privacy for individuals that I am scraping? Document locking, or store as RDB? Since I plan on storing this info in Graft, this could be anonymised at this point. Individual profiles and what-not. 
+In order to detect when a site blocked or limited my scra
 
-\section{Possible Improvements}
+Real data to show that blocking detection resistance improved with subsequent builds!
 
-Greater parallelizaion - over the ECS Grid for example, rather than froma  single machine. Parallelize components other than tweet fething - entire profile fetching could be split up. Over engineered? 
+\section{Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}
 
-\section{Scraping Conclusions}
+I qualitatively evaluate the social media portability of the scraping framework, with respect to the case study of developing a LinkedIn scraper. 
 
-Conclusions about what pages are suitable to scrape
+Discuss with associated heuristics the development of the LinkedIn scraper, and how the framework assisted with the development of this scraper. %#BULLSHIT BULLSHIT BULLSHIT!
+
+%Performance testing of scrapers was carried out throughout the project, through performance logging mechanisms designed to measure the time taken to fetch an entire profile. To reduce bias caused by varying network speeds at University, the software was run over extended periods of time.
+%Given the iterative approach taken to develop the scrapers, I evaluate their performance with respect to incremental builds, as well as final performance. As the definition of a 'profile' differs between sites, different performance metrics are used for each site. 

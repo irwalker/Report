@@ -16,6 +16,8 @@
 
 \usepackage{graphicx} %I have some pictures :3
 
+\usepackage{rotating}
+
 %
 %  We don't want figures to float so we define
 %
@@ -95,12 +97,7 @@ Online reputation has become increasingly important as more social and business 
 \include{scraper_implementation}
 \include{policy_implementation}
 \include{scraper_evaluation}
-%\include{policy_evaluation}
-%\include{evaluation}
 \include{conclusion}
-
-%\include{22_08_Meeting}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -2,24 +2,19 @@
 \contentsline {section}{\numberline {1.1}The Problem}{1}
 \contentsline {section}{\numberline {1.2}Proposed Solution}{1}
 \contentsline {section}{\numberline {1.3}Contributions}{2}
+\contentsline {section}{\numberline {1.4}Key Issues}{2}
 \contentsline {chapter}{\numberline {2}Background}{3}
-\contentsline {section}{\numberline {2.1}Web-Scraping Background}{3}
+\contentsline {section}{\numberline {2.1}Web-Scraping}{3}
 \contentsline {subsection}{\numberline {2.1.1}Legal and Privacy Issues}{3}
-\contentsline {section}{\numberline {2.2}Inferring Information from Social Media}{4}
-\contentsline {section}{\numberline {2.3}Personality from Social Media}{4}
-\contentsline {section}{\numberline {2.4}Quantifying Reputation on Social Media}{5}
-\contentsline {section}{\numberline {2.5}Reputation Metrics Elsewhere}{5}
-\contentsline {section}{\numberline {2.6}Community Detection}{6}
-\contentsline {section}{\numberline {2.7}Sentiment and Temporal Analysis}{6}
-\contentsline {section}{\numberline {2.8}Related Systems}{6}
-\contentsline {subsection}{\numberline {2.8.1}Service Oriented Computing}{6}
-\contentsline {subsection}{\numberline {2.8.2}Generalised Recommendation Architecture}{6}
-\contentsline {subsection}{\numberline {2.8.3}Open Social}{7}
-\contentsline {subsection}{\numberline {2.8.4}Social Media Data Access Control}{7}
-\contentsline {subsection}{\numberline {2.8.5}Klout}{7}
-\contentsline {subsection}{\numberline {2.8.6}Karma}{8}
-\contentsline {subsection}{\numberline {2.8.7}Discussion}{8}
-\contentsline {section}{\numberline {2.9}Discussion}{8}
+\contentsline {section}{\numberline {2.2}Personality from Social Media}{4}
+\contentsline {section}{\numberline {2.3}Quantifying Reputation on Social Media}{4}
+\contentsline {section}{\numberline {2.4}Reputation Metrics Elsewhere}{5}
+\contentsline {section}{\numberline {2.5}Related Systems}{6}
+\contentsline {subsection}{\numberline {2.5.1}Service Oriented Computing}{6}
+\contentsline {subsection}{\numberline {2.5.2}Generalised Recommendation Architecture}{6}
+\contentsline {subsection}{\numberline {2.5.3}Open Social}{7}
+\contentsline {subsection}{\numberline {2.5.4}Social Media Data Access Control}{7}
+\contentsline {subsection}{\numberline {2.5.5}Klout}{7}
 \contentsline {chapter}{\numberline {3}Methodology}{9}
 \contentsline {section}{\numberline {3.1}Project Management Approach}{9}
 \contentsline {section}{\numberline {3.2}Design Approach}{9}
@@ -28,63 +23,60 @@
 \contentsline {subsection}{\numberline {4.0.1}Functional Requirements}{11}
 \contentsline {subsection}{\numberline {4.0.2}Non-Functional Requirements}{11}
 \contentsline {subsection}{\numberline {4.0.3}Discarded Requirements}{11}
-\contentsline {section}{\numberline {4.1}Policy Construction}{11}
-\contentsline {section}{\numberline {4.2}A reliability Metric Based on the Amount of Data Considered}{11}
-\contentsline {section}{\numberline {4.3}Social Media Platform Portability}{12}
-\contentsline {section}{\numberline {4.4}Maintainability and Resistance to User-Interface Changes}{12}
-\contentsline {section}{\numberline {4.5}Scraper Performance}{12}
-\contentsline {section}{\numberline {4.6}Ability to Resist Blocking Detection and Recover from Failure}{12}
-\contentsline {section}{\numberline {4.7}Privacy Protection}{12}
-\contentsline {section}{\numberline {4.8}Discarded Requirements}{12}
-\contentsline {chapter}{\numberline {5}Scraper Design and Implementation}{13}
-\contentsline {section}{\numberline {5.1}Architecture}{13}
-\contentsline {subsection}{\numberline {5.1.1}Database Storage Architecture}{13}
-\contentsline {subsection}{\numberline {5.1.2}XML Storage Architecture}{14}
-\contentsline {section}{\numberline {5.2}Technology}{15}
-\contentsline {subsection}{\numberline {5.2.1}Extend scrAPI}{15}
-\contentsline {subsection}{\numberline {5.2.2}Extend A Browser-Automation Model}{15}
-\contentsline {subsection}{\numberline {5.2.3}Use the API}{16}
-\contentsline {section}{\numberline {5.3}Systems Design and Structure}{16}
-\contentsline {section}{\numberline {5.4}Facebook Crawler}{16}
-\contentsline {section}{\numberline {5.5}Twitter Crawler}{17}
-\contentsline {subsection}{\numberline {5.5.1}Parallel Tweet Fetching}{18}
-\contentsline {subsection}{\numberline {5.5.2}Detection Avoidance and Recovery}{18}
-\contentsline {subsection}{\numberline {5.5.3}Dealing with Authentication}{19}
-\contentsline {subsection}{\numberline {5.5.4}Dealing with Poorly Formed Markup}{19}
-\contentsline {section}{\numberline {5.6}LinkedIn Scraper}{19}
-\contentsline {section}{\numberline {5.7}Code instrumentation}{19}
-\contentsline {chapter}{\numberline {6}Data Discussion and Policy Construction}{21}
-\contentsline {section}{\numberline {6.1}Social Media Selection}{21}
-\contentsline {section}{\numberline {6.2}Collection Method}{22}
-\contentsline {section}{\numberline {6.3}Retweet Analysis}{22}
-\contentsline {subsection}{\numberline {6.3.1}An Impact Factor}{22}
-\contentsline {section}{\numberline {6.4}Temporal Clustering}{23}
-\contentsline {section}{\numberline {6.5}Community Detection}{23}
-\contentsline {subsection}{\numberline {6.5.1}MapEquation}{23}
-\contentsline {section}{\numberline {6.6}Policy Construction}{23}
-\contentsline {section}{\numberline {6.7}Temporal}{23}
-\contentsline {subsection}{\numberline {6.7.1}MapEquation}{23}
-\contentsline {section}{\numberline {6.8}Policy Evaluation}{23}
-\contentsline {section}{\numberline {6.9}Policies}{24}
-\contentsline {subsection}{\numberline {6.9.1}Correlation of Impact Factor vs Bucketed Impacts}{24}
-\contentsline {subsection}{\numberline {6.9.2}Results of Monthly Bucketing}{24}
-\contentsline {section}{\numberline {6.10}Scraper}{25}
-\contentsline {subsection}{\numberline {6.10.1}Functional Requirements}{25}
-\contentsline {chapter}{\numberline {7}Evaluation}{29}
-\contentsline {section}{\numberline {7.1}Scraper Accuracy}{29}
-\contentsline {section}{\numberline {7.2}Performance Evaluation}{29}
-\contentsline {subsection}{\numberline {7.2.1}Twitter Performance Evaluation}{29}
-\contentsline {section}{\numberline {7.3}Web Scraper Evaluation}{29}
-\contentsline {section}{\numberline {7.4}Scraper}{30}
-\contentsline {subsection}{\numberline {7.4.1}Functional Requirements}{30}
-\contentsline {subsection}{\numberline {7.4.2}Non-Functional Requirements}{30}
-\contentsline {subsubsection}{Maintainability and Resistance of Scrapers to User Interface Change}{30}
-\contentsline {subsubsection}{Twitter Scraper Performance}{30}
-\contentsline {subsubsection}{Ability to Resist Blocking Detection}{31}
-\contentsline {subsubsection}{Privacy Protection}{31}
-\contentsline {section}{\numberline {7.5}Possible Improvements}{31}
-\contentsline {section}{\numberline {7.6}Scraping Conclusions}{31}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{35}
-\contentsline {section}{\numberline {8.1}Future Work}{35}
-\contentsline {chapter}{\numberline {A}Appendices}{41}
-\contentsline {section}{\numberline {A.1}Twitter Data Schema}{41}
+\contentsline {section}{\numberline {4.1}Functional Requirements}{11}
+\contentsline {subsection}{\numberline {4.1.1}Social Media Data Aggregation}{11}
+\contentsline {subsection}{\numberline {4.1.2}Development of Reputation Policies}{12}
+\contentsline {subsection}{\numberline {4.1.3}Develop a Metric of Reliability Based Upon Quantity of Data}{12}
+\contentsline {section}{\numberline {4.2}Non-Functional Requirements}{12}
+\contentsline {subsection}{\numberline {4.2.1}Resistance to User-Interface Change}{12}
+\contentsline {subsection}{\numberline {4.2.2}Reasonable Performance}{12}
+\contentsline {subsection}{\numberline {4.2.3}Accuracy of Data Collected}{12}
+\contentsline {subsection}{\numberline {4.2.4}Resistance to Blocking Detection}{12}
+\contentsline {subsection}{\numberline {4.2.5}Extensibility and Social Media Portability of Scraping Framework}{12}
+\contentsline {section}{\numberline {4.3}Discarded Requirements}{13}
+\contentsline {chapter}{\numberline {5}Scraper Design and Implementation - IHPScrape}{15}
+\contentsline {section}{\numberline {5.1}Architecture}{15}
+\contentsline {subsection}{\numberline {5.1.1}Database Storage Architecture}{15}
+\contentsline {subsection}{\numberline {5.1.2}XML Storage Architecture}{16}
+\contentsline {section}{\numberline {5.2}Technology}{17}
+\contentsline {subsection}{\numberline {5.2.1}Extend scrAPI}{17}
+\contentsline {subsection}{\numberline {5.2.2}Extend A Browser-Automation Model}{18}
+\contentsline {subsection}{\numberline {5.2.3}Use the API}{18}
+\contentsline {section}{\numberline {5.3}Systems Design and Structure}{18}
+\contentsline {section}{\numberline {5.4}Facebook Crawler}{18}
+\contentsline {section}{\numberline {5.5}Twitter Crawler}{19}
+\contentsline {subsection}{\numberline {5.5.1}Parallel Tweet Fetching}{20}
+\contentsline {subsection}{\numberline {5.5.2}Detection Avoidance and Recovery}{20}
+\contentsline {subsection}{\numberline {5.5.3}Dealing with Authentication}{21}
+\contentsline {subsection}{\numberline {5.5.4}Dealing with Poorly Formed Markup}{21}
+\contentsline {section}{\numberline {5.6}LinkedIn Scraper}{21}
+\contentsline {section}{\numberline {5.7}Code instrumentation}{21}
+\contentsline {chapter}{\numberline {6}Data Discussion and Policy Construction}{23}
+\contentsline {section}{\numberline {6.1}Social Media Selection}{23}
+\contentsline {section}{\numberline {6.2}Collection Method}{24}
+\contentsline {section}{\numberline {6.3}Retweet Analysis}{24}
+\contentsline {subsection}{\numberline {6.3.1}An Impact Factor}{25}
+\contentsline {subsection}{\numberline {6.3.2}Temporal Clustering}{26}
+\contentsline {section}{\numberline {6.4}Community Detection}{27}
+\contentsline {subsection}{\numberline {6.4.1}MapEquation Tool}{27}
+\contentsline {subsection}{\numberline {6.4.2}Followers and Following}{28}
+\contentsline {subsection}{\numberline {6.4.3}Retweet Communities}{28}
+\contentsline {subsection}{\numberline {6.4.4}Community Discussion}{29}
+\contentsline {subsection}{\numberline {6.4.5}Sentiment Analysis}{29}
+\contentsline {section}{\numberline {6.5}Policy Examples and Discussion}{29}
+\contentsline {subsection}{\numberline {6.5.1}Case Study - Discussion Forum}{29}
+\contentsline {subsection}{\numberline {6.5.2}Policy Discussion}{30}
+\contentsline {chapter}{\numberline {7}Evaluation}{31}
+\contentsline {section}{\numberline {7.1}Scraper Accuracy}{31}
+\contentsline {section}{\numberline {7.2}Performance Evaluation}{33}
+\contentsline {subsection}{\numberline {7.2.1}Resulting Policy Performance}{33}
+\contentsline {section}{\numberline {7.3}Resistance to Interface Change}{34}
+\contentsline {section}{\numberline {7.4}Resistance to Detection}{35}
+\contentsline {section}{\numberline {7.5}Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}{35}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{37}
+\contentsline {section}{\numberline {8.1}Future Work}{38}
+\contentsline {subsection}{\numberline {8.1.1}Community Detection Extension}{38}
+\contentsline {subsection}{\numberline {8.1.2}Social Media Expansion}{38}
+\contentsline {subsection}{\numberline {8.1.3}Further Evaluation}{38}
+\contentsline {chapter}{\numberline {A}Appendices}{43}
+\contentsline {section}{\numberline {A.1}Twitter Data Schema}{43}

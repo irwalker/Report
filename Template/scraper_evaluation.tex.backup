@@ -2,6 +2,16 @@
 
 Following the completed scraper implementation and data analysis, an evaluation of the project was carried out on both the scrapers and resulting policies. The evaluation was designed primarily to verify whether or not the scraper and policies created were succesful in fulfilling the requirements of the project.
 
+%This section outlines my evaluation strategies, tests performed, and presents and discusses the results of evaluation conducted on the developed web scrapers. It then presents an evaluation of the policies and hypotheses formulated during analysis of data gathered. 
+
+%\section{Tests Performed}
+
+%Tests were conducted against each of the individual functional and non-functional requirements defined in chapter four. 
+
+%What did I do
+
+%Why did I do it.
+
 \section{Scraper Accuracy}
 
 Quantitatively evaluating the accuracy of figures gathered by IHPScrape is difficult without a dataset to compare results against. Given that one of the primary reasons for implementing a scraper was due to this lack of a valid dataset, such an evaluation was not possible within the time constraints of the project. Requirement R6 stated that data gathered needs to be accurate in order to generate meaningful results, and that any potential innacuracies in data collected should be well understood. As such I performed a qualitative evaluation of aspects of scraper accuracy. 
@@ -112,7 +122,7 @@ constant; URLs to fetch resources and xPath expressions to fetch specific values
 \end{figure}
 %Best represented in a table?
 
-URL dependancies are relatively constant and unlikely to change. xPath expressions however are much more prone to change, and thus fail. Taken in the context of the entire scraper, the number of absolute interface dependancies is low. Over the course of the project, the Twitter interface did not change, nor the URL structure. As such it is difficult to test whether any change would geniunely result in the scraper breaking, and how difficult this change would be to fix. 
+URL dependancies are relatively constant and unlikely to change. xPath expressions however are much more prone to change, and thus fail. Taken in the context of the entire scraper, the number of absolute interface dependancies is low. Over the course of the project, the Twitter interface did not change, nor the URL structure. 
 
 %Fix this up. Tomorrow.
 
@@ -149,6 +159,12 @@ Real data to show that blocking detection resistance improved with subsequent bu
 \section{Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}
 
 I qualitatively evaluate the social media portability of the scraping framework, with respect to the case study of developing a LinkedIn scraper. 
+
+\section{Scraping Conclusions and Recommendations}
+
+The results and experiences gathered by developing these tools allow for some sensible recommendations to be made when deciding if to screen-scrape a website. 
+
+
 
 Discuss with associated heuristics the development of the LinkedIn scraper, and how the framework assisted with the development of this scraper. %#BULLSHIT BULLSHIT BULLSHIT!
 

@@ -29,9 +29,7 @@ Further, small-world network analysis could be compared to communities detected 
 
 \subsection{Social Media Expansion}
 
-In order to further validate the scraping framework constructed, more social media sites should be explored. This would enable richer still policies and data analysis to be performed. Not all sites would be suitable for scraping, and indeed in some cases the API may be of more use.
-
-Highly dynamic sites such as Facebook proved infeasible for the scraper design; but networks like Slashdot could be more suitable. 
+In order to further validate the scraping framework constructed, more social media sites should be explored. Highly dynamic sites such as Facebook proved infeasible for the scraper design; but networks like Slashdot could be more suitable. 
 
 %Compare detected embedded social networks against small-world networks and check for correlation. 
 
@@ -39,4 +37,5 @@ Highly dynamic sites such as Facebook proved infeasible for the scraper design; 
 
 \subsection{Further Evaluation}
 
-Further verification of IHPScrape with respect to resistance to change is required. No Twitter user interface changes were experienced during the course of the project, fortunately simplifying my task. For the scraper to be applied as part of a legitimate reputation system, verification of its resistance to interface change must be conducted. Comparison against API changes would be more valuable still.
+Further verification of IHPScrape with respect to resistance to change is required. No Twitter user interface changes were experienced during the course of the project, fortunately simplifying my task. For the scraper to be applied as part of a legitimate reputation system, verification of its resistance to interface change must be conducted. Comparison against API changes would be more valuable still. 
+

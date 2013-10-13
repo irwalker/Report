@@ -3,19 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Proposed Architecture for Database Storage Solution}}{13}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}}{14}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{16}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Pipes-and-Filters Class Structure}}{17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Proposed Architecture for Database Storage Solution}}{16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}}{16}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{18}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Pipes-and-Filters Class Structure}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Correlation of Retweet Count to Favourite Count}}{22}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Monthly Impact against Overall Impact}}{25}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Yearly Impact against Overall Impact}}{26}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces The Daily Impact of Chris Hadfield - Famous Astronaut}}{27}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{27}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces The Monthly Impact of Barack Obama - President of USA (As if you didn't know that)}}{28}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Correlation of Retweet and Favourite Count}}{24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of Impact Score Among Users}}{25}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces An Example of Monthly-Impact Score Bucketing - Barack Obama}}{26}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{27}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Followers of Steven Adams}}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{32}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces The Percentage of Incomplete or Failed Profile Scrapes, Ordered by Builds}}{33}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Accuracy Metric Results}}{32}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Scraper performance improvements across incremental builds. }}{34}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Scraper Interface Dependancies}}{35}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Incomplete profiles fetched, with reasons for Failure}}{36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

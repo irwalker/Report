@@ -1,5 +1,42 @@
-\chapter{Conclusion and Future Work}\label{C:us}
+\chapter{Conclusions and Future Work}\label{C:us}
+
+This section draws conclusions from the results of the projects and details future work that could be conducted.\\
+
+\noindent The evaluation of IHPScrape demonstrates that a web-scraping solution is possible for inferring basic reputation metrics, against the primary case-study of Twitter. However performance to fetch and parse an entire profile is too slow to be viable in a commercial system. The lower than expected performance is due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate HTTP requests being sent to fetch an entire profile. 
+
+However the performance of policies operating on a subset of the full detail from a user's profile is significantly closer to the target aims. Whilst still not achieving response times on the order of a few seconds, when using a subset of tweets greater performance could be achieved with little information loss. Policy effectiveness resulting from data analysis strategies were varying. While the proposed impact factor and temporal clustering methods are possible with the current tools and data, community detection was more limited. The existing visualisation tool cannot handle millions of nodes and even more edges, in this case twitter profiles and their links. However the MapEquation team have acknowledged the deficiencies of their tool, and are working to port this to a non-Flash based system without such limitations. 
+
+Through qualitative results, retrieved data was shown to be accurate for information such as retweets, favourites and so on. Requirement R6 stated that data should not be missing or incorrect, and this was achieved in the majority of cases. When data was missing, this was due to scrapers being detected and an incomplete list of tweets being returned, for example. Design decisions had to also be made to allow for reasonable performance, such as not fetching the entire list of names who retweeted a post. 
+
+The framework was shown to be extensible through the implementation of a second social scraper for LinkedIn. The pattern of creating separate classes for pages and defining functions to handle data retrieval related to these pages, and abstracting the actual fetching details was easily extendible to LinkedIn, with the resulting scraper implemented in significantly less time than the original Twitter artefact and framework. I acknowledge however that the comparison is not entirely even, as LinkedIn did not have complications such as Infinite Scrolling. 
+
+IHPScrape was successful in avoiding detection by sites, and was never blocked entirely running on the University environment. Incomplete profiles dropped below one in ten by the final build. Recovery from detection was not implemented however, as there was no way to distinguish for example the actual end of an individual's twitter page, and the server taking action against a scraper.
+
+IHPScrape did not fully meet the requirement of remaining flexible despite interface change. The solution had to rely on certain xPath expressions and backend URLs remaining constant, and quantitatively evaluating the exact resistance of the scrapers to change proved infeasible within the timeframe of the project. 
+
+Experiences with scraping from various social sites lead to conclusions about the suitability of sites for scraping. The more dynamic a site, the more complex and unreliable data fetching will become. 
+
+Conclusions on which sites are suitable for scraping.
+
 
 \section{Future Work}
 
-Compare detected embedded social networks against small-world networks and check for correlation. 
+\subsection{Community Detection Extension}
+
+In its current state, the community detection component of my project only detects community patterns and is not able to associate meaning with these various communities. In order to support a richer set of reputation-defining policies, some form of sentiment or classification of profiles within these communities would be required. In order for more meaningful visualisation of such results, the MapGenerator tool will need to have advanced to a capable level for handling larger amounts of data. As such this was left to future work.
+
+Further, small-world network analysis could be compared to communities detected within Twitter, and my dataset. 
+
+\subsection{Social Media Expansion}
+
+In order to further validate the scraping framework constructed, more social media sites should be explored. This would enable richer still policies and data analysis to be performed. Not all sites would be suitable for scraping, and indeed in some cases the API may be of more use.
+
+Highly dynamic sites such as Facebook proved infeasible for the scraper design; but networks like Slashdot could be more suitable. 
+
+%Compare detected embedded social networks against small-world networks and check for correlation. 
+
+%Improve community detection elements, perhaps with sentiment or other detection methods in order to classify profiles.
+
+\subsection{Further Evaluation}
+
+Further verification of IHPScrape with respect to resistance to change is required. No Twitter user interface changes were experienced during the course of the project, fortunately simplifying my task. For the scraper to be applied as part of a legitimate reputation system, verification of its resistance to interface change must be conducted. Comparison against API changes would be more valuable still.
