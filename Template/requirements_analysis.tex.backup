@@ -1,95 +1,121 @@
 \chapter{Requirements Analysis}\label{C:us}
 
-To satisfy the goals of the project, the following issues need to be addressed. The requirements may be logically split into two divisions; web-scraping requirements and access policy requirements.
+To satisfy the goals of the project, the following issues need to be addressed. These requirements were created based upon the key issues outlined in chapter 1, and established through research conducted as part of the background. 
 
-\subsection{Functional Requirements}
+%\subsection{Functional Requirements}
 
-\begin{description}
- \item [R1.] Aggregation of social media data into consistent and readable format
- \item [R2.] Development of Reputation Policies
- \item [R3.] Metric of reliability based on amounts of data collected.
-\end{description}
+%\begin{description}
+% \item [R1.] Aggregation of social media data into consistent and readable format, from multiple SNS (Social Networking Sites).
+%% \item [R2.] Development of Reputation Policies
+ %\item [R3.] Metric of reliability based on amounts of data collected.
+%\end{description}
 
-\subsection{Non-Functional Requirements}
+%\subsection{Non-Functional Requirements}
 
-\begin{description}
- \item [R4.] Resistance to User-Interface Change
- \item [R5.] Reasonable performance - expectation that policies and scrapers could be used as part of wider application.
- \item [R6.] Accuracy of data collected - content should not be missing or incorrect
- \item [R7.] Resistance to Blocking Detection - my scrapers should not be blocked.
- \item [R8.] Extensibility and Social Media Portability for future use of framework
-\end{description}
+%\begin{description}
+% \item [R4.] Resistance to User-Interface Change
+% \item [R5.] Reasonable performance - expectation that policies and scrapers could be used as part of wider application.
+% \item [R6.] Accuracy of data collected - content should not be missing or incorrect
+% \item [R7.] Resistance to Blocking Detection - my scrapers should not be blocked.
+% \item [R8.] Extensibility and Social Media Portability for future use of framework
+%\end{description}
 
-\subsection{Discarded Requirements}
+%\subsection{Discarded Requirements}
 
-\begin{description}
- \item [R8] Aggregation of Social Media data, for storage in GRAft.
-\end{description}
+%\begin{description}
+% \item [R9] Aggregation of Social Media data, for storage in GRAft.
+%\end{description}
 
 
 \section{Functional Requirements}
 
-\subsection{Social Media Data Aggregation}
+These are the functional requirements that were proposed to be met by my system:
 
-Data from various social media sites needs to be aggregated in a sensible manner. This requirement exists in order to 
+\subsection{F1: Aggregation of Social Media Data}
 
-Reputation data from various social media sites should be aggregated in a sensible manner. 
+Data from multiple social media sites needs to be aggregated in a sensible manner. This requirement exists in order to construct reputation-inferring policies from multiple websites. Entire profiles should be scraped in order to provide a richer set of social data.
 
-\subsection{Development of Reputation Policies}
+\subsection{F2: Development of Reputation Policies}
 
-The first and most significant requirement is to generate a set of policies to assist with generating a snapshot of the reputation information of an individual. Policies must consider data from reasonable time periods, to generate a shadow of the future.
+The most significant requirement is to generate a set of policies to assist with generating a snapshot of an individual's reputation. Policies must consider data from reasonable time periods to ensure accurate predictions are made. These must consider future interactions in order to maintain user awareness and reflection upon their own reputation. Policies will need to return results within seconds to be useable in any real system. 
 
-\subsection{Develop a Metric of Reliability Based Upon Quantity of Data}
+%Scrape entire profile!
 
-A metric of reliability based upon the quantity of data collected about an entity needs to be created. This is due to the time taken to fetch an entire profile being potentially highly time-consuming, and potentially ruling out the possibility of scraping an entire user profile for use in a policy. Thus smaller quantities of information could be considered instead, with a reliability metric value attached. 
+\subsection{ F3: Extensibility and Social Media Portability of Scraping Framework}
+
+A framework should be created into which my web-scrapers conform. This framework should be suitable for application onto multiple social media platforms, and extension onto these platforms should require minimal effort. 
+
+%Web-scrapers developed should conform to some overarching framework that may be applied to further social media sites in the future. This requirement specifies that the framework should be applicable to multiple social media sites with little modification. 
+
+\subsection{ F4: Resistance to Blocking Detection}
+
+In order for scrapers to continue collecting data over time periods of days or weeks, they must not be blocked by SNS servers. Scrapers that are detected by sites and are noted to be taxing on a server's resources will likely be blocked \cite{}. As such, my framework must firstly attempt to remain undetected as a scraping entity, and secondly recover from detection and resume scraping data if detection occurs. 
+
+\subsection{ F5: Develop a Metric of Reliability Based Upon Quantity of Data}
+
+A metric of reliability based upon the quantity of data collected about an entity needs to be created. This is due to the time taken to fetch an entire profile being potentially highly time-consuming, possibly ruling out the feasibility of scraping an entire user profile for use in a policy. Thus smaller quantities of information could be considered instead, with a reliability metric value attached. As a result of the greater time spent analysing Twitter data than expected, this requirement had to be removed from the scope of the project.
+
+ %This requirement was discarded from the scope of the project due to time constraints, as defining policies and original analysis of data was more time-consuming than expected. 
+
+\subsection{ F6: Storage of Reputation Information in GRAft}
+
+Reputation policy construction will effectively enable my framework to act as a provider node for storage of data within the GRAft system. This requirement specifies that the final product should interface with the GRAft reputation system to ensure confidential and secure long-term storage of data. However this task necessitates the construction of a business model for such a system to be viable. A community effort would be required to maintain the code, and as such this was removed from the scope of my project. 
+
+%Discarded requirement - why?
 
 \section{Non-Functional Requirements}
 
+The following 
+
 \subsection{Resistance to User-Interface Change}
 
+Scrapers developed must be resistant to user interface layout and design, and small changes should not result in a scraper no longer functioning as expected. 
 
+%\subsection{Scraper Performance Suitability for Real-Time Systems}
 
-\subsection{Reasonable Performance}
+%Reprase dis shit in general
+
+\subsection{Scraper Performance Fast Enough for Use as part of Real-Time System}
+
+This requirement refers to the speed and accuracy of my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation, in a reasonable amount of time. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. Data gathered must be accurate and represent what is actually displayed on a profile. 
 
 \subsection{Accuracy of Data Collected}
 
-\subsection{Resistance to Blocking Detection}
+In order to generate meaningful data analysis, discussion and policies, data collected by my scrapers must be accurate. Any innacuracies in collected data should be clearly highlighted and explained. As web-scraping through HTTP requests can sometimes produce unexpected return values some innacuracies will be expected, but these should be known-bugs. 
 
-\subsection{Extensibility and Social Media Portability of Scraping Framework}
 
-\section{A reliability Metric Based on the Amount of Data Considered}%Consider removing this requirement
 
-From the beginning of the project I acknowledged that it may not be feasible to scrape the profile or data of an entire user 
+%\section{Social Media Platform Portability}%Ability to port original scraper onto new sites.
 
-\section{Social Media Platform Portability}%Ability to port original scraper onto new sites.
-
-The ability to build scrapers for new sites on top of existing architecture I develop.
+%The ability to build scrapers for new sites on top of existing architecture I develop.
 
 %How to port my scrapers between social media platforms.
 
-\section{Maintainability and Resistance to User-Interface Changes}
+%\section{Maintainability and Resistance to User-Interface Changes}
 
-Along with portability of my scrapers, they need to be somewhat resistant to change at the user interface level. An oft-repeated downfall of web-scraping is that changes to interfaces may occur at any time, without warning. This is in contrast to changing APIs, which generally give some significant warning and phasing out period of functions. Often changes to the layout of pages will break crawlers, resulting in a need for frequent re-builgs on sites that go regular user interface change. As such my system must be designed in a manner that is as un-reliant on layout-specific information as possible. In cases where change will unavoidably break my scrapers, they should be designed in a fashion which allows for easy identification and solving of issues.
+%Along with portability of my scrapers, they need to be somewhat resistant to change at the user interface level. An oft-repeated downfall of web-scraping is that changes to interfaces may occur at any time, without warning. This is in contrast to changing APIs, which generally give some significant warning and phasing out period of functions. Often changes to the layout of pages will break crawlers, resulting in a need for frequent re-builds on sites that go regular user interface change. As such my system must be designed in a manner that is as un-reliant on layout-specific information as possible. In cases where change will unavoidably break my scrapers, they should be designed in a fashion which allows for easy identification and solving of issues.
 
-\section{Scraper Performance}
+%\section{Scraper Performance}
 
-This requirement refers to the speed and accuracy of my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation, in a reasonable amount of time. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds or minutes. Data gathered must be accurate and represent what is actually displayed on a site. 
 
-\section{Ability to Resist Blocking Detection and Recover from Failure}
 
-A challenge presented in web-scraping is the ability to resist detection as a robot by webservers. Webservers do not look well upon robots, and will attempt to block aggresive crawlers. As such my scrapers need to implement strategies to avoid detection, and when blocked or detected, take appropriate action. A balance has to be achieved between performance of scrapers and detection by webservers - normally a scraper attempting to retrieve masses of results will be detected and blocked extremely rapidly. 
+%\section{Ability to Resist Blocking Detection and Recover from Failure}
 
-\section{Privacy Protection}
+%A challenge presented in web-scraping is the ability to resist detection as a robot by webservers. Webservers do not look well upon robots, and will attempt to block aggresive crawlers. As such my scrapers need to implement strategies to avoid detection, and when blocked or detected, take appropriate action. A balance has to be achieved between performance of scrapers and detection by webservers - normally a scraper attempting to retrieve masses of results will be detected and blocked extremely rapidly. 
 
-This requirement refers to the fact that data I gather should be anonymised to a reasonable extent, such that actual personal details should not be traceable. 
+%\section{Privacy Protection}
 
-Maintain reasonable privacy of data I collect. Discuss how the information I am gathering is publicly avaialble on social media anyway, and users should have reasonable expectation that their data will be accessed. 
+%This requirement refers to the fact that data I gather should be anonymised to a reasonable extent, such that actual personal details should not be traceable. 
 
-\section{Discarded Requirements}
+%Maintain reasonable privacy of data I collect. Discuss how the information I am gathering is publicly avaialble on social media anyway, and users should have reasonable expectation that their data will be accessed. 
 
-Aggregate data for storage into GRAft - because of community effort required. Business model would need to be constructed, out of scope for the project.
+%\section{Discarded Requirements}
 
-Visualisation component of the project-  discarded as was able to source external tools to visualise and represent data. 
+%The requirement to aggregate reputation data for storage into GRAft was removed from the scope of the project. The justification for removal is due to the necessity for community effort to maintain such a system in the future, in order to maintain the scrapers and body of data. A business model and case would be required to justify this effort. 
+
+%Aggregate data for storage into GRAft - because of community effort required. Business model would need to be constructed, out of scope for the project.
+
+%Visualisation component of the project-  discarded as was able to source external tools to visualise and represent data. 
 
 
 %\subsection{Policy Requirements}

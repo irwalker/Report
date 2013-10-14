@@ -1,12 +1,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Actions and Corresponding Reputation Change on Stack Overflow \cite {movshovitzanalysis}}}{6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces GRAft reputation based access policy example}}{8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Klout impact score, calculated via the Facebook API}}{9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Proposed Architecture for Database Storage Solution}}{16}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}}{16}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{18}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Pipes-and-Filters Class Structure}}{19}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution.}}{17}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Correlation of Retweet and Favourite Count}}{24}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of Impact Score Among Users}}{25}

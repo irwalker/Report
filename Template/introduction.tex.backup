@@ -1,8 +1,6 @@
 \chapter{Introduction}\label{C:us}
 
-The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. In this report I identify a background to 
-
-In this chapter I identify the general problem that the project has been undertaken to help solve. In addition I describe the proposed solutions and core contributions of the project.
+The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. In this chapter I identify the general problem that the project has been undertaken to help solve. In addition I describe the proposed solutions and core contributions of the project.
 
 %In this report I identify the problem being solved, summarise the background research and methodology used to solve the problem. Requirements for web scraping tools are then defined, 
 

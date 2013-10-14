@@ -21,30 +21,39 @@ Two potential architectures were considered when designing the web-scraper compo
  \item A text/XML storage approach
 \end{itemize}
 
-Having received feedback on the database approach, the more straightforward and suitable text/XML design was ultimately used.
+The text/XML design was used in the final solution. The time investment of setting up a database, as well as performance gains in using file storage over database storage were the primary contributors to this decision. The database approach was deemed to be over-engineered. 
+
+%The database approach was ultimately rejected, and the more straightforward text/XML design used. The database design added unnecessary complexity and time-investment to develop the framework. The performance cost of saving to a database rather than a file also 
+
+%The reason for this rejection was due to a database design adding unnecessary complexity to the application, as well as time required to develop the framework. The performance cost of saving to a database was also unnecessary, so this over-engineered solution was rejected. 
+
+%Having received feedback on the database approach, the more straightforward and suitable text/XML design was ultimately used.
 
 \subsection{Database Storage Architecture}
 
 \begin{figure}[h!]
+\begin{center} 
  \centering
- \includegraphics[width=0.7\textwidth]{Images/Database_Architecture.pdf}
+  \includegraphics[width=0.9\textwidth]{Images/Database_Architecture.pdf}
  \caption{Proposed Architecture for Database Storage Solution}
-\end{figure}
+\end{center}
+ \end{figure}
 
 A possible approach to meeting the requirements of the project was to store fetched data in a relational database. In this design, the scrapers would gather data over an extended period of time, writing retrieved information into a database. Analysis components would then fetch data from the database as necessary, saving results in separate tables within the same schema.
 
-This approach provides long-term extensibility benefits, as per requirement R.4. All of the advantages that come with database storage would have been present in this solution - fetching of specific profiles for example would have been much more practical through a database query. 
-
-However this design was deemed to be over-engineered for the purposes of the project. Given that data retrieved is in HTML, JSON or XML format there is a large impedance mismatch between retrieved data and relational database tuple format. This is compounded when retrieving data from the store for analysis - many third party analysis tools require input data in a variety of text forms.  The analysis components were also largely contingent on the fetching of a whole profile, rather than specific elements, lessening the need for querying against specific elements in my data storage structure. 
+This approach provides long-term extensibility benefits, as per requirement F3. All of the advantages that come with database storage would have been present in this solution -
+specifically selection of individual profile elements and updates to these elements would have been more straightforward. However this design was deemed to be over-engineered for the purposes of the project. Given that data retrieved is in HTML, JSON or XML format there is a large impedance mismatch between retrieved data and relational database tuple format. This is compounded when retrieving data from the store for analysis - many third party analysis tools require input data in a variety of text forms.  The analysis components were also largely contingent on the fetching of a whole profile, rather than specific elements, lessening the need for querying against specific elements in my data storage structure. 
 
 \subsection{XML Storage Architecture}
 
-The alternative and ultimately selected architecture involves the scraper and analysis components interacting with a shared XML storage structure. Again in this structure, scrapers run over time whilst saving data to a common XML-based file system. Analysis components could then annotate and enrich the original dataset. 
+The alternative and ultimately selected architecture involves the scraper and analysis components interacting with a shared XML storage structure. Again in this structure, scrapers run over time whilst saving data to a common XML-based file system. Analysis components could then annotate and enrich the original dataset. Note that analysis components in this architecture essentially act as source nodes for the GRAft system, through generating some reputation metrics associated with a profile. 
 
 \begin{figure}[h!]
+\begin{center}
 \centering
-\includegraphics[width=0.7\textwidth]{Images/XML_Storage_Architecture.pdf}
-\caption{Architecture for XML Storage Solution. Implemented Components are Highlighted Yellow}
+\includegraphics[width=0.9\textwidth]{Images/xml_storage_arch_v2.pdf}
+\caption{Architecture for XML Storage Solution.}
+ \end{center}
 \end{figure}
 %File storage is also much faster and less server taxing than using a database
 This design largely simplifies the scripting and scraper construction. Little setup was required during prototyping to construct schemas against which to save data. An informal XML approach also allowed for straightforward manipulation of data structures, and additions to what was being stored. Performance of storing to files is also known to be much faster and less server-taxing than the use of a database.
@@ -53,35 +62,57 @@ The primary disadvantage to the XML approach is difficulties associated with sel
 
 \section{Technology}
 
+
 The web-scraper components were written entirely in Ruby. The development of screen scrapers is largely independent upon language choice; however Ruby was selected due to its large number of libraries suitable for scraping, and straightforward scripting nature. Ruby also has a significant Open Source following in comparison to many more conventional languages like Java. This was considered necessary early in the project, when looking at a model for future maintenance of the scrapers, especially for the discarded requirement of aggregating data for GRAft. 
 
-Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. 
+Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. This is just a 'nice-to-have' feature however, and would not have added any real value to the project design.
 
-The frameworks upon which my scrapers were built included:
+\section{Framework Design}
+
+Various framework designs were considered when designing the IHPScrape framework. I will discuss four options that were considered:
 
 \begin{itemize}
- \item Nokogiri: a widely used HTML and XML parsing framework, allowing for straightforward interpretation of raw HTML documents.
- \item Mechanize: an extension of the Nokogiri framework, that simulates browser actions on web-pages.
- \item Rest-Client: Ruby's most popular HTTP client.
+ \item Extend the scrAPI framework
+ \item Implement a browser-automation application
+ \item Use site APIs
+ \item Develop my own framework from scratch, using various Ruby Gems
 \end{itemize}
 
-Alternative frameworks were considered, and their advantages and reasons for not being selected in the final model will now be covered.
-
 \subsection{Extend scrAPI}
-
 scrAPI is a Rubyforge project, allowing for fast implementation of web scrapers. The core benefit of scrAPI is allowing data to be fetched from HTML pages using CSS selectors. In addition it hides processes such as the actual fetching of pages. It is a much higher-level framework than Nokogiri and Mechanize. 
 
-Extending scrAPI was ultimately discarded, due to its heavy reliance on CSS files remaining constant. Any change to style sheet files would likely have broken the scrapers. Arguably these freestyles are less likely to change than layout manipulations (for example consider xpath on HTML as an alternative); however on sites such as Twitter and Facebook large design teams frequently make changes to these files. Given that a key requirement of the project was to make scrapers resistant to user-interface change, this resulted in scrAPI being deemed unfit for purpose. 
+Extending scrAPI was ultimately discarded, due to its heavy reliance on CSS files remaining constant. Any change to style sheet files would likely have broken the scrapers. Arguably these style sheets are less likely to change than layout manipulations (for example consider xpath on HTML as an alternative); however on sites such as Twitter and Facebook large design teams frequently make changes to these files. Given that requirement NF1 was to make scrapers resistant to user-interface change, this resulted in scrAPI being deemed unfit for purpose. 
 
 \subsection{Extend A Browser-Automation Model}
 
 Browser automation options were considered as an alternative architecture. Frameworks such as Watir allow users to simulate user interaction with web pages, by driving an actual browser instance.
 
-A browser automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading CSS selectors and such. Despite this, performance would have been significantly poorer using this option. As browser automation scripts are generally highly dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change (R5). 
+A browser automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading CSS selectors and such. This would have been effective at fulfilling requirement F4. Despite this, performance would have been significantly poorer using this option, violating requirement NF2. As browser automation scripts are generally highly dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change NF1. 
 
 \subsection{Use the API}
 
 Although the project title from the outset was 'Reputation Scraper', we investigated the use of site's APIs before settling on the scraping option. A basic application interacting with the Twitter API was constructed early in the project. Twitter's API version 1.0 was actually highly suitable for the needs of the project. However the changes in REST API v 1.1 rendered this infeasible. The earlier API allowed fetching of up to 800 statuses from any public profile, along with more public data (see appendix for more information). Version 1.1 however implemented more requirements for authentication, and limited functions such as downloading tweets to the individual's account only. Facebook's developer API is even more restricted. On Facebook, permissions must be obtained from the appropriate users before fetching data from their profile. LinkedIn's policy is similar. %due to the changes!!!
+
+\subsection{Implement a new Framework}
+
+The fourth approach considered was to develop a new framework, built upon a number of Ruby libraries. This approach allowed for more flexibility when constructing scrapers, and consider new approaches to the user interface dependancies of web-scrapers. 
+
+The most obvious disadvantage to this approach is the argument that by implementing my own scraping framework I was 'reinventing the wheel'. However by building the framework around existing libraries to perform the networking technicalities of web-scraping, I greatly lessen the developer burden. Also this approach allowed me to build a scraper framework tailored for social media, which was not present in frameworks I researched. 
+
+%Advantages - flexibility, adapdability as I get to design and tune my own scraping framework. Can be built upon whatever libraries I choose. 
+
+%Talk about why I chose to implement my scrapers using this method, and the advantages that this framework provides when considering the architecture.
+
+The libraries upon which my scrapers were built included:
+
+\begin{itemize}
+ \item Nokogiri: a widely used HTML and XML parsing framework, allowing for straightforward interpretation of raw HTML documents. Nokogiri has many extensions, and can be effectively used to parse HTTP body responses into sensible HTML structure, which can then be parsed using xPath expressions to retrieve data of interest.
+ \item Mechanize: an extension of the Nokogiri framework, that simulates browser actions on web-pages. 
+ \item Rest-Client: Ruby's most popular HTTP client. Rest-Client allows the use of all HTTP verbs, and can be adjusted for user-agent, proxy, and custom field input.
+\end{itemize}
+
+
+
 
 \begin{figure}[h!]
 \centering
@@ -89,15 +120,15 @@ Although the project title from the outset was 'Reputation Scraper', we investig
 \caption{Scraper Development Feedback Loop}
 \end{figure}
 
-\section{Systems Design and Structure}
+\section{Framework Implementation}
 
 Developing the project solution consisted generally of a cyclic, iterative prototyping approach as detailed in figure 5.3. This generally consisted of four phases; Implementing and adjusting scrapers, fetching data, analysing the data, and prototyping policy concepts as a result of this analysis. The first scraper developed was for Facebook. 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth]{Images/Code_Reuse.pdf}
-\caption{Pipes-and-Filters Class Structure}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.6\textwidth]{Images/Code_Reuse.pdf}
+%\caption{Pipes-and-Filters Class Structure}
+%\end{figure}
 
 \section{Facebook Crawler}
 
@@ -128,7 +159,7 @@ Technical difficulties exist with fetching such profiles and meta data, which we
 
 \subsection{Parallel Tweet Fetching}
 
-Although tweet content can be fetched from the base profile page, useful data such as re-tweet and favourite count is initially hidden. To view tweet detail, a further request must be sent, to mimic the user interaction of clicking on the tweet. Fortunately this process can be parallelism for each tweet within a tweet window. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelization of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 6. Parallel fetching was not considered earlier in the project as I expected the resulting simultaneous requests to end in more frequent detection by sites. 
+Although tweet content can be fetched from the base profile page, useful data such as re-tweet and favourite count is initially hidden. To view tweet detail, a further request must be sent, to mimic the user interaction of clicking on the tweet. Fortunately this process can be parallelized for each tweet within a tweet window. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelization of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 6. Parallel fetching was not considered earlier in the project as I expected the resulting simultaneous requests to end in more frequent detection by sites. 
 
 \subsection{Detection Avoidance and Recovery}
 
@@ -141,17 +172,15 @@ The second strategy employed is to send requests that spoof a browser user-agent
 A third strategy that was considered but not implemented was the downloading of CSS and other markup, in order to behave as browser-like as possible. This was discarded because of questions of its feasibility, as well as uncertainty as to the level of potential benefits from constructing such a solution. 
 
 %Rate limiting detection
-I rarely encountered rate limiting at University, and was never blocked outright on the University machines. Early in the project, when prototyping a Facebook scraper I was briefly banned from Facebook at home. 503 errors reveal detection on Twitter. 500 errors were encountered throughout the project also, but these were due to coding errors. 
+I rarely encountered rate limiting at University, and was never blocked outright on the University machines. Early in the project, when prototyping a Facebook scraper I was briefly banned from Facebook at home. 503 errors (indicating resource unavailability) reveal detection on Twitter. 500 (indicating server error) errors were encountered throughout the project also, but these were due to coding errors. 
 
 \subsection{Dealing with Authentication}
 
-The original scraper did not require authentication, since the majority of Twitter profiles are viewable to individuals who do not have a Twitter account, or are not signed in. However to fetch the names and profiles of users re-tweeting posted content, an authentication feature had to be added. Fortunately the authentication strategy employed by the Facebook prototype was able to be re-used for this component. 
+The original scraper did not require authentication, since the majority of Twitter profiles are viewable to individuals who do not have a Twitter account, or are not signed in. However to fetch the names and profiles of users re-tweeting posted content, an authentication feature had to be added. Fortunately the authentication strategy employed by the Facebook prototype was able to be re-used for this component. The same strategy as used for Facebook of logging into a dummy account at the beginning of a scraping run was used.  
 
-To fetch re-tweet-name data, more features had to be added. All other data fetched was publicly viewable, whereas this data is only available to users who have authenticated with Twitter.
+\subsection{Parsing Poorly Formed Markup}
 
-\subsection{Dealing with Poorly Formed Markup}
-
-A concern earlier in the project was the scraping of content containing poorly formed HTML or JSON markup. Thankfully the sensitivity of HTML parsers to poor markup is largely library-dependant. This was not well-documented in the gems (a gem is the library equivalent in Ruby) I found, so experimentation with various options had to suffice. 
+A concern earlier in the project was the scraping of content containing poorly formed HTML or JSON markup. Thankfully the sensitivity of HTML parsers to poor markup is largely library-dependant. This was not well-documented in the gems (a gem is the library equivalent in Ruby) I found, so experimentation with various options had to suffice. Nokogiri was sufficient for HTML parsing, and the default ruby JSON parsing library was most effective at parsing incomplete JSON data.
 
 %Mention that the code is available from github. http://www.github.com/irwalker/dat-roll
 
@@ -173,7 +202,9 @@ A concern earlier in the project was the scraping of content containing poorly f
 
 \section{LinkedIn Scraper}
 
-The LinkedIn Scraper was developed towards the close of the project, and as a result data analysis of what was collected using this tool was not carried out. However developing this tool, which is able to scrape multiple LinkedIn profiles in parallel, was able to prove the extensibility of the IHPScrape framework ina the context of a new social media site. 
+The LinkedIn Scraper was developed towards the close of the project, and as a result data analysis of what was collected using this tool was not carried out. However developing this tool, which is able to scrape multiple LinkedIn profiles in parallel, was able to prove the extensibility of the IHPScrape framework in the context of a new social media site. The LinkedIn scraper was developed in one week's construction time. This was much less time than was spent developing and debgguing the original Twitter scraper and framework, and is evidence of the portability of the framework. However consideration must be given to the simplicity of the LinkedIn website as compared to Twitter. Also, the first iteration of my Twitter scraper only took approximately two and a half weeks (this build did not include the infinite scroll scraping feature). 
+
+%The time to develop the LinkedIn scraper, including implementing parallel profile fetching totalled 3 days work. This was weeks less time spent
 
 %Discuss how the implementation of this component was a success in that it proved the extensibility of the framework developed. 
 
@@ -183,7 +214,8 @@ The LinkedIn Scraper was developed towards the close of the project, and as a re
 
 The code was instrumented using a Ruby logger system written for the application. Given complexities and difficulties debugging errors on web-scraping applications, logging had to be performed to a very fine level of granularity. Any action changing system state such as fetching a page triggers the logging mechanism. The logger would then take note of the timestamp and write to the appropriate file the nature of the action. For example, if the scraper sent an HTTP request to retrieve a given URL, it would record the timestamp and URL requested. 
 
-The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, I used multiple debugging files with different purposes in an attempt to catch these errors. The debug.log captured all interaction information at a basic level. Error.log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error.log assisted greatly in identifying these edge cases. Finally the failure.log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a high level 
+The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, I used multiple debugging files with different purposes in an attempt to catch these errors. The debug.log captured all interaction information at a basic level. Error.log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error.log assisted greatly in identifying these edge cases. Finally the failure.log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a high 
+level 
 of detail, sometimes even writing the entire HTML document before the failure to disk. This again assisted with debugging, when reviewing how a particular run had gone. 
 
 To limit the performance overhead of writing to these logging files, a buffered approach was taken in order to achieve the least impact. %lol

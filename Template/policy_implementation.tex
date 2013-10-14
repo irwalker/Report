@@ -1,47 +1,38 @@
 \chapter{Data Discussion and Policy Construction}\label{C:us}
 
-In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. %Fix this
+In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. Only Twitter data is discussed due to the richness of the dataset mined. As such multiple analysis approaches were taken. 
 
-\section{Social Media Selection}
+Data was collected during scraper implementation, as per the feedback loop in figure 5.3. As such, profiles scraped earlier contain less detail than data collected later. FFor example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totalling 1,745,161 tweets. 
 
-Until now, the reasoning behind my social media selection has been largely neglected. In order to gather useful data, I looked at the various social media sites in the context of gathering reputation data, and seeing what could be fetched. %Add to this. Not very good currently... 
+%Twitter data is discussed soley, as the dataset retrieved was rich enough to provide for several analysis angles.
+%Fix this
 
-In order to scrape useful information, I needed to look at the various social media sites in the context of gathering reputation data, and seeing what could be selected. 
+%\section{Collection Method}
 
-\begin{itemize}
-
-\item Facebook: Publicly available information on Facebook includes data such as a user's Likes, Posts to Walls, and Friend networks. 
-\item LinkedIn: The primary business social network on which professionals can display information pertaining to their career and skills. Reputation data is fairly concrete - endorsements, skills, groups, and recommendations. 
-\item Twitter: The social networking site allowing posts of up to 140 characters. Information available is number of followers, number of profiles the person is following, number of posts, and post data itself. Post data includes retweet and favourite count, the content itself, as well as the people who retweeted the tweet itself. 
-\item Google+: Google+ is similar to Facebook in style, and holds a large user base, but with much lower daily use than Facebook.
-\item Slashdot: Slashdot is a social media and news network targeted at a 'geek' audience. Slashdot is one of few social media sites that uses a positive/negative rating system on posts. This inbuilt reputation system could be interesting to look at further, when porting data between social media platforms. It is also unique from the standpoint of identifying 'trolls' - for which the website is widely known. 
-\end{itemize}
-
-This basic feature analysis was the foundation for data exploration on the social media sites scraped. 
-
-\section{Collection Method}
-
-Data discussed was collected entirely from the Twitter Scraper I implemented. This was collected during implementation, as per the feedback loop in figure 5.3. As such, profiles scraped earlier contain less detail than data collected later. For example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totalling 1,745,161 tweets. 
+%Data discussed was collected entirely from the Twitter Scraper I implemented. This was collected during implementation, as per the feedback loop in figure 5.3. As such, profiles scraped earlier contain less detail than data collected later. 
 
 %Show the median,q1 q3 min max of the number of tweets per profile perhaps?
 
 \section{Retweet Analysis}
 
-I now present the results of retweet analysis on Twitter, and put forward example policies that may be constructed from such analysis. The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
+I now present the results of retweet analysis on Twitter, and put forward example policies that may be constructed from such analysis. Retweets were considered as a basis for more policies as more semantic information can be retrieved from retweets than favourites. When retweeting content 
+
+The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
 
 \begin{description}
  \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
 \end{description}
 
-A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. 
+A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. We find that retweets and favourites have a strong positive correlation, with a Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
 
 \begin{figure}[h!]
-\centering
-\includegraphics[width=400px]{Images/retweets_vs_favourites.pdf}
+\begin{center}
+ \centering
+\includegraphics[width=500px]{Images/retweets_vs_favourites.pdf}
 \caption{Correlation of Retweet and Favourite Count}
+\end{center}
 \end{figure}
 
-We find that retweets and favourites are strongly correlated, with Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
 
 %Number of tweets compared against
 %Correlation
@@ -51,9 +42,11 @@ We find that retweets and favourites are strongly correlated, with Pearson's coe
 We created an 'impact factor' measurement based upon a Twitter user's retweet count, and tweet activity. This formula is upon the Hirsch-index \cite{} measurement for an academic's contribution to literature. It attempts to measure both the impact (number of retweets) and productivity (number of tweets) of a Twitter user. 
 
 \begin{figure}[h!]
+\begin{center}
 \centering
 \includegraphics[width=500px]{Images/impact_distribution_histogram.pdf}
 \caption{Distribution of Impact Score Among Users}
+\end{center}
 \end{figure}
 
 The above chart displays the distribution of impact factor values, over the set of twitter profiles collected. We can see that the impact score follows a roughly exponentially decreasing curve, with the vast majority of users getting a low impact score. This is reflective of past research, studying the behaviours of Twitter users \cite{}. That is user patterns can be broken up into users who follow others and do not post much content themselves, and users who are more active and are followed by others. The extremely high impact scores are likely celebrities - the profile with the highest impact score of 216 was the Jonas Brother's (a pop band) profile, which happened to feature in the dataset. 
@@ -62,14 +55,16 @@ The impact factor calculation differs from other social media impact algorithms 
 
 Extensions to the impact factor algorithm could include use of data such as number of followers, as well as frequency or consistency of posting. For example, users which have a large following but whom only have very low retweet counts may imply that content posted is somewhat stale. Also, an individual who had a strong impact in the past but who has not posted recently should logically receive a lower current impact; the current algorithm will not differentiate from an active user and an inactive one. This temporal structuring and analysis for a reputation policy is worth exploring further. 
 
-\subsection{Temporal Clustering}
+\subsection{Temporal Clustering and Impact Factor}
 
 In order to differentiate from one-hit-wonders and 'constant emitters' in my reputation policies, some view of activity over time was discussed. We refer to this as temporal clustering. One approach is to cluster impact score calculation into separate months. This reveals how consistently influential a person is. Various bucket sizes were experimented with - days were much to varying to interpret a clear underlying trend, whilst years were too coarse to solve the issue of inactive users receiving a high impact score. Thus months are used as a bucketing measure.
 
 \begin{figure}[h!]
+\begin{center}
 \centering
 \includegraphics[width=500px]{Images/barack_obama_monthly_impact.pdf}
 \caption{An Example of Monthly-Impact Score Bucketing - Barack Obama}
+\end{center}
 \end{figure}
 
 This technique can be used to link real-world events to a person's influence. As an example I take Barack Obama. In October and November of 2012, the US presidential elections were at their peak. The corresponding impact score of 47 for Obama in October is reflective of this. 
@@ -77,9 +72,11 @@ This technique can be used to link real-world events to a person's influence. As
 To demonstrate this on another individual, take Chris Hadfield (Twitter name Cmdr\_Hadfield), made famous through his cover of David Bowie's 'Space Oddity'. The below chart shows how Hadfield's popularity spiked around the time of this video's explosion in popularity - June this year. 
 
 \begin{figure}[h!]
+\begin{center}
 \centering
 \includegraphics[width=500px]{Images/chris_hadfield_monthly_impact.pdf}
 \caption{The Monthly Impact of Chris Hadfield - Famous Astronaut}
+\end{center}
 \end{figure}
 
 \section{Community Detection}
@@ -103,9 +100,11 @@ The InfoMap software package distributed by mapequation is compatible with a Fla
 The first community detection approach considers those clustered around profiles, through links in following (profiles an individual is following) and followers (users who are following the current profile). I found that disconnected communities are clustered around popular figures. The below example, taken from Steven Adams profile, is a visualisation of the community formed through a subset of his followers. 
 
 \begin{figure}[h!]
+\begin{center}
 \centering
 \includegraphics[width=300px]{Images/steven_adams_followers.pdf}
 \caption{Followers of Steven Adams}
+\end{center}
 \end{figure}
 
 Unfortunately due to the limitations of the tool used, larger sets of data were not able to be loaded in this context. I feel that with more results, larger and connected communities would be evident through the follower and following connection on Twitter.

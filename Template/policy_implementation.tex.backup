@@ -1,23 +1,10 @@
 \chapter{Data Discussion and Policy Construction}\label{C:us}
 
-In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. %Fix this
+In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. Only Twitter data is discussed due to the richness of the dataset mined. As such multiple analysis approaches were taken. 
 
-\section{Social Media Selection}
+Twitter data is discussed soley, as the dataset retrieved was rich enough to provide for several analysis angles, which occupied 
 
-Until now, the reasoning behind my social media selection has been largely neglected. In order to gather useful data, I looked at the various social media sites in the context of gathering reputation data, and seeing what could be fetched. %Add to this. Not very good currently... 
-
-In order to scrape useful information, I needed to look at the various social media sites in the context of gathering reputation data, and seeing what could be selected. 
-
-\begin{itemize}
-
-\item Facebook: Publicly available information on Facebook includes data such as a user's Likes, Posts to Walls, and Friend networks. 
-\item LinkedIn: The primary business social network on which professionals can display information pertaining to their career and skills. Reputation data is fairly concrete - endorsements, skills, groups, and recommendations. 
-\item Twitter: The social networking site allowing posts of up to 140 characters. Information available is number of followers, number of profiles the person is following, number of posts, and post data itself. Post data includes retweet and favourite count, the content itself, as well as the people who retweeted the tweet itself. 
-\item Google+: Google+ is similar to Facebook in style, and holds a large user base, but with much lower daily use than Facebook.
-\item Slashdot: Slashdot is a social media and news network targeted at a 'geek' audience. Slashdot is one of few social media sites that uses a positive/negative rating system on posts. This inbuilt reputation system could be interesting to look at further, when porting data between social media platforms. It is also unique from the standpoint of identifying 'trolls' - for which the website is widely known. 
-\end{itemize}
-
-This basic feature analysis was the foundation for data exploration on the social media sites scraped. 
+%Fix this
 
 \section{Collection Method}
 
@@ -27,7 +14,7 @@ Data discussed was collected entirely from the Twitter Scraper I implemented. Th
 
 \section{Retweet Analysis}
 
-I now present the results of retweet analysis on Twitter, and put forward example policies that may be constructed from such analysis. The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed seperately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
+I now present the results of retweet analysis on Twitter, and put forward example policies that may be constructed from such analysis. The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
 
 \begin{description}
  \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
@@ -38,7 +25,7 @@ A simple approach to demonstrate that the use of retweets and favourites is equi
 \begin{figure}[h!]
 \centering
 \includegraphics[width=400px]{Images/retweets_vs_favourites.pdf}
-\caption{Correlation of Retweet and Favorite Count}
+\caption{Correlation of Retweet and Favourite Count}
 \end{figure}
 
 We find that retweets and favourites are strongly correlated, with Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
@@ -58,13 +45,13 @@ We created an 'impact factor' measurement based upon a Twitter user's retweet co
 
 The above chart displays the distribution of impact factor values, over the set of twitter profiles collected. We can see that the impact score follows a roughly exponentially decreasing curve, with the vast majority of users getting a low impact score. This is reflective of past research, studying the behaviours of Twitter users \cite{}. That is user patterns can be broken up into users who follow others and do not post much content themselves, and users who are more active and are followed by others. The extremely high impact scores are likely celebrities - the profile with the highest impact score of 216 was the Jonas Brother's (a pop band) profile, which happened to feature in the dataset. 
 
-The impact factor calculation differs from other social media impact algorithms in that there is no upper limit on score. Other methods are arbitrarily capped at values like 10 or 100, which restricts the comparative value of such tools for the high echalons of impacting-users. The algorithm also automatically takes into account the length of time a user has been active on Twitter when performing the calculation. 
+The impact factor calculation differs from other social media impact algorithms in that there is no upper limit on score. Other methods are arbitrarily capped at values like 10 or 100, which restricts the comparative value of such tools for the high echelons of impacting-users. The algorithm also automatically takes into account the length of time a user has been active on Twitter when performing the calculation. 
 
 Extensions to the impact factor algorithm could include use of data such as number of followers, as well as frequency or consistency of posting. For example, users which have a large following but whom only have very low retweet counts may imply that content posted is somewhat stale. Also, an individual who had a strong impact in the past but who has not posted recently should logically receive a lower current impact; the current algorithm will not differentiate from an active user and an inactive one. This temporal structuring and analysis for a reputation policy is worth exploring further. 
 
 \subsection{Temporal Clustering}
 
-In order to differentiate from one-hit-wonders and 'constant emitters' in my reputation policies, some view of activity over time was discussed. We refer to this as temporal clustering. One approach is to cluster impact score calculation into seperate months. This reveals how consistently influential a person is. Various bucket sizes were experimented with - days were much to varying to interpret a clear underlying trend, whilst years were too coarse to solve the issue of inactive users receiving a high impact score. Thus months are used as a bucketing measure.
+In order to differentiate from one-hit-wonders and 'constant emitters' in my reputation policies, some view of activity over time was discussed. We refer to this as temporal clustering. One approach is to cluster impact score calculation into separate months. This reveals how consistently influential a person is. Various bucket sizes were experimented with - days were much to varying to interpret a clear underlying trend, whilst years were too coarse to solve the issue of inactive users receiving a high impact score. Thus months are used as a bucketing measure.
 
 \begin{figure}[h!]
 \centering
@@ -72,7 +59,7 @@ In order to differentiate from one-hit-wonders and 'constant emitters' in my rep
 \caption{An Example of Monthly-Impact Score Bucketing - Barack Obama}
 \end{figure}
 
-This technique can be used to link real-world events to a person's influence. As an example I take Barack Obama. In October and November of 2012, the US presedential elections were at their peak. The corresponding impact score of 47 for Obama in October is reflective of this. 
+This technique can be used to link real-world events to a person's influence. As an example I take Barack Obama. In October and November of 2012, the US presidential elections were at their peak. The corresponding impact score of 47 for Obama in October is reflective of this. 
 
 To demonstrate this on another individual, take Chris Hadfield (Twitter name Cmdr\_Hadfield), made famous through his cover of David Bowie's 'Space Oddity'. The below chart shows how Hadfield's popularity spiked around the time of this video's explosion in popularity - June this year. 
 
@@ -112,7 +99,7 @@ Unfortunately due to the limitations of the tool used, larger sets of data were 
 
 \subsection{Retweet Communities}
 
-The second approach taken considers the communities formed on Twitter through retweeting of content. I consider two profiles to be connected if one retweets the other. This is ordered by the retweeter being connected to the orignal poster, respectively. Heavier weight is added to the connection if a user retweets posts from the user multiple times. As this retweet connection is richer, visualisations of communities formed are of more interesting structure. 
+The second approach taken considers the communities formed on Twitter through retweeting of content. I consider two profiles to be connected if one retweets the other. This is ordered by the retweeter being connected to the original poster, respectively. Heavier weight is added to the connection if a user retweets posts from the user multiple times. As this retweet connection is richer, visualisations of communities formed are of more interesting structure. 
 
 Unfortunately the MapGenerator tool did not allow for any entire set of profile and retweet data that was collected to be visualised in one piece. This is due to the extremely large quantity of nodes that are generated through the fetching of a single profile, and the entire collection of retweet links associated with this profile. This largely reduced the use of current retweet communities, and the visualisation options for generating meaningful understanding of data collected. 
 
@@ -136,11 +123,11 @@ One avenue for enriching the community data would be to use sentiment-detection 
 
 \section{Policy Examples and Discussion}
 
-Reputation-inferring policies can be constructed from the data collected. I discuss 2 examplar policies in particular which could be built as part of any system requiring reputation data related to a user's profile. I apply these policies in relation to a theoretical case study, that requires access policies based upon user reputaiton from an external source. 
+Reputation-inferring policies can be constructed from the data collected. I discuss 2 exemplar policies in particular which could be built as part of any system requiring reputation data related to a user's profile. I apply these policies in relation to a theoretical case study, that requires access policies based upon user reputation from an external source. 
 
 \subsection{Case Study - Discussion Forum}
 
-In order to introduce examplar reputation policies, I use the concept of an interactive forum. This concept is inspired by Hendrikx at al's application of GRAft to a social forum, using a pure reputation access control system \cite{graft_paper}. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
+In order to introduce exemplar reputation policies, I use the concept of an interactive forum. This concept is inspired by Hendrikx at al's application of GRAft to a social forum, using a pure reputation access control system \cite{graft_paper}. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
 
 As in the GRAft paper, I provide policy fragments, using Ruler\cite{} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. Here I propose that the calculated impact factor of the user is greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
 
@@ -160,7 +147,7 @@ Whereas for read-only rights, the person may only need to be part of the relevan
  $rb['community_value'] -> in_array(['computer_science','engineering'])
 \end{verbatim}
 
-On the same forum, administrator rights may be granted to consistently active users. This could be due to some proof of productivity on social forums, required for effective administration of the site. In this examplar policy, administration rights are granted to the user if their average monthly computed impact is greater than or equal to 3, and they are part of the computer science or engineering community. 
+On the same forum, administrator rights may be granted to consistently active users. This could be due to some proof of productivity on social forums, required for effective administration of the site. In this exemplar policy, administration rights are granted to the user if their average monthly computed impact is greater than or equal to 3, and they are part of the computer science or engineering community. 
 
 \begin{center}
  \textbf{Policy 2: Impact Factor, Community Participation and Temporal Consistency}
