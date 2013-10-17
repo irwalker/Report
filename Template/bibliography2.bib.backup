@@ -1,0 +1,325 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% http://www.cs.ucsd.edu/~mmccrack/bibdesk.html
+%% Created for neil at 2002-12-09 14:04:13 +1300
+
+
+@inproceedings{golbeck2011,
+  title={Predicting personality with social media},
+  author={Golbeck, Jennifer and Robles, Cristina and Turner, Karen},
+  booktitle={Proceedings of the 2011 annual conference extended abstracts on Human factors in computing systems},
+  pages={253--262},
+  year={2011},
+  organization={ACM}
+}
+
+@inproceedings{kunegis2009slashdot,
+  title={The slashdot zoo: mining a social network with negative edges},
+  author={Kunegis, J{\'e}r{\^o}me and Lommatzsch, Andreas and Bauckhage, Christian},
+  booktitle={Proceedings of the 18th international conference on World wide web},
+  pages={741--750},
+  year={2009},
+  organization={ACM}
+}
+
+@inproceedings{quercia2012personality,
+  title={The personality of popular facebook users},
+  author={Quercia, Daniele and Lambiotte, Renaud and Stillwell, David and Kosinski, Michal and Crowcroft, Jon},
+  booktitle={Proceedings of the ACM 2012 conference on Computer Supported Cooperative Work},
+  pages={955--964},
+  year={2012},
+  organization={ACM}
+}
+
+@inproceedings{bachrach2012personality,
+  title={Personality and patterns of Facebook usage},
+  author={Bachrach, Yoram and Kosinski, Michal and Graepel, Thore and Kohli, Pushmeet and Stillwell, David},
+  booktitle={Proceedings of the 3rd Annual ACM Web Science Conference},
+  pages={24--32},
+  year={2012},
+  organization={ACM}
+}
+
+@article{kewalramanisentiment,
+  title={Sentiment Analysis on Twitter},
+  author={Kewalramani, Mohit}
+}
+
+@article{back2010facebook,
+  title={Facebook profiles reflect actual personality, not self-idealization},
+  author={Back, Mitja D and Stopfer, Juliane M and Vazire, Simine and Gaddis, Sam and Schmukle, Stefan C and Egloff, Boris and Gosling, Samuel D},
+  journal={Psychological Science},
+  volume={21},
+  number={3},
+  pages={372--374},
+  year={2010},
+  publisher={Sage Publications}
+}
+
+@article{resnick2002trust,
+  title={Trust among strangers in Internet transactions: Empirical analysis of eBay's reputation system},
+  author={Resnick, Paul and Zeckhauser, Richard},
+  journal={Advances in applied microeconomics},
+  volume={11},
+  pages={127--157},
+  year={2002},
+  publisher={Emerald Group Publishing Limited}
+}
+
+@misc{crowdsourcing_wad,
+  title ={Lessons from crowdsourcing the boston bombing investigation},
+  Howpublished = {\url{http://www.forbes.com/sites/tarunwadhwa/2013/04/22/lessons-from-crowdsourcing-the-boston-marathon-bombings-investigation/}},
+  author = {Wadwha, T},
+  year = {2013}
+}
+
+
+@inproceedings{golbeck2011predicting,
+  title={Predicting personality from twitter},
+  author={Golbeck, Jennifer and Robles, Cristina and Edmondson, Michon and Turner, Karen},
+  booktitle={Privacy, security, risk and trust (passat), 2011 ieee third international conference on and 2011 ieee third international conference on social computing (socialcom)},
+  pages={149--156},
+  year={2011},
+  organization={IEEE}
+}
+
+@article{doan2011crowdsourcing,
+  title={Crowdsourcing systems on the world-wide web},
+  author={Doan, Anhai and Ramakrishnan, Raghu and Halevy, Alon Y},
+  journal={Communications of the ACM},
+  volume={54},
+  number={4},
+  pages={86--96},
+  year={2011},
+  publisher={ACM}
+}
+
+@article{brabham2008crowdsourcing,
+  title={Crowdsourcing as a model for problem solving an introduction and cases},
+  author={Brabham, Daren C},
+  journal={Convergence: the international journal of research into new media technologies},
+  volume={14},
+  number={1},
+  pages={75--90},
+  year={2008},
+  publisher={Sage Publications}
+}
+
+@inproceedings{brzozowski2008friends,
+  title={Friends and foes: ideological social networking},
+  author={Brzozowski, Michael J and Hogg, Tad and Szabo, Gabor},
+  booktitle={Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
+  pages={817--820},
+  year={2008},
+  organization={ACM}
+}
+
+@article{kosinski2013private,
+  title={Private traits and attributes are predictable from digital records of human behavior},
+  author={Kosinski, Michal and Stillwell, David and Graepel, Thore},
+  journal={Proceedings of the National Academy of Sciences},
+  year={2013},
+  publisher={National Acad Sciences}
+}
+
+
+@inproceedings{adali2012predicting,
+  title={Predicting Personality with Social Behavior},
+  author={Adali, Sibel and Golbeck, Jennifer},
+  booktitle={Advances in Social Networks Analysis and Mining (ASONAM), 2012 IEEE/ACM International Conference on},
+  pages={302--309},
+  year={2012},
+  organization={IEEE}
+}
+
+@inproceedings{adali2012actions,
+  title={Actions speak as loud as words: Predicting relationships from social behavior data},
+  author={Adali, Sibel and Sisenda, Fred and Magdon-Ismail, Malik},
+  booktitle={Proceedings of the 21st international conference on World Wide Web},
+  pages={689--698},
+  year={2012},
+  organization={ACM}
+}
+
+@article{resnick2000reputation,
+  title={Reputation systems},
+  author={Resnick, Paul and Kuwabara, Ko and Zeckhauser, Richard and Friedman, Eric},
+  journal={Communications of the ACM},
+  volume={43},
+  number={12},
+  pages={45--48},
+  year={2000},
+  publisher={ACM}
+}
+
+@article{golbeck2011experimental,
+  title={An experimental study of social tagging behavior and image content},
+  author={Golbeck, Jennifer and Koepfler, Jes and Emmerling, Beth},
+  journal={Journal of the American Society for Information Science and Technology},
+  volume={62},
+  number={9},
+  pages={1750--1760},
+  year={2011},
+  publisher={Wiley Online Library}
+}
+
+@inproceedings{golbeck2011computing,
+  title={Computing political preference among twitter followers},
+  author={Golbeck, Jennifer and Hansen, Derek},
+  booktitle={Proceedings of the 2011 annual conference on Human factors in computing systems},
+  pages={1105--1108},
+  year={2011},
+  organization={ACM}
+}
+
+@article{debatin2009facebook,
+  title={Facebook and online privacy: Attitudes, behaviors, and unintended consequences},
+  author={Debatin, Bernhard and Lovejoy, Jennette P and Horn, Ann-Kathrin and Hughes, Brittany N},
+  journal={Journal of Computer-Mediated Communication},
+  volume={15},
+  number={1},
+  pages={83--108},
+  year={2009},
+  publisher={Wiley Online Library}
+}
+
+@inproceedings{gal2008cross,
+  title={Cross-community reputation: Policies and alternatives},
+  author={Gal-Oz, Nurit and Grinshpoun, Tal and Gudes, Ehud and Meisels, Amnon},
+  booktitle={Proceedings of the IADIS International Conference on Web Based Communities, Amsterdam, The Netherlands},
+  pages={197--201},
+  year={2008}
+}
+
+@article{sabater2005review,
+  title={Review on computational trust and reputation models},
+  author={Sabater, Jordi and Sierra, Carles},
+  journal={Artificial Intelligence Review},
+  volume={24},
+  number={1},
+  pages={33--60},
+  year={2005},
+  publisher={Springer}
+}
+
+@inproceedings{quercia2011our,
+  title={Our twitter profiles, our selves: Predicting personality with twitter},
+  author={Quercia, Daniele and Kosinski, Michal and Stillwell, David and Crowcroft, Jon},
+  booktitle={Privacy, security, risk and trust (passat), 2011 ieee third international conference on and 2011 ieee third international conference on social computing (socialcom)},
+  pages={180--185},
+  year={2011},
+  organization={IEEE}
+}
+
+@inproceedings{kosinski2012personality,
+  title={Personality and website choice},
+  author={Kosinski, Michal and Kohli, P and Stillwell, DJ and Bachrach, Yoram and Graepel, Thore},
+  booktitle={ACM Web Science Conference},
+  pages={251--254},
+  year={2012}
+}
+
+@article{graft_paper,
+Author = {Hendrix, Ferry and Burbendorfer, Kris},
+Title = {Malleable Access Rights to Establish and Enable Scientific Collaboration},
+Year = {2013},
+note = {Accepted to eScience 2013 Conference}
+}
+
+@misc{fb_users,
+Author={Facebook},
+Howpublished={\url{http://www.scribd.com/doc/123034877/Facebook-Q4-2012-Investor-Slide-Deck}},
+Title={Facebook Quaterly Earnings Slides, Q4 2012},
+Year = {2012}
+}
+
+@misc{facebook_sued,
+Author = {Warden, Pete},
+Howpublished = {\url{http://petewarden.typepad.com/searchbrowser/2010/04/how-i-got-sued-by-facebook.html}},
+Title = {How I got sued by Facebook},
+Year = {2010}
+}
+
+@misc{howto_scrape,
+Author = {Lurie, Ian},
+Howpublished = {\url{http://searchnewscentral.com/20110928186/General-SEO/how-to-scrape-search-engines-without-pissing-them-off.html}},
+Title = {How to:Scrape search engines without pissing them off},
+Year = {2011}
+}
+
+@misc{social_media_share,
+Author = {Stelzner, Michael},
+Title = {2013 Social Media Marketing Industry Report},
+Howpublished = {\url{http://www.socialmediaexaminer.com/social-media-marketing-industry-report-2013/}},
+Year = {2013}
+}
+
+@book{de2000big,
+  title={The Big Five Personality Factors: The psycholexical approach to personality.},
+  author={De Raad, Boele},
+  year={2000},
+  publisher={Hogrefe \& Huber Publishers}
+}
+
+@misc{no_api_for_me,
+Author = {Brody, Hartley},
+Title = {I don't need no Stinking API: Web-Scraping for Fun and Profit},
+Howpublished = {\url{http://blog.hartleybrody.com/web-scraping/}},
+Year = {2013}
+}
+
+@article{movshovitzanalysis,
+  title={Analysis of the Reputation System and User Contributions on a Question Answering Website: StackOverflow},
+  author={Movshovitz-Attias, Dana and Movshovitz-Attias, Yair and Steenkiste, Peter and Faloutsos, Christos}
+}
+
+@misc{mapequation,
+ title={The MapEquation software package},
+ author={Edler, D and Rosvall, M.},
+ Year = {2013},
+ Howpublished = {available online at \url{http://www.mapequation.org}}
+}
+
+@inproceedings{zhang2012open,
+  title={Open Social based group access control framework for e-Science data infrastructure},
+  author={Zhang, Hui and Wu, Wenjun and Li, Zhenan},
+  booktitle={E-Science (e-Science), 2012 IEEE 8th International Conference on},
+  pages={1--8},
+  year={2012},
+  organization={IEEE}
+}
+
+@article{hirsch2005index,
+  title={An index to quantify an individual's scientific research output},
+  author={Hirsch, Jorge E},
+  journal={Proceedings of the National academy of Sciences of the United States of America},
+  volume={102},
+  number={46},
+  pages={16569},
+  year={2005},
+  publisher={National Academy of Sciences}
+}
+
+@misc{beevolve,
+Author = {Beevolve Statistics},
+Howpublished = {\url{http://www.beevolve.com/twitter-statistics/}},
+Year = {2012},
+Title = {An Exhaustive Study of Twitter Users Across the World}
+}
+
+@misc{facebook,
+  title = {Facebook},
+  howpublished = {\url{https://www.facebook.com/}},
+  note = {Accessed: 17-10-2013}
+}
+
+@misc{linkedin,
+  title = {LinkedIn},
+  howpublished = {\url{http://www.linkedin.com/}},
+  note = {Accessed: 17-10-2013}
+}
+
+@misc{linkedin,
+  title = {LinkedIn},
+  howpublished = {\url{http://www.linkedin.com/}},
+  note = {Accessed: 17-10-2013}
+}

@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Actions and Corresponding Reputation Change on Stack Overflow \cite {movshovitzanalysis}}}{6}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces GRAft reputation based access policy example}}{8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Klout impact score, calculated via the Facebook API}}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Klout impact score}}{9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -15,10 +15,15 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces An Example of Monthly-Impact Score Bucketing - Barack Obama}}{26}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{27}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Followers of Steven Adams}}{28}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Retweets detected community modules}}{29}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Retweets source nodes}}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Accuracy Metric Results}}{32}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Scraper performance improvements across incremental builds. }}{34}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Scraper Interface Dependancies}}{35}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Incomplete profiles fetched, with reasons for Failure}}{36}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Scraper performance improvements across incremental builds.}}{34}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Average Times to Fetch an Entire Twitter Profile, for use in Policies}}{35}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Scraper Interface Dependancies}}{36}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Incomplete profiles fetched, with reasons for Failure.}}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{49}

@@ -10,7 +10,7 @@ The project was structured around a loose waterfall. At the start of the project
 
 This approach of combining aspects of waterfall and agile was reasonably effective as a project management approach. Agile methods tend to work best in a team environment, assisting with the coordination of team members. However the method of small, focused sprints contributing to the larger project were excellent in maintaining focus and direction. The waterfall element in turn outlined the more concrete and long-term deliverables of the project, which was useful with monitoring, controlling and ensuring my work did not fall behind schedule. These target goals were met in the majority of cases. I did experience delays with finishing my implementation and evaluation, as new features such as community detection were added late in the project. Reasons for this late discovery and delay were in part due to the exploratory nature of the project, as will be discussed in the design approach.
 
-Throughout the project I had joint weekly meetings with Dr. Kris Bubendorfer,  Ferry Hendrikx and Filip Dimitrievski. In these meetings, 30-45 minutes in length, we outlined progress achieved during the week, identified issues encountered and planned tasks for the coming week. In the latter half of the project, weekly reports were constructed in order to carefully monitor achievement and contribute to components of this report. A sample weekly report is attached as Apendix 2. Having meetings with Filip and Ferry also present was beneficial, as there were aspects of the project for which Filip and I were able to collaborate over. Ferry, who developed the GRAft system was also able to give useful technical feedback, with his experience in the development of web-scraping tools. The design approach for development of these tools are discussed next.
+Throughout the project I had joint weekly meetings with Dr. Kris Bubendorfer,  Ferry Hendrikx and Filip Dimitrievski. In these meetings, 30-45 minutes in length, we outlined progress achieved during the week, identified issues encountered and planned tasks for the coming week. In the latter half of the project, weekly reports were constructed in order to carefully monitor achievement and contribute to components of this report. A sample weekly report is attached as Appendix 2. Having meetings with Filip and Ferry also present was beneficial, as there were aspects of the project for which Filip and I were able to collaborate over. Ferry, who developed the GRAft system was also able to give useful technical feedback, with his experience in the development of web-scraping tools. The design approach for development of these tools are discussed next.
 
  %CHANGE THIS TO SPECIFIC SECTION
 
@@ -30,7 +30,11 @@ Requirements analysis and design were completed through a combination of researc
 
 Later in the design phase, I constructed a set of prototypes to evaluate the feasibility and alternatives for a web-scraping solution. These covered preliminary scrapers for Twitter, Facebook, LinkedIn and Slashdot. The benefit of developing these was to both give me a better understanding of technologies involved with performing these functions, and to produce some meaningful effort early in the project, as these scrapers could be potentially useful later. There were some pitfalls in this approach however. Some effort in developing prototypes can go to waste, which occured in this project. Facebook was deemed infeasible to scrape due to its interface's constant state of flux. Also during prototyping, Twitter's API changed significantly, rendering much effort lost.
 
-The weekly meetings with my supervisor allowed opportunities to obtain feedback on design choices, as well as suggestions where there was room for improvement. 
+%Talk about different design approaches that I considered, and why the approach that I took was the best.
+
+%The weekly meetings with my supervisor allowed opportunities to obtain feedback on design choices, as well as suggestions where there was room for improvement. 
+
+%Be more reflective here with the evaluation of my design approach. 
 
 %Comes very close to being reflective, so would be worth just doing a reflective segment here!
 
@@ -40,7 +44,9 @@ The weekly meetings with my supervisor allowed opportunities to obtain feedback 
 
 \section{Project Complexities}
 
-The complexity of the system stems largely from the aggregation of unstructured data from a variety of sources - a difficulty often encountered in web-crawling applications. The codebase itself is not overly complex. However, what contributed to the primary difficulty of prototype development was the development of code in the aggregation of data from disparate locations, and debugging often unclear and unexpected errors from various web requests.
+The complexity of the system stems largely from the aggregation of unstructured data from a variety of sources - a difficulty often encountered in web-crawling applications. The codebase itself is not overly complex.
+
+However, what contributed to the primary difficulty of prototype development was the development of code in the aggregation of data from disparate locations, and debugging often unclear and unexpected errors from various web requests.
 
 Understanding the data gathered was a time-expensive challenge. The process of understanding and defining reputation data on social media was the task that occupied most of my time on the project. 
 

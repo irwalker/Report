@@ -1,6 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% http://www.cs.ucsd.edu/~mmccrack/bibdesk.html
 %% Created for neil at 2002-12-09 14:04:13 +1300
+
 @inproceedings{adali2010,
   title={Measuring behavioral trust in social networks},
   author={Adali, Sibel and Escriva, Robert and Goldberg, Mark K and Hayvanovych, Mykola and Magdon-Ismail, Malik and Szymanski, Boleslaw K and Wallace, William A and Williams, Gregory},
@@ -267,13 +268,7 @@
 Author = {Hendrix, Ferry and Burbendorfer, Kris},
 Title = {Malleable Access Rights to Establish and Enable Scientific Collaboration},
 Year = {2013},
-Note = {Unpublished paper, submitted to eScience 2013 Conference}
-}
-
-@misc{klout,
-Author={Klout},
-Howpublished={\url{http://klout.com}},
-Title={Klout.com}
+booktitle = {Accepted to eScience 2013 Conference}
 }
 
 @misc{fb_users,
@@ -281,13 +276,6 @@ Author={Facebook},
 Howpublished={\url{http://www.scribd.com/doc/123034877/Facebook-Q4-2012-Investor-Slide-Deck}},
 Title={Facebook Quaterly Earnings Slides, Q4 2012},
 Year = {2012}
-}
-
-@misc{boston,
-Author = {Wadwha,Tarun},
-Howpublished ={\url{http://www.forbes.com/sites/tarunwadhwa/2013/04/22/lessons-from-crowdsourcing-the-boston-marathon-bombings-investigation/}},
-Title = {Lessons From Crowdsourcing The Boston Bombing Investigation},
-Year = {2013}
 }
 
 @misc{facebook_sued,
@@ -364,5 +352,31 @@ Year = {2013}
  author={Edler, D and Rosvall, M.},
  Year = {2013},
  Howpublished = {available online at \url{http://www.mapequation.org}}
+}
 
+@inproceedings{zhang2012open,
+  title={Open Social based group access control framework for e-Science data infrastructure},
+  author={Zhang, Hui and Wu, Wenjun and Li, Zhenan},
+  booktitle={E-Science (e-Science), 2012 IEEE 8th International Conference on},
+  pages={1--8},
+  year={2012},
+  organization={IEEE}
+}
+
+@article{hirsch2005index,
+  title={An index to quantify an individual's scientific research output},
+  author={Hirsch, Jorge E},
+  journal={Proceedings of the National academy of Sciences of the United States of America},
+  volume={102},
+  number={46},
+  pages={16569},
+  year={2005},
+  publisher={National Academy of Sciences}
+}
+
+@misc{beevolve,
+Author = {Beevolve Statistics},
+Howpublished = {\url{http://www.beevolve.com/twitter-statistics/}},
+Year = {2012},
+Title = {An Exhaustive Study of Twitter Users Across the World}
 }

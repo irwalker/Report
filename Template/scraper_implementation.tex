@@ -46,7 +46,7 @@ specifically selection of individual profile elements and updates to these eleme
 
 \subsection{XML Storage Architecture}
 
-The alternative and ultimately selected architecture involves the scraper and analysis components interacting with a shared XML storage structure. Again in this structure, scrapers run over time whilst saving data to a common XML-based file system. Analysis components could then annotate and enrich the original dataset. Note that analysis components in this architecture essentially act as source nodes for the GRAft system, through generating some reputation metrics associated with a profile. 
+The alternative and ultimately selected architecture involves the scraper and analysis components interacting with a shared XML storage system. Again in this structure, scrapers run over time whilst saving data to a common XML-based file system. Analysis components could then annotate and enrich the original dataset. Note that analysis components in this architecture essentially act as source nodes for the GRAft system, through generating some reputation metrics associated with a profile. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -75,23 +75,23 @@ Various framework designs were considered when designing the IHPScrape framework
  \item Extend the scrAPI framework
  \item Implement a browser-automation application
  \item Use site APIs
- \item Develop my own framework from scratch, using various Ruby Gems
+ \item Develop my own framework from scratch, using various Ruby Gems.
 \end{itemize}
 
 \subsection{Extend scrAPI}
-scrAPI is a Rubyforge project, allowing for fast implementation of web scrapers. The core benefit of scrAPI is allowing data to be fetched from HTML pages using CSS selectors. In addition it hides processes such as the actual fetching of pages. It is a much higher-level framework than Nokogiri and Mechanize. 
+scrAPI is a Rubyforge project, allowing for fast implementation of web scrapers. The core benefit of scrAPI is allowing data to be fetched from HTML pages using CSS selectors. In addition it hides processes such as the actual fetching of pages. It is a much higher-level framework than what was eventually implemented.
 
 Extending scrAPI was ultimately discarded, due to its heavy reliance on CSS files remaining constant. Any change to style sheet files would likely have broken the scrapers. Arguably these style sheets are less likely to change than layout manipulations (for example consider xpath on HTML as an alternative); however on sites such as Twitter and Facebook large design teams frequently make changes to these files. Given that requirement NF1 was to make scrapers resistant to user-interface change, this resulted in scrAPI being deemed unfit for purpose. 
 
 \subsection{Extend A Browser-Automation Model}
 
-Browser automation options were considered as an alternative architecture. Frameworks such as Watir allow users to simulate user interaction with web pages, by driving an actual browser instance.
+Browser automation options were considered as an alternative architecture. Frameworks such as Watir \footnote{http://watir.com/} allow users to simulate user interaction with web pages, by driving an actual browser instance.
 
-A browser automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading CSS selectors and such. This would have been effective at fulfilling requirement F4. Despite this, performance would have been significantly poorer using this option, violating requirement NF2. As browser automation scripts are generally highly dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change NF1. 
+A browser automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading CSS selectors and such. This would have been effective at fulfilling requirement F4. Despite this, performance would have been significantly poorer using this option, violating requirement NF2. As browser automation scripts are entirely dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change NF1. 
 
 \subsection{Use the API}
 
-Although the project title from the outset was 'Reputation Scraper', we investigated the use of site's APIs before settling on the scraping option. A basic application interacting with the Twitter API was constructed early in the project. Twitter's API version 1.0 was actually highly suitable for the needs of the project. However the changes in REST API v 1.1 rendered this infeasible. The earlier API allowed fetching of up to 800 statuses from any public profile, along with more public data (see appendix for more information). Version 1.1 however implemented more requirements for authentication, and limited functions such as downloading tweets to the individual's account only. Facebook's developer API is even more restricted. On Facebook, permissions must be obtained from the appropriate users before fetching data from their profile. LinkedIn's policy is similar. %due to the changes!!!
+Although the project title from the outset was 'Reputation Scraper', we investigated the use of site's APIs before settling on the scraping option. A basic application interacting with the Twitter API was constructed early in the project. Twitter's API version 1.0 was actually highly suitable for the needs of the project. However the changes in REST API v 1.1 rendered this infeasible. The earlier API allowed fetching of up to 800 statuses from any public profile, along with more public data\footnote{https://dev.twitter.com/docs/api/1}. Version 1.1 however implemented more requirements for authentication, and limited functions such as downloading tweets to the individual's account only\footnote{https://dev.twitter.com/docs/api/1.1}. Facebook's developer API is even more restricted. On Facebook, permissions must be obtained from the appropriate users before fetching data from their profile. LinkedIn's policy is similar. %due to the changes!!!
 
 \subsection{Implement a new Framework}
 
@@ -106,9 +106,9 @@ The most obvious disadvantage to this approach is the argument that by implement
 The libraries upon which my scrapers were built included:
 
 \begin{itemize}
- \item Nokogiri: a widely used HTML and XML parsing framework, allowing for straightforward interpretation of raw HTML documents. Nokogiri has many extensions, and can be effectively used to parse HTTP body responses into sensible HTML structure, which can then be parsed using xPath expressions to retrieve data of interest.
- \item Mechanize: an extension of the Nokogiri framework, that simulates browser actions on web-pages. 
- \item Rest-Client: Ruby's most popular HTTP client. Rest-Client allows the use of all HTTP verbs, and can be adjusted for user-agent, proxy, and custom field input.
+ \item Nokogiri \footnote{http://nokogiri.org/}: a widely used HTML and XML parsing framework, allowing for straightforward interpretation of raw HTML documents. Nokogiri has many extensions, and can be effectively used to parse HTTP body responses into sensible HTML structure, which can then be parsed using xPath expressions to retrieve data of interest.
+ \item Mechanize \footnote{http://rubygems.org/gems/mechanize}: an extension of the Nokogiri framework, that simulates browser actions on web-pages. 
+ \item Rest-Client \footnote{https://github.com/rest-client/rest-client}: Ruby's most popular HTTP client. Rest-Client allows the use of all HTTP verbs, and can be adjusted for user-agent, proxy, and custom field input.
 \end{itemize}
 
 
@@ -134,7 +134,7 @@ Developing the project solution consisted generally of a cyclic, iterative proto
 
 A Facebook scraper was prototyped early in the project, and allowed for experimentation with many of the technologies that were used later. Firstly, strategies for authenticating against Facebook had to be developed. While public profiles do exist, these are primarily for company pages or politicians, which is not what the project aimed to solely investigate. Authentication was implemented using a dummy Facebook account, through the Mechanize Ruby framework. Mechanize allows for form data on pages to be populated and submitted through either HTTP or HTTPS. Once authentication was achieved, an authentication token was passed as an attribute of further requests. New authentication tokens are obtained after an adjustable time period, or on a new scraper run. 
 
-Having obtained the necessary authentication tokens, profile pages could be fetched. The planned approach was to crawl through friend networks via friend lists, and scrape profiles in this manner. Downloaded profiles would then be parsed using Nokogiri, and relevant data extracted via xpath expressions. Posts, likes, friends are examples of information identified as useful to collect. However as mentioned in chapter 3, this scraper was eventually discarded as infeasible. Scraping large amounts of content reliably through Facebook was infeasible within the project's scope due to its highly dynamic content, and frequently changing interface. Maintaining and updating a scraper to fetch accurate data from Facebook during the project would have been too time-consuming and distracting, and as a result was removed from the project scope. However the technologies experimented with whilst developing this prototype were useful later when developing the more robust Twitter scraper.
+Having obtained the necessary authentication tokens, profile pages could be fetched. The planned approach was to crawl through friend networks via friend lists, and scrape profiles in this manner. Downloaded profiles would then be parsed using Nokogiri, and relevant data extracted via xpath expressions. Posts, likes, friends are examples of information identified as useful to collect. However as mentioned in chapter 3, this scraper was eventually discarded as infeasible. Scraping large amounts of content reliably through Facebook was infeasible within the project's scope due to its highly dynamic content, and frequently changing interface. Maintaining and updating a scraper to fetch accurate data from Facebook during the project would have been too time-consuming and as a result was removed from the project scope. However the technologies experimented with whilst developing this prototype were useful later when developing the more robust Twitter scraper.
 
 %Discuss what I built the Facebook prototype with. Then mention that the technologies used here were added to in order to make the Twitter Crawler. Discussion as to why this was discarded as a requirement.
 
@@ -144,7 +144,7 @@ The Twitter Crawler users a Google Twitter search function to search for profile
 
 %The Twitter Crawler uses a Google Twitter search function, to loop through profiles at the top level. An input text file of random names delimited by lines is accepted by the scraper. These names are looped through in order, with the scraper fetching the profiles of the top 10 results returned through Google. Bias is introduced through this approach, as results appearing in Google are naturally more popular than users who would not. However as the top ten results are fetched and prepared for scraping, in general the lower ranking users here are more 'standard'. 
 
-Due to this bias, alternative approaches were considered. A potentially better scientific approach to randomising the selection of profiles to scrape would have been to crawl through an already-generated set of random profile names. However searches did not reveal any such databases to exist, excluding 'celebrity-exclusive' ones which would have been significantly worse than my current approach. I also considered crawling via embedded links on Twitter, starting from any profile and following re-tweet links through to new profiles. However this introduces new complexities - how will the algorithm detect infinite loops (potentially huge loops), or detect repeat profiles? As the project was ultimately about reputation and not scraping algorithms, the simple name-searching approach was selected. 
+Due to this bias, alternative approaches were considered. A potentially better scientific approach to randomising the selection of profiles to scrape would have been to crawl through an already-generated set of random profile names. However searches did not reveal any such databases to exist, excluding 'celebrity-exclusive' ones which would have been significantly worse than my current approach. I also considered crawling via embedded links on Twitter, starting from any profile and following re-tweet links through to new profiles. However this introduces new complexities - how will the algorithm detect infinite loops (potentially huge loops), or detect repeated profiles? As the project was ultimately about reputation and not scraping algorithms, the simple name-searching approach was selected. 
 
 Once the ten profile names are selected (for the current input name in the text file), the application will perform the scraping of each of these profiles in order.  The definition of a Twitter profile changed throughout the project, as more information was chosen to be analysed. The final schema of stored data for the standard Twitter scraper is contained in appendix 1.1. Essentially all tweets are captured where possible, along with associated re-tweets, favourites, and the profile names of users who re-tweeted this item. Profile meta data is also stored, such as number of followers, number following, and total number of tweets. 
 %CHANGE THIS AS APPROPRIATE. 
@@ -159,7 +159,7 @@ Technical difficulties exist with fetching such profiles and meta data, which we
 
 \subsection{Parallel Tweet Fetching}
 
-Although tweet content can be fetched from the base profile page, useful data such as re-tweet and favourite count is initially hidden. To view tweet detail, a further request must be sent, to mimic the user interaction of clicking on the tweet. Fortunately this process can be parallelized for each tweet within a tweet window. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelization of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 6. Parallel fetching was not considered earlier in the project as I expected the resulting simultaneous requests to end in more frequent detection by sites. 
+Although tweet content can be fetched from the base profile page, useful data such as re-tweet and favourite count is initially hidden. To view tweet detail, a further request must be sent, to mimic the user interaction of clicking on the tweet. Fortunately this process can be parallelized for each tweet within a tweet window. In the final twitter scraper a thread pool of 15 threads is created, one for each potential tweet in the window. Each thread then fetches and parses each tweet individually. To ensure parallel performance is not lost, any tweet-fetching process that fails here will simply be thrown away. Parallelization of tweet fetching resulted in huge performance gains, which will be discussed further in chapter 7. Parallel fetching was not considered earlier in the project as I expected the resulting simultaneous requests to end in more frequent detection by sites. 
 
 \subsection{Detection Avoidance and Recovery}
 
@@ -172,7 +172,7 @@ The second strategy employed is to send requests that spoof a browser user-agent
 A third strategy that was considered but not implemented was the downloading of CSS and other markup, in order to behave as browser-like as possible. This was discarded because of questions of its feasibility, as well as uncertainty as to the level of potential benefits from constructing such a solution. 
 
 %Rate limiting detection
-I rarely encountered rate limiting at University, and was never blocked outright on the University machines. Early in the project, when prototyping a Facebook scraper I was briefly banned from Facebook at home. 503 errors (indicating resource unavailability) reveal detection on Twitter. 500 (indicating server error) errors were encountered throughout the project also, but these were due to coding errors. 
+I rarely encountered rate limiting at University, and was never blocked outright on the University machines. Early in the project, when prototyping a Facebook scraper I was briefly banned from Facebook at home. 503 errors (indicating resource unavailability) reveal detection on Twitter. 500 errors (indicating server error)  were encountered throughout the project also, but these were due to coding errors. 
 
 \subsection{Dealing with Authentication}
 
@@ -180,7 +180,7 @@ The original scraper did not require authentication, since the majority of Twitt
 
 \subsection{Parsing Poorly Formed Markup}
 
-A concern earlier in the project was the scraping of content containing poorly formed HTML or JSON markup. Thankfully the sensitivity of HTML parsers to poor markup is largely library-dependant. This was not well-documented in the gems (a gem is the library equivalent in Ruby) I found, so experimentation with various options had to suffice. Nokogiri was sufficient for HTML parsing, and the default ruby JSON parsing library was most effective at parsing incomplete JSON data.
+A concern earlier in the project was the scraping of content containing poorly formed HTML or JSON markup. Thankfully the sensitivity of HTML parsers to poor markup is largely library-dependant. This was not well-documented in the gems I found, so experimentation with various options had to suffice. Nokogiri was sufficient for HTML parsing, and the default ruby JSON parsing library was most effective at parsing incomplete JSON data.
 
 %Mention that the code is available from github. http://www.github.com/irwalker/dat-roll
 

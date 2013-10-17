@@ -1,22 +1,41 @@
 \chapter{Conclusions and Future Work}\label{C:us}
 
-This section draws conclusions from the results of the projects and details future work that could be conducted.\\
+This section summarises work completed over the project, and reflects on successes with relation to the issues identified at the beginning of the project.
 
-\noindent The evaluation of IHPScrape demonstrates that a web-scraping solution is possible for inferring basic reputation metrics, against the primary case-study of Twitter. However performance to fetch and parse an entire profile is too slow to be viable in a commercial system. The lower than expected performance is due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate HTTP requests being sent to fetch an entire profile. 
+% This section draws conclusions from the results of the projects and details future work that could be conducted. 
 
-However the performance of policies operating on a subset of the full detail from a user's profile is significantly closer to the target aims. Whilst still not achieving response times on the order of a few seconds, when using a subset of tweets greater performance could be achieved with little information loss. Policy effectiveness resulting from data analysis strategies were varying. While the proposed impact factor and temporal clustering methods are possible with the current tools and data, community detection was more limited. The existing visualisation tool cannot handle millions of nodes and even more edges, in this case twitter profiles and their links. However the MapEquation team have acknowledged the deficiencies of their tool, and are working to port this to a non-Flash based system without such limitations. 
+\section{Web-Scraper Implementation}
 
-Through qualitative results, retrieved data was shown to be accurate for information such as retweets, favourites and so on. Requirement R6 stated that data should not be missing or incorrect, and this was achieved in the majority of cases. When data was missing, this was due to scrapers being detected and an incomplete list of tweets being returned, for example. Design decisions had to also be made to allow for reasonable performance, such as not fetching the entire list of names who retweeted a post. 
+A social media web-scraping framework was developed. This framework was developed firstly for Twitter, and was extended onto LinkedIn. I was able to demonstrate how web-scraping technologies are suitable for retrieval of basic reputation metrics. Performance of the scraper was greatly increased through incremental builds, with the final build performing a factor of 6 times better than the previous one.
 
-The framework was shown to be extensible through the implementation of a second social scraper for LinkedIn. The pattern of creating separate classes for pages and defining functions to handle data retrieval related to these pages, and abstracting the actual fetching details was easily extendible to LinkedIn, with the resulting scraper implemented in significantly less time than the original Twitter artefact and framework. I acknowledge however that the comparison is not entirely even, as LinkedIn did not have complications such as Infinite Scrolling. 
+Unfortunately performance to fetch and parse an entire Twitter profile was shown to be too slow to prove viable in a real-time analytical system. The lower than anticipated performance was due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate requests to retrieve an entire profile. Data retrieved was shown to be accurate, withholding some elements which can remain incomplete should their size exceed the threshold selected. Detection avoidance of the framework was also evaluated to have been successful, again up until the point of 7,000 + tweets being fetched. 
 
-IHPScrape was successful in avoiding detection by sites, and was never blocked entirely running on the University environment. Incomplete profiles dropped below one in ten by the final build. Recovery from detection was not implemented however, as there was no way to distinguish for example the actual end of an individual's twitter page, and the server taking action against a scraper.
+\section{Data Analysis and Resulting Policies}
 
-IHPScrape did not fully meet the requirement of remaining flexible despite interface change. The solution had to rely on certain xPath expressions and backend URLs remaining constant, and quantitatively evaluating the exact resistance of the scrapers to change proved infeasible within the timeframe of the project. 
+Data analysis was performed against the Twitter dataset collected of 1.7 million tweets. Retweets were firstly discussed, due to their greater semantic depth than the equivalent 'favourite' mechanism. Using retweet counts as a measure of impact, an 'Impact Factor' calculation is proposed, based upon the Hirsch-Index calculation. This calculation measures productivity and response values on Twitter. Combining this figure with average monthly impact gives a view of average activity, and allows for inactive users to be detected. Different bucketing sizes may be used; in this project, a month was the bucket size of choice. 
 
-Experiences with scraping from various social sites lead to conclusions about the suitability of sites for scraping. The more dynamic a site, the more complex and unreliable data fetching will become. 
+Community detection was also experimented with, and the links of retweets and follower/following relationships explored to reveal existence of sub-communities within Twitter. Unfortunately visualisation of entire retweet communities was not achieved due to limitations with the selected visualisation tool. As the MapGenerator tool is currently undergoing improvement, there is potential for improvement in this feature.
 
-Conclusions on which sites are suitable for scraping.
+Exemplar policies were provided, with respect to the case study of a social forum. Combination of community detection, impact factor, and temporal reputation information was demonstrated to be useful in regards to access policy constructs. 
+
+% Exemplar policies are given, with respect to the example of a social forum. 
+
+
+% \noindent The evaluation of IHPScrape demonstrates that a web-scraping solution is possible for inferring basic reputation metrics, against the primary case-study of Twitter. However performance to fetch and parse an entire profile is too slow to be viable in a commercial system. The lower than expected performance is due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate HTTP requests being sent to fetch an entire profile. 
+
+% However the performance of policies operating on a subset of the full detail from a user's profile is significantly closer to the target aims. Whilst still not achieving response times on the order of a few seconds, when using a subset of tweets greater performance could be achieved with little information loss. Policy effectiveness resulting from data analysis strategies were varying. While the proposed impact factor and temporal clustering methods are possible with the current tools and data, community detection was more limited. The existing visualisation tool cannot handle millions of nodes and even more edges, in this case twitter profiles and their links. However the MapEquation team have acknowledged the deficiencies of their tool, and are working to port this to a non-Flash based system without such limitations. 
+
+% Through qualitative results, retrieved data was shown to be accurate for information such as retweets, favourites and so on. Requirement R6 stated that data should not be missing or incorrect, and this was achieved in the majority of cases. When data was missing, this was due to scrapers being detected and an incomplete list of tweets being returned, for example. Design decisions had to also be made to allow for reasonable performance, such as not fetching the entire list of names who retweeted a post. 
+
+% The framework was shown to be extensible through the implementation of a second social scraper for LinkedIn. The pattern of creating separate classes for pages and defining functions to handle data retrieval related to these pages, and abstracting the actual fetching details was easily extendible to LinkedIn, with the resulting scraper implemented in significantly less time than the original Twitter artefact and framework. I acknowledge however that the comparison is not entirely even, as LinkedIn did not have complications such as Infinite Scrolling. 
+
+% IHPScrape was successful in avoiding detection by sites, and was never blocked entirely running on the University environment. Incomplete profiles dropped below one in ten by the final build. Recovery from detection was not implemented however, as there was no way to distinguish for example the actual end of an individual's twitter page, and the server taking action against a scraper.
+
+% IHPScrape did not fully meet the requirement of remaining flexible despite interface change. The solution had to rely on certain xPath expressions and backend URLs remaining constant, and quantitatively evaluating the exact resistance of the scrapers to change proved infeasible within the timeframe of the project. 
+
+% Experiences with scraping from various social sites lead to conclusions about the suitability of sites for scraping. The more dynamic a site, the more complex and unreliable data fetching will become. 
+
+% Conclusions on which sites are suitable for scraping.
 
 
 \section{Future Work}
@@ -29,9 +48,9 @@ Further, small-world network analysis could be compared to communities detected 
 
 \subsection{Social Media Expansion}
 
-In order to further validate the scraping framework constructed, more social media sites should be explored. This would enable richer still policies and data analysis to be performed. Not all sites would be suitable for scraping, and indeed in some cases the API may be of more use.
+In order to further validate the scraping framework constructed, more social media sites should be explored. This would enable richer still policies and data analysis to be performed. Not all sites would be suitable for scraping, and indeed in some cases the API may be of more use. Sites with more static content are more suitable for web scraping. 
 
-Highly dynamic sites such as Facebook proved infeasible for the scraper design; but networks like Slashdot could be more suitable. 
+%Highly dynamic sites such as Facebook proved infeasible for the scraper design; but networks like Slashdot could be more suitable. 
 
 %Compare detected embedded social networks against small-world networks and check for correlation. 
 
@@ -39,4 +58,12 @@ Highly dynamic sites such as Facebook proved infeasible for the scraper design; 
 
 \subsection{Further Evaluation}
 
-Further verification of IHPScrape with respect to resistance to change is required. No Twitter user interface changes were experienced during the course of the project, fortunately simplifying my task. For the scraper to be applied as part of a legitimate reputation system, verification of its resistance to interface change must be conducted. Comparison against API changes would be more valuable still.
+Further verification of IHPScrape with respect to resistance to change is required. No Twitter user interface changes were experienced during the course of the project. For the scraper to be applied as part of a legitimate reputation system, verification of its resistance to interface change must be conducted. Comparison against API changes would be more valuable still.
+
+\subsection{Reliability Metric}
+
+Requirement F5 stated that a metric of reliability should be developed based upon quantity of data collected. The performance of policies demonstrated that fetching a full profile for use is not feasible within a real-time system. As such using only a subset of profile data could be more practical, with the attachment of some form of metric pointing to the reliability of data collected.
+
+\subsection{GRAft integration}
+
+As analysis components and policies developed effectively act as a source node in the GRAft model, actual implementation of this could be useful. Community effort would be required to maintain such a solution.

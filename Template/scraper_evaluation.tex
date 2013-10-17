@@ -1,10 +1,10 @@
 \chapter{Evaluation}\label{C:us}
 
-Following the completed scraper implementation and data analysis, an evaluation of the project was carried out on both the scrapers and resulting policies. The evaluation was designed primarily to verify whether or not the scraper and policies created were succesful in fulfilling the requirements of the project.
+Following the completed scraper implementation and data analysis, an evaluation of the project was carried out on both the scrapers and policies. The evaluation was designed primarily to verify whether or not the scraper and policies created were succesful in fulfilling the requirements of the project. The following aspects of the IHPScrape framework were evaluated: accuracy, performance, resistance to user interface change, and  resistance to detection. 
 
 \section{Scraper Accuracy}
 
-Quantitatively evaluating the accuracy of figures gathered by IHPScrape is difficult without a dataset to compare results against. Given that one of the primary reasons for implementing a scraper was due to this lack of a valid dataset, such an evaluation was not possible within the time constraints of the project. Requirement R6 stated that data gathered needs to be accurate in order to generate meaningful results, and that any potential innacuracies in data collected should be well understood. As such I performed a qualitative evaluation of aspects of scraper accuracy. 
+Requirement NF3 stated that data gathered needs to be accurate in order to generate meaningful results, and that any potential innacuracies in data collected should be well understood. Quantitatively evaluating the accuracy of figures gathered by IHPScrape was difficult without a dataset to compare results against. Given that one of the primary reasons for implementing a scraper was due to this lack of a valid dataset, such an evaluation was not possible within the time constraints of the project.  As such I performed a qualitative evaluation of aspects of scraper accuracy. 
 
 To measure relative scraper accuracy, manual inspection of 15 random Twitter profiles that were fetched in the final build was conducted. Figure 7.1 displays the data checked for accuracy on the user's Twitter profile pages, and scraped xml file. Details checked for correctness were as follows:
 
@@ -42,11 +42,13 @@ To measure relative scraper accuracy, manual inspection of 15 random Twitter pro
 \caption{Accuracy Metric Results}
 \end{sidewaysfigure}
 
-The results of this sample test were encouraging. Static and unchanging values such as Number of followers, number following, and number of tweets were always correct. Dynamic lists such as the retweet names were sometimes incomplete. This was a design decision that I had to make earlier in the project, and it is known behaviour that for large converstation chains, or large lists of retweeters, not all of the names will be present. Since extended lists of retweet names require further HTTP requests, fetching the entire list would have resulted in performance penalties. The number of incomplete profiles from my sample here is consistent with incomplete profiles fetched overall in the final build. The common denominator for an incomplete profile is due to too large quantities tweets being posted by the user, on the order of 10,000 or more. This is a known problem with the IHPScrape solution, as after a number of tweets the Twitter server will respond saying no more Tweets exist, where this is untrue.  Fetching the entire profile of a user with 10,000 + tweets however is largely infeasible for use with reputation policies though, which is justified in the performance evaluation section.
+The results of this sample test were encouraging. Static and unchanging values such as Number of followers, number following, and number of tweets were always correct. Dynamic lists such as the retweet names were sometimes incomplete. This was a design decision that I had to make earlier in the project, and it is known behaviour that for large converstation chains, or large lists of retweeters, not all of the names will be present. Since extended lists of retweet names require further HTTP requests, fetching the entire list would have resulted in performance penalties. The number of incomplete profiles from my sample here is consistent with incomplete profiles fetched overall in the final build. The common denominator for an incomplete profile is due to too large quantities of tweets being posted by the user, on the order of 10,000 or more. This is a known problem with the IHPScrape solution, as after a number of tweets the Twitter server will respond saying no more Tweets exist, where this is untrue.  
+Fetching 
+the entire profile of a user with 10,000 + tweets however is largely infeasible for use with reputation policies though, which is justified in the performance evaluation section.
 
 Having evaluated accuracy of results it was also noted that the order of tweets saved was occasionally different to the order posted by the subject, within the tweet window size of seven. This was due to the parallization of tweet fetching. Given that none of the policies designed require accurate ordering of tweets, this is not an issue within the scope of my project. 
 
-The experiment to verify scraper accuracy positively suggests that data collected is of good quality. I acknowledge that the small sample size covered was not ideal, but was feasible within the timeframe for evaluation. If possible a better evaluation would compare collected data against the same figures from an existing dataset. However, since no such dataset existed for the project, this factor being a driving force for scraper implementation, my ability to conduct a thorough quantitative assesment of the scraper's accuracy was limited.
+The experiment to verify scraper accuracy positively suggests that data collected is of good quality. I consider requirement NF3 to have been met, as data was accurate where required, and innacuracies in data are well understood. I acknowledge that the small sample size covered was not ideal, but was feasible within the timeframe for evaluation. If possible a better evaluation would compare collected data against the same figures from an existing dataset. However, since no such dataset existed for the project, this factor being a driving force for scraper implementation, my ability to conduct a thorough quantitative assesment of the scraper's accuracy was limited.
 
 \section{Performance Evaluation}
 
@@ -61,12 +63,13 @@ I evaluate the performance of IHPScrape with respect to the average time taken t
  \item Build 4 - Fetching of tweets performed in parallel. This resulted in the scraper increasing in performance by a factor of six (Average time reduced from 1.4s to 0.2s).
 \end{itemize}
 
+\begin{center}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=400px]{Images/scrape_performance_against_builds.pdf}
-\caption{Scraper performance improvements across incremental builds. }
+\includegraphics[width=500px]{Images/scrape_performance_against_builds.pdf}
+\caption{Scraper performance improvements across incremental builds.}
 \end{figure}
-
+\end{center}
 %Performance testing for the Twitter scraper is conducted using quantitative performance data, collected at the end of each build. The primary metric for scraper efficiency is average time to scrape and parse a tweet. 
 
 %Figure 7.2 demonstrates the performance gains that 
@@ -79,78 +82,96 @@ I evaluate the performance of IHPScrape with respect to the average time taken t
 
 \subsection{Resulting Policy Performance}
 
-Based upon the final build results, we are able to evaluate the performance and practicality of policy fragments defined in chapter 6. 
+Based upon the final build results, I am able to evaluate performance of the examplar policies proposed in chapter 6. As policies must fetch the entire profile to generate the impact factor calculation, time to fetch profiles is the primary metric against which I evaluate policy performance. The analysis components calculating impact factor perform on the order of one to two seconds, depending on profile size. Thus I measure policy performance entirely against profile fetch times, as these are by far the most time-consuming factor to reputation metric calculation. The average time to fetch profiles is shown in figure \textbf{x}, using the parallel performing build. Despite the time taken to fetch a single tweet having been dramatically reduced in this version, an entire profile still takes hundreds of seconds on average.
 
-For each policy, discuss how long this would take on average for an average profile.
+Therefore I conclude requirement NF2 to not have been met, as policies resulting from are too slow for use in a real-time system. In the Twitter case study this is due to the necessity for a seperate HTTP request to fetch every single tweet. Although parrelisation of tweet fetching greatly improved performance, this requirement was largely infeasible. for websites with more static content such as LinkedIn, I propose that this would be possible however. 
 
-Average number of tweets, and average time to fetch and parse a tweet based upon build number. 
+\begin{center}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=500px]{Images/Average_Time_To_Fetch_Profile.pdf}
+\caption{Average Times to Fetch an Entire Twitter Profile, for use in Policies}
+\end{figure}
+\end{center}
+
+
+
+%Although this fetching was parrelised, increasing performance sixfold
+
+%The average time to fetch profiles is shown in figure .
+
+%The analysis components calculating impact factor perform much faster, on the order of one to two seconds, depending on 
+
+%Based upon the final build results, we are able to evaluate the performance and practicality of policy fragments defined in chapter 6. 
+
+%For each policy, discuss how long this would take on average for an average profile.
+
+%Average number of tweets, and average time to fetch and parse a tweet based upon build number. 
 
 \section{Resistance to Interface Change}
 
 Evaluation of scraper resistance to interface change was conducted qualitatively. I summarise the critical points which, if changed, would result in the scraper failing. Discussion of the likelihood of these components changing is conducted in order to asess their reliability. 
 
-IHPScrape is reliant on two components remaining This is what a validate my scraper accuracy against. 
-constant; URLs to fetch resources and xPath expressions to fetch specific values. URLs are less likely to change, as this implies some level of large backend change or migration. xPath expressions are much more brittle, especialy when hard-coded based upon document structure (for example document/v1/li/test/ is more brittle than //**[li]). To evaluate the resistance of my Twitter scraper against user interface or backend change, I constructed a summary of all hard-coded URL and xPath expressions used to fetch data.
+IHPScrape is reliant on two components remaining constant; URLs to fetch resources and xPath expressions to fetch specific values. URLs are less likely to change, as this implies some level of large backend change or migration. xPath expressions are much more brittle, especialy when hard-coded based upon document structure (for example document/v1/li/test/ is more brittle than //**[li]). To evaluate the resistance of my Twitter scraper against user interface or backend change, I constructed a summary of all hard-coded URL and xPath expressions used to fetch data.
 
 \begin{figure}[h!]
 \begin{center}
-  \begin{tabular}{| l | p{6cm} | l |}
+  \begin{tabular}{| p{9cm} | l | }
   \hline
-   \textbf{Nature of Dependancy} & \textbf{Feature} & \textbf{Class Name} \\ \hline
-   URL & Google Twitter Search - searching for Twitter profiles by name & Twitter \\ \hline
-   URL & Twitter base profile & TwitterScraper \\ \hline
-   URL & Fetch extra tweets & Tweet \\ \hline
-   URL & Fetch tweet detail & Tweet \\ \hline
-   URL & Fetch retweeter list & Tweet \\ \hline
-   xPath & Google Twitter Search - retrieve names & Twitter \\ \hline
-   xPath & Fetch core profile statistics. Name, number of tweets, number of followers, number following & TwitterItem \\ \hline
-   xPath & Fetch detailed tweet information. Retweets, favourites, favourites, content, date\_time. & Tweet \\ \hline
-   xPath & Fetch retweeter names & Tweet \\ \hline
+   \textbf{Feature} & \textbf{Nature of Dependancy}  \\ \hline
+   Google Twitter Search - searching for Twitter profiles by name. URL is modified to input name parameter. & URL \\ \hline
+   Twitter base profile. URL is modified to search for Twitter page with given user name. & URL \\ \hline
+   Fetch extra tweets. Backend HTTP request to load more tweets for the current profile. & URL  \\ \hline
+   Fetch tweet detail. HTTP request to load tweet detail for the current tweet, using ID as a parameter.& URL \\ \hline
+   Fetch retweeter list. HTTP request to fetch the retweeters for the current tweet, using ID as a parameter.& URL \\ \hline
+   Google Twitter Search - retrieve names. The names are located at specific points on the result page.& xPath \\ \hline
+   Fetch core profile statistics. Name, number of tweets, number of followers, number following.&  xPath \\ \hline
+   Fetch detailed tweet information. Retweets, favourites, favourites, content, date\_time.&  xPath \\ \hline
+   Fetch retweeter names. &xPath \\ \hline
   \end{tabular}  
 \end{center}
 \caption{Scraper Interface Dependancies}
 \end{figure}
 %Best represented in a table?
 
-URL dependancies are relatively constant and unlikely to change. xPath expressions however are much more prone to change, and thus fail. Taken in the context of the entire scraper, the number of absolute interface dependancies is low. Over the course of the project, the Twitter interface did not change, nor the URL structure. As such it is difficult to test whether any change would geniunely result in the scraper breaking, and how difficult this change would be to fix. %Finish this.
-
+Taken in the context of the entire scraper, the number of absolute interface dependancies is low. Over the course of the project, the Twitter user interface did not change, nor the URL structure. As such it is difficult to test whether any change would genuinely result in the scraper breaking, and how difficult this change would be to fix. From the analysis performed, I conclude that requirement NF1 was met; small changes should not result in the scraper breaking, unless they affect the specific points of failure outlined in figure 7.3. Wholesale interface redesigns will of course result in scrapers breaking, but such resistance was deemed infeasible. %Finish this.
 %Fix this up. Tomorrow.
-
 %Discuss how likely each of these components is to change
-
 %State that any change would result in the scraper breaking
-
 %Google twitter search - URL reliance
-
 %To evaluate scraper and framework resistance 
-
-%Metric evaluation based upon fields that may change, and the effects that would occur if these changes happened. 
-
+%Metric evaluation based upon fields that may change, and the effects that would occur if these changes happened.
 %Heuristic discussion of the fields which would result in scrapers breaking. 
 
 \section{Resistance to Detection}
 
-Evaluation of scraping detection was performed throughout the data collection phase, by logging events where a scraper was blocked. The primary event indicating Twitter had blocked or limited my scraper was primarily the 503 error code. This has been experienced by other Twitter scrapers, confirming that this code indicates rate limiting and not a coding failure. The secondary event recorded to indicate blocking was 500 error codes - this was in fact a mistake, as 500 errors were in response to coding errors in IHPScrape. 
+Evaluation of scraping detection was performed throughout the data collection phase, by logging events where a scraper was blocked. The primary event indicating Twitter had blocked or limited my scraper was primarily the 503 error code. This has been experienced by other Twitter scrapers, confirming that this code indicates rate limiting and not a coding failure. The secondary event recorded to indicate blocking was 500 error codes - this was in fact a mistake, as 500 errors were in response to coding errors in IHPScrape.
 
-As with performance, scraping detection and failure rates were recorded at the end of each build phase, displaying the incremental gains resulting from my development approach. The first build had extremely high parse errors, caused by choice of parsing library - this was one of the issues with feasibility noted at the milestone report. Having improved parsing... %Blah blah
+Figure 7.4 shows the percentage of failed profiles against incremental builds for the Twitter scraper. The definition of failure here is a profile that was not fetched in its entirety. As such the rates of failure look worse than is the case. In the first build, the parsing code was not sufficiently reliable, and in many cases parse errors were encountered midway through scraping a profile. These were for special case events such as photo posts that I had not considered. The second build vastly improved the parsing quality, and gave way to detection issues, which were in turn subsequently reduced. The final build had an extremly small percentage of genuinely failed profiles, and only approximately 1 in 10 profiles not entirely fetched. As mentioned earlier, many incomplete profiles are of such size that further fetching is somewhat redundant. 
 
+I conclude that the requirement F4 was half met. The final Twitter build demonstrates that mechanisms in place to avoid detection were effective, as only extremly large profiles result in detection and incompleteness. However recovery from failure was not implemented for Twitter, as it was impossible to distinguish for example the end of a profile and the Twitter server responding with false information. 
+
+%Scraping detection and failure rates were recorded at the end of each build phase, displaying the incremental gains resulting from my development approach. The first build had extremely high parse errors, caused by choice of parsing library - this was one of the issues with feasibility noted at the milestone report. Having improved parsing... %Blah blah
+
+\begin{center}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=400px]{Images/failure_rate_and_reason.pdf}
-\caption{Incomplete profiles fetched, with reasons for Failure}
+\includegraphics[width=500px]{Images/failure_rate_and_reason.pdf}
+\caption{Incomplete profiles fetched, with reasons for Failure.}
 \end{figure}
+\end{center}
 
-Events indicating a site has blocked or limited my scrapers included 503 error codes
+%\section{Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}
 
-In order to detect when a site blocked or limited my scra
+%The development of a LinkedIn scraper is a suitable case study to evaluate the social media portability of the IHPScrape framework. Development of this scraper was completed in one weeks work, compared to the 
 
-Real data to show that blocking detection resistance improved with subsequent builds!
+%How the framework helps in development of social media scarpersTje
 
-\section{Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}
+%What improvements could have been made to the scraper.s
 
-I qualitatively evaluate the social media portability of the scraping framework, with respect to the case study of developing a LinkedIn scraper. 
+%I qualitatively evaluate the social media portability of the scraping framework, with respect to the case study of developing a LinkedIn scraper. 
 
-Discuss with associated heuristics the development of the LinkedIn scraper, and how the framework assisted with the development of this scraper. %#BULLSHIT BULLSHIT BULLSHIT!
+%Discuss with associated heuristics the development of the LinkedIn scraper, and how the framework assisted with the development of this scraper. %#BULLSHIT BULLSHIT BULLSHIT!
 
 %Performance testing of scrapers was carried out throughout the project, through performance logging mechanisms designed to measure the time taken to fetch an entire profile. To reduce bias caused by varying network speeds at University, the software was run over extended periods of time.
 %Given the iterative approach taken to develop the scrapers, I evaluate their performance with respect to incremental builds, as well as final performance. As the definition of a 'profile' differs between sites, different performance metrics are used for each site. 

@@ -1,6 +1,14 @@
 \chapter{Introduction}\label{C:us}
 
-The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. In this chapter I identify the general problem that the project has been undertaken to help solve. In addition I describe the proposed solutions and core contributions of the project.
+
+
+%The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. In this report I summarise work completed towards this goal. Background research is discussed in the domain of social media, web-scraping, and related reputation-system based systems. The project management and requirements are discussed. Scraper design and con
+
+ %This report summarises background research 
+
+%In this report I identify a background to 
+
+%In this chapter I identify the general problem that the project has been undertaken to help solve. In addition I describe the proposed solutions and core contributions of the project.
 
 %In this report I identify the problem being solved, summarise the background research and methodology used to solve the problem. Requirements for web scraping tools are then defined, 
 
@@ -8,18 +16,16 @@ The aim of this project is to demonstrate the feasibility of a tool that gathers
 
 %This section outlines an introduction to the problem this project attempts to solve. 
 
-%FIXME
-
-\section{The Problem}
+\section{Motivation}
 In the digital age many social and business transactions are moving online. The size of Facebook and other Social Networking Sites (SNS) has grown exponentially with 1.05 billion monthly users on Facebook in December 2012 \cite{fb_users}. As such, defining who we should and should not trust becomes increasingly important, yet hard to resolve. Although SNS to some extent have inbuilt concepts of trust, using contact networks (Facebook, LinkedIn) and circles (Google+) for example, the concept of trustworthiness is more blurred. Tools to provide a snapshot, or hint of an individual's reputation and trustworthiness could be useful. Reputation is the global trust mechanism, whereas trust is one nodes impression of another in the network.
 
-Reputation systems on trading websites have been extremely successful, despite the potential for fraudulent activity \cite{}. While we might expect a self-aware adult to fairly easily spot equivalent 'fraudulent' activity or deceptive behaviour on social media, many examples have shown this to be untrue. Social crowd sourcing gone wrong has also been a high-profile issue, with incidents such as the Boston Bombings \cite{}.
+Reputation systems on trading websites have been extremely successful, despite the potential for fraudulent activity \cite{resnick2002trust}. While we might expect a self-aware adult to fairly easily spot equivalent 'fraudulent' activity or deceptive behaviour on social media, many examples have shown this to be untrue. Social crowd sourcing gone wrong has also been a high-profile issue, with incidents such as the Boston Bombings \cite{crowdsourcing_wad,doan2011crowdsourcing,brabham2008crowdsourcing}.
 
 Various strategies have been used to infer the personality or active traits of individuals online; these have been shown to be highly accurate. Applications on SNS have been used to give people an idea of their own personality. The results can then be compared against elements of the person's use of social media. This requires the express permission of the individual concerned to gain any meaningful data, when collecting information through a site's API. Which privacy concerns must be taken into account, publicly available information on an individual or company's social media account can be considered fair game. This information could be useful when judging trustworthiness. A new approach, that does not need permission to access information which is publicly-available, is needed. 
 
 \section{Key Issues}
 
-To summarise, the project aims to address the following two issues:
+To summarise, the project aims to address the following three issues:
 
 \begin{description}
 	\item [I1.] Reputation on Social Media is largely undefined.
@@ -28,7 +34,9 @@ To summarise, the project aims to address the following two issues:
 \end{description}
 
 \section{Proposed Solution}
-A solution to the above issues is to use web-scraping strategies to anonymously retrieve reputation data. A more traditional approach would be to retrieve information directly through an API, but few social networks provide sufficient APIs - and they all require express user permission to work. This system could be used to give a general snapshot about an individual, by using these non-traditional data sources. There are many potential applications and users for this sort of application. Parents might wish to get a glimpse at their child's online friends, or a company might wish to automatically get some information about a potential employee for example.
+A solution to the above issues is to use web-scraping strategies to anonymously retrieve reputation data. A more traditional approach would be to retrieve information directly through an API, but few social networks provide sufficient APIs - and they all require express user permission to work. This system could be used to give a general snapshot about an individual, by using these non-traditional data sources. There are many potential applications and uses for this sort of application. Parents might wish to get a glimpse at their child's online friends, or a company might wish to automatically get some information about a potential employee for example.
+
+The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. By creating such a reputation scraper, we envisage that a general impression about an individual on social media may be constructed. I create a new framework for scraping social media sites called IHPScrape, with the case study of Twitter, Facebook and LinkedIn as examples of the framework's applicability. A Twitter dataset is gathered of 1.7 million tweets, from which reputation metrics and policies are discussed. Finally I evaluate the performance and accuracy of this framework and reputation policies to analyse their potential effectiveness in a larger system.
 
 \section{Contributions}
 The primary contributions of this project are:
@@ -39,6 +47,10 @@ The primary contributions of this project are:
 	\item A set of reputation-inferring policies for use on Twitter 
 	\item A dataset of 1.7 million tweets, and associated tweet meta-data.
 \end{enumerate}
+
+\section{Report Structure}
+
+The remainder of the report is structured as follows. Chapter 2 summarises background research that was undertaken in the problem domain. 
 
 %The major contribution of the project is to deliver a prototype that gathers online reputation data using web-scraping techniques.The prototype will be integrated with the GRAft reputation system \cite{graft_paper}, in order to link with a person's OpenID\cite{open_id}. Users would be able to generate a reputation value for themselves, or for others they know. 
 %explain below sentence!

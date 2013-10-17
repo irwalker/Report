@@ -18,6 +18,8 @@
 
 \usepackage{rotating}
 
+\usepackage{subcaption}
+%\usepackage{subfloat}
 %
 %  We don't want figures to float so we define
 %
@@ -68,7 +70,9 @@
 
 \begin{abstract}
 
-Online reputation has become increasingly important as more social and business interactions move online. This project is concerned with investigating how we can infer basic reputation metrics from non-traditional sources such as social media sites, including Facebook, Twitter, Google+, LinkedIn, and Slashdot. The method of gathering has been through web-scraping, since most social media sites do not (understandably) have an API to retrieve this information without logging in to the system. The project has looked at developing web-scrapers to retrieve publicly-available information on social media sites, and investigating how this can be used to infer basic reputation metrics. 
+Online reputation has become increasingly important as more social and business interactions move online. This project is concerned with investigating how basic reputation metrics may be inferred from non-traditional sources such as social media sites, in particular Twitter, Facebook and LinkedIn. A web-scraping framework is constructed that is able to retrieve data from social media sites. This tool collected a dataset of 1.7 million tweets for analysis. Using this dataset, reputation inferring metrics and policies are discussed, with the potential for wider application. These policies are evaluated and found to be too slow for use in a real-time system, although they may be useful in analytical reputation systems. 
+
+%Online reputation has become increasingly important as more social and business interactions move online. This project is concerned with investigating how we can infer basic reputation metrics from non-traditional sources such as social media sites, including Facebook, Twitter, Google+, LinkedIn, and Slashdot. The method of gathering has been through web-scraping, since most social media sites do not (understandably) have an API to retrieve this information without logging in to the system. The project has looked at developing web-scrapers to retrieve publicly-available information on social media sites, and investigating how this can be used to infer basic reputation metrics. 
 
 \end{abstract}
 
@@ -107,11 +111,12 @@ Online reputation has become increasingly important as more social and business 
 
 
 %\bibliographystyle{ieeetr}
-\nocite{*}
+%\nocite{*}
 \bibliographystyle{acm}
-\bibliography{bibliography}
+\bibliography{bibliography2}
 
-\include{appendix}
+\include{appendix_a}
+%\include{appendix_b}
 
 
 \end{document}

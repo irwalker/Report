@@ -37,7 +37,7 @@ Data from multiple social media sites needs to be aggregated in a sensible manne
 
 \subsection{F2: Development of Reputation Policies}
 
-The most significant requirement is to generate a set of policies to assist with generating a snapshot of an individual's reputation. Policies must consider data from reasonable time periods to ensure accurate predictions are made. These must consider future interactions in order to maintain user awareness and reflection upon their own reputation. Policies will need to return results within seconds to be useable in any real system. 
+The most significant requirement is to generate a set of policies to assist with generating a snapshot of an individual's reputation. Policies must consider data from time periods on the order of months or years to ensure accurate predictions are made. These must consider future interactions in order to maintain user awareness and reflection upon their own reputation. Policies will need to return results within seconds to be useable in any real system. 
 
 %Scrape entire profile!
 
@@ -49,7 +49,7 @@ A framework should be created into which my web-scrapers conform. This framework
 
 \subsection{ F4: Resistance to Blocking Detection}
 
-In order for scrapers to continue collecting data over time periods of days or weeks, they must not be blocked by SNS servers. Scrapers that are detected by sites and are noted to be taxing on a server's resources will likely be blocked \cite{}. As such, my framework must firstly attempt to remain undetected as a scraping entity, and secondly recover from detection and resume scraping data if detection occurs. 
+In order for scrapers to continue collecting data over time periods of days or weeks, they must not be blocked by SNS servers. Scrapers that are detected by sites and are noted to be taxing on a server's resources will likely be blocked \cite{no_api_for_me}. As such, my framework must firstly attempt to remain undetected as a scraping entity, and secondly recover from detection and resume scraping data if detection occurs. 
 
 \subsection{ F5: Develop a Metric of Reliability Based Upon Quantity of Data}
 
@@ -79,11 +79,11 @@ The scraping framework should have built-in resilance to user interface layout a
 
 \subsection{NF2: Scraper Performance Fast Enough for Use as part of Real-Time System}
 
-This requirement refers to the speed and accuracy of my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. Data gathered must be accurate and represent what is actually displayed on a profile. 
+This requirement refers to the speedof my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. 
 
 \subsection{NF3: Accuracy of Data Collected}
 
-In order to generate meaningful data analysis, discussion and policies, data collected by my scrapers must be accurate. Any innacuracies in collected data should be clearly highlighted and explained. As web-scraping through HTTP requests can sometimes produce unexpected return values some innacuracies will be expected, but these should be known-bugs. 
+In order to generate meaningful data analysis, discussion and policies, data collected by my scrapers must be accurate. Data gathered must be accurate and represent what is actually displayed on a profile. Any innacuracies in collected data should be clearly highlighted and explained. As web-scraping through HTTP requests can sometimes produce unexpected return values some innacuracies will be expected, but these should be known-bugs. 
 
 
 

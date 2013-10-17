@@ -1,8 +1,8 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}The Problem}{1}
-\contentsline {section}{\numberline {1.2}Key Issues}{1}
-\contentsline {section}{\numberline {1.3}Proposed Solution}{2}
-\contentsline {section}{\numberline {1.4}Contributions}{2}
+\contentsline {section}{\numberline {1.1}Motivation}{1}
+\contentsline {section}{\numberline {1.2}Proposed Solution}{1}
+\contentsline {section}{\numberline {1.3}Contributions}{2}
+\contentsline {section}{\numberline {1.4}Report Structure}{2}
 \contentsline {chapter}{\numberline {2}Background}{3}
 \contentsline {section}{\numberline {2.1}Social Media}{3}
 \contentsline {section}{\numberline {2.2}Web-Scraping}{4}
@@ -46,10 +46,10 @@
 \contentsline {section}{\numberline {5.4}Framework Implementation}{19}
 \contentsline {section}{\numberline {5.5}Facebook Crawler}{19}
 \contentsline {section}{\numberline {5.6}Twitter Crawler}{20}
-\contentsline {subsection}{\numberline {5.6.1}Parallel Tweet Fetching}{20}
+\contentsline {subsection}{\numberline {5.6.1}Parallel Tweet Fetching}{21}
 \contentsline {subsection}{\numberline {5.6.2}Detection Avoidance and Recovery}{21}
 \contentsline {subsection}{\numberline {5.6.3}Dealing with Authentication}{21}
-\contentsline {subsection}{\numberline {5.6.4}Parsing Poorly Formed Markup}{21}
+\contentsline {subsection}{\numberline {5.6.4}Parsing Poorly Formed Markup}{22}
 \contentsline {section}{\numberline {5.7}LinkedIn Scraper}{22}
 \contentsline {section}{\numberline {5.8}Code instrumentation}{22}
 \contentsline {chapter}{\numberline {6}Data Discussion and Policy Construction}{23}
@@ -63,19 +63,28 @@
 \contentsline {subsection}{\numberline {6.2.4}Community Discussion}{28}
 \contentsline {subsection}{\numberline {6.2.5}Sentiment Analysis}{29}
 \contentsline {section}{\numberline {6.3}Policy Examples and Discussion}{29}
-\contentsline {subsection}{\numberline {6.3.1}Case Study - Discussion Forum}{29}
-\contentsline {subsection}{\numberline {6.3.2}Policy Discussion}{30}
+\contentsline {subsection}{\numberline {6.3.1}Case Study - Discussion Forum}{30}
 \contentsline {chapter}{\numberline {7}Evaluation}{31}
 \contentsline {section}{\numberline {7.1}Scraper Accuracy}{31}
 \contentsline {section}{\numberline {7.2}Performance Evaluation}{33}
-\contentsline {subsection}{\numberline {7.2.1}Resulting Policy Performance}{33}
-\contentsline {section}{\numberline {7.3}Resistance to Interface Change}{34}
-\contentsline {section}{\numberline {7.4}Resistance to Detection}{35}
-\contentsline {section}{\numberline {7.5}Extensibility and Social Media Portability of Scraping Framework - LinkedIn Case Study}{35}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{37}
-\contentsline {section}{\numberline {8.1}Future Work}{38}
-\contentsline {subsection}{\numberline {8.1.1}Community Detection Extension}{38}
-\contentsline {subsection}{\numberline {8.1.2}Social Media Expansion}{38}
-\contentsline {subsection}{\numberline {8.1.3}Further Evaluation}{38}
-\contentsline {chapter}{\numberline {A}Appendices}{43}
-\contentsline {section}{\numberline {A.1}Twitter Data Schema}{43}
+\contentsline {subsection}{\numberline {7.2.1}Resulting Policy Performance}{34}
+\contentsline {section}{\numberline {7.3}Resistance to Interface Change}{35}
+\contentsline {section}{\numberline {7.4}Resistance to Detection}{36}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{39}
+\contentsline {section}{\numberline {8.1}Web-Scraper Implementation}{39}
+\contentsline {section}{\numberline {8.2}Data Analysis and Resulting Policies}{39}
+\contentsline {section}{\numberline {8.3}Future Work}{40}
+\contentsline {subsection}{\numberline {8.3.1}Community Detection Extension}{40}
+\contentsline {subsection}{\numberline {8.3.2}Social Media Expansion}{40}
+\contentsline {subsection}{\numberline {8.3.3}Further Evaluation}{40}
+\contentsline {subsection}{\numberline {8.3.4}Reliability Metric}{40}
+\contentsline {subsection}{\numberline {8.3.5}GRAft integration}{40}
+\contentsline {chapter}{\numberline {A}Data Schemata}{45}
+\contentsline {section}{\numberline {A.1}Twitter Data Schema}{45}
+\contentsline {section}{\numberline {A.2}LinkedIn Data Schema}{46}
+\contentsline {chapter}{\numberline {B}Weekly Report Example. 2nd of September}{47}
+\contentsline {section}{\numberline {B.1}Progress}{47}
+\contentsline {subsection}{\numberline {B.1.1}Multi-Threading}{47}
+\contentsline {subsection}{\numberline {B.1.2}Sentiment}{47}
+\contentsline {subsection}{\numberline {B.1.3}Blockers}{47}
+\contentsline {subsection}{\numberline {B.1.4}Targets}{47}

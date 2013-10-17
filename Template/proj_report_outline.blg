@@ -11,54 +11,56 @@ A level-1 auxiliary file: policy_implementation.aux
 A level-1 auxiliary file: scraper_evaluation.aux
 A level-1 auxiliary file: conclusion.aux
 The style file: acm.bst
-A level-1 auxiliary file: appendix.aux
-Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "bollen2011twitter"
-Warning--I didn't find a database entry for "ginsberg2008detecting"
+A level-1 auxiliary file: appendix_a.aux
+Database file #1: bibliography2.bib
 Warning--I didn't find a database entry for "josang2007survey"
 Warning--I didn't find a database entry for "GRAft"
+Warning--to sort, need author or key in facebook_site
+Warning--to sort, need author or key in linkedin_site
+Warning--to sort, need author or key in twitter_site
+Warning--to sort, need author or key in google_site
+Warning--to sort, need author or key in slashdot_site
 Warning--empty journal in graft_paper
-Warning--empty journal in kewalramanisentiment
 Warning--empty journal in movshovitzanalysis
-You've used 43 entries,
+You've used 32 entries,
             2253 wiz_defined-function locations,
-            766 strings with 12260 characters,
-and the built_in function-call counts, 15906 in all, are:
-= -- 1560
-> -- 701
+            706 strings with 9657 characters,
+and the built_in function-call counts, 10227 in all, are:
+= -- 1001
+> -- 429
 < -- 0
-+ -- 294
-- -- 246
-* -- 1105
-:= -- 2429
-add.period$ -- 126
-call.type$ -- 43
-change.case$ -- 250
++ -- 186
+- -- 148
+* -- 703
+:= -- 1573
+add.period$ -- 95
+call.type$ -- 32
+change.case$ -- 169
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 648
-empty$ -- 1323
-format.name$ -- 246
-if$ -- 3440
+cite$ -- 39
+duplicate$ -- 390
+empty$ -- 887
+format.name$ -- 148
+if$ -- 2200
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 34
-newline$ -- 215
-num.names$ -- 86
-pop$ -- 334
+int.to.str$ -- 32
+missing$ -- 22
+newline$ -- 162
+num.names$ -- 54
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 209
+purify$ -- 138
 quote$ -- 0
-skip$ -- 488
+skip$ -- 278
 stack$ -- 0
-substring$ -- 1000
-swap$ -- 227
+substring$ -- 603
+swap$ -- 117
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 170
-warning$ -- 3
-while$ -- 158
-width$ -- 45
-write$ -- 436
-(There were 7 warnings)
+type$ -- 126
+warning$ -- 7
+while$ -- 95
+width$ -- 34
+write$ -- 320
+(There were 9 warnings)

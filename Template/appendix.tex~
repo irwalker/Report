@@ -2,7 +2,8 @@
 
 \section{Twitter Data Schema}
 
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+\begin{verbatim}
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <xsd:element name="profile">
 	<xsd:complexType>
@@ -48,3 +49,44 @@
 
 
 </xsd:schema>
+\end{verbatim}
+
+\section{LinkedIn Data Schema}
+
+\begin{verbatim}
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="profiles">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="profile" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="num_connections" type="xsd:string"/>
+							<xsd:element name="num_recommendations" type="xsd:string"/>
+							<xsd:element name="current_position" type="xsd:string"/>
+							<xsd:element name="skills">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="skill" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+								<xsd:attribute name="num_skills" type="xsd:positiveInteger" use="mandatory"/>
+							</xsd:element>
+							<xsd:element name="groups">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="group" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+								<xsd:attribute name="num_groups" type="xsd:positiveInteger" use="mandatory"/>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
+\end{verbatim}
+

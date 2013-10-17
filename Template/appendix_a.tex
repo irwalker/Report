@@ -1,0 +1,124 @@
+\chapter{Data Schemata}\label{C:us}
+
+\section{Twitter Data Schema}
+
+\begin{verbatim}
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="profile">
+	<xsd:complexType>
+		<xsd:sequence>
+
+			<xsd:element name="key_values">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="number_followers" type="xsd:string"/>
+						<xsd:element name="number_tweets" type="xsd:string"/>
+						<xsd:element name="number_following" type="xsd:strng"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="tweets">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="tweet" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="tweet_content" type="xsd:string"/>
+									<xsd:element name="retweet_count" type="xsd:positiveInteger"/>
+									<xsd:element name="favourite_count" type="xsd:positiveInteger"/>
+									<xsd:element name="retweet_names">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+							<xsd:attribute name="tweet_id" type="xsd:string" use="mandatory"/>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>	
+
+
+</xsd:schema>
+\end{verbatim}
+
+\section{LinkedIn Data Schema}
+
+\begin{verbatim}
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="profiles">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="profile" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="num_connections" type="xsd:string"/>
+							<xsd:element name="num_recommendations" type="xsd:string"/>
+							<xsd:element name="current_position" type="xsd:string"/>
+							<xsd:element name="skills">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="skill" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+								<xsd:attribute name="num_skills" type="xsd:positiveInteger" use="mandatory"/>
+							</xsd:element>
+							<xsd:element name="groups">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="group" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+								<xsd:attribute name="num_groups" type="xsd:positiveInteger" use="mandatory"/>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
+\end{verbatim}
+
+
+\chapter{Weekly Report Example. 2nd of September}\label{C:us}
+
+\section{Progress}
+
+Multi-threading is now working, items were built to cooperate with the sentiment140 API.
+
+\subsection{Multi-Threading} I learned how to do multi-threading in ruby, and implemented it. A thread pool of 15 is created. Each thread then sends an HTTP request to fetch the detailed tweet data, allowing retweets, favourites, date/time data to be accessed by the scraper. If a request fails, it is simply discarded in order to not reduce the benefit of parellisation. Multi-threading has increased performance dramatically. In my evaluation, I may make the point that fetching an entire profile as a policy might be too time-consuming to be useful. A good policy input might be to specify the number of tweets required for reputation analysis. 
+
+%INSERT THE IMAGE HERE!!
+\begin{figure}[h!]
+\centering
+\includegraphics[width=500px]{Images/average_time_to_fetch_parse_tweets_per_build.pdf}
+\caption{The Average Time to Fetch and Parse a Tweet, Ordered by Builds}
+\end{figure}
+
+
+\subsection{Sentiment}
+
+I can input my tweets, and retrieve a response positive/neutral/negative. Initial results included, I save these as csv format to import into excel more easily.\\
+
+\subsection{Blockers}
+
+Found the issue causing the correlation between month/overall impact to be incorrect. The graph indeed showed that there was a problem with the data collected. This was in fact from the scraper. Scraper was in fact including tweets NOT posted by the page owner (retweets) and counting these as retweets towards the individual's impact factor. Have fixed this, but did not have enough time to gather sufficient and accurate data for the meeting.\\
+
+\noindent This is not such a massive problem overall - but it will have largely skewed impact results for less popular pages in the past.
+
+\subsection{Targets}
+
+Targets for this week; gather lots more data (accurate) and do the correlation analysis on this. With this more accurate data, look at how sentiments - positive and negative, correlate with the impact formula calculation. Case studies; contraversial individuals and the like. 
+
+

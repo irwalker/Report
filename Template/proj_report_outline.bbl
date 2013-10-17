@@ -1,11 +1,29 @@
 \begin{thebibliography}{10}
 
-\bibitem{adali2010}
-{\sc Adali, S., Escriva, R., Goldberg, M.~K., Hayvanovych, M., Magdon-Ismail,
-  M., Szymanski, B.~K., Wallace, W.~A., and Williams, G.}
-\newblock Measuring behavioral trust in social networks.
-\newblock In {\em Intelligence and Security Informatics (ISI), 2010 IEEE
-  International Conference on\/} (2010), IEEE, pp.~150--152.
+\bibitem{facebook_site}
+Facebook.
+\newblock \url{https://www.facebook.com/}.
+\newblock Accessed: 17-10-2013.
+
+\bibitem{google_site}
+Google+.
+\newblock \url{https://plus.google.com/}.
+\newblock Accessed: 17-10-2013.
+
+\bibitem{linkedin_site}
+Linkedin.
+\newblock \url{http://www.linkedin.com/}.
+\newblock Accessed: 17-10-2013.
+
+\bibitem{slashdot_site}
+Slashdot.
+\newblock \url{http://slashdot.org/}.
+\newblock Accessed: 17-10-2013.
+
+\bibitem{twitter_site}
+Twitter.
+\newblock \url{https://twitter.com/}.
+\newblock Accessed: 17-10-2013.
 
 \bibitem{adali2012predicting}
 {\sc Adali, S., and Golbeck, J.}
@@ -20,13 +38,6 @@
 \newblock In {\em Proceedings of the 21st international conference on World
   Wide Web\/} (2012), ACM, pp.~689--698.
 
-\bibitem{facebook_newsfeed}
-{\sc Arrington, M.}
-\newblock Facebook users revolt, facebook replies.
-\newblock
-  \url{http://techcrunch.com/2006/09/06/facebook-users-revolt-facebook-replies/},
-  2006.
-
 \bibitem{bachrach2012personality}
 {\sc Bachrach, Y., Kosinski, M., Graepel, T., Kohli, P., and Stillwell, D.}
 \newblock Personality and patterns of facebook usage.
@@ -38,6 +49,11 @@
   Egloff, B., and Gosling, S.~D.}
 \newblock Facebook profiles reflect actual personality, not self-idealization.
 \newblock {\em Psychological Science 21}, 3 (2010), 372--374.
+
+\bibitem{bollen2011twitter}
+{\sc Bollen, J., Mao, H., and Zeng, X.}
+\newblock Twitter mood predicts the stock market.
+\newblock {\em Journal of Computational Science 2}, 1 (2011), 1--8.
 
 \bibitem{brabham2008crowdsourcing}
 {\sc Brabham, D.~C.}
@@ -51,36 +67,16 @@
 \newblock I don't need no stinking api: Web-scraping for fun and profit.
 \newblock \url{http://blog.hartleybrody.com/web-scraping/}, 2013.
 
-\bibitem{brzozowski2008friends}
-{\sc Brzozowski, M.~J., Hogg, T., and Szabo, G.}
-\newblock Friends and foes: ideological social networking.
-\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
-  Computing Systems\/} (2008), ACM, pp.~817--820.
-
 \bibitem{de2000big}
 {\sc De~Raad, B.}
 \newblock {\em The Big Five Personality Factors: The psycholexical approach to
   personality.}
 \newblock Hogrefe \& Huber Publishers, 2000.
 
-\bibitem{debatin2009facebook}
-{\sc Debatin, B., Lovejoy, J.~P., Horn, A.-K., and Hughes, B.~N.}
-\newblock Facebook and online privacy: Attitudes, behaviors, and unintended
-  consequences.
-\newblock {\em Journal of Computer-Mediated Communication 15}, 1 (2009),
-  83--108.
-
 \bibitem{doan2011crowdsourcing}
 {\sc Doan, A., Ramakrishnan, R., and Halevy, A.~Y.}
 \newblock Crowdsourcing systems on the world-wide web.
 \newblock {\em Communications of the ACM 54}, 4 (2011), 86--96.
-
-\bibitem{dubois2011predicting}
-{\sc DuBois, T., Golbeck, J., and Srinivasan, A.}
-\newblock Predicting trust and distrust in social networks.
-\newblock In {\em Privacy, security, risk and trust (passat), 2011 ieee third
-  international conference on and 2011 ieee third international conference on
-  social computing (socialcom)\/} (2011), IEEE, pp.~418--424.
 
 \bibitem{mapequation}
 {\sc Edler, D., and Rosvall, M.}
@@ -94,11 +90,11 @@
   \url{http://www.scribd.com/doc/123034877/Facebook-Q4-2012-Investor-Slide-Deck},
   2012.
 
-\bibitem{gal2008cross}
-{\sc Gal-Oz, N., Grinshpoun, T., Gudes, E., and Meisels, A.}
-\newblock Cross-community reputation: Policies and alternatives.
-\newblock In {\em Proceedings of the IADIS International Conference on Web
-  Based Communities, Amsterdam, The Netherlands\/} (2008), pp.~197--201.
+\bibitem{ginsberg2008detecting}
+{\sc Ginsberg, J., Mohebbi, M.~H., Patel, R.~S., Brammer, L., Smolinski, M.~S.,
+  and Brilliant, L.}
+\newblock Detecting influenza epidemics using search engine query data.
+\newblock {\em Nature 457}, 7232 (2008), 1012--1014.
 
 \bibitem{golbeck2011computing}
 {\sc Golbeck, J., and Hansen, D.}
@@ -125,31 +121,17 @@
 \newblock In {\em Proceedings of the 2011 annual conference extended abstracts
   on Human factors in computing systems\/} (2011), ACM, pp.~253--262.
 
-\bibitem{guha2004propagation}
-{\sc Guha, R., Kumar, R., Raghavan, P., and Tomkins, A.}
-\newblock Propagation of trust and distrust.
-\newblock In {\em Proceedings of the 13th international conference on World
-  Wide Web\/} (2004), ACM, pp.~403--412.
-
 \bibitem{graft_paper}
 {\sc Hendrix, F., and Burbendorfer, K.}
 \newblock Malleable access rights to establish and enable scientific
   collaboration.
-\newblock Unpublished paper, submitted to eScience 2013 Conference.
+\newblock Accepted to eScience 2013 Conference.
 
-\bibitem{kewalramanisentiment}
-{\sc Kewalramani, M.}
-\newblock Sentiment analysis on twitter.
-
-\bibitem{klout}
-{\sc Klout}.
-\newblock Klout.com.
-\newblock \url{http://klout.com}.
-
-\bibitem{kosinski2012personality}
-{\sc Kosinski, M., Kohli, P., Stillwell, D., Bachrach, Y., and Graepel, T.}
-\newblock Personality and website choice.
-\newblock In {\em ACM Web Science Conference\/} (2012), pp.~251--254.
+\bibitem{hirsch2005index}
+{\sc Hirsch, J.~E.}
+\newblock An index to quantify an individual's scientific research output.
+\newblock {\em Proceedings of the National academy of Sciences of the United
+  States of America 102}, 46 (2005), 16569.
 
 \bibitem{kosinski2013private}
 {\sc Kosinski, M., Stillwell, D., and Graepel, T.}
@@ -157,48 +139,11 @@
   human behavior.
 \newblock {\em Proceedings of the National Academy of Sciences\/} (2013).
 
-\bibitem{kunegis2009slashdot}
-{\sc Kunegis, J., Lommatzsch, A., and Bauckhage, C.}
-\newblock The slashdot zoo: mining a social network with negative edges.
-\newblock In {\em Proceedings of the 18th international conference on World
-  wide web\/} (2009), ACM, pp.~741--750.
-
-\bibitem{leskovec2010predicting}
-{\sc Leskovec, J., Huttenlocher, D., and Kleinberg, J.}
-\newblock Predicting positive and negative links in online social networks.
-\newblock In {\em Proceedings of the 19th international conference on World
-  wide web\/} (2010), ACM, pp.~641--650.
-
-\bibitem{howto_scrape}
-{\sc Lurie, I.}
-\newblock How to:scrape search engines without pissing them off.
-\newblock
-  \url{http://searchnewscentral.com/20110928186/General-SEO/how-to-scrape-search-engines-without-pissing-them-off.html},
-  2011.
-
 \bibitem{movshovitzanalysis}
 {\sc Movshovitz-Attias, D., Movshovitz-Attias, Y., Steenkiste, P., and
   Faloutsos, C.}
 \newblock Analysis of the reputation system and user contributions on a
   question answering website: Stackoverflow.
-
-\bibitem{najafi2012web}
-{\sc Najafi, M., Sartipi, K., and Archer, N.}
-\newblock Web service competition: a new approach to service selection.
-\newblock In {\em Proceedings of the 2012 Conference of the Center for Advanced
-  Studies on Collaborative Research\/} (2012), IBM Corp., pp.~161--175.
-
-\bibitem{open_id}
-{\sc OpenID}.
-\newblock \url{http://openid.net/}, 2013.
-
-\bibitem{quercia2011our}
-{\sc Quercia, D., Kosinski, M., Stillwell, D., and Crowcroft, J.}
-\newblock Our twitter profiles, our selves: Predicting personality with
-  twitter.
-\newblock In {\em Privacy, security, risk and trust (passat), 2011 ieee third
-  international conference on and 2011 ieee third international conference on
-  social computing (socialcom)\/} (2011), IEEE, pp.~180--185.
 
 \bibitem{quercia2012personality}
 {\sc Quercia, D., Lambiotte, R., Stillwell, D., Kosinski, M., and Crowcroft,
@@ -218,24 +163,12 @@
   ebay's reputation system.
 \newblock {\em Advances in applied microeconomics 11\/} (2002), 127--157.
 
-\bibitem{sabater2005review}
-{\sc Sabater, J., and Sierra, C.}
-\newblock Review on computational trust and reputation models.
-\newblock {\em Artificial Intelligence Review 24}, 1 (2005), 33--60.
+\bibitem{beevolve}
+{\sc Statistics, B.}
+\newblock An exhaustive study of twitter users across the world.
+\newblock \url{http://www.beevolve.com/twitter-statistics/}, 2012.
 
-\bibitem{social_media_share}
-{\sc Stelzner, M.}
-\newblock 2013 social media marketing industry report.
-\newblock
-  \url{http://www.socialmediaexaminer.com/social-media-marketing-industry-report-2013/},
-  2013.
-
-\bibitem{tsai2006introduction}
-{\sc Tsai, W., Chen, Y., Bitter, G., and Miron, D.}
-\newblock Introduction to service-oriented computing.
-\newblock {\em Arizona State University\/} (2006).
-
-\bibitem{boston}
+\bibitem{crowdsourcing_wad}
 {\sc Wadwha, T.}
 \newblock Lessons from crowdsourcing the boston bombing investigation.
 \newblock
@@ -249,16 +182,11 @@
   \url{http://petewarden.typepad.com/searchbrowser/2010/04/how-i-got-sued-by-facebook.html},
   2010.
 
-\bibitem{xu2011sociable}
-{\sc Xu, Y., Cao, X., Sellen, A., Herbrich, R., and Graepel, T.}
-\newblock Sociable killers: understanding social relationships in an online
-  first-person shooter game.
-\newblock In {\em Proceedings of the ACM 2011 conference on Computer supported
-  cooperative work\/} (2011), ACM, pp.~197--206.
-
-\bibitem{ziegler2005propagation}
-{\sc Ziegler, C.-N., and Lausen, G.}
-\newblock Propagation models for trust and distrust in social networks.
-\newblock {\em Information Systems Frontiers 7}, 4-5 (2005), 337--358.
+\bibitem{zhang2012open}
+{\sc Zhang, H., Wu, W., and Li, Z.}
+\newblock Open social based group access control framework for e-science data
+  infrastructure.
+\newblock In {\em E-Science (e-Science), 2012 IEEE 8th International Conference
+  on\/} (2012), IEEE, pp.~1--8.
 
 \end{thebibliography}

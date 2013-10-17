@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  14 OCT 2013 22:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  17 OCT 2013 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -85,10 +85,28 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box28
 \rot@mess@toks=\toks17
 )
+(/usr/pkg/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
+
+
+! Package subcaption Error: `caption' package not loaded
+(subcaption)                (which is needed by this package)
+
+See the subcaption package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38   \endinput}{}
+                   
+If you do not understand this error, please take a closer look
+at the documentation of the `subcaption' package.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
 \@float@every@fig=\toks18
 \c@fig=\count91
-
-(/vol/tex-local/tex/latex/local/vuwproject.sty
+ (/vol/tex-local/tex/latex/local/vuwproject.sty
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/mathpazo.sty
 Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
 \symupright=\mathgroup4
@@ -126,26 +144,29 @@ LaTeX Warning: Label `C:us' multiply defined.
 
 LaTeX Warning: Label `C:us' multiply defined.
 
-) (./appendix.aux
+) (./appendix_a.aux
+
+LaTeX Warning: Label `C:us' multiply defined.
+
 
 LaTeX Warning: Label `C:us' multiply defined.
 
 ))
 \openout1 = `proj_report_outline.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 62.
  (/usr/pkg/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
@@ -212,38 +233,38 @@ e
 ))
 \big@size=\dimen107
 
-Overfull \hbox (1.462pt too wide) in paragraph at lines 70--71
+Overfull \hbox (1.462pt too wide) in paragraph at lines 73--74
 []\OT1/ppl/m/n/10.95 Online rep-u-ta-tion has be-come in-creas-ingly im-por-tan
 t as more so-cial and busi-
  []
 
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 76.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 81.
 
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 76.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 81.
 
 
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 76.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 81.
 
 
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 81.
 
 
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 81.
  [-1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [0]
@@ -260,28 +281,28 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.88> not available
 
 
 ]
-(./proj_report_outline.toc [3])
+(./proj_report_outline.toc [3] [4])
 \tf@toc=\write3
 \openout3 = `proj_report_outline.toc'.
 
- [4] (./proj_report_outline.lof)
+ [5] [6
+
+] (./proj_report_outline.lof)
 \tf@lof=\write4
 \openout4 = `proj_report_outline.lof'.
 
- [5
 
-] [6
+[7] [8
 
 ]
 \openout2 = `introduction.aux'.
 
-
-(./introduction.tex
+ (./introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 27.
 [1
 
 
@@ -290,48 +311,43 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 
  (./background.tex
 Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 39.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 41.
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
  [3
 
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 65.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 70.
  [4]
-Overfull \hbox (12.71178pt too wide) in paragraph at lines 80--82
-\OT1/ppl/m/n/10.95 havioural anal-y-sis of in-di-vid-u-als on so-cial me-dia. T
-hese stud-ies have taken both a behavioural-
+Overfull \hbox (3.4804pt too wide) in paragraph at lines 87--92
+\OT1/ppl/m/n/10.95 Studies have in-ves-ti-gated how pri-vate de-tails about per
+-son-al-ity traits can be in-ferred through
  []
 
 
-LaTeX Warning: Citation `bollen2011twitter' on page 5 undefined on input line 8
-9.
+Overfull \hbox (3.96835pt too wide) in paragraph at lines 93--94
+[]\OT1/ppl/m/n/10.95 While these stud-ies showed how pri-vate per-son-al-ity de
+-tails can be in-ferred from publicly-
+ []
 
 [5]
 
-LaTeX Warning: Citation `ginsberg2008detecting' on page 6 undefined on input li
-ne 91.
+LaTeX Warning: Citation `josang2007survey' on page 6 undefined on input line 13
+8.
 
-
-LaTeX Warning: Citation `josang2007survey' on page 6 undefined on input line 12
-6.
-
-[6] [7] [8] <Images/klout.png, id=59, 803.0pt x 722.7pt>
+[6] [7] [8] <Images/klout.png, id=65, 803.0pt x 722.7pt>
 File: Images/klout.png Graphic file (type png)
 
 <use Images/klout.png>
-Package pdftex.def Info: Images/klout.png used on input line 233.
+Package pdftex.def Info: Images/klout.png used on input line 246.
 (pdftex.def)             Requested size: 308.71104pt x 277.84888pt.
-) [9 <./Images/klout.png>] [10]
+ [9 <./Images/klout.png>]) [10]
 \openout2 = `project_management_approach.aux'.
 
 
@@ -355,7 +371,7 @@ Chapter 4.
 
  (./scraper_implementation.tex
 Chapter 5.
-<Images/Database_Architecture.pdf, id=79, 722.7pt x 542.025pt>
+<Images/Database_Architecture.pdf, id=85, 722.7pt x 542.025pt>
 File: Images/Database_Architecture.pdf Graphic file (type pdf)
 
 <use Images/Database_Architecture.pdf>
@@ -370,7 +386,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-] <Images/xml_storage_arch_v2.pdf, id=83, 722.7pt x 542.025pt>
+] <Images/xml_storage_arch_v2.pdf, id=90, 722.7pt x 542.025pt>
 File: Images/xml_storage_arch_v2.pdf Graphic file (type pdf)
 
 <use Images/xml_storage_arch_v2.pdf>
@@ -385,7 +401,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Citation `GRAft' on page 17 undefined on input line 68.
 
 [17 <./Images/xml_storage_arch_v2.pdf>] [18]
-<Images/Implementation_Lifecycle.pdf, id=132, 722.7pt x 542.025pt>
+<Images/Implementation_Lifecycle.pdf, id=138, 722.7pt x 542.025pt>
 File: Images/Implementation_Lifecycle.pdf Graphic file (type pdf)
 
 <use Images/Implementation_Lifecycle.pdf>
@@ -403,7 +419,7 @@ ude_entities=1&max_id=12345[]
 
  (./policy_implementation.tex
 Chapter 6.
-<Images/retweets_vs_favourites.pdf, id=156, 953.81343pt x 563.85657pt>
+<Images/retweets_vs_favourites.pdf, id=164, 953.81343pt x 563.85657pt>
 File: Images/retweets_vs_favourites.pdf Graphic file (type pdf)
 
 <use Images/retweets_vs_favourites.pdf>
@@ -423,15 +439,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ]
-<Images/impact_distribution_histogram.pdf, id=162, 845.07718pt x 597.55246pt>
+<Images/impact_distribution_histogram.pdf, id=168, 845.07718pt x 597.55246pt>
 File: Images/impact_distribution_histogram.pdf Graphic file (type pdf)
 
 <use Images/impact_distribution_histogram.pdf>
 Package pdftex.def Info: Images/impact_distribution_histogram.pdf used on input
- line 47.
+ line 46.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 47--48
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 46--47
  [] 
  []
 
@@ -442,15 +458,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./Images/retweets_vs_favourites.pdf>]
-<Images/barack_obama_monthly_impact.pdf, id=166, 845.07718pt x 597.55246pt>
+<Images/barack_obama_monthly_impact.pdf, id=172, 845.07718pt x 597.55246pt>
 File: Images/barack_obama_monthly_impact.pdf Graphic file (type pdf)
 
 <use Images/barack_obama_monthly_impact.pdf>
 Package pdftex.def Info: Images/barack_obama_monthly_impact.pdf used on input l
-ine 65.
+ine 64.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 65--66
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 64--65
  [] 
  []
 
@@ -458,20 +474,20 @@ Overfull \hbox (60.85912pt too wide) in paragraph at lines 65--66
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (29.07721pt too wide) in paragraph at lines 72--73
+Overfull \hbox (29.07721pt too wide) in paragraph at lines 71--72
 []\OT1/ppl/m/n/10.95 To demon-strate this on an-other in-di-vid-ual, take Chris
  Had-field (Twit-ter name Cmdr[]Hadfield),
  []
 
-<Images/chris_hadfield_monthly_impact.pdf, id=167, 845.07718pt x 597.55246pt>
+<Images/chris_hadfield_monthly_impact.pdf, id=173, 845.07718pt x 597.55246pt>
 File: Images/chris_hadfield_monthly_impact.pdf Graphic file (type pdf)
 
 <use Images/chris_hadfield_monthly_impact.pdf>
 Package pdftex.def Info: Images/chris_hadfield_monthly_impact.pdf used on input
- line 77.
+ line 76.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 77--78
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 76--77
  [] 
  []
 
@@ -483,19 +499,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25 <./Images/impact_distribution_histogram.pdf>] [26 <./Images/barack_obama_m
 onthly_impact.pdf>]
-<Images/steven_adams_followers.pdf, id=203, 402.50375pt x 334.24875pt>
+<Images/steven_adams_followers.pdf, id=209, 402.50375pt x 334.24875pt>
 File: Images/steven_adams_followers.pdf Graphic file (type pdf)
 
 <use Images/steven_adams_followers.pdf>
 Package pdftex.def Info: Images/steven_adams_followers.pdf used on input line 1
-05.
+04.
 (pdftex.def)             Requested size: 301.1261pt x 250.0637pt.
+ [27 <./Images/chris_hadfield_monthly_impact.pdf>] <Images/retweets_modules.pdf
+, id=231, 367.3725pt x 326.21875pt>
+File: Images/retweets_modules.pdf Graphic file (type pdf)
 
+<use Images/retweets_modules.pdf>
+Package pdftex.def Info: Images/retweets_modules.pdf used on input line 118.
+(pdftex.def)             Requested size: 146.94638pt x 130.48518pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<Images/retweets_source_nodes.pdf, id=232, 518.93875pt x 536.0025pt>
+File: Images/retweets_source_nodes.pdf Graphic file (type pdf)
 
-[27 <./Images/chris_hadfield_monthly_impact.pdf>] [28 <./Images/steven_adams_fo
-llowers.pdf>] [29]) [30]
+<use Images/retweets_source_nodes.pdf>
+Package pdftex.def Info: Images/retweets_source_nodes.pdf used on input line 12
+4.
+(pdftex.def)             Requested size: 207.57182pt x 214.3972pt.
+
+Overfull \hbox (9.1152pt too wide) in paragraph at lines 124--125
+[][] 
+ []
+
+[28 <./Images/steven_adams_followers.pdf>] [29 <./Images/retweets_modules.pdf> 
+<./Images/retweets_source_nodes.pdf>]) [30]
 \openout2 = `scraper_evaluation.aux'.
 
  (./scraper_evaluation.tex
@@ -530,115 +562,119 @@ Underfull \hbox (badness 3333) in paragraph at lines 24--24
 
 
 ] [32]
-<Images/scrape_performance_against_builds.pdf, id=244, 845.07718pt x 597.55246p
+<Images/scrape_performance_against_builds.pdf, id=260, 845.07718pt x 597.55246p
 t>
 File: Images/scrape_performance_against_builds.pdf Graphic file (type pdf)
  <use Images/scrape_performance_against_builds.pdf>
 Package pdftex.def Info: Images/scrape_performance_against_builds.pdf used on i
-nput line 66.
-(pdftex.def)             Requested size: 401.50146pt x 283.90419pt.
+nput line 69.
+(pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
+
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 69--70
+ [][] 
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [33]
-Underfull \hbox (badness 1910) in paragraph at lines 105--105
-[]\OT1/ppl/m/n/10.95 Google Twit-ter Search - re-trieve
- []
+<Images/Average_Time_To_Fetch_Profile.pdf, id=265, 845.07718pt x 597.55246pt>
+File: Images/Average_Time_To_Fetch_Profile.pdf Graphic file (type pdf)
 
+<use Images/Average_Time_To_Fetch_Profile.pdf>
+Package pdftex.def Info: Images/Average_Time_To_Fetch_Profile.pdf used on input
+ line 92.
+(pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Underfull \hbox (badness 5217) in paragraph at lines 107--107
-\OT1/ppl/m/n/10.95 Retweets, favourites, favourites,
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 92--93
+ [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 6396) has occurred while \output is active []
+Underfull \vbox (badness 2671) has occurred while \output is active []
 
  [34 <./Images/scrape_performance_against_builds.pdf>]
-<Images/failure_rate_and_reason.pdf, id=258, 845.07718pt x 597.55246pt>
+Overfull \hbox (20.45334pt too wide) in paragraph at lines 115--116
+\OT1/ppl/m/n/10.95 es-pe-cialy when hard-coded based upon doc-u-ment struc-ture
+ (for ex-am-ple doc-u-ment/v1/li/test/
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 126--126
+[]\OT1/ppl/m/n/10.95 Fetch retweeter list. HTTP re-quest to fetch the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+[]\OT1/ppl/m/n/10.95 Fetch de-tailed tweet in-for-ma-tion. Retweets,
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35 <./Images/Average_Time_To_Fetch_Profile.pdf>]
+<Images/failure_rate_and_reason.pdf, id=286, 845.07718pt x 597.55246pt>
 File: Images/failure_rate_and_reason.pdf Graphic file (type pdf)
 
 <use Images/failure_rate_and_reason.pdf>
 Package pdftex.def Info: Images/failure_rate_and_reason.pdf used on input line 
-139.
-(pdftex.def)             Requested size: 401.50146pt x 283.90419pt.
+159.
+(pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
+
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 159--160
+ [][] 
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [35] [36 <./Images/failure_rate_and_reason.pdf>]
+) [36] [37 <./Images/failure_rate_and_reason.pdf>]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex
-Chapter 8.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-[37
+ (./conclusion.tex [38
 
 
 
 ]
-Overfull \hbox (6.99066pt too wide) in paragraph at lines 28--29
+Chapter 8.
+[39]
+Overfull \hbox (6.99066pt too wide) in paragraph at lines 47--48
 []\OT1/ppl/m/n/10.95 Further, small-world net-work anal-y-sis could be com-pare
 d to com-mu-ni-ties de-tected within
  []
 
-) [38] (./proj_report_outline.bbl [39
+) [40] (./proj_report_outline.bbl [41
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 173--178
-[]\OT1/ppl/m/sc/10.95 Lurie, I.  \OT1/ppl/m/n/10.95 How to:scrape search en-gin
-es with-out piss-ing them
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--178
-\OT1/ppl/m/n/10.95 off.  $\OT1/cmtt/m/n/10.95 http : / / searchnewscentral . co
-m / 20110928186 / General-[]SEO /
- []
-
-[40]
-Underfull \hbox (badness 2197) in paragraph at lines 227--232
-[]\OT1/ppl/m/sc/10.95 Stelzner, M.  \OT1/ppl/m/n/10.95 2013 so-cial me-dia mar-
-ket-ing in-dus-try re-port.  $\OT1/cmtt/m/n/10.95 http : / / www .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--232
-\OT1/cmtt/m/n/10.95 socialmediaexaminer . com / social-[]media-[]marketing-[]in
-dustry-[]report-[]2013/$\OT1/ppl/m/n/10.95 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--244
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
 []\OT1/ppl/m/sc/10.95 Wadwha, T.  \OT1/ppl/m/n/10.95 Lessons from crowd-sourc-i
 ng the boston bomb-ing in-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--244
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
 \OT1/ppl/m/n/10.95 ves-ti-ga-tion.  $\OT1/cmtt/m/n/10.95 http : / / www . forbe
 s . com / sites / tarunwadhwa / 2013 / 04 / 22 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--244
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
 \OT1/cmtt/m/n/10.95 lessons-[]from-[]crowdsourcing-[]the-[]boston-[]marathon-[]
 bombings-[]investigation/$\OT1/ppl/m/n/10.95 ,
  []
 
-[41]) [42]
-\openout2 = `appendix.aux'.
+[42]) [43]
+\openout2 = `appendix_a.aux'.
 
- (./appendix.tex
+ (./appendix_a.tex [44
+
+
+]
 Appendix A.
 
 Overfull \hbox (18.8773pt too wide) in paragraph at lines 52--52
@@ -646,14 +682,70 @@ Overfull \hbox (18.8773pt too wide) in paragraph at lines 52--52
 ed" type="xsd:string"/>[] 
  []
 
-[43
+[45]
+Overfull \hbox (24.62599pt too wide) in paragraph at lines 91--91
+[]\OT1/cmtt/m/n/10.95 <xsd:element name="skill" minOccurs="0" maxOccurs="unboun
+ded" type="xsd:string"/>[] 
+ []
 
 
-]) [44] (./proj_report_outline.aux (./acknowledge.aux) (./introduction.aux)
+Overfull \hbox (1.63124pt too wide) in paragraph at lines 91--91
+[]\OT1/cmtt/m/n/10.95 <xsd:attribute name="num_skills" type="xsd:positiveIntege
+r" use="mandatory"/>[] 
+ []
+
+
+Overfull \hbox (24.62599pt too wide) in paragraph at lines 91--91
+[]\OT1/cmtt/m/n/10.95 <xsd:element name="group" minOccurs="0" maxOccurs="unboun
+ded" type="xsd:string"/>[] 
+ []
+
+
+Overfull \hbox (1.63124pt too wide) in paragraph at lines 91--91
+[]\OT1/cmtt/m/n/10.95 <xsd:attribute name="num_groups" type="xsd:positiveIntege
+r" use="mandatory"/>[] 
+ []
+
+[46]
+Appendix B.
+
+<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=330, 597.23125pt x
+ 845.1575pt>
+File: Images/average_time_to_fetch_parse_tweets_per_build.pdf Graphic file (typ
+e pdf)
+ <use Images/average_time_to_fetch_parse_tweets_per_build.pdf>
+Package pdftex.def Info: Images/average_time_to_fetch_parse_tweets_per_build.pd
+f used on input line 105.
+(pdftex.def)             Requested size: 501.87683pt x 710.22408pt.
+
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 105--106
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 54.04578pt on input line 107.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+) [47
+
+] [48] [49 <./Images/average_time_to_fetch_parse_tweets_per_build.pdf>]
+(./proj_report_outline.aux (./acknowledge.aux) (./introduction.aux)
 (./background.aux) (./project_management_approach.aux)
 (./requirements_analysis.aux) (./scraper_implementation.aux)
 (./policy_implementation.aux) (./scraper_evaluation.aux) (./conclusion.aux)
-(./appendix.aux))
+(./appendix_a.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -662,23 +754,23 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2211 strings out of 494071
- 32720 string characters out of 3160406
- 100618 words of memory out of 3000000
- 5318 multiletter control sequences out of 15000+200000
+ 2229 strings out of 494071
+ 33576 string characters out of 3160406
+ 100655 words of memory out of 3000000
+ 5327 multiletter control sequences out of 15000+200000
  36575 words of font info for 90 fonts, out of 3000000 for 9000
  648 hyphenation exceptions out of 8191
- 38i,13n,23p,1292b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,13n,23p,1201b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/pkg/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/pkg/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw
 /palatino/uplb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplr8a
 .pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/pkg/
 share/texmf-dist/fonts/type1/vuw/vuw20.pfb>
-Output written on proj_report_outline.pdf (52 pages, 1304680 bytes).
+Output written on proj_report_outline.pdf (59 pages, 1452156 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 373 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
