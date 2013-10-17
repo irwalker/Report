@@ -164,7 +164,7 @@ Reputation-inferring policies can be constructed from the data collected. Two ex
 
 \subsection{Case Study - Discussion Forum}
 
-In order to introduce exemplar reputation policies, the concept of an interactive forum is used. This concept is inspired by Hendrikx at al \cite{graft_paper}, where GRAft was applied to a social forum, using a pure reputation access control system. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
+In order to introduce exemplar reputation policies, the concept of an interactive forum is used. This concept is inspired by Hendrikx at al. \cite{graft_paper}, where GRAft was applied to a social forum, using a pure reputation access control system. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
 
 As in the GRAft paper, I provide policy fragments, using Ruler\footnote{https://github.com/bobthecow/Ruler} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. In the example the calculated impact factor of the user is enfored to be greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
 

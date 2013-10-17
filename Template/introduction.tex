@@ -1,13 +1,19 @@
 \chapter{Introduction}\label{C:int}
 
-Paragraph about social media and how social media has expanded into wide use.
+Social Networking Sites (SNS) such as \textit{theFacebook} originated in University environments in 2004. Users on social sites are able to create profiles about themselves, and interact with other users. Between 2004 and 2013, SNS have experienced extraordinary growth in active users, as well as moving through shifts in popularity. Online social platforms such as Facebook, Twitter, Google+ and LinkedIn have served to largely complement real-life interaction. Interactions online may take place with a variety of social spheres; friends, co-workers, family and complete strangers all congregate in one online location \cite{johnson2012facebook}.
 
-Paragraph about concepts of reputation. 
+Reputation and the task of maintaining one's online reputation is a task often discussed, but with little metrics associated as to what defines an online reputation, or how to evaluate one's reputation online. In traditional networking terminology, reputation is a global trust mechanism, as opposed to trust which describes one nodes impression of another in the network. 
 
-Give a real introduction to the problem domain. What is social media and what is reputation, etc. 
+% which should influence other members of the networks opninions on the node. 
+
+% Paragraph about social media and how social media has expanded into wide use.
+
+% Paragraph about concepts of reputation. 
+
+% Give a real introduction to the problem domain. What is social media and what is reputation, etc. 
 
 
-Reputation is the global trust mechanism, whereas trust is one nodes impression of another in the network.
+% Reputation is the global trust mechanism, whereas trust is one nodes impression of another in the network.
 
 
 %The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. In this report I summarise work completed towards this goal. Background research is discussed in the domain of social media, web-scraping, and related reputation-system based systems. The project management and requirements are discussed. Scraper design and con
@@ -29,7 +35,7 @@ In the digital age many social and business transactions are moving online. The 
 
 Reputation systems on trading websites have been extremely successful, despite the potential for fraudulent activity \cite{resnick2002trust}. While we might expect a self-aware adult to fairly easily spot equivalent 'fraudulent' activity or deceptive behaviour on social media, many examples have shown this to be untrue. Social crowd sourcing gone wrong has also been a high-profile issue, with incidents such as the Boston Bombings \cite{crowdsourcing_wad,doan2011crowdsourcing,brabham2008crowdsourcing}.
 
-Various strategies have been used to infer the personality or active traits of individuals online; these have been shown to be highly accurate. Applications on SNS have been used to give people an idea of their own personality. The results can then be compared against elements of the person's use of social media. This requires the express permission of the individual concerned to gain any meaningful data, when collecting information through a site's API. Which privacy concerns must be taken into account, publicly available information on an individual or company's social media account can be considered fair game. This information could be useful when judging trustworthiness. A new approach, that does not need permission to access information which is publicly-available, is needed. 
+Various strategies have been used to infer the personality or active traits of individuals online; these have been shown to be highly accurate. Applications on SNS have been used to give people an idea of their own personality. The results can then be compared against elements of the person's use of social media. This requires the express permission of the individual concerned to gain any meaningful data, when collecting information through a site's API. While privacy concerns must be taken into account, publicly available information on an individual or company's social media account can be considered fair game. This information could be useful when judging trustworthiness. A new approach, that does not need permission to access information which is publicly-available is needed. 
 
 % \section{Key Issues}
 % 
@@ -50,18 +56,20 @@ The aim of this project is to demonstrate the feasibility of a tool that gathers
 The primary contributions of this project are:
 
 \begin{description}
-	\item [A web-scraper for Twitter] as part of a wider scraping framework
+	\item [A web-scraper for Twitter] as part of a wider scraping framework. Existing Twitter scrapers exist, but with performance and usage limitations that are unsuitable for fetching large quantities of data, or indeed reputation-focused data.
 	
-	\item [A web-scraping framework] that is suitable for extension onto more social networking sites
+	\item [A web-scraping framework] that is suitable for extension onto more social networking sites is created called IHPScrape. The framework abstracts low-level networking details for further works, and reduces development time.
 	
-	\item [A set of reputation-inferring policies] for use on Twitter 
+	\item [A set of reputation-inferring policies] for use on Twitter are described, with the potential for more to be created. These exemplar policies are created with reference to observed patterns in 
 	
-	\item [A dataset of 1.7 million tweets], and associated tweet meta-data.
+	\item [A dataset of 1.7 million tweets], and associated tweet meta-data. This dataset was randomly selected. Existing Twitter datasets that were found online were predominantly celebrity based and not useful for research purposes. 
 \end{description}
 
 \section{Report Structure}
 
-The remainder of the report is structured as follows. Chapter 2 summarises background research that was undertaken in the problem domain. Chapter 3 describes the software engineering methodology used throughout the project. Chapter 4 identifies the specific requirements that the project aims to meet. Chapter 5 describes the design and implementation of the web scraping framework. Chapter 6 analyses data collected and proposes exemplar policies to determine social reputation. Chapter 7 then evaluates the scraping framework created. Chapter 8 provides conclusions and future work.
+The remainder of the report is organised as follows. Chapter 2 summarises background work. Software engineering methodologies used throughout the project are described in Chapter 3, followed by the identified requirements in Chapter 4. Chapter 5 describes the design and implementation of the web scraping framework. Data collected using this framework is covered in Chapter 6. Chapter 7 then evaluates the scraping framework created. Finally, Chapter 8 provides conclusions and future work.
+
+% The remainder of the report is structured as follows. Chapter 2 summarises background research that was undertaken in the problem domain. Chapter 3 describes the software engineering methodology used throughout the project. Chapter 4 identifies the specific requirements that the project aims to meet. Chapter 5 describes the design and implementation of the web scraping framework. Chapter 6 analyses data collected and proposes exemplar policies to determine social reputation. Chapter 7 then evaluates the scraping framework created. Chapter 8 provides conclusions and future work.
 
 %The major contribution of the project is to deliver a prototype that gathers online reputation data using web-scraping techniques.The prototype will be integrated with the GRAft reputation system \cite{graft_paper}, in order to link with a person's OpenID\cite{open_id}. Users would be able to generate a reputation value for themselves, or for others they know. 
 %explain below sentence!

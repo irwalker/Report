@@ -23,8 +23,6 @@ Two potential architectures were considered when designing the web-scraper compo
  \item A text/XML storage approach
 \end{itemize}
 
-
-
 %The database approach was ultimately rejected, and the more straightforward text/XML design used. The database design added unnecessary complexity and time-investment to develop the framework. The performance cost of saving to a database rather than a file also 
 
 %The reason for this rejection was due to a database design adding unnecessary complexity to the application, as well as time required to develop the framework. The performance cost of saving to a database was also unnecessary, so this over-engineered solution was rejected. 
@@ -86,7 +84,7 @@ Extending scrAPI was ultimately discarded, due to its heavy reliance on CSS file
 
 \subsection{Extend A Browser-Automation Model}
 
-Browser automation options were considered as an alternative architecture. Frameworks such as Watir \footnote{http://watir.com/} allow developers to simulate user interaction with web pages, by driving an actual browser instance.
+Browser automation options were considered as an alternative architecture. Frameworks such as Watir\footnote{http://watir.com/} allow developers to simulate user interaction with web pages, by driving an actual browser instance.
 
 A browser automated-scraper would likely have had little problem with site detection or blocking, due to the use of a real browser - providing genuine user agents, downloading CSS selectors and such. This would have been effective at fulfilling requirement F4. Despite this, performance would have been significantly poorer using this option, violating requirement NF2. As browser automation scripts are entirely dependant on site layout and interface naming conventions, this would have violated the requirement of resisting user interface change NF1. 
 
@@ -129,19 +127,21 @@ Developing the project solution consisted generally of a cyclic, iterative proto
 
 The web-scraper components were written entirely in Ruby. The development of screen scrapers is largely independent upon language choice; however Ruby was selected due to its large number of libraries suitable for scraping, and straightforward scripting nature. Ruby also has a significant Open Source following in comparison to many more conventional languages like Java. This was considered necessary early in the project, when looking at a model for future maintenance of the scrapers, especially for the discarded requirement of aggregating data for GRAft. 
 
-Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. This is just a 'nice-to-have' feature however, and would not have added any real value to the project design.
+Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{graft_paper}, as well as being the same language as my policies are described in. This is just a 'nice-to-have' feature however, and would not have added any real value to the project design.
 
-\section{IHPScrape Framework}
+% \section{IHPScrape Framework}
 
-The IHPScrape framework was implemented as per the architecture in Figure \ref{fig:xml_storage}. The purpose of the framework was to outline a class structure for following scrapers, as well as abstract the low level networking request details which all scrapers had to implement. 
+% The IHPScrape framework was implemented as per the architecture in Figure \ref{fig:xml_storage}. The purpose of the framework was to outline a class structure for following scrapers, as well as abstract the low level networking request details which all scrapers had to implement. HTTP requests and responses are handled by a Request Handler package, that 
+
+% Use xpath to retrieve information from documents.
 
 %
 
-Talk about the development of a generic scraping framework, and the considerations put in place during the this development.
+% Talk about the development of a generic scraping framework, and the considerations put in place during the this development.
 
-Request Handler generic request writer which is able to handle errors, etc. General layout for scrapers which scrapers implement.
+% Request Handler generic request writer which is able to handle errors, etc. General layout for scrapers which scrapers implement.
 
-Talk about xPath somewhat, as a language to select items from page from.
+% Talk about xPath somewhat, as a language to select items from page from.
 
 
 %\begin{figure}[h!]
@@ -236,12 +236,13 @@ The LinkedIn Scraper was developed towards the close of the project, and as a re
 
 The code was instrumented using a Ruby logger system written for the application. Given complexities and difficulties debugging errors on web-scraping applications, logging had to be performed to a very fine level of granularity. Any action changing system state such as fetching a page triggers the logging mechanism. The logger would then take note of the timestamp and write to the appropriate file the nature of the action. For example, if the scraper sent an HTTP request to retrieve a given URL, it would record the timestamp and URL requested. 
 
-The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, multiple debugging files with different purposes were used in an attempt to catch these errors. The debug log captured all interaction information at a basic level. The error log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error log assisted greatly in identifying these edge cases. Finally the failure log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a high level of detail, sometimes even writing the entire HTML document before the failure to disk. This again assisted with debugging, when reviewing how a particular run had gone. 
+The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, multiple debugging files with different purposes were used in an attempt to catch these errors. The debug log captured all interaction information at a basic level. The error log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error log assisted greatly in identifying these edge cases. Finally the failure log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a 
+high level of detail, sometimes even writing the entire HTML document before the failure to disk. This again assisted with debugging, when reviewing how a particular run had gone. 
 
 To limit the performance overhead of writing to these logging files, a buffered approach was taken in order to achieve the least impact. 
 
-\section{IHPScrape Summary}
+% \section{IHPScrape Summary}
 
-Write a summary of the scrapers here yo. Made a Framework which can be applied to multiple social media sites. Implemented for Facebook Twitter and LinkedIn, but Facebook was discarded due to its too often changed user interface. 
+% Write a summary of the scrapers here yo. Made a Framework which can be applied to multiple social media sites. Implemented for Facebook Twitter and LinkedIn, but Facebook was discarded due to its too often changed user interface. 
 
 %lol

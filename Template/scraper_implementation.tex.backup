@@ -135,6 +135,8 @@ Alternatives to Ruby were considered; Java, which does not have the same open so
 
 The IHPScrape framework was implemented as per the architecture in Figure \ref{fig:xml_storage}. The purpose of the framework was to outline a class structure for following scrapers, as well as abstract the low level networking request details which all scrapers had to implement. 
 
+Use xpath to retrieve information from documents.
+
 %
 
 Talk about the development of a generic scraping framework, and the considerations put in place during the this development.
@@ -236,6 +238,13 @@ The LinkedIn Scraper was developed towards the close of the project, and as a re
 
 The code was instrumented using a Ruby logger system written for the application. Given complexities and difficulties debugging errors on web-scraping applications, logging had to be performed to a very fine level of granularity. Any action changing system state such as fetching a page triggers the logging mechanism. The logger would then take note of the timestamp and write to the appropriate file the nature of the action. For example, if the scraper sent an HTTP request to retrieve a given URL, it would record the timestamp and URL requested. 
 
-The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, I used multiple debugging files with different purposes in an attempt to catch these errors. The debug log captured all interaction information at a basic level. The error log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error.log assisted greatly in identifying these edge cases. Finally the failure log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a high level of detail, sometimes even writing the entire HTML document before the failure to disk. This again assisted with debugging, when reviewing how a particular run had gone. 
+The logger would write to the appropriate log file based on the nature of the supplied action. Because these scrapers were running over long periods of time, using traditional IDE debugging tools was not effective at detecting errors. As a result, multiple debugging files with different purposes were used in an attempt to catch these errors. The debug log captured all interaction information at a basic level. The error log captures error information that is non-fatal to scraping an individual's profile, e.g. on Twitter. Commonly these errors were due to application logic flaws, such as performing operations on null entities. As a result the error log assisted greatly in identifying these edge cases. Finally the failure log was used to record fatal exceptions that would prevent me from scraping a profile. Occurrences such as 404, 500 or 503 responses from servers are examples that would result in a record being written to the failure log. The failure log would write system state at the time of failure to a 
+high level of detail, sometimes even writing the entire HTML document before the failure to disk. This again assisted with debugging, when reviewing how a particular run had gone. 
 
-To limit the performance overhead of writing to these logging files, a buffered approach was taken in order to achieve the least impact. %lol
+To limit the performance overhead of writing to these logging files, a buffered approach was taken in order to achieve the least impact. 
+
+\section{IHPScrape Summary}
+
+Write a summary of the scrapers here yo. Made a Framework which can be applied to multiple social media sites. Implemented for Facebook Twitter and LinkedIn, but Facebook was discarded due to its too often changed user interface. 
+
+%lol

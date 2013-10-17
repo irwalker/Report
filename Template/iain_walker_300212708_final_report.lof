@@ -9,18 +9,18 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Architecture for XML Storage Solution.}}{17}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Scraper Development Feedback Loop}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Correlation of Retweet and Favourite Count}}{26}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of Impact Score Among Users}}{27}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces An Example of Monthly-Impact Score Bucketing - Barack Obama}}{28}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{29}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Followers of Steven Adams}}{30}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Retweet detected community modules}}{31}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Retweet source nodes}}{31}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Correlation of Retweet and Favourite Count}}{24}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of Impact Score Among Users}}{25}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces An Example of Monthly-Impact Score Bucketing - Barack Obama}}{26}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The Monthly Impact of Chris Hadfield - Famous Astronaut}}{27}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Followers of Steven Adams}}{28}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Retweet detected community modules}}{29}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Retweet source nodes}}{29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Scraper performance improvements across incremental builds.}}{36}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Average Times to Fetch an Entire Twitter Profile, for use in Policies}}{37}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Incomplete profiles fetched, with reasons for Failure.}}{39}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Scraper performance improvements across incremental builds.}}{34}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Average Times to Fetch an Entire Twitter Profile, for use in Policies}}{35}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Incomplete profiles fetched, with reasons for Failure.}}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{53}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The Average Time to Fetch and Parse a Tweet, Ordered by Builds}}{51}

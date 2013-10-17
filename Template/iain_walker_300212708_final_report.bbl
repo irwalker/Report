@@ -149,6 +149,12 @@ Twitter.
 \newblock {\em Proceedings of the National academy of Sciences of the United
   States of America 102}, 46 (2005), 16569.
 
+\bibitem{johnson2012facebook}
+{\sc Johnson, M., Egelman, S., and Bellovin, S.~M.}
+\newblock Facebook and privacy: it's complicated.
+\newblock In {\em Proceedings of the Eighth Symposium on Usable Privacy and
+  Security\/} (2012), ACM, p.~9.
+
 \bibitem{josang2007survey}
 {\sc J{\o}sang, A., Ismail, R., and Boyd, C.}
 \newblock A survey of trust and reputation systems for online service
