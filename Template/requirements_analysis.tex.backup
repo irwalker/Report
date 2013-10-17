@@ -1,6 +1,6 @@
-\chapter{Requirements Analysis}\label{C:us}
+\chapter{Requirements Analysis}\label{C:requirements}
 
-To satisfy the goals of the project, the following requirements need to be addressed. These were created based upon the key issues outlined in chapter 1, and established through research conducted as part of the background. 
+To satisfy the goals of the project, the following requirements need to be addressed. These were created based upon the key issues outlined in Chapter 1, and established through research conducted as part of the background. 
 
 %\subsection{Functional Requirements}
 
@@ -29,37 +29,37 @@ To satisfy the goals of the project, the following requirements need to be addre
 
 \section{Functional Requirements}
 
-These are the functional requirements that were proposed to be met by my system:
+It was identified that the following functional requirements were key to the success of the system:
 
-\subsection{F1: Aggregation of Social Media Data}
+\paragraph{F1: Aggregation of Social Media Data}\hspace{0pt} \\
 
-Data from multiple social media sites needs to be aggregated in a sensible manner. This requirement exists in order to construct reputation-inferring policies from multiple websites. Entire profiles should be scraped in order to provide a richer set of social data.
+\noindent Data from multiple social media sites needs to be aggregated in a sensible manner. This requirement exists in order to construct reputation-inferring policies from multiple websites. Entire profiles should be scraped in order to provide a richer set of social data.
 
-\subsection{F2: Development of Reputation Policies}
+\paragraph{F2: Development of Reputation Policies}\hspace{0pt} \\
 
-The most significant requirement is to generate a set of policies to assist with generating a snapshot of an individual's reputation. Policies must consider data from reasonable time periods to ensure accurate predictions are made. These must consider future interactions in order to maintain user awareness and reflection upon their own reputation. Policies will need to return results within seconds to be useable in any real system. 
+\noindent The most significant requirement is to generate a set of policies to assist with generating a snapshot of an individual's reputation. Policies must consider data from time periods on the order of months or years to ensure accurate predictions are made. These must consider future interactions in order to maintain user awareness and reflection upon their own reputation. Policies will need to return results within seconds to be useable in any real system. 
 
 %Scrape entire profile!
 
-\subsection{ F3: Extensibility and Social Media Portability of Scraping Framework}
+\paragraph{ F3: Extensibility and Social Media Portability of Scraping Framework}\hspace{0pt} \\
 
-A framework should be created into which my web-scrapers conform. This framework should be suitable for application onto multiple social media platforms, and extension onto these platforms should require minimal effort. 
+\noindent A framework should be created into which my web-scrapers conform. This framework must be suitable for application onto multiple social media platforms, and extension onto these platforms should require minimal effort. 
 
 %Web-scrapers developed should conform to some overarching framework that may be applied to further social media sites in the future. This requirement specifies that the framework should be applicable to multiple social media sites with little modification. 
 
-\subsection{ F4: Resistance to Blocking Detection}
+\paragraph{ F4: Resistance to Blocking Detection}\hspace{0pt} \\
 
-In order for scrapers to continue collecting data over time periods of days or weeks, they must not be blocked by SNS servers. Scrapers that are detected by sites and are noted to be taxing on a server's resources will likely be blocked \cite{}. As such, my framework must firstly attempt to remain undetected as a scraping entity, and secondly recover from detection and resume scraping data if detection occurs. 
+\noindent In order for scrapers to continue collecting data over time periods of days or weeks, they must not be blocked by SNS servers. Scrapers that are detected by sites and are noted to be taxing on a server's resources will likely be blocked \cite{no_api_for_me}. As such, my framework must firstly attempt to remain undetected as a scraping entity, and secondly recover from detection and resume scraping data if detection occurs. 
 
-\subsection{ F5: Develop a Metric of Reliability Based Upon Quantity of Data}
+\paragraph{ F5: Develop a Metric of Reliability Based Upon Quantity of Data}\hspace{0pt} \\
 
-A metric of reliability based upon the quantity of data collected about an entity needs to be created. This is due to the time taken to fetch an entire profile being potentially highly time-consuming, possibly ruling out the feasibility of scraping an entire user profile for use in a policy. Thus smaller quantities of information could be considered instead, with a reliability metric value attached. As a result of the greater time spent analysing Twitter data than expected, this requirement had to be removed from the scope of the project.
+\noindent A metric of reliability based upon the quantity of data collected about an entity needs to be created. This is due to the time taken to fetch an entire profile being potentially highly time-consuming, possibly ruling out the feasibility of scraping an entire user profile for use in a policy. Thus smaller quantities of information could be considered instead, with a reliability metric value attached. As a result of the greater time spent analysing Twitter data than expected, this requirement had to be removed from the scope of the project.
 
  %This requirement was discarded from the scope of the project due to time constraints, as defining policies and original analysis of data was more time-consuming than expected. 
 
-\subsection{ F6: Storage of Reputation Information in GRAft}
+\paragraph{ F6: Storage of Reputation Information in GRAft}\hspace{0pt} \\
 
-Reputation policy construction will effectively enable my framework to act as a provider node for storage of data within the GRAft system. This requirement specifies that the final product should interface with the GRAft reputation system to ensure confidential and secure long-term storage of data. However this task necessitates the construction of a business model for such a system to be viable. A community effort would be required to maintain the code, and as such this was removed from the scope of my project. 
+\noindent Reputation policy construction will effectively enable my framework to act as a provider node for storage of data within the GRAft system. This requirement specifies that the final product should interface with the GRAft reputation system to ensure confidential and secure long-term storage of data. However this task necessitates the construction of a business model for such a system to be viable. A community effort would be required to maintain the code, and as such this was removed from the scope of my project. 
 
 %Discarded requirement - why?
 
@@ -67,9 +67,9 @@ Reputation policy construction will effectively enable my framework to act as a 
 
 The following are the non-functional requirements that my scraping framework aims to meet:
 
-\subsection{NF1: Resistance to User-Interface Change}
+\paragraph{NF1: Resistance to User-Interface Change}\hspace{0pt} \\
 
-The scraping framework should have built-in resilance to user interface layout and design change. Small changes should not result in a scraper no longer functioning as expected. This does not mean that wholesale site restructures should not affect the scraper, as this is an infeasible challenge. Instead, I expect that the framework should be mindful of what dependancies are most likely to change, and cater for this accordingly. 
+\noindent The scraping framework should have built-in resilance to user interface layout and design change. Small changes should not result in a scraper no longer functioning as expected. This does not mean that wholesale site restructures should not affect the scraper, as this is an infeasible challenge. Instead, I expect that the framework should be mindful of what dependancies are most likely to change, and cater for this accordingly. 
 
 %Scrapers developed must be resistant to user interface layout and design, and small changes should not result in a scraper no longer functioning as expected. 
 
@@ -77,13 +77,13 @@ The scraping framework should have built-in resilance to user interface layout a
 
 %Reprase dis shit in general
 
-\subsection{NF2: Scraper Performance Fast Enough for Use as part of Real-Time System}
+\paragraph{NF2: Scraper Performance Fast Enough for Use as part of Real-Time System}\hspace{0pt} \\
 
-This requirement refers to the speed and accuracy of my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. Data gathered must be accurate and represent what is actually displayed on a profile. 
+\noindent This requirement refers to the speedof my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. 
 
-\subsection{NF3: Accuracy of Data Collected}
+\paragraph{NF3: Accuracy of Data Collected}\hspace{0pt} \\
 
-In order to generate meaningful data analysis, discussion and policies, data collected by my scrapers must be accurate. Any innacuracies in collected data should be clearly highlighted and explained. As web-scraping through HTTP requests can sometimes produce unexpected return values some innacuracies will be expected, but these should be known-bugs. 
+\noindent In order to generate meaningful data analysis, discussion and policies, data collected by my scrapers must be accurate. Data gathered must be accurate and represent what is actually displayed on a profile. Any innacuracies in collected data should be clearly highlighted and explained. As web-scraping through HTTP requests can sometimes produce unexpected return values some innacuracies will be expected, but these should be known-bugs. 
 
 
 

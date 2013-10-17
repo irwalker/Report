@@ -1,5 +1,7 @@
 \chapter{Conclusions and Future Work}\label{C:us}
 
+
+
 This section summarises work completed over the project, and reflects on successes with relation to the issues identified at the beginning of the project.
 
 % This section draws conclusions from the results of the projects and details future work that could be conducted. 
@@ -8,17 +10,25 @@ This section summarises work completed over the project, and reflects on success
 
 A social media web-scraping framework was developed. This framework was developed firstly for Twitter, and was extended onto LinkedIn. I was able to demonstrate how web-scraping technologies are suitable for retrieval of basic reputation metrics. Performance of the scraper was greatly increased through incremental builds, with the final build performing a factor of 6 times better than the previous one.
 
-Unfortunately performance to fetch and parse an entire Twitter profile was shown to be too slow to prove viable in a real-time analytical system. The lower than anticipated performance was due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of seperate requests to retrieve an entire profile. Data retrieved was shown to be accurate, witholding some elements which can remain incomplete should their size exceed the threshold selected. Detection avoidance of the framework was also evaluated to have been successful, again up until the point of 7,000 + tweets being fetched. 
+Unfortunately performance to fetch and parse an entire Twitter profile was shown to be too slow to prove viable in a real-time analytical system. The lower than anticipated performance was due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate requests to retrieve an entire profile. Data retrieved was shown to be accurate, withholding some elements which can remain incomplete should their size exceed the threshold selected. Detection avoidance of the framework was also evaluated to have been successful, again up until the point of 7,000 + tweets being fetched. 
+
+Talk about requirements F1...F4 being met/not met
 
 \section{Data Analysis and Resulting Policies}
 
 Data analysis was performed against the Twitter dataset collected of 1.7 million tweets. Retweets were firstly discussed, due to their greater semantic depth than the equivalent 'favourite' mechanism. Using retweet counts as a measure of impact, an 'Impact Factor' calculation is proposed, based upon the Hirsch-Index calculation. This calculation measures productivity and response values on Twitter. Combining this figure with average monthly impact gives a view of average activity, and allows for inactive users to be detected. Different bucketing sizes may be used; in this project, a month was the bucket size of choice. 
 
-Community detection was also experimented with, and the links of retweets and follower/following relationships explored to reveal existance of sub-communities within Twitter. Unfortunately visualisation of entire retweet communities was not achieved due to limitations with the selected visualisation tool. As the MapGenerator tool is currently undergoing improvement, there is potential for improvement in this feature.
+Community detection was also experimented with, and the links of retweets and follower/following relationships explored to reveal existence of sub-communities within Twitter. Unfortunately visualisation of entire retweet communities was not achieved due to limitations with the selected visualisation tool. As the MapGenerator tool is currently undergoing improvement, there is potential for improvement in this feature.
 
-Examplar policies were provided, with respect to the case study of a social forum. Combination of community detection, impact factor, and temporal reputation information was demonstrated to be useful in regards to access policy constructs. 
+Exemplar policies were provided, with respect to the case study of a social forum. Combination of community detection, impact factor, and temporal reputation information was demonstrated to be useful in regards to access policy constructs. 
 
-% Examplar policies are given, with respect to the example of a social forum. 
+\section{Methodology Reflection}
+
+ I did experience delays with finishing my implementation and evaluation, as new features such as community detection were added late in the project. Reasons for this late discovery and delay were in part due to the exploratory nature of the project, as will be discussed in the design approach.
+ 
+ There were some pitfalls in this approach however. Some effort in developing prototypes can go to waste, which occured in this project. Facebook was deemed infeasible to scrape due to its interface's constant state of flux. Also during prototyping, Twitter's API changed significantly, rendering much effort lost.
+
+% Exemplar policies are given, with respect to the example of a social forum. 
 
 
 % \noindent The evaluation of IHPScrape demonstrates that a web-scraping solution is possible for inferring basic reputation metrics, against the primary case-study of Twitter. However performance to fetch and parse an entire profile is too slow to be viable in a commercial system. The lower than expected performance is due to the dynamic nature of today's social sites, necessitating in potentially hundreds or thousands of separate HTTP requests being sent to fetch an entire profile. 
@@ -39,6 +49,8 @@ Examplar policies were provided, with respect to the case study of a social foru
 
 
 \section{Future Work}
+
+Through this project the following potential extensions were identified as future work.
 
 \subsection{Community Detection Extension}
 

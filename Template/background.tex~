@@ -12,7 +12,9 @@
 
 %Quantifying reputation on social media - what this means. Examples of systems that attempt to quantify reputation on social media, through the use of APIs and how a system I build could extend upon these. 
 
-This section covers the background research I performed for the project, and works related to my project. I also discuss how I was able to contribute to the research domain, with points of difference to these works. 
+This section covers the background research performed for the project, and works related to the project. Also discussed are the contribution to the research domain, with points of different to these related works.
+
+% I also discuss how I was able to contribute to the research domain, with points of difference to these works. 
 
 \section{Social Media}
 
@@ -51,7 +53,8 @@ This basic feature analysis was the foundation for data exploration on the socia
 
 % Web-scraping or \textit{screen scraping} refers to the practice of downloading web pages directly through HTTP requests, and parsing this unstructured data into something useful. It is a wel-understood data-gathering technique, and there are existing architectures and frameworks to help facilitate this. Anything online that is accessible through a browser can be scraped. 
 
-Web-scraping or \textit{screen scraping} refers to the practice of downloading web pages directly through HTTP requests, and parsing this unstructured data into something useful. It is a well-understood data-gathering technique, and there are existing architectures and frameworks to help facilitate this.  Anything online that is accessible through a browser can be scraped. Hartley gives a light introduction to the concepts and strengths of web-scraping \cite{no_api_for_me}. Web-scraping is largely used as an alternative to traditional API's to websites, where these may not exist, or face a lack of support or development. Applications using web-APIs which frequently change could also benefit from switching to a web-scraping alternative. The advantage of web-scraping is that it provides direct access to the content of a website. While a site's API may not allow access to information that is quite clear from the front end, web-scraping will inherently provide this. Also, some sites do not monitor their API status 
+Web-scraping or \textit{screen scraping} refers to the practice of downloading web pages directly through HTTP requests, and parsing this unstructured data into something useful. It is a well-understood data-gathering technique, and there are existing architectures and frameworks to help facilitate this.  Anything online that is accessible through a browser can be scraped. Hartley gives a light introduction to the concepts and strengths of web-scraping \cite{no_api_for_me}. Web-scraping is largely used as an alternative to traditional API's to websites, where these may not exist, or face a lack of support or development. Applications using web-APIs which frequently change could also benefit from switching to a web-scraping alternative. The advantage of web-scraping is that it provides direct access to the content of a website. While a site's API may not allow access to information that is quite clear from the front end, web-scraping will inherently provide this. Also, some sites do not monitor their API 
+status 
 as carefully as the actual front-end access. Maintaining availability to the core site is of higher business priority than developer APIs, and this is consistently reflected in respective levels of support. 
 
 The primary limitation of web-scrapers is that major user interface changes will likely result in a broken scraper. In general site's structures do not change frequently enough for this to be a major issue. The typical argument however is that a site's structure can, without any warning, change at any time. This is an unavoidable issue when considering developing a scraper, and as such the regularity of user interface changes on a website should be considered when deciding between using an API or a scraper. In general it is more sensible to inspect a site's API for applicability before constructing a web-scraper. As an example; Facebook was ruled out as a social option in this project due to its regular user interface updates. 
@@ -84,7 +87,8 @@ The following sections examine research conducted into what information has alre
 
 \subsection{Personality from Social Media}
 
-Studies have investigated how private details about personality traits can be inferred through behavioural analysis of individuals on social media \cite{adali2012predicting,adali2012actions,bachrach2012personality,golbeck2011predicting,golbeck2011computing,golbeck2011,golbeck2011experimental}. Golbeck et al. demonstrate that real life personality traits may be predicted by looking at past behavioural patterns on Twitter with high accuracy \cite{golbeck2011predicting}. Using the publicly-available figures of followers, following and posts the authors were able to classify individuals into different Big Five personality types \cite{de2000big}. This was verified against a 44-question personality test for 71 individuals, with accuracy of around 80\%. In further papers these authors were also able to make conclusions on political preference, as well as extend their work onto Facebook and tagging behaviour \cite{golbeck2011computing,golbeck2011,golbeck2011experimental}. Adali et al. \cite{adali2012predicting,adali2012actions} extend this work further by predicting personality and relationship information on Facebook.
+Studies have investigated how private details about personality traits can be inferred through behavioural analysis of individuals on social media \cite{adali2012predicting,adali2012actions,bachrach2012personality,golbeck2011predicting,golbeck2011computing,golbeck2011,golbeck2011experimental}. Golbeck et al. demonstrate that real life personality traits may be predicted by looking at past behavioural patterns on Twitter with high accuracy \cite{golbeck2011predicting}. Using the publicly-available figures of followers, following and posts the authors were able to classify individuals into different Big Five personality types \cite{de2000big}. This was verified against a 44-question personality test for 71 individuals, with accuracy of around 80\%. In further papers these authors were also able to make conclusions on political preference, as well as extend their work onto Facebook and tagging behaviour \cite{golbeck2011computing,golbeck2011,golbeck2011experimental}. Adali et al. \cite{adali2012predicting,
+adali2012actions} extend this work further by predicting personality and relationship information on Facebook.
 %Sentiment-based analysis of tweets has also been studied, analysing the use of emoticons on Twitter.
 %Studies have shown how private details about personality traits can be inferred by behavioural analysis of individuals on social media. These studies have taken both a behavioural-based and textual sentiment-analysis approach to determine personality. Studies showed that real life personality traits can be predicted by looking at past behavioural patterns on Twitter, with high accuracy \cite{}. Using publicly-available information on Twitter pages, the authors were able to classify individuals into different Big-Five personality types \cite{}. This was verified against a 44-question personality test for 71 individuals, with accuracy of around 80\%. Further research has been performed, looking at how Facebook behavioural patterns relate to personality type by asking questions on the MyPersonality Facebook app. Behavioural data was then gathered from the test subject's Facebook profiles, to check for correlations. Textual sentiment-analysis approaches have also been taken in order to determine personality 
 % type 
@@ -111,7 +115,7 @@ Although the above studies investigate the concept of personality and how we can
 
 Some sites explicitly reference user reputation, a system commonly utilised on social forums. Stack Overflow \cite{stackoverflow_site} is a question and answer site where users are able to post code-related programming problems. It has been identified that sites such as Stack Overflow are largely dependant on the contributions of a small number of expert users, who provide a significant proportion of useful answers \cite{movshovitzanalysis}. As such, identifying users who have the potential to become strong contributors is of significant importance to the success of the website.
 
-\begin{figure}[h!]
+\begin{table}[h!]
 \begin{center}
 \begin{tabular}{l|r}
  Action & Reputation Change\\ \hline
@@ -127,16 +131,17 @@ Some sites explicitly reference user reputation, a system commonly utilised on s
 %Actions and Corresponding Reputation Change on Stack Overflow \cite{movshovitzanalysis}
 \end{center}
 \caption{Actions and Corresponding Reputation Change on Stack Overflow \cite{movshovitzanalysis}}
-\end{figure}
+\label{tab:STACK}
+\end{table}
 
 %Actions and Corresponding Reputation Change on Stack Overflow \cite{movshovitzanalysis}\\
 
 %\caption{Actions and Reputation Change on Stack Overflow\cite{movshovitzanalysis}}\\
 
-Reputation in this context is entirely derivative of the actions and effectiveness of answers provided by users. Within Stack Overflow, a high user reputation score could be considered a measure of expertise.
+Table \ref{tab:STACK} defines the actions and corresponding reputation changes users may take on Stack Overflow. Reputation in this context is entirely derivative of the actions and effectiveness of answers provided by users. Within Stack Overflow, a high user reputation score could be considered a measure of expertise.
 
-The online forum SlashDot \cite{} is another social site where user action affects reputation. Slashdot was created in 1997 as a 'news for nerds' message board \cite{josang2007survey}. As members grew rapidly, spam and poor posts became an issue, resulting in the introduction of a moderation system. A two tier moderation system now exists, where \textit{M1} allows administration of comments on articles, and \textit{M2} moderating the \textit{M1} moderators. User reputation information is logged using \textit{Karma} for logged in users as a reputation metric. Each logged in user maintains a \textit{Karma} score from one of six discrete values: \textit{Terrible, Bad, Neutral, Positive, Good, Excellent}. Positive moderation feedback to a user's comment will result in an increase in Karma. The opposite applies for negative moderation. Comments on SlashDot are ranked from [-1,5]. If a user with high Karma created a comment, this will have a higher starting rank. To reduce spam, users 
-can then filter comments based on minimum rank. For example if I wished only to see the best comments, I would set the filter value to 5. 
+The online forum SlashDot \cite{slashdot_site} is another social site where user action affects reputation. Slashdot was created in 1997 as a 'news for nerds' message board \cite{josang2007survey}. As members grew rapidly, spam and poor posts became an issue, resulting in the introduction of a moderation system. A two tier moderation system now exists, where \textit{M1} allows administration of comments on articles, and \textit{M2} moderating the \textit{M1} moderators. User reputation information is logged using \textit{Karma} for logged in users as a reputation metric. Each logged in user maintains a \textit{Karma} score from one of six discrete values: \textit{Terrible, Bad, Neutral, Positive, Good, Excellent}. Positive moderation feedback to a user's comment will result in an increase in Karma. The opposite applies for negative moderation. Comments on SlashDot are ranked from [-1,5]. If a user with high Karma created a comment, this will have a higher starting rank. To reduce spam, users can then filter 
+comments based on minimum rank. For example if a user wished only to see the best comments, they could set the filter value to 5. 
 
 The SlashDot reputation system is an example of effective spam filtering through the use of a reputation system in conjunction with moderation. The use of reputation in this context greatly reduces the moderation community effort to maintain the website. 
 
@@ -148,7 +153,7 @@ The SlashDot reputation system is an example of effective spam filtering through
 
 \section{Reputation Metrics Elsewhere}
 
-Reputation systems have also had considerable success on trading applications such as eBay and TradeMe. Resnick et al looked at the success of eBay's reputation system and identified the three properties that a reputation system must enforce in order to add value to such a site \cite{resnick2000reputation,resnick2002trust}. 
+Reputation systems have also had considerable success on trading applications such as eBay and TradeMe. Resnick et al. \cite{resnick2000reputation,resnick2002trust} looked at the success of eBay's reputation system and identified the following three properties that a reputation system must enforce in order to add value to such a site. 
 
 \begin{itemize}
  \item Entities are long-lived, so that there is an expectation for future interaction. This generates a 'shadow of the future', and provides incentive for users to behave with integrity in the short term, such that future interactions will not be impacted by a poor reputation. 
@@ -156,7 +161,7 @@ Reputation systems have also had considerable success on trading applications su
  \item Feedback from the past guides current decisions: people must pay attention to reputations for them to be valuable. 
 \end{itemize}
 
-This impacts my study as it guides the creation of reputation policies; reputation data I gather should conform to these concepts. Resnick's paper also identified weaknesses within current reputation systems online. There are three weaknesses present within current reputation systems which automated policies can help address. 
+This impacts the undertaken research as it guides the creation of reputation policies; reputation data I gather should conform to these concepts. Resnick's paper also identified weaknesses within current reputation systems online. There are three weaknesses present within current reputation systems which automated policies can help address. 
 
 \begin{itemize}
  \item Fears of retaliation - users not posting negative scores due to fear of unsolicited reciprocation.
@@ -166,9 +171,11 @@ This impacts my study as it guides the creation of reputation policies; reputati
 
 An automated reputation system using policies to turn reputation into access or action rights solves many of these issues instantly. There is no area in which retaliation can occur, feedback is never explicitly placed, and policies treating all users equally will assure honest feedback.
 
-\section{Related Systems}
+\section{Related Work}
 
-I will now discuss some systems which consider reputation data and apply it to access-control and service selection policies online. Firstly I examine the Generalise Recommendation Architecture and an OpenSocial access framework, in the context of access control solutions using reputation attributes as keys. Then the social-media based reputation system Klout will be discussed. 
+The following sections review and discuss a number of related works. The Generalised Recommendation Architecture and an OpenSocial access framework are covered in the context of access control solutions using reputation attributes as keys. Then the social media focused reputation system Klout is discussed.
+
+% I will now discuss some systems which consider reputation data and apply it to access-control and service selection policies online. Firstly I examine the Generalise Recommendation Architecture and an OpenSocial access framework, in the context of access control solutions using reputation attributes as keys. Then the social-media based reputation system Klout will be discussed. 
 
 %Finally, the social-media based reputation system Klout will be discussed. 
 
@@ -208,8 +215,13 @@ Entities within GRAft are uniquely identified using their OpenID. The system is 
 
 %Change this to he forum example. More relevant to my studies than the example pictured here. 
 
-Although GRAft is not a system currently used in industry, the authors discuss how it could be applied in practice. The domain of a scientific wiki is one such example. This wiki consists of scientific articles, which can be read and edited by members. Using a two-tier access policy, read access to a page was is given by co-authorship. Users who had previously worked with the owner have a 1st-degree relationship; those who have worked with a person in the set of 1st-degree owners are 2nd degree owners, and so on. Once the user is granted access depending on this degree of co-authorship, editing rights are calculated by the users Hirsch-Index (H-Index) \cite{}. Another policy is then responsible for assigning editing permissions based on this value. This example demonstrates how access rights can be automatically granted for all users who fulfil requirements defined by the page owner. The group is never explicitly defined in terms of users; and as the author begins work with others, they can be 
-automatically granted access to resources. This flexible policy comes closer to reflecting ad-hoc and informal scientific collaborative interactions, and is based on trust information that comes closer to real-life reputation. 
+Although GRAft is not a system currently used in industry, the authors discuss how it could be applied in practice. The domain of a scientific wiki is one such example. This wiki consists of scientific articles, which can be read and edited by members. Using a two-tier access policy defined in Figure \ref{fig:GRAFT}, read access to a page was is given by co-authorship. Users who had previously worked with the owner have a 1st-degree relationship; those who have worked with a person in the set of 1st-degree owners are 2nd degree owners, and so on. Once the user is granted access depending on this degree of co-authorship, editing rights are calculated by the users Hirsch-Index (H-Index) \cite{hirsch2005index}. Another policy is then responsible for assigning editing permissions based on this value. This example demonstrates how access rights can be automatically granted for all users who fulfil requirements defined by the page owner. The group is never explicitly defined in terms of users; and as the author 
+begins work with others, they can be automatically granted access to resources. This flexible policy comes closer to reflecting ad-hoc and informal scientific collaborative interactions, and is based on trust information that comes closer to real-life reputation. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, this project provides a further case study example for this system.
+
+% My proposed solution extends and borrows concepts from these related reputation systems. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, I essentially create source nodes as a further case study example for this system.
+
+% Whilst Klout provides interesting reputation insight into a users profile, it is limited in that only your own profile reputation data can be viewable immediately. To view friend's profiles, they must sign into Klout themselves. It is impossible to view the Klout scores for strangers. As such this system is only purposed for competition among friends, and little else. 
+% Figure \ref{fig:GRAFT}
 
 \begin{center}
 \begin{figure}[h!]
@@ -223,6 +235,7 @@ automatically granted access to resources. This flexible policy comes closer to 
  )
 \end{verbatim}
 \caption{GRAft reputation based access policy example}
+\label{fig:GRAFT}
 \end{figure}
 \end{center}
 
@@ -232,26 +245,29 @@ automatically granted access to resources. This flexible policy comes closer to 
 
 Zhang et al. \cite{zhang2012open} proposed an Open Social\footnote{http://opensocial.org/} based group access control framework. Open Social is a framework for deploying cloud-based social applications. It was used in this context as it provides an API useful for retrieving social connection data. It also supports OAuth \footnote{http://oauth.net/}, a protocol that allows users to grant third-part access to their protected resources.
 
-The social trust scheme proposed in this paper consists of a multi-tenancy access control model, which can be applied to a scientific team-management scenario. Firstly the authors consider how trust in this context is a complex human-to-human relationship, developed through scientific collaboration. The authors argue that information about such relationships can be captured through data embedded on Online Social Networking (OSN) sites. This enables friend-of-a-friend trust to be computed, enabling transitive data as also seen in GRAft(which proposed using degree of co-authorship as a trust attribute).
+The social trust scheme proposed in this paper consists of a multi-tenancy access control model, which can be applied to a scientific team-management scenario. Firstly the authors consider how trust in this context is a complex human-to-human relationship, developed through scientific collaboration. The authors argue that information about such relationships can be captured through data embedded on Online Social Networking (OSN) sites. This enables friend-of-a-friend trust to be computed, enabling transitive data as also seen in GRAft(which proposed using degree of co-authorship as a trust attribute). Whilst this system is useful for access control schemes, there was little discussion relating to other potential applications of its reputation schemes. By creating a more generic social media scraper, this project increases the possible avenues for utilisation of this data.
+
+%  Whilst the Open Social based reputation system is useful for access control schemes, there was little discussion relating to other potential applications of its reputation schemes. As such it is of arguably less value than a more generic system such as GRAft. 
 
 %How do social media sites control access
 %How effective have social media sites been at controlling access, and how well do users feel that their information is safe?
 
 \subsection{Klout}
 
-Klout \footnote{http://www.klout.com} is a social media reputation system that generates an 'impact score' out of 100, based on how influential you are on various social media sites. In order to generate your Klout score, you sign in to Klout using OAuth to connect to your social media site of choice. Klout then interacts with these sites' APIs to fetch the relevant data. This site is useful to me as it both demonstrates how such information can be used to generate influence information, as well as how such a system can become popular. I extend this system by using the alternative approach of web-scraping. By doing so, users would be able to look at the reputation data of other users, as well as themselves. 
+Klout \cite{klout_site} is a social media reputation system that generates an \textit{impact score} out of 100, based on how influential you are on various social media sites. In order to generate your Klout score, you sign in to Klout using OAuth to connect to your social media site of choice. Klout then interacts with these sites' APIs to fetch the relevant data. Figure \ref{fig:KLOUT} shows Klout's dashboard page, which breaks down your reputation score. This site is useful to me as it both demonstrates how such information can be used to generate influence information, as well as how such a system can become popular. I extend this system by using the alternative approach of web-scraping. By doing so, users would be able to look at the reputation data of other users, as well as themselves. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{Images/klout.png}
 \caption{Klout impact score}
+\label{fig:KLOUT}
 \end{figure}
 
-\subsection{Discussion}
+% \subsection{Discussion}
 
-My proposed solution extends and borrows concepts from these related reputation systems. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, I essentially create source nodes as a further case study example for this system. Whilst the Open Social based reputation system is useful for access control schemes, there was little discussion relating to other potential applications of its reputation schemes. As such it is of arguably less value than a more generic system such as GRAft. 
+% My proposed solution extends and borrows concepts from these related reputation systems. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, I essentially create source nodes as a further case study example for this system. Whilst the Open Social based reputation system is useful for access control schemes, there was little discussion relating to other potential applications of its reputation schemes. As such it is of arguably less value than a more generic system such as GRAft. 
 
-Whilst Klout provides interesting reputation insight into a users profile, it is limited in that only your own profile reputation data can be viewable immediately. To view friend's profiles, they must sign into Klout themselves. It is impossible to view the Klout scores for strangers. As such this system is only purposed for competition among friends, and little else. 
+% Whilst Klout provides interesting reputation insight into a users profile, it is limited in that only your own profile reputation data can be viewable immediately. To view friend's profiles, they must sign into Klout themselves. It is impossible to view the Klout scores for strangers. As such this system is only purposed for competition among friends, and little else. 
 
 %Add more reflection and discussion about the related systems, and discuss why a new solution needs to be developed. Otherwise, why don't we just tsick with the current system lol
 

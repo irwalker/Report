@@ -1,6 +1,6 @@
 \chapter{Data Discussion and Policy Construction}\label{C:us}
 
-In this section I discuss the construction of my reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created will be discussed, and discussion of hypotheses generated from this data and how we experimented with these. Only Twitter data is discussed due to the richness of the dataset mined. As such multiple analysis approaches were taken.
+This section addresses the construction of reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created are discussed, and discussion of hypotheses generated from this data and how we experimented with these. Only Twitter data is discussed due to the richness of the dataset mined. As such multiple analysis approaches were taken.
 
 Data was collected during scraper implementation, as per the feedback loop in figure 5.3. Profiles scraped earlier contain less detail than data collected later. For example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totalling 1,745,161 tweets. 
 
@@ -15,40 +15,42 @@ Data was collected during scraper implementation, as per the feedback loop in fi
 
 \section{Retweet Analysis}
 
-I now present the results of retweet analysis on Twitter. Retweets were considered as a basis for more policies as more semantic information can be retrieved from retweets than favourites. When retweeting content users are able to comment and add extra value to the post, whereas this is not possible for favourites.
+Retweets were considered as a basis for policies as more semantic information can be retrieved from retweets than favourites. When retweeting content users are able to comment and add extra value to the post, whereas this is not possible for favourites.
 
-The first question we asked was in the use of retweet and favourite functionality on Twitter. When 'retweeting' content on Twitter, the post will appear on the users own wall, as a tweet. A 'favourite' instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. 
+The first question asked was to do with the use of retweet and favourite functionality on Twitter. When \textit{retweeting} content on Twitter, the post will appear on the users own wall, as a tweet. A \textit{favourite} instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. We hypothesise that as a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.
 
-\begin{description}
- \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
-\end{description}
+% \begin{description}
+%  \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
+% \end{description}
 
-A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. We find that retweets and favourites have a strong positive correlation, with a Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
+A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. Figure \ref{fig:correlation_retweet_fav} shows this correlation. We find that retweets and favourites have a strong positive correlation, with a Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
 
 \begin{figure}[h!]
 \begin{center}
  \centering
 \includegraphics[width=500px]{Images/retweets_vs_favourites.pdf}
 \caption{Correlation of Retweet and Favourite Count}
+\label{fig:correlation_retweet_fav}
 \end{center}
 \end{figure}
 
 %Number of tweets compared against
 %Correlation
 
-\subsection{An Impact Factor}
+\subsection{Impact Factor}
 
-We created an 'impact factor' measurement based upon a Twitter user's retweet count, and tweet activity. This formula is upon the Hirsch-index \cite{hirsch2005index} measurement for an academic's contribution to literature. It attempts to measure both the impact (number of retweets) and productivity (number of tweets) of a Twitter user. 
+We created an /textit{impact factor} measurement based upon a Twitter user's retweet count, and tweet activity. This formula is upon the Hirsch-index \cite{hirsch2005index} measurement for an academic's contribution to literature. It attempts to measure both the impact (number of retweets) and productivity (number of tweets) of a Twitter user. 
 
 \begin{figure}[h!]
 \begin{center}
 \centering
 \includegraphics[width=500px]{Images/impact_distribution_histogram.pdf}
 \caption{Distribution of Impact Score Among Users}
+\label{fig:dist_impact_score}
 \end{center}
 \end{figure}
 
-Figure 6.2 displays the distribution of impact factor values, over the set of twitter profiles collected. We can see that the impact score follows a roughly exponentially decreasing curve, with the vast majority of users getting a low impact score. This is reflective of past research, studying the behaviours of Twitter users \cite{beevolve}. That is, user patterns can be broken up into users who follow others and do not post much content themselves, and users who are more active and are followed by others. The extremely high impact scores are likely celebrities - the profile with the highest impact score of 216 was the Jonas Brothers (a pop band) profile, which happened to feature in the dataset. 
+Figure \ref{fig:dist_impact_score} displays the distribution of impact factor values, over the set of twitter profiles collected. We can see that the impact score follows a roughly exponentially decreasing curve, with the vast majority of users getting a low impact score. This is reflective of past research, studying the behaviours of Twitter users \cite{beevolve}. That is, user patterns can be broken up into users who follow others and do not post much content themselves, and users who are more active and are followed by others. The extremely high impact scores are likely celebrities - the profile with the highest impact score of 216 was the Jonas Brothers (a pop band) profile, which happened to feature in the dataset. 
 
 The impact factor calculation differs from other social media impact algorithms in that there is no upper limit on score. Other methods are arbitrarily capped at values like 10 or 100, which restricts the comparative value of such tools for the high echelons of impacting-users. The algorithm also automatically takes into account the length of time a user has been active on Twitter when performing the calculation. 
 
@@ -56,37 +58,41 @@ Extensions to the impact factor algorithm could include use of data such as numb
 
 \subsection{Temporal Clustering and Impact Factor}
 
-In order to differentiate from one-hit-wonders and 'constant emitters' in my reputation policies, some view of activity over time was discussed. We refer to this as temporal clustering. One approach is to cluster impact score calculation into separate months. This reveals how consistently influential a person is, and gives the potential for detecting inactive users. Various bucket sizes were experimented with - days were much to varying to interpret a clear underlying trend, whilst years were too coarse to solve the issue of inactive users receiving a high impact score. Thus months are used as a bucketing measure.
+In order to differentiate from \textit{one-hit-wonders} and \textit{constant emitters} in reputation policies, some view of activity over time was discussed. We refer to this as temporal clustering. One approach is to cluster impact score calculation into separate months. This reveals how consistently influential a person is, and gives the potential for detecting inactive users. Various bucket sizes were experimented with - days were much to varying to interpret a clear underlying trend, whilst years were too coarse to solve the issue of inactive users receiving a high impact score. Thus months are used as a bucketing measure.
 
 \begin{figure}[h!]
 \begin{center}
 \centering
 \includegraphics[width=500px]{Images/barack_obama_monthly_impact.pdf}
 \caption{An Example of Monthly-Impact Score Bucketing - Barack Obama}
+\label{fig:obama}
 \end{center}
 \end{figure}
 
-This technique can be used to link real-world events to a person's influence. As an example I take Barack Obama. In October and November of 2012, the US presidential elections were at their peak. The corresponding impact score of 47 for Obama in October is reflective of this. 
+This technique can be used to link real-world events to a person's influence. Barack Obama is taken as an example, as seen in Figure \ref{fig:obama}. In October and November of 2012, the US presidential elections were at their peak. The corresponding impact score of 47 for Obama in October is reflective of this. 
 
-To demonstrate this on another individual, take Chris Hadfield (Twitter name Cmdr\_Hadfield), made famous through his cover of David Bowie's 'Space Oddity'. The below chart shows how Hadfield's popularity spiked around the time of this video's explosion in popularity - June this year. 
+To demonstrate this on another individual, take Chris Hadfield (Twitter name Cmdr\_Hadfield), made famous through his cover of David Bowie's 'Space Oddity'. Figure \ref{fig:hadfield} shows how Hadfield's popularity spiked around the time of this video's explosion in popularity - June this year. 
 
 \begin{figure}[h!]
 \begin{center}
 \centering
 \includegraphics[width=500px]{Images/chris_hadfield_monthly_impact.pdf}
 \caption{The Monthly Impact of Chris Hadfield - Famous Astronaut}
+\label{fig:hadfield}
 \end{center}
 \end{figure}
 
 \section{Community Detection}
 
-The second primary data exploration factor explored community detection on Twitter. I propose the following. 
+The second primary data exploration factor explored community detection on Twitter. As a second hypothesis, we attempt to validate that embedded social networks exist within Twitter, and can be detected using IHPScrape. Detection of these communities will be possible through two means; follower and following links, and connection through retweets. Data collected for detecting communities consists of two sets to verify this claim; the retweet links, and follower links. These sets are largely disconnected, and as such discussion of these two techniques must also be separated.  
+% 
+% I propose the following. 
+% 
+% \begin{description}
+% \item[H2.]{Embedded social networks exist within Twitter, and can be detected using IHPScrape. Detection of these communities will be possible through two means; follower and following links, and connection through retweets.}
+% \end{description}
 
-\begin{description}
-\item[H2.]{Embedded social networks exist within Twitter, and can be detected using IHPScrape. Detection of these communities will be possible through two means; follower and following links, and connection through retweets.}
-\end{description}
 
-Data collected for detecting communities consists of two sets to verify this claim; the retweet links, and follower links. These sets are largely disconnected, and as such discussion of these two techniques must also be separated.  
 
 \subsection{MapEquation Tool}
 
@@ -96,17 +102,18 @@ The InfoMap software package distributed by mapequation is compatible with a Fla
 
 \subsection{Followers and Following}
 
-The first community detection approach considers those clustered around profiles, through links in following (profiles an individual is following) and followers (users who are following the current profile). I found that disconnected communities are clustered around popular figures. The below example, taken from Steven Adams profile, is a visualisation of the community formed through a subset of his followers. 
+The first community detection approach considers those clustered around profiles, through links in following (profiles an individual is following) and followers (users who are following the current profile). I found that disconnected communities are clustered around popular figures. Figure \ref{fig:stevenadamsfollowers}, taken from Steven Adams profile, is a visualisation of the community formed through a subset of his followers. 
 
 \begin{figure}[h!]
 \begin{center}
 \centering
 \includegraphics[width=300px]{Images/steven_adams_followers.pdf}
 \caption{Followers of Steven Adams}
+\label{fig:stevenadamsfollowers}
 \end{center}
 \end{figure}
 
-Unfortunately due to the limitations of the tool used, larger sets of data were not able to be loaded in this context. I feel that with more results, larger and connected communities would be evident through the follower and following connection on Twitter.
+% Unfortunately due to the limitations of the tool used, larger sets of data were not able to be loaded in this context. I feel that with more results, larger and connected communities would be evident through the follower and following connection on Twitter.
 
 \subsection{Retweet Communities}
 
@@ -116,29 +123,24 @@ The second approach taken considers the communities formed on Twitter through re
 \centering
 \begin{minipage}[b]{0.45\linewidth}
 \includegraphics[scale=0.40]{Images/retweets_modules.pdf}
-\caption{Retweets detected community modules}
+\caption{Retweet detected community modules}
 \label{fig:minipage1}
 \end{minipage}
 \quad
 \begin{minipage}[b]{0.45\linewidth}
 \includegraphics[scale=0.40]{Images/retweets_source_nodes.pdf}
-\caption{Retweets source nodes}
+\caption{Retweet source nodes}
 \label{fig:minipage2}
 \end{minipage}
 \end{figure}
 
-Unfortunately the MapGenerator tool did not allow for any entire set of profile and retweet data that was collected to be visualised in one piece. This is due to the extremely large quantity of nodes that are generated through the fetching of a single profile, and the entire collection of retweet links associated with this profile. This largely reduced the use of current retweet communities, and the visualisation options for generating meaningful understanding of data collected, as arbitrary divisions in data necessary to be loaded into the tool introduce bias. Figures 6.6 and 6.7 are the retweet communities generated from the first quarter of one Twitter profile scraped. 
-
-
-
+Unfortunately the MapGenerator tool did not allow for any entire set of profile and retweet data that was collected to be visualised in one piece. This is due to the extremely large quantity of nodes that are generated through the fetching of a single profile, and the entire collection of retweet or followers links associated with this profile. This largely reduced the use of current retweet communities, and the visualisation options for generating meaningful understanding of data collected, as arbitrary divisions in data necessary to be loaded into the tool introduce bias. Figures \ref{fig:minipage1} and \ref{fig:minipage2} are the retweet communities generated from the first quarter of one Twitter profile scraped. 
 
 % as divisions in data were necessary to load into the tool introduce bias.
 
-% TODO - INPUT SOME OF THE RETWEET COMMUNITY FIGURES HERE.
-
 \subsection{Community Discussion}
 
-The scrapers allowed for detection of communities for the two groups of followers and following, as well as detection of communities among retweeting circles. While the tools available certainly allowed for the detection of these communities, there is no way with the analysis tools currently provided to associate any real meaning with these groups. Future projects could assign meaning with the data I have made available - for example with sentiment or keyword classifying of tweet conversation topics for a profile. This would allow for meaningful classification of communities on Twitter, rather than simply grouping around profile names such as the grouping shown around Steven Adams profile. As this is not an A.I. project, it was perfectly reasonable to leave this implementation detail to the future work. Due to the large potential for extension of this community detection function, the policies ahead make assumptions on the classification of these groups being possible. 
+The scrapers allowed for detection of communities for the two groups of followers and following, as well as detection of communities among retweeting circles. While the tools available certainly allowed for the detection of these communities, there is no way with the analysis tools currently provided to associate any real meaning with these groups. Future projects could assign meaning with the data that has been extracted - for example with sentiment or keyword classifying of tweet conversation topics for a profile. This would allow for meaningful classification of communities on Twitter, rather than simply grouping around profile names such as the grouping shown in Figure \ref{fig:stevenadamsfollowers}. This feature was left out of scope. Due to the large potential for extension of this community detection function, the policies ahead make assumptions on the classification of these groups being possible. 
 
 %Positive outcomes of community detection - was able to group w.r.t to followers and following, as well as for retweeting communities.
 
@@ -150,17 +152,23 @@ The scrapers allowed for detection of communities for the two groups of follower
 
 \subsection{Sentiment Analysis}
 
-One avenue for enriching the community data would be to use sentiment-detection methods. Filip Dimitrievski's project was primarily focused on classifying social media posts based upon sentiment, and constructing policies based on this information. He was able to use data collected from my scrapers to classify tweets according to sentiment, with varying success with different classifiers such as Sentiment140\footnote{http://www.sentiment140.com/}. Although the classifier was not trained specifically to Twitter data and in the long run the approach was abandoned, this demonstrated the feasibility of such an approach. Further exploration of this is left to future work, given that the project was not Artificial-Intelligence focused.
+One avenue for enriching the community data would be to use sentiment-detection methods. Filip Dimitrievski's project was primarily focused on classifying social media posts based upon sentiment, and constructing policies based on this information. He was able to use data collected from the IHPScrape scrapers to classify tweets according to sentiment, with varying success with different classifiers such as Sentiment140\footnote{http://www.sentiment140.com/}. Although the classifier was not trained specifically to Twitter data and in the long run the approach was abandoned, this demonstrated the feasibility of such an approach. Future exploration of this is left to future work.
+
+% Further exploration of this is left to future work, given that the project was not Artificial-Intelligence focused.
 
 \section{Policy Examples and Discussion}
 
-Reputation-inferring policies can be constructed from the data collected. I discuss 2 exemplar policies in particular which could be built as part of any system requiring reputation data related to a user's profile. I apply these policies in relation to a theoretical case study, that requires access policies based upon user reputation from an external source. 
+Reputation-inferring policies can be constructed from the data collected. Two exemplar policies are presented, which could be built as part of a system requiring reputation data related to a user's profile. These policies are applied in relation to a theoretical case study.
+
+% I discuss 2 exemplar policies in particular which could be built as part of any system requiring reputation data related to a user's profile. I apply these policies in relation to a theoretical case study, that requires access policies based upon user reputation from an external source. 
 
 \subsection{Case Study - Discussion Forum}
 
-In order to introduce exemplar reputation policies, I use the concept of an interactive forum. This concept is inspired by Hendrikx at al's application of GRAft to a social forum, using a pure reputation access control system \cite{graft_paper}. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
+In order to introduce exemplar reputation policies, the concept of an interactive forum is used. This concept is inspired by Hendrikx at al. \cite{graft_paper}, where GRAft was applied to a social forum, using a pure reputation access control system. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
 
-As in the GRAft paper, I provide policy fragments, using Ruler \footnote{https://github.com/bobthecow/Ruler} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. Here I propose that the calculated impact factor of the user is greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
+As in the GRAft paper, I provide policy fragments, using Ruler\footnote{https://github.com/bobthecow/Ruler} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. In the example the calculated impact factor of the user is enfored to be greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
+
+% Here I propose that the calculated impact factor of the user is greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
 
 \begin{center}
  \textbf{Policy 1: Impact Factor and Community Participation}
