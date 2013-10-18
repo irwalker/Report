@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  18 OCT 2013 01:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (Web2C 2012) (format=pdflatex 2013.2.21)  18 OCT 2013 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,14 +291,18 @@ Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 23.
 [1
 
 
-]) [2]
+]) [2] [3]
 \openout2 = `background.aux'.
 
- (./background.tex
+ (./background.tex [4
+
+
+
+]
 Chapter 2.
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 43.
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/omsppl.fd
@@ -306,14 +310,10 @@ File: omsppl.fd
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
- [3
-
-
-
-]
+ [5]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 73.
- [4]
+ [6]
 Overfull \hbox (3.4804pt too wide) in paragraph at lines 90--96
 \OT1/ppl/m/n/10.95 Studies have in-ves-ti-gated how pri-vate de-tails about per
 -son-al-ity traits can be in-ferred through
@@ -325,23 +325,23 @@ Overfull \hbox (3.96835pt too wide) in paragraph at lines 97--98
 -tails can be in-ferred from publicly-
  []
 
-[5] [6] [7] [8] <Images/klout.png, id=59, 803.0pt x 722.7pt>
+[7] [8] [9] [10] <Images/klout.png, id=65, 803.0pt x 722.7pt>
 File: Images/klout.png Graphic file (type png)
 
 <use Images/klout.png>
-Package pdftex.def Info: Images/klout.png used on input line 260.
+Package pdftex.def Info: Images/klout.png used on input line 261.
 (pdftex.def)             Requested size: 308.71104pt x 277.84888pt.
-) [9 <./Images/klout.png>]
+) [11 <./Images/klout.png>]
 \openout2 = `project_management_approach.aux'.
 
 
-(./project_management_approach.tex [10
+(./project_management_approach.tex [12
 
 
 
 ]
 Chapter 3.
-[11]) [12]
+[13]) [14]
 \openout2 = `requirements_analysis.aux'.
 
  (./requirements_analysis.tex
@@ -371,7 +371,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
-[13
+[15
 
 
 
@@ -395,12 +395,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-) [14]
+) [16]
 \openout2 = `scraper_implementation.aux'.
 
  (./scraper_implementation.tex
 Chapter 5.
-<Images/Database_Architecture.pdf, id=79, 722.7pt x 542.025pt>
+<Images/Database_Architecture.pdf, id=85, 722.7pt x 542.025pt>
 File: Images/Database_Architecture.pdf Graphic file (type pdf)
 
 <use Images/Database_Architecture.pdf>
@@ -411,11 +411,11 @@ Package pdftex.def Info: Images/Database_Architecture.pdf used on input line 37
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15
+[17
 
 
 
-] <Images/xml_storage_arch_v2.pdf, id=83, 722.7pt x 542.025pt>
+] <Images/xml_storage_arch_v2.pdf, id=90, 722.7pt x 542.025pt>
 File: Images/xml_storage_arch_v2.pdf Graphic file (type pdf)
 
 <use Images/xml_storage_arch_v2.pdf>
@@ -428,9 +428,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 2126) has occurred while \output is active []
 
- [16 <./Images/Database_Architecture.pdf>] [17 <./Images/xml_storage_arch_v2.pd
+ [18 <./Images/Database_Architecture.pdf>] [19 <./Images/xml_storage_arch_v2.pd
 f>]
-<Images/Implementation_Lifecycle.pdf, id=129, 722.7pt x 542.025pt>
+<Images/Implementation_Lifecycle.pdf, id=135, 722.7pt x 542.025pt>
 File: Images/Implementation_Lifecycle.pdf Graphic file (type pdf)
 
 <use Images/Implementation_Lifecycle.pdf>
@@ -441,59 +441,56 @@ Package pdftex.def Info: Images/Implementation_Lifecycle.pdf used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19 <./Images/Implementation_Lifecycle.pdf>] [20] [21]) [22]
+[20] [21 <./Images/Implementation_Lifecycle.pdf>] [22] [23]) [24]
 \openout2 = `policy_implementation.aux'.
 
 
 (./policy_implementation.tex
 Chapter 6.
-<Images/retweets_vs_favourites.pdf, id=156, 953.81343pt x 563.85657pt>
+<Images/retweets_vs_favourites.pdf, id=164, 953.81343pt x 563.85657pt>
 File: Images/retweets_vs_favourites.pdf Graphic file (type pdf)
 
 <use Images/retweets_vs_favourites.pdf>
-Package pdftex.def Info: Images/retweets_vs_favourites.pdf used on input line 3
-1.
+Package pdftex.def Info: Images/retweets_vs_favourites.pdf used on input line 1
+5.
 (pdftex.def)             Requested size: 501.87683pt x 296.69162pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 31--32
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 15--16
  [] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Images/impact_distribution_histogram.pdf, id=157, 845.07718pt x 597.55246pt>
+<Images/impact_distribution_histogram.pdf, id=165, 845.07718pt x 597.55246pt>
 File: Images/impact_distribution_histogram.pdf Graphic file (type pdf)
 
 <use Images/impact_distribution_histogram.pdf>
 Package pdftex.def Info: Images/impact_distribution_histogram.pdf used on input
- line 47.
+ line 41.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 47--48
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 41--42
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23
+[25
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./Images/retweets_vs_favourites.pdf>]
-<Images/barack_obama_monthly_impact.pdf, id=166, 845.07718pt x 597.55246pt>
+ [26 <./Images/retweets_vs_favourites.pdf>]
+<Images/barack_obama_monthly_impact.pdf, id=172, 845.07718pt x 597.55246pt>
 File: Images/barack_obama_monthly_impact.pdf Graphic file (type pdf)
 
 <use Images/barack_obama_monthly_impact.pdf>
 Package pdftex.def Info: Images/barack_obama_monthly_impact.pdf used on input l
-ine 66.
+ine 60.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 66--67
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 60--61
  [] 
  []
 
@@ -501,20 +498,20 @@ Overfull \hbox (60.85912pt too wide) in paragraph at lines 66--67
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (29.07721pt too wide) in paragraph at lines 74--75
+Overfull \hbox (29.07721pt too wide) in paragraph at lines 68--69
 []\OT1/ppl/m/n/10.95 To demon-strate this on an-other in-di-vid-ual, take Chris
  Had-field (Twit-ter name Cmdr[]Hadfield),
  []
 
-<Images/chris_hadfield_monthly_impact.pdf, id=167, 845.07718pt x 597.55246pt>
+<Images/chris_hadfield_monthly_impact.pdf, id=173, 845.07718pt x 597.55246pt>
 File: Images/chris_hadfield_monthly_impact.pdf Graphic file (type pdf)
 
 <use Images/chris_hadfield_monthly_impact.pdf>
 Package pdftex.def Info: Images/chris_hadfield_monthly_impact.pdf used on input
- line 79.
+ line 73.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 79--80
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 73--74
  [] 
  []
 
@@ -524,43 +521,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./Images/impact_distribution_histogram.pdf>]
+ [27 <./Images/impact_distribution_histogram.pdf>]
 Underfull \vbox (badness 1210) has occurred while \output is active []
 
- [26 <./Images/barack_obama_monthly_impact.pdf>]
-<Images/steven_adams_followers.pdf, id=203, 402.50375pt x 334.24875pt>
+ [28 <./Images/barack_obama_monthly_impact.pdf>]
+<Images/steven_adams_followers.pdf, id=209, 402.50375pt x 334.24875pt>
 File: Images/steven_adams_followers.pdf Graphic file (type pdf)
 
 <use Images/steven_adams_followers.pdf>
-Package pdftex.def Info: Images/steven_adams_followers.pdf used on input line 1
-10.
+Package pdftex.def Info: Images/steven_adams_followers.pdf used on input line 9
+6.
 (pdftex.def)             Requested size: 301.1261pt x 250.0637pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27 <./Images/chris_hadfield_monthly_impact.pdf>]
-<Images/retweets_modules.pdf, id=224, 367.3725pt x 326.21875pt>
+[29 <./Images/chris_hadfield_monthly_impact.pdf>]
+<Images/retweets_modules.pdf, id=231, 367.3725pt x 326.21875pt>
 File: Images/retweets_modules.pdf Graphic file (type pdf)
 
 <use Images/retweets_modules.pdf>
-Package pdftex.def Info: Images/retweets_modules.pdf used on input line 125.
+Package pdftex.def Info: Images/retweets_modules.pdf used on input line 111.
 (pdftex.def)             Requested size: 146.94638pt x 130.48518pt.
 
-<Images/retweets_source_nodes.pdf, id=225, 518.93875pt x 536.0025pt>
+<Images/retweets_source_nodes.pdf, id=232, 518.93875pt x 536.0025pt>
 File: Images/retweets_source_nodes.pdf Graphic file (type pdf)
 
 <use Images/retweets_source_nodes.pdf>
-Package pdftex.def Info: Images/retweets_source_nodes.pdf used on input line 13
-1.
+Package pdftex.def Info: Images/retweets_source_nodes.pdf used on input line 11
+7.
 (pdftex.def)             Requested size: 207.57182pt x 214.3972pt.
 
-Overfull \hbox (9.1152pt too wide) in paragraph at lines 131--132
+Overfull \hbox (9.1152pt too wide) in paragraph at lines 117--118
 [][] 
  []
 
-[28 <./Images/steven_adams_followers.pdf>] [29 <./Images/retweets_modules.pdf> 
-<./Images/retweets_source_nodes.pdf>]) [30]
+[30 <./Images/steven_adams_followers.pdf>] [31 <./Images/retweets_modules.pdf> 
+<./Images/retweets_source_nodes.pdf>]) [32]
 \openout2 = `scraper_evaluation.aux'.
 
  (./scraper_evaluation.tex
@@ -590,36 +587,36 @@ Underfull \hbox (badness 3333) in paragraph at lines 25--25
 []\OT1/ppl/b/n/10.95 Tweet List
  []
 
-[31
+[33
 
 
 
-] [32]
-<Images/scrape_performance_against_builds.pdf, id=254, 845.07718pt x 597.55246p
+] [34]
+<Images/scrape_performance_against_builds.pdf, id=260, 845.07718pt x 597.55246p
 t>
 File: Images/scrape_performance_against_builds.pdf Graphic file (type pdf)
  <use Images/scrape_performance_against_builds.pdf>
 Package pdftex.def Info: Images/scrape_performance_against_builds.pdf used on i
-nput line 69.
+nput line 70.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 69--70
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[33]
-<Images/Average_Time_To_Fetch_Profile.pdf, id=258, 845.07718pt x 597.55246pt>
+[35]
+<Images/Average_Time_To_Fetch_Profile.pdf, id=265, 845.07718pt x 597.55246pt>
 File: Images/Average_Time_To_Fetch_Profile.pdf Graphic file (type pdf)
 
 <use Images/Average_Time_To_Fetch_Profile.pdf>
 Package pdftex.def Info: Images/Average_Time_To_Fetch_Profile.pdf used on input
- line 95.
+ line 96.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 95--96
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 96--97
  [][] 
  []
 
@@ -629,54 +626,54 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 7540) has occurred while \output is active []
 
- [34 <./Images/scrape_performance_against_builds.pdf>]
-Underfull \hbox (badness 1210) in paragraph at lines 134--134
+ [36 <./Images/scrape_performance_against_builds.pdf>]
+Underfull \hbox (badness 1210) in paragraph at lines 135--135
 []\OT1/ppl/m/n/10.95 Fetch retweeter list. HTTP re-quest to fetch the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []\OT1/ppl/m/n/10.95 Fetch de-tailed tweet in-for-ma-tion. Retweets,
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35 <./Images/Average_Time_To_Fetch_Profile.pdf>]
-<Images/failure_rate_and_reason.pdf, id=280, 845.07718pt x 597.55246pt>
+[37 <./Images/Average_Time_To_Fetch_Profile.pdf>]
+<Images/failure_rate_and_reason.pdf, id=286, 845.07718pt x 597.55246pt>
 File: Images/failure_rate_and_reason.pdf Graphic file (type pdf)
 
 <use Images/failure_rate_and_reason.pdf>
 Package pdftex.def Info: Images/failure_rate_and_reason.pdf used on input line 
-168.
+169.
 (pdftex.def)             Requested size: 501.87683pt x 354.87796pt.
 
-Overfull \hbox (60.85912pt too wide) in paragraph at lines 168--169
+Overfull \hbox (60.85912pt too wide) in paragraph at lines 169--170
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [36] [37 <./Images/failure_rate_and_reason.pdf>]
+) [38] [39 <./Images/failure_rate_and_reason.pdf>]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex [38
+ (./conclusion.tex [40
 
 
 
 ]
 Chapter 8.
-[39] [40]
-Overfull \hbox (6.99066pt too wide) in paragraph at lines 78--79
+[41] [42]
+Overfull \hbox (6.99066pt too wide) in paragraph at lines 107--108
 []\OT1/ppl/m/n/10.95 Further, small-world net-work anal-y-sis could be com-pare
 d to com-mu-ni-ties de-tected within
  []
 
-) [41] [42
+) [43] [44
 
 
-] (./iain_walker_300212708_final_report.bbl [43
+] (./iain_walker_300212708_final_report.bbl [45
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 171--176
@@ -690,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--176
 m / 20110928186 / General-[]SEO /
  []
 
-[44]
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 212--217
 []\OT1/ppl/m/sc/10.95 Wadwha, T.  \OT1/ppl/m/n/10.95 Lessons from crowd-sourc-i
 ng the boston bomb-ing in-
@@ -708,10 +705,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--217
 bombings-[]investigation/$\OT1/ppl/m/n/10.95 ,
  []
 
-) [45]
+) [47]
 \openout2 = `appendix_a.aux'.
 
- (./appendix_a.tex [46
+ (./appendix_a.tex [48
 
 
 ]
@@ -722,7 +719,7 @@ Overfull \hbox (18.8773pt too wide) in paragraph at lines 52--52
 ed" type="xsd:string"/>[] 
  []
 
-[47]
+[49]
 Overfull \hbox (24.62599pt too wide) in paragraph at lines 91--91
 []\OT1/cmtt/m/n/10.95 <xsd:element name="skill" minOccurs="0" maxOccurs="unboun
 ded" type="xsd:string"/>[] 
@@ -746,10 +743,10 @@ Overfull \hbox (1.63124pt too wide) in paragraph at lines 91--91
 r" use="mandatory"/>[] 
  []
 
-[48]
+[50]
 Appendix B.
 
-<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=330, 597.23125pt x
+<Images/average_time_to_fetch_parse_tweets_per_build.pdf, id=336, 597.23125pt x
  845.1575pt>
 File: Images/average_time_to_fetch_parse_tweets_per_build.pdf Graphic file (typ
 e pdf)
@@ -778,9 +775,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
-) [49
+) [51
 
-] [50] [51 <./Images/average_time_to_fetch_parse_tweets_per_build.pdf>]
+] [52] [53 <./Images/average_time_to_fetch_parse_tweets_per_build.pdf>]
 (./iain_walker_300212708_final_report.aux (./acknowledge.aux)
 (./introduction.aux) (./background.aux) (./project_management_approach.aux)
 (./requirements_analysis.aux) (./scraper_implementation.aux)
@@ -793,22 +790,22 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2255 strings out of 494071
  34238 string characters out of 3160406
- 100882 words of memory out of 3000000
+ 100884 words of memory out of 3000000
  5353 multiletter control sequences out of 15000+200000
  36575 words of font info for 90 fonts, out of 3000000 for 9000
  648 hyphenation exceptions out of 8191
- 38i,13n,23p,1625b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,13n,23p,1206b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/pkg/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/pkg/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw
 /palatino/uplb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplr8a
 .pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/pkg/
 share/texmf-dist/fonts/type1/vuw/vuw20.pfb>
-Output written on iain_walker_300212708_final_report.pdf (59 pages, 1454941 byt
+Output written on iain_walker_300212708_final_report.pdf (61 pages, 1456050 byt
 es).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
+ 380 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

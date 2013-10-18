@@ -253,7 +253,7 @@ The social trust scheme proposed in this paper consists of a multi-tenancy acces
 
 \subsection{Klout}
 
-Klout \cite{klout_site} is a social media reputation system that generates an \textit{impact score} out of 100, based on how influential you are on various social media sites. In order to generate a Klout score, users sign in to Klout using OAuth to connect to their social media site of choice. Klout then interacts with these sites' APIs to fetch the relevant data. Figure \ref{fig:KLOUT} shows Klout's dashboard page, which breaks down a user's reputation score. This site is useful to me as it both demonstrates how such information can be used to generate influence information, as well as how such a system can become popular. I extend this system by using the alternative approach of web-scraping. By doing so, users would be able to look at the reputation data of other users, as well as themselves. 
+Klout \cite{klout_site} is a social media reputation system that generates an \textit{impact score} out of 100, based on how influential you are on various social media sites. In order to generate a Klout score, users sign in to Klout using OAuth to connect to their social media site of choice. Klout then interacts with these sites' APIs to fetch the relevant data. Figure \ref{fig:KLOUT} shows Klout's dashboard page, which breaks down a user's reputation score. This site is useful as it both demonstrates how such information can be used to generate influence information, as well as how such a system can become popular. I extend this system by using the alternative approach of web-scraping. By doing so, users would be able to look at the reputation data of other users, as well as themselves. 
 
 \begin{figure}[h!]
 \centering

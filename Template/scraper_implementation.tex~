@@ -94,7 +94,7 @@ A basic application interacting with the Twitter API was constructed early in th
 
 \subsection{Implement a new Framework}
 
-The fourth approach considered was to develop a new framework, built upon a number of Ruby libraries. This approach allowed for more flexibility when constructing scrapers, and consider new approaches to the user interface dependancies of web-scrapers. 
+The fourth approach considered was to develop a new framework, built upon a number of Ruby libraries. This approach allowed for more flexibility when constructing scrapers, and consider new approaches to the user interface dependencies of web-scrapers. 
 
 The primary disadvantage to this approach is the potential to re-implement work that has already been done previously. However by building the framework around existing libraries to perform the low-level networking technicalities of web-scraping, developer burden may be greatly lessened. This approach also allowed for development of a scraper framework tailored for social media, which was not present in frameworks researched.
 
@@ -127,7 +127,7 @@ Developing the project solution consisted generally of a cyclic, iterative proto
 
 The web-scraper components were written entirely in Ruby. The development of screen scrapers is largely independent upon language choice; however Ruby was selected due to its large number of libraries suitable for scraping, and straightforward scripting nature. Ruby also has a significant Open Source following in comparison to many more conventional languages like Java. This was considered necessary early in the project, when looking at a model for future maintenance of the scrapers, especially for the discarded requirement of aggregating data for GRAft. 
 
-Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{GRAft}, as well as being the same language as my policies are described in. This is just a 'nice-to-have' feature however, and would not have added any real value to the project design.
+Alternatives to Ruby were considered; Java, which does not have the same open source following as Ruby, as well as a larger degree of lower-level network coding for web-scraping software; and PHP, which was rejected due to time constraints limiting personal capabilities to learn the language to a competent level during the project. PHP would have given the advantage of being more consistent with past works, however \cite{graft_paper}, as well as being the same language as my policies are described in. This is just a 'nice-to-have' feature however, and would not have added any real value to the project design.
 
 % \section{IHPScrape Framework}
 

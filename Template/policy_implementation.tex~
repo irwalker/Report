@@ -2,30 +2,14 @@
 
 This section addresses the construction of reputation policies for use on Twitter. In particular the development of analysis tools for achieving greater understanding of the Twitter dataset created are discussed, and discussion of hypotheses generated from this data and how we experimented with these. Only Twitter data is discussed due to the richness of the dataset mined. As such multiple analysis approaches were taken.
 
-Data was collected during scraper implementation, as per the feedback loop in figure 5.3. Profiles scraped earlier contain less detail than data collected later. For example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totalling 1,745,161 tweets. 
-
-%Twitter data is discussed soley, as the dataset retrieved was rich enough to provide for several analysis angles.
-%Fix this
-
-%\section{Collection Method}
-
-%Data discussed was collected entirely from the Twitter Scraper I implemented. This was collected during implementation, as per the feedback loop in figure 5.3. As such, profiles scraped earlier contain less detail than data collected later. 
-
+Data was collected during scraper implementation, as per the feedback loop in figure 5.3. Profiles scraped earlier contain less detail than data collected later. For example, names of retweeters was not a feature collected on earlier profiles. In total, 1767 separate profiles were scraped, totaling 1,745,161 tweets. 
 %Show the median,q1 q3 min max of the number of tweets per profile perhaps?
 
 \section{Retweet Analysis}
 
 Retweets were considered as a basis for policies as more semantic information can be retrieved from retweets than favourites. When retweeting content users are able to comment and add extra value to the post, whereas this is not possible for favourites.
 
-The first question asked was to do with the use of retweet and favourite functionality on Twitter. When \textit{retweeting} content on Twitter, the post will appear on the users own wall, as a tweet. A \textit{favourite} instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. We hypothesise that as a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.
-
-% \begin{description}
-%  \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
-% \end{description}
-
-A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. Figure \ref{fig:correlation_retweet_fav} shows this correlation. We find that retweets and favourites have a strong positive correlation, with a Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
-
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
  \centering
 \includegraphics[width=500px]{Images/retweets_vs_favourites.pdf}
@@ -34,12 +18,22 @@ A simple approach to demonstrate that the use of retweets and favourites is equi
 \end{center}
 \end{figure}
 
+The first question asked was to do with the use of retweet and favourite functionality on Twitter. When \textit{retweeting} content on Twitter, the post will appear on the users own wall, as a tweet. A \textit{favourite} instead is added to a user's list of favourite tweets, which may be viewed separately by other members of Twitter. To demonstrate policy examples later, and to simplify data collection, we put forward that tweets similar in popularity will have equivalent amounts of retweets and favourites. We hypothesise that as a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.
+
+% \begin{description}
+%  \item [H1.]{As a measure of impact, the number of retweets and favourites for an item on Twitter are equivalent.}
+% \end{description}
+
+
+
+A simple approach to demonstrate that the use of retweets and favourites is equivalent in terms of impact or response is to check the correlation between these figures on a set of tweets. Figure \ref{fig:correlation_retweet_fav} shows this correlation. We find that retweets and favourites have a strong positive correlation, with a Pearson's coefficient r of 0.875 (3.s.f), n = 1,048,576. 
+
 %Number of tweets compared against
 %Correlation
 
 \subsection{Impact Factor}
 
-We created an /textit{impact factor} measurement based upon a Twitter user's retweet count, and tweet activity. This formula is upon the Hirsch-index \cite{hirsch2005index} measurement for an academic's contribution to literature. It attempts to measure both the impact (number of retweets) and productivity (number of tweets) of a Twitter user. 
+We created an \textit{impact factor} measurement based upon a Twitter user's retweet count, and tweet activity. This formula is upon the Hirsch-index \cite{hirsch2005index} measurement for an academic's contribution to literature. It attempts to measure both the impact (number of retweets) and productivity (number of tweets) of a Twitter user. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -85,14 +79,6 @@ To demonstrate this on another individual, take Chris Hadfield (Twitter name Cmd
 \section{Community Detection}
 
 The second primary data exploration factor explored community detection on Twitter. As a second hypothesis, we attempt to validate that embedded social networks exist within Twitter, and can be detected using IHPScrape. Detection of these communities will be possible through two means; follower and following links, and connection through retweets. Data collected for detecting communities consists of two sets to verify this claim; the retweet links, and follower links. These sets are largely disconnected, and as such discussion of these two techniques must also be separated.  
-% 
-% I propose the following. 
-% 
-% \begin{description}
-% \item[H2.]{Embedded social networks exist within Twitter, and can be detected using IHPScrape. Detection of these communities will be possible through two means; follower and following links, and connection through retweets.}
-% \end{description}
-
-
 
 \subsection{MapEquation Tool}
 
@@ -152,8 +138,9 @@ The scrapers allowed for detection of communities for the two groups of follower
 
 \subsection{Sentiment Analysis}
 
-One avenue for enriching the community data would be to use sentiment-detection methods. Filip Dimitrievski's project was primarily focused on classifying social media posts based upon sentiment, and constructing policies based on this information. He was able to use data collected from the IHPScrape scrapers to classify tweets according to sentiment, with varying success with different classifiers such as Sentiment140\footnote{http://www.sentiment140.com/}. Although the classifier was not trained specifically to Twitter data and in the long run the approach was abandoned, this demonstrated the feasibility of such an approach. Future exploration of this is left to future work.
+One avenue for enriching the community data would be to use sentiment-detection methods. Filip Dimitrievski's project was primarily focused on classifying social media posts based upon sentiment, and constructing policies based on this information. He was able to use data collected from the IHPScrape scrapers to classify tweets according to sentiment, with varying success with different classifiers such as Sentiment140\footnote{http://www.sentiment140.com/}. Although the classifier was not trained specifically to Twitter data and in the long run the approach was abandoned, this demonstrated the applicability of my dataset to Sentiment analysis. Future exploration of this is left to future work.
 
+% Although the classifier was not trained specifically to Twitter data and in the long run the approach was abandoned, this demonstrated the feasibility of such an approach. 
 % Further exploration of this is left to future work, given that the project was not Artificial-Intelligence focused.
 
 \section{Policy Examples and Discussion}
@@ -166,7 +153,7 @@ Reputation-inferring policies can be constructed from the data collected. Two ex
 
 In order to introduce exemplar reputation policies, the concept of an interactive forum is used. This concept is inspired by Hendrikx at al. \cite{graft_paper}, where GRAft was applied to a social forum, using a pure reputation access control system. In this example, forum access control may be modified by restricting or granting additional rights to users based upon calculated reputation. Reputation is turned into access control rights by these policies.
 
-As in the GRAft paper, I provide policy fragments, using Ruler\footnote{https://github.com/bobthecow/Ruler} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. In the example the calculated impact factor of the user is enfored to be greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
+As in the GRAft paper, I provide policy fragments, using Ruler\footnote{https://github.com/bobthecow/Ruler} to demonstrate how such a policy engine may operate. The following policy fragment restricts access based upon the impact factor of the given user, combined with the community that the individual is a part of. For example, on a computer science forum the administrator may only desire users with a significant social media impact to do with the engineering discipline to be able to post. In the example the calculated impact factor of the user is enforced to be greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
 
 % Here I propose that the calculated impact factor of the user is greater than or equal to 1, and the computed community discipline is related to the current forum, in order to post. 
 
@@ -197,74 +184,3 @@ On the same forum, administrator rights may be granted to consistently active us
   ) 
  \end{verbatim}
 \end{center}
-
-
-%Performance
-
-%Resistance to Detection
-
-%Logging
-
-
-%Our definition of equivalent defines that 
-
-%\section{Temporal Clustering}
-
-%By looking at impact across a period of time, we are able to distinguish constant emitters from one-hit-wonders, who 
-
-%\subsection{Correlation of Impact Factor vs Bucketed Impacts}
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[width=400px]{Images/monthly_impact_vs_overallv2.pdf}
-%\caption{Monthly Impact against Overall Impact}
-%\end{figure}
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[width=400px]{Images/yearly_impact_vs_overallv2.pdf}
-%\caption{Yearly Impact against Overall Impact}
-%\end{figure}
-
-%One strategy for inferring reputation information that I looked at was through temporal bucketing of impact factor, into days, months, and years. The figures below show the relationship between people's mean monthly calculated impact factor (i.e. by calculating a person's impact score for each month, and then averaging these values over the total number of months), and the individual's overall impact score. I infer that there is a weak relationship between average monthly impact and overall impact (Pearson's correlation coefficient of 0.273(3 s.f.)), and a stronger relationship between average yearly impact and overall impact (r=0.689(3 s.f.))\\
-
-%\noindent What I believe this data shows is that the impact factor is favourable to individuals who are consistent on Twitter over time. 
-
-%\subsection{Results of Monthly Bucketing}
-
-%By applying the impact factor formula to individuals on a monthly basis, we are able to generate an impression of how regularly active a person is. The data also reveals how influential the person has been per month. This assists when comparing individuals who are consistently strongly influential (e.g. Barack Obama, companies such as instagram), with those who are popular for a limited period only. I looked at comparing different bucket sizes for this temporal aggregation. Days, months, and years were used as buckets, with monthly aggregation clearly showing the strongest and more interesting trends. 
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics{Images/daily_impact_chris_hadfield.pdf}
-%\caption{The Daily Impact of Chris Hadfield - Famous Astronaut}
-%\end{figure}
-
-
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics{Images/monthly_impact_barack_obama.png}
-%\caption{The Monthly Impact of Barack Obama - President of USA (As if you didn't know that)}
-%\end{figure}
-
-%We can see that the daily and monthly impact trends follow roughly the same curve, which should be expected. The difference is due to the strictness of the impact factor formula in classifying someone as 'influential'. It is very difficult to get a value much above 1 on a daily basis, unless you are very frequently both making use of the social media, and having people respond to this activity. 
-
-
-%\section{Monthly Bucketing of Impact}
-
-%\section{Community Detection}
-
-%\begin{description}
-% \item [H2.] Sub-communities exist on Twitter, and we are able to detect these through scraping mechanisms.
-%\end{description}
-
-
-
-%One strategy for inferring reputation information that I looked at was through temporal bucketing of impact factor, into days, months, and years. The figures below show the relationship between people's mean monthly calculated impact factor (i.e. by calculating a person's impact score for each month, and then averaging these values over the total number of months), and the individual's overall impact score. I infer that there is a weak relationship between average monthly impact and overall impact (Pearson's correlation coefficient of 0.273(3 s.f.)), and a stronger relationship between average yearly impact and overall impact (r=0.689(3 s.f.))\\
-
-%First present the use of retweets vs favourites on Twitter, and show that they are similar
-
-%Next we look at impact factor of a person's retweets, pulled from the Hirsch-index formula. 
-
-%Policies as an outcome of this, written using Ruler?

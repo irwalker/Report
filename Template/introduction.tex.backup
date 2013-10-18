@@ -1,8 +1,12 @@
 \chapter{Introduction}\label{C:int}
 
-Social Networking Sites (SNS) such as \textit{theFacebook} originated in University environments in 2004. Users on social sites are able to create profiles about themselves, and interact with other users. Between 2004 and 2013, SNS have experienced extraordinary growth in active users, as well as moving through shifts in popularity. Online social platforms such as Facebook, Twitter, Google+ and LinkedIn have served to largely complement real-life interaction. Interactions online may take place with a variety of social spheres; friends, co-workers, family and complete strangers all congregate in multiple online sites. 
+Social Networking Sites (SNS) such as \textit{theFacebook} originated in University environments in the early 2000s. Users on social sites are able to create profiles about themselves, and interact with other users. Between 2000 and 2013, SNS have experienced extraordinary growth in active users, as well as moving through shifts in popularity. Online social platforms such as Facebook, Twitter, Google+ and LinkedIn have served to largely complement real-life interaction. Interactions online may take place with a variety of social spheres; friends, co-workers, family and complete strangers all congregate in one online location \cite{johnson2012facebook}.
 
-Reputation and the task of maintaining one's online reputation is a task often discussed, but with little metrics associated as to what defines an online reputation, or how to evaluate one's reputation online. In traditional networking terminology, reputation is a global trust mechanism, as opposed to trust which describes one nodes impression of another in the network. 
+Reputation and the task of maintaining one's online reputation is a task often discussed, but with little metrics associated as to what defines an online reputation, or how to evaluate one's reputation online. Evaluating the standing of users in other communities has been useful for describing access rights \cite{graft_paper}, filtering spam and low quality posts \cite{josang2007survey}, and evaluating the likely quality of feedback on Question and Answer websites \cite{movshovitzanalysis}. 
+
+% In traditional networking terminology, reputation is a global trust mechanism, as opposed to trust which describes one nodes impression of another in the network. 
+
+% Redo this second paragraph.
 
 % which should influence other members of the networks opninions on the node. 
 
@@ -35,7 +39,7 @@ In the digital age many social and business transactions are moving online. The 
 
 Reputation systems on trading websites have been extremely successful, despite the potential for fraudulent activity \cite{resnick2002trust}. While we might expect a self-aware adult to fairly easily spot equivalent 'fraudulent' activity or deceptive behaviour on social media, many examples have shown this to be untrue. Social crowd sourcing gone wrong has also been a high-profile issue, with incidents such as the Boston Bombings \cite{crowdsourcing_wad,doan2011crowdsourcing,brabham2008crowdsourcing}.
 
-Various strategies have been used to infer the personality or active traits of individuals online; these have been shown to be highly accurate. Applications on SNS have been used to give people an idea of their own personality. The results can then be compared against elements of the person's use of social media. This requires the express permission of the individual concerned to gain any meaningful data, when collecting information through a site's API. Which privacy concerns must be taken into account, publicly available information on an individual or company's social media account can be considered fair game. This information could be useful when judging trustworthiness. A new approach, that does not need permission to access information which is publicly-available, is needed. 
+Various strategies have been used to infer the personality or active traits of individuals online; these have been shown to be highly accurate. Applications on SNS have been used to give people an idea of their own personality. The results can then be compared against elements of the person's use of social media. This requires the express permission of the individual concerned to gain any meaningful data, when collecting information through a site's API. While privacy concerns must be taken into account, publicly available information on an individual or company's social media account can be considered fair game. This information could be useful when judging trustworthiness. A new approach, that does not need permission to access information which is publicly-available is needed. 
 
 % \section{Key Issues}
 % 
@@ -48,9 +52,17 @@ Various strategies have been used to infer the personality or active traits of i
 % \end{description}
 
 \section{Proposed Solution}
-A solution to the above issues is to use web-scraping strategies to anonymously retrieve reputation data. A more traditional approach would be to retrieve information directly through an API, but few social networks provide sufficient APIs - and they all require express user permission to work. This system could be used to give a general snapshot about an individual, by using these non-traditional data sources. There are many potential applications and uses for this sort of application. Parents might wish to get a glimpse at their child's online friends, or a company might wish to automatically get some information about a potential employee for example.
+A solution to the above issues is to use web-scraping strategies to anonymously retrieve reputation data. A more traditional approach would be to retrieve information directly through an API, but few social networks provide sufficient APIs - and they all require express user permission to work. This new system could be used to calculate a person's standing in a community. 
 
-The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. By creating such a reputation scraper, we envisage that a general impression about an individual on social media may be constructed. I create a new framework for scraping social media sites called IHPScrape, with the case study of Twitter, Facebook and LinkedIn as examples of the framework's applicability. A Twitter dataset is gathered of 1.7 million tweets, from which reputation metrics and policies are discussed. Finally I evaluate the performance and accuracy of this framework and reputation policies to analyse their potential effectiveness in a larger system.
+% This system could be used to give a general snapshot about an individual, by using these non-traditional data sources. There are many potential applications and uses for this sort of application.
+
+The aim of this project is to demonstrate the feasibility of a tool that gathers and provides snapshot reputation data from social media sites, using web-scraping as the data gathering method. A framework for scraping social media sites is created called IHPScrape, and is applied to case studies of Twitter, Facebook and LinkedIn. A Twitter dataset is gathered of 1.7 million tweets. Access policies are written based upon the calculated standing of individuals in the community. The Twitter dataset was rich in semantic potential for analysis, and multiple approaches are taken to structure these policies. Retweet and favourite numbers, temporal clustering and community detection are the avenues explored for reputation calculation. 
+
+% Access policies were written based upon the calculated standing of individuals in the community.
+
+% This dataset was found to be rich in semantic potential for analysis, and multiple approaches were taken to structure these poilicies. 
+
+% By creating such a reputation scraper, we envisage that a general impression about an individual on social media may be constructed. I create a new framework for scraping social media sites called IHPScrape, with the case study of Twitter, Facebook and LinkedIn as examples of the framework's applicability. A Twitter dataset is gathered of 1.7 million tweets, from which reputation metrics and policies are discussed. Finally I evaluate the performance and accuracy of this framework and reputation policies to analyse their potential effectiveness in a larger system.
 
 \section{Contributions}
 The primary contributions of this project are:
@@ -58,11 +70,19 @@ The primary contributions of this project are:
 \begin{description}
 	\item [A web-scraper for Twitter] as part of a wider scraping framework. Existing Twitter scrapers exist, but with performance and usage limitations that are unsuitable for fetching large quantities of data, or indeed reputation-focused data.
 	
-	\item [A web-scraping framework] that is suitable for extension onto more social networking sites is created called IHPScrape. 
+	\item [A web-scraping framework] that is suitable for extension onto more social networking sites is created called IHPScrape. The framework abstracts low-level networking details for further works, and reduces development time.
 	
-	\item [A set of reputation-inferring policies] for use on Twitter 
+	\item [A dataset of 1.7 million tweets,] and associated tweet meta-data is created. This dataset was randomly selected. Existing Twitter datasets that were found online were predominantly celebrity based and not useful for research purposes. 
 	
-	\item [A dataset of 1.7 million tweets], and associated tweet meta-data. This dataset was randomly selected. Existing Twitter datasets that were found online were predominantly celebrity based, which is not useful for research. 
+	\item [A Strong Correlation between Retweet and Favourite] count is identified. 
+	
+	\item [A Twitter Impact Factor] that describes a Twitter user's standing in the community as a function of retweet counts. This builds upon the Hirsch-Index \cite{hirsch2005index} calculation of an academic's standing in the community.
+	
+	\item [A set of reputation-inferring policies] for use on Twitter are described, with the potential for more to be created. These exemplar policies are created with reference to observed patterns in collected data.
+	
+	
+	
+	
 \end{description}
 
 \section{Report Structure}

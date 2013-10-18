@@ -81,7 +81,7 @@ The following non-functional requirements were identified as necessary for the s
 
 \paragraph{NF2: Scraper Performance Fast Enough for Use as part of Real-Time System}\hspace{0pt} \\
 
-\noindent This requirement refers to the speedof my web-scrapers. The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. 
+\noindent The web-scraping tools developed must perform with sufficient speed to generate snapshots of an individual's reputation for use in constructed policies. In order to create policies that are useful for future works, these scrapers must be able to gather and make conclusions about an individual in a matter of seconds. 
 
 \paragraph{NF3: Accuracy of Data Collected}\hspace{0pt} \\
 

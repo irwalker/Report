@@ -47,7 +47,7 @@ Social Networking Sites (SNS) have achieved massive adoption and user numbers si
 \item Slashdot \cite{slashdot_site}: A social media and news network targeted at a 'geek' audience. Slashdot is one of few social media sites that uses a positive/negative rating system on posts. This inbuilt reputation system could be interesting to look at further, when porting data between social media platforms. It is also unique from the standpoint of identifying 'trolls' - for which the website is widely known. 
 \end{itemize}
 
-This basic feature analysis was the foundation for data exploration on the social media sites scraped. As the project's primary aim was to demonstrate the fesibility of web-scraping as a means for fetching such information, research was conducted on web-scraping as a technology. 
+This basic feature analysis was the foundation for data exploration on the social media sites scraped. As the project's primary aim was to demonstrate the feasibility of web-scraping as a means for fetching such information, research was conducted on web-scraping as a technology. 
 
 \section{Web-Scraping}
 
@@ -78,9 +78,9 @@ As an academic project, fears of legal retaliation are much lower. However strat
 
 \section{Inferring Information from Social Media}
 
-The following sections examine research conducted into what information has already been investigated on social media. In particular, private personality traits that are inferrable from publicly available data are discussed, as well as how sentiment analysis of SNS can predict unexpected variables. 
+The following sections examine research conducted into what information has already been investigated on social media. In particular, private personality traits that are inferable from publicly available data are discussed, as well as how sentiment analysis of SNS can predict unexpected variables. 
 
-% I now examine research conducted into what information has already been investigated on social media. In particular I discuss what private personality traits are inferrable from publicly available data, as well as how sentiment analysis of SNS can predict unexpected variables.
+% I now examine research conducted into what information has already been investigated on social media. In particular I discuss what private personality traits are inferable from publicly available data, as well as how sentiment analysis of SNS can predict unexpected variables.
 %In particular what private personality traits can be inferred from publicly-available data, as well as 
 
 %Discuss the core challenges of web scraping in a social media setting
@@ -100,9 +100,9 @@ A potential weakness in these studies is that personality on SNS may not transla
 
 \subsection{Sentiment and Temporal Information from Social Media}
 
-It is also possible to take sentiment and temporal-related information from social sites as a whole, and use trending information to make accurate predictions about seemingly unlinked occurances. Bollen et al. \cite{bollen2011twitter} demonstrated that the 'mood' of Twitter can be used as a predictor of the U.S. stock market. The authors argue that Twitter mood is an accurate predictor of the public's mood state in general, which affects human decision-making and as such financial decisions. By taking historical Twitter data and calculating mood values using a classifier, the authors showed that Twitter was an accurate predictor of the U.S. stockmarket.
+It is also possible to take sentiment and temporal-related information from social sites as a whole, and use trending information to make accurate predictions about seemingly unlinked occurrences. Bollen et al. \cite{bollen2011twitter} demonstrated that the 'mood' of Twitter can be used as a predictor of the U.S. stock market. The authors argue that Twitter mood is an accurate predictor of the public's mood state in general, which affects human decision-making and as such financial decisions. By taking historical Twitter data and calculating mood values using a classifier, the authors showed that Twitter was an accurate predictor of the U.S. stockmarket.
 
-In a similar temporal approach to social BigData analysis, Ginsberg et al. \cite{ginsberg2008detecting} investigate the detection of influenza epidemics using Google search query data. By analysing the relative frequency of certain queries implying health information-seeking online, early prediction and detection of epidemics may be possible. These examples demonstrate that information that may be thought of as seperate can be determined from the wealth of information on social media.
+In a similar temporal approach to social BigData analysis, Ginsberg et al. \cite{ginsberg2008detecting} investigate the detection of influenza epidemics using Google search query data. By analysing the relative frequency of certain queries implying health information-seeking online, early prediction and detection of epidemics may be possible. These examples demonstrate that information that may be thought of as separate can be determined from the wealth of information on social media.
 
 %Talk about research conducted into social media, with respect to temporal analysis and predicting stock markets, etc.
 
@@ -166,7 +166,7 @@ This impacts the undertaken research as it guides the creation of reputation pol
 \begin{itemize}
  \item Fears of retaliation - users not posting negative scores due to fear of unsolicited reciprocation.
  \item People not bothering to place feedback - if no incentive exists for users to place feedback, they may not see the value of doing so.
- \item The assurance of honest feedback - for the above two reasons, reputations may be skewed and unreflective of reality.
+ \item The assurance of honest feedback - for the above two reasons, reputations may be skewed and not reflective of reality.
 \end{itemize}
 
 An automated reputation system using policies to turn reputation into access or action rights solves many of these issues instantly. There is no area in which retaliation can occur, feedback is never explicitly placed, and policies treating all users equally will assure honest feedback.
@@ -215,7 +215,8 @@ Entities within GRAft are uniquely identified using their OpenID. The system is 
 
 %Change this to he forum example. More relevant to my studies than the example pictured here. 
 
-Although GRAft is not a system currently used in industry, the authors discuss how it could be applied in practice. The domain of a scientific wiki is one such example. This wiki consists of scientific articles, which can be read and edited by members. Using a two-tier access policy defined in Figure \ref{fig:GRAFT}, read access to a page was is given by co-authorship. Users who had previously worked with the owner have a 1st-degree relationship; those who have worked with a person in the set of 1st-degree owners are 2nd degree owners, and so on. Once the user is granted access depending on this degree of co-authorship, editing rights are calculated by the users Hirsch-Index (H-Index) \cite{hirsch2005index}. Another policy is then responsible for assigning editing permissions based on this value. This example demonstrates how access rights can be automatically granted for all users who fulfil requirements defined by the page owner. The group is never explicitly defined in terms of users; and as the author begins work with others, they can be automatically granted access to resources. This flexible policy comes closer to reflecting ad-hoc and informal scientific collaborative interactions, and is based on trust information that comes closer to real-life reputation. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, this project provides a further case study example for this system.
+Although GRAft is not a system currently used in industry, the authors discuss how it could be applied in practice. The domain of a scientific wiki is one such example. This wiki consists of scientific articles, which can be read and edited by members. Using a two-tier access policy defined in Figure \ref{fig:GRAFT}, read access to a page was is given by co-authorship. Users who had previously worked with the owner have a 1st-degree relationship; those who have worked with a person in the set of 1st-degree owners are 2nd degree owners, and so on. Once the user is granted access depending on this degree of co-authorship, editing rights are calculated by the users Hirsch-Index (H-Index) \cite{hirsch2005index}. Another policy is then responsible for assigning editing permissions based on this value. This example demonstrates how access rights can be automatically granted for all users who fulfil requirements defined by the page owner. The group is never explicitly defined in terms of users; and as the author 
+begins work with others, they can be automatically granted access to resources. This flexible policy comes closer to reflecting ad-hoc and informal scientific collaborative interactions, and is based on trust information that comes closer to real-life reputation. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, this project provides a further case study example for this system.
 
 % My proposed solution extends and borrows concepts from these related reputation systems. GRAft as a distributed reputation storage system has the potential for storage of reputation data for many different applications. By implementing reputation policies for storage within GRAft, I essentially create source nodes as a further case study example for this system.
 
